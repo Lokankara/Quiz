@@ -1,36 +1,40 @@
 package com.quiz.card.service;
 
+import static com.quiz.card.service.FlashCardMapper.toDto;
+
 import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.FlashCardDto;
-import com.quiz.card.model.QuizResultDto;
+import com.quiz.card.model.Option;
+import com.quiz.card.model.QuestionEntity;
+import com.quiz.card.model.ResultDto;
 import com.quiz.card.repository.QuestionRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import lombok.RequiredArgsConstructor;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class QuestionService implements IQuestionService {
 
-    private final QuestionRepository repository;
     private final Warehouse warehouse;
+    private final QuestionRepository repository;
     private volatile List<FlashCardDto> allCardsCache;
-    private final Map<Long, Boolean> answerMap = new HashMap<>();
+    private final Set<AnswerDto> answerMap = Collections.synchronizedSet(new LinkedHashSet<>());
 
     @Override
     public List<FlashCardDto> getAllCards() {
         if (allCardsCache == null) {
-            synchronized (this) {
-                if (allCardsCache == null) {
-                    allCardsCache = repository.findAll().stream()
-                            .map(FlashCardMapper::toDto)
-                            .collect(Collectors.toList());
-                    warehouse.seed(allCardsCache);
-                }
-            }
+            allCardsCache = repository.findAll().stream()
+                    .map(FlashCardMapper::toDto)
+                    .collect(Collectors.toList());
+            warehouse.seed(allCardsCache);
         }
         return allCardsCache;
     }
@@ -42,24 +46,63 @@ public class QuestionService implements IQuestionService {
     }
 
     @Override
-    public QuizResultDto getResult() {
-        Set<Long> answeredIds = answerMap.keySet();
-        int total = answeredIds.size();
-        long correct = answerMap.values().stream().filter(Boolean::booleanValue).count();
+    public ResultDto getResult() {
+        int total = answerMap.size();
+        long correct = answerMap.stream().filter(AnswerDto::isCorrect).count();
         long incorrect = total - correct;
-        return QuizResultDto.builder()
+        Set<Long> answeredIds = answerMap.stream()
+                .map(AnswerDto::getId)
+                .collect(Collectors.toSet());
+        return ResultDto.builder()
                 .total(total)
                 .correct(correct)
                 .incorrect(incorrect)
-                .answeredIds(new HashSet<>(answeredIds))
+                .answeredIds(answeredIds)
                 .build();
     }
 
     @Override
-    public AnswerDto registerAnswer(Long id, boolean correct) {
-        answerMap.put(id, correct);
+    public AnswerDto registerAnswer(Long id, List<String> selectedOptions) {
+        Optional<QuestionEntity> optional = repository.findById(id);
+
+        if (optional.isEmpty()) {
+            FlashCardDto emptyCard = new FlashCardDto();
+            return AnswerDto.builder()
+                    .correct(false)
+                    .explanation("")
+                    .build();
+        }
+
+        QuestionEntity entity = optional.get();
+
+        Set<String> correctOptions = entity.getOptions().stream()
+                .filter(Option::isCorrect)
+                .map(Option::getText)
+                .collect(Collectors.toSet());
+
+        boolean correct = selectedOptions.size() == correctOptions.size() &&
+                correctOptions.containsAll(selectedOptions);
+
+        AnswerDto answerDto = AnswerDto.builder()
+                .id(entity.getId())
+                .correct(correct)
+                .explanation(entity.getExplanation())
+                .build();
+
+        answerMap.removeIf(a -> a.getId() == id);
+        answerMap.add(answerDto);
         warehouse.removeById(id);
-        return AnswerDto.builder().id(id).correct(correct).build();
+
+        return answerDto;
+    }
+
+    private Optional<QuestionEntity> getEntityOptional(Long id) {
+        return repository.findById(id);
+    }
+
+    @Override
+    public Set<AnswerDto> getAnswers() {
+        return answerMap;
     }
 
     @Override
@@ -68,6 +111,7 @@ public class QuestionService implements IQuestionService {
         return warehouse.snapshotAvailable();
     }
 
+    @Override
     public SseEmitter subscribeAvailable() {
         getAllCards();
         return warehouse.subscribe();
@@ -75,14 +119,14 @@ public class QuestionService implements IQuestionService {
 
     @Override
     public FlashCardDto removeCard(Long id) {
-        return repository.findById(id)
+        return getEntityOptional(id)
                 .map(entity -> {
                     repository.deleteById(id);
                     allCardsCache = null;
                     getAllCards();
                     warehouse.removeById(id);
-                    answerMap.remove(id);
-                    return FlashCardMapper.toDto(entity);
+                    answerMap.removeIf(a -> a.getId() == id);
+                    return toDto(entity);
                 })
                 .orElse(new FlashCardDto());
     }

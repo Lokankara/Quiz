@@ -11,7 +11,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuizResultDto {
+public class ResultDto {
     private long total;
     private long correct;
     private long incorrect;

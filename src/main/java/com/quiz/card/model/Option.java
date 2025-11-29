@@ -1,16 +1,19 @@
 package com.quiz.card.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Embeddable
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class AnswerDto {
-    private long id;
+@AllArgsConstructor
+public class Option {
+    @Column(columnDefinition = "TEXT")
+    private String text;
     private boolean correct;
-    private String explanation;
 }

@@ -2,13 +2,14 @@ package com.quiz.card.web;
 
 import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.FlashCardDto;
-import com.quiz.card.model.QuizResultDto;
+import com.quiz.card.model.ResultDto;
 import com.quiz.card.service.IQuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class QuestionController {
     }
 
     @GetMapping("/result")
-    public ResponseEntity<QuizResultDto> result() {
+    public ResponseEntity<ResultDto> result() {
         return ResponseEntity.ok(service.getResult());
     }
 
@@ -39,13 +40,18 @@ public class QuestionController {
         return ResponseEntity.ok(availableCards);
     }
 
-    @PostMapping("/answer")
+    @PostMapping("/answers")
     public ResponseEntity<AnswerDto> registerAnswer(
-            @RequestParam Long id, @RequestParam boolean correct) {
-        AnswerDto answer = service.registerAnswer(id, correct);
+            @RequestParam Long id, @RequestParam List<String> options) {
+        AnswerDto answer = service.registerAnswer(id, options);
         return ResponseEntity.ok(answer);
     }
 
+    @GetMapping("/answers")
+    public ResponseEntity<Set<AnswerDto>> getAnswer() {
+        Set<AnswerDto> answers = service.getAnswers();
+        return ResponseEntity.ok(answers);
+    }
 
     @GetMapping("/available/count")
     public ResponseEntity<Integer> availableCount() {

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -14,6 +14,5 @@ import java.util.List;
 public class FlashCardDto {
     private long id;
     private String question;
-    private List<String> options;
-    private String explanation;
+    private Set<String> options;
 }
