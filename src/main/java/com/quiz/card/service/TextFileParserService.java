@@ -22,7 +22,7 @@ public class TextFileParserService {
     private final String dataFilePath;
 
     public TextFileParserService(ResourceLoader resourceLoader,
-            @Value("${quiz.data.file:classpath:quiz_data.md}") String dataFilePath) {
+            @Value("${quiz.data.file:classpath:quiz-set_0.md}") String dataFilePath) {
         this.resourceLoader = resourceLoader;
         this.dataFilePath = dataFilePath;
     }
@@ -101,7 +101,7 @@ public class TextFileParserService {
 
         String[] lines = explanation.split("\n");
         for (String line : lines) {
-            if (line.contains("is correct")) {
+            if (line.contains("is correct") || line.contains("Correct.")) {
                 int end = line.indexOf("is correct");
                 String correctOption = line.substring(0, end).replace("\"", "").trim();
                 if (!correctOption.isEmpty())

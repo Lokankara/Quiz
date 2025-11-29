@@ -66,7 +66,6 @@ public class QuestionService implements IQuestionService {
         Optional<QuestionEntity> optional = repository.findById(id);
 
         if (optional.isEmpty()) {
-            FlashCardDto emptyCard = new FlashCardDto();
             return AnswerDto.builder()
                     .correct(false)
                     .explanation("")

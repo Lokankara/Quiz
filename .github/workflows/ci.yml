@@ -34,4 +34,4 @@ jobs:
           gradle-${{ runner.os }}-
 
     - name: Build with Gradle
-      run: ./gradlew clean build -x test --no-daemon
+      run: ./gradlew clean build --no-daemon
