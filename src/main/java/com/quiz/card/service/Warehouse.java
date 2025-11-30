@@ -96,4 +96,13 @@ public class Warehouse {
         }
         return emitter;
     }
+
+    public void clear() {
+        lock.writeLock().lock();
+        try {
+            deck.clear();
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
 }

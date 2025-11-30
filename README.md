@@ -1,6 +1,9 @@
 ## Quiz
 
-[Cards](https://quiz-6o4v.onrender.com)
+[API](https://quiz-6o4v.onrender.com)
+
+[React](https://quiz-aws.onrender.com/)
+
 
 [![Java CI/CD](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml/badge.svg)](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml)
 
@@ -17,7 +20,7 @@ npm install --save-dev @types/react-router-dom
 npm install react-router-dom@latest
 npm install axios
 npm install --save-dev @types/axios
-npm install -D tailwindcss postcss autoprefixernpx tailwindcss init -p
+npm install -D tailwindcss postcss autoprefixer
 npm install -D tailwindcss@3
 npx tailwindcss init -p
 ```
@@ -31,8 +34,6 @@ Build and run the application with Gradle:
 `./gradlew bootRun`
 
 `npm start dev`
-
-`npm run dev`
 
 `npm run build`
 

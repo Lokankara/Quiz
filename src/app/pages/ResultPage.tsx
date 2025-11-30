@@ -1,11 +1,101 @@
 import { useEffect, useState } from "react";
 import { AnswerDto } from "../types";
-import { getAnswers, handleRestart } from "../api";
+import { getAnswers } from "../api";
+import axios from "axios";
+
+const TabNav = ({ activeTab, onTabChange, onRestartClick }: { 
+    activeTab: string; 
+    onTabChange: (tab: string) => void;
+    onRestartClick: () => void;
+}) => (
+    <nav className="-mb-px flex space-x-8">
+        <button
+            onClick={() => onTabChange("exam")}
+            className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === "exam"
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            }`}
+        >
+            Exam
+        </button>
+        <button
+            onClick={() => onTabChange("results")}
+            className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === "results"
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            }`}
+        >
+            Results
+        </button>
+        <button
+            onClick={() => onTabChange("statistics")}
+            className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === "statistics"
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            }`}
+        >
+            Statistics
+        </button>
+        <button
+            onClick={onRestartClick}
+            className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === "restart"
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            }`}
+        >
+            Restart
+        </button>
+    </nav>
+);
+
+const RestartModal = ({ onClose, onRestart }: { 
+    onClose: () => void; 
+    onRestart: (fileIndex: number) => void;
+}) => {
+    useEffect(() => {
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+        };
+        document.addEventListener("keydown", handleEsc);
+        return () => document.removeEventListener("keydown", handleEsc);
+    }, [onClose]);
+
+    return (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-lg max-w-md w-full p-6 relative">
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl"
+                >
+                    ×
+                </button>
+                <h3 className="text-lg font-medium mb-4">Select Quiz Set</h3>
+                <p className="text-gray-600 mb-6">Choose a quiz set to restart with:</p>
+                <div className="grid grid-cols-1 gap-3 mb-6">
+                    {[0, 1, 2, 3, 4].map((index) => (
+                        <button
+                            key={index}
+                            onClick={() => onRestart(index)}
+                            className="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-red-400 hover:text-white"
+                        >
+                            Quiz Set {index}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const ResultPage = () => {
     const [answers, setAnswers] = useState<AnswerDto[]>([]);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState("results");
+    const [activeTab, setActiveTab] = useState("exam");
+    const [showRestartModal, setShowRestartModal] = useState(false);
 
     useEffect(() => {
         const fetchAnswers = async () => {
@@ -22,7 +112,14 @@ const ResultPage = () => {
         fetchAnswers();
     }, []);
 
-    handleRestart();
+    const handleRestart = async (fileIndex: number) => {
+        try {
+            await axios.post(`/api/questions/restart?fileIndex=${fileIndex}`);
+            window.location.href = "/";
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     const correctCount = answers.filter(a => a.correct).length;
     const totalCount = answers.length;
@@ -34,36 +131,25 @@ const ResultPage = () => {
     return (
         <div className="max-w-3xl mx-auto p-4">
             <div className="border-b border-gray-200 mb-6">
-                <nav className="-mb-px flex space-x-8">
-                    <button
-                        onClick={() => setActiveTab("results")}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === "results"
-                                ? "border-blue-500 text-blue-600"
-                                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                            }`}
-                    >
-                        Results
-                    </button>
-                    <button
-                        onClick={() => setActiveTab("statistics")}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === "statistics"
-                                ? "border-blue-500 text-blue-600"
-                                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                            }`}
-                    >
-                        Statistics
-                    </button>
-                    <button
-                        onClick={() => setActiveTab("restart")}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${activeTab === "restart"
-                                ? "border-blue-500 text-blue-600"
-                                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                            }`}
-                    >
-                        Restart
-                    </button>
-                </nav>
+                <TabNav 
+                    activeTab={activeTab}
+                    onTabChange={setActiveTab}
+                    onRestartClick={() => setShowRestartModal(true)}
+                />
             </div>
+
+            {activeTab === "exam" && (
+                <div className="text-center p-8 border rounded-lg bg-gray-50">
+                    <h2 className="text-2xl font-bold mb-4">Ready for Exam?</h2>
+                    <p className="text-gray-600 mb-6">Start a new exam session to test your knowledge.</p>
+                    <button
+                        onClick={() => window.location.href = "/"}
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded"
+                    >
+                        Start New Exam
+                    </button>
+                </div>
+            )}
 
             {activeTab === "results" && (
                 <div>
@@ -93,7 +179,6 @@ const ResultPage = () => {
                                     <span>Attempted on <b>{new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</b></span>
                                 </div>
                                 <h2 className="text-xl font-bold mb-4">Practice Quiz Results</h2>
-
                                 <div className="text-sm text-gray-600 space-y-2">
                                     <div className="flex justify-between">
                                         <span>Exam score: <b>{scorePercentage}%</b></span>
@@ -109,7 +194,6 @@ const ResultPage = () => {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="text-center ml-6">
                                 <div className="relative w-20 h-20">
                                     <svg className="w-full h-full transform -rotate-90">
@@ -142,17 +226,11 @@ const ResultPage = () => {
                 </section>
             )}
 
-            {activeTab === "restart" && (
-                <div className="text-center p-8 border rounded-lg bg-gray-50">
-                    <h3 className="text-lg font-medium mb-4">Restart Quiz</h3>
-                    <p className="mb-6 text-gray-600">This will clear all your answers and start a new quiz session.</p>
-                    <button
-                        onClick={handleRestart}
-                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded"
-                    >
-                        Restart Quiz
-                    </button>
-                </div>
+            {showRestartModal && (
+                <RestartModal 
+                    onClose={() => setShowRestartModal(false)}
+                    onRestart={handleRestart}
+                />
             )}
         </div>
     );

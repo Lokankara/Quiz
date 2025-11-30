@@ -35,8 +35,12 @@ public class QuestionService implements IQuestionService {
             allCardsCache = repository.findAll().stream()
                     .map(FlashCardMapper::toDto)
                     .collect(Collectors.toList());
-            if(allCardsCache.isEmpty()){
-                parserService.parseDataFile("0");
+            if(allCardsCache == null || allCardsCache.isEmpty()){
+                List<QuestionEntity> entities = parserService.parseDataFile(String.valueOf(0));
+                repository.saveAll(entities);
+                allCardsCache = entities.stream()
+                        .map(FlashCardMapper::toDto)
+                        .collect(Collectors.toList());
             }
             warehouse.seed(allCardsCache);
         }
@@ -125,6 +129,8 @@ public class QuestionService implements IQuestionService {
 
     @Override
     public void deleteAll() {
+        allCardsCache = null;
+        warehouse.clear();
         repository.deleteAll();
     }
 

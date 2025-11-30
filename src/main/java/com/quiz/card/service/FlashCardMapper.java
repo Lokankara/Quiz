@@ -11,6 +11,7 @@ public class FlashCardMapper {
     public static FlashCardDto toDto(QuestionEntity card) {
         return FlashCardDto.builder()
                 .id(card.getId())
+                .explanation(card.getExplanation())
                 .question(card.getQuestion())
                 .multiSelect(card.getOptions().stream()
                         .filter(Option::isCorrect)

@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -29,113 +30,84 @@ public class TextFileParserService {
 
     public List<QuestionEntity> parseDataFile(String index) {
         List<QuestionEntity> cards = new ArrayList<>();
-        String location = String.format("quiz-set_%s.md", index);
+        String location = String.format("classpath:quiz-set_%s.md", index);
         Resource resource = resourceLoader.getResource(location);
-        try{
+
+        try {
             String[] sections = resource.getContentAsString(StandardCharsets.UTF_8).split("##\\s*\\d+\\.");
-            IntStream.range(1, sections.length).mapToObj(i -> parseSection(sections[i].trim())).forEach(cards::add);
+            IntStream.range(1, sections.length)
+                    .mapToObj(i -> parseSection(sections[i].trim()))
+                    .forEach(cards::add);
         } catch (IOException e) {
             LOGGER.error("{}", e.getMessage());
         }
+
         return cards;
     }
 
     private QuestionEntity parseSection(String section) {
-        String[] lines = section.split("\n");
-        if (lines.length == 0) {
-            return null;
-        }
+        String[] lines = section.split("\\r?\\n");
+        StringBuilder question = new StringBuilder();
+        StringBuilder explanation = new StringBuilder();
+        Set<Option> options = new LinkedHashSet<>();
+        boolean inExplanation = false;
 
-        String question = lines[0].trim();
-        List<String> options = new ArrayList<>();
-        StringBuilder explanationBuilder = new StringBuilder();
-        boolean parsingExplanation = false;
+        for (String line : lines) {
+             line = line.replaceAll("-{3,}", "")
+               .replaceAll("\\s*-{3,}\\s*", "")
+               .trim();
 
-        for (int i = 1; i < lines.length; i++) {
-            String line = lines[i].replaceAll("---", "").trim();
-
-            if (line.isEmpty()) {
+            if (line.isEmpty())
                 continue;
-            }
 
-            if (line.startsWith("**Explanation:**")) {
-                parsingExplanation = true;
-                explanationBuilder.append(line.replace("**Explanation:**", "").trim()).append("\n");
-            } else if (parsingExplanation) {
-                explanationBuilder.append(line).append("\n");
-            } else if (line.startsWith("-")) {
-                options.add(line.substring(1).trim());
+            if (line.startsWith("- ")) {
+                options.add(Option.builder()
+                        .text(line.substring(2).trim())
+                        .correct(false)
+                        .build());
+            } else if (line.startsWith("**Explanation:**")) {
+                inExplanation = true;
+                explanation = new StringBuilder(line.replace("**Explanation:**", "").trim());
+            } else if (inExplanation) {
+                explanation.append(" ").append(line);
+            } else {
+                question.append((question.isEmpty()) ? "" : " ").append(line);
             }
         }
 
-        return getFlashCard(question, options, explanationBuilder);
-    }
+        Set<String> correctTexts = extractCorrectOptions(explanation.toString());
 
-    private QuestionEntity getFlashCard(String question, List<String> options, StringBuilder explanationBuilder) {
-        String explanation = explanationBuilder.toString().trim();
-        Set<Option> optionSet = extractOptions(options, explanation);
+        Set<Option> finalOptions = options.stream()
+                .map(o -> Option.builder()
+                        .text(o.getText())
+                        .correct(correctTexts.contains(o.getText()))
+                        .build())
+                .collect(Collectors.toCollection(LinkedHashSet::new));
 
         return QuestionEntity.builder()
-                .question(question)
-                .options(optionSet)
-                .explanation(explanation)
+                .question(question.toString())
+                .options(finalOptions)
+                .explanation(explanation.toString())
                 .build();
     }
 
-    private Set<Option> extractOptions(List<String> options, String explanation) {
-        Set<String> correctOptions = extractCorrectOptionsFromExplanation(explanation);
+    private Set<String> extractCorrectOptions(String explanation) {
+        Set<String> correctOptions = new HashSet<>();
 
-        return options.stream()
-                .map(opt -> Option.builder()
-                        .text(opt)
-                        .correct(correctOptions.contains(opt))
-                        .build())
-                .collect(Collectors.toSet());
-    }
-
-    private Set<String> extractCorrectOptionsFromExplanation(String explanation) {
-        Set<String> correct = new HashSet<>();
-        if (explanation == null || explanation.isEmpty())
-            return correct;
-
-        String[] sentences = explanation.split("[\\r\\n]+|(?<=\\.)");
-        Pattern pCorrect = Pattern.compile("(?i)\\bcorrect\\b");
-        Pattern pQuoted = Pattern.compile("\"([^\"]+)\"");
-        Pattern pBeforeCorrect = Pattern.compile("(?i)([\\w\\s\\-:&]+?)\\bcorrect\\b");
-
-        for (String sentence : sentences) {
-            String s = sentence.trim();
-            if (s.isEmpty())
-                continue;
-
-            Matcher mCorrect = pCorrect.matcher(s);
-            if (!mCorrect.find())
-                continue;
-
-            Matcher mq = pQuoted.matcher(s);
-            boolean found = false;
-            while (mq.find()) {
-                String g = mq.group(1).trim();
-                if (!g.isEmpty()) {
-                    correct.add(g);
-                    found = true;
-                }
-            }
-            if (found)
-                continue;
-
-            Matcher mb = pBeforeCorrect.matcher(s);
-            if (mb.find()) {
-                String group = mb.group(1);
-                group = group.replaceAll("[\\*\\[\\]\\(\\)]+", "").trim();
-                String[] parts = group.split("\\band\\b|,");
-                for (String part : parts) {
-                    String opt = part.replaceAll("^[\\-:\\s]+|[\\-:\\s]+$", "").trim();
-                    if (!opt.isEmpty())
-                        correct.add(opt);
-                }
-            }
+        Pattern multiPattern =
+                Pattern.compile("\"([^\"]+)\"\\s+and\\s+\"([^\"]+)\"\\s+are\\s+correct", Pattern.CASE_INSENSITIVE);
+        Matcher multiMatcher = multiPattern.matcher(explanation);
+        while (multiMatcher.find()) {
+            correctOptions.add(multiMatcher.group(1).trim());
+            correctOptions.add(multiMatcher.group(2).trim());
         }
-        return correct;
+
+        Pattern singlePattern = Pattern.compile("\"([^\"]+)\"\\s+is\\s+correct", Pattern.CASE_INSENSITIVE);
+        Matcher singleMatcher = singlePattern.matcher(explanation);
+        while (singleMatcher.find()) {
+            correctOptions.add(singleMatcher.group(1).trim());
+        }
+
+        return correctOptions;
     }
 }

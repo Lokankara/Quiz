@@ -626,8 +626,7 @@ Security groups can be changed at any time.
 - It replaces IAM users and roles.
 
 **Explanation:**  
-"It retrieves authentication information from a central repository using an API call" and "It encrypts data at rest" are
-correct.  
+"It retrieves authentication information from a central repository using an API call" and "It encrypts data at rest" are correct.  
 "It provides free storage" is incorrect; it is a paid service.  
 "It replaces hardcoding authentication information in code" is incorrect as a statement of fact; it helps avoid
 hardcoding, but does not automatically replace it.  
