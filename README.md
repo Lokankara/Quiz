@@ -4,7 +4,6 @@
 
 [React](https://quiz-aws.onrender.com/)
 
-
 [![Java CI/CD](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml/badge.svg)](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml)
 
 ```bash
@@ -30,8 +29,6 @@ Build and run the application with Gradle:
 `./gradlew bootRun`
 
 `./gradlew clean build --refresh-dependencies`
-
-`./gradlew bootRun`
 
 `npm start dev`
 

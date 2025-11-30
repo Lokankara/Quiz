@@ -9,7 +9,7 @@
 - Hardware
 - Operating system
 
-**Explanations:**
+**Explanation:**
 "Data" is incorrect. The customer is responsible for the data they store and manage in EC2 instances; AWS does not control the content or integrity of customer data.
 "Application code" is incorrect. The customer is responsible for the application code they deploy and run on EC2; AWS only provides the underlying infrastructure.
 "Hardware" is correct. AWS manages the physical servers, networking, and storage hardware as part of the Shared Responsibility model.
@@ -24,7 +24,7 @@
 - Spot Instances
 - Dedicated Hosts
 
-**Explanations:**
+**Explanation:**
 "On-Demand Instances" is incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
 "Reserved Instances" is incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
 "Spot Instances" is incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
@@ -39,7 +39,7 @@
 - Community
 - Private
 
-**Explanations:**
+**Explanation:**
 "Hybrid" is correct. A hybrid cloud allows workloads to be distributed between on‑premises and cloud environments, offering flexibility for data‑intensive or specialized tasks.
 "Public" is incorrect. Public cloud exclusively runs on shared cloud infrastructure; all workloads would reside in the cloud.
 "Community" is incorrect. Community cloud is shared among organizations with similar requirements but does not provide on‑premises integration flexibility.
@@ -54,7 +54,7 @@
 - User’s device
 - Network firewalls
 
-**Explanations:**
+**Explanation:**
 "Web server" is incorrect. Web servers mainly handle data in transit and storage; they are not the primary place to prevent data loss during active use.
 "Storage system" is incorrect. Storage systems protect data at rest but do not prevent leaks while data is actively used.
 "User’s device" is correct. DLP solutions protecting data in use monitor endpoints (user devices) to prevent unauthorized sharing, copying, or printing of sensitive data.
@@ -69,7 +69,7 @@
 - AWS Desktop
 - AppStream
 
-**Explanations:**
+**Explanation:**
 "WorkSpaces" is correct. WorkSpaces provides managed virtual desktops, supporting Windows and Linux, accessible from multiple devices.
 "WorkLink" is incorrect. WorkLink provides secure access to internal websites and applications from mobile devices, not full virtual desktops.
 "AWS Desktop" is incorrect. There is no AWS service officially named “AWS Desktop.”
@@ -84,7 +84,7 @@
 - ACLs have numbered rules that are processed in order.
 - ACLs are composed only of ALLOW rules.
 
-**Explanations:**
+**Explanation:**
 "Every subnet must have an ACL assigned to it." is correct. Every subnet automatically has a default ACL if none is explicitly assigned.
 "ACLs can have different inbound and outbound rules." is correct. Network ACLs can independently control inbound and outbound traffic.
 "ACLs have numbered rules that are processed in order." is correct. ACL rules are evaluated starting from the lowest number.
@@ -99,7 +99,7 @@
 - Discovery
 - Classification
 
-**Explanations:**
+**Explanation:**
 "Hashing" is incorrect. Hashing is a method to verify data integrity, not to determine security controls.
 "Labeling" is incorrect. Labeling assigns metadata to data but does not determine security controls.
 "Discovery" is incorrect. Discovery identifies where data resides but does not define its required protection.
@@ -114,7 +114,7 @@
 - ca-central-1
 - me-south-1
 
-**Explanations:**
+**Explanation:**
 "us-gov-west-1" is correct. This is a GovCloud region available only to U.S. government agencies and eligible contractors.
 "sa-east-1" is incorrect. This is a public region in South America accessible to all AWS customers.
 "ca-central-1" is incorrect. This is a public region in Canada accessible to all AWS customers.
@@ -129,7 +129,7 @@
 - SaaS
 - IaaS
 
-**Explanations:**
+**Explanation:**
 "DaaS" is incorrect. Desktop‑as‑a‑Service provides virtual desktops, not directly aligned with DevOps practices.
 "PaaS" is correct. Platform‑as‑a‑Service provides environments for developers to deploy, manage, and scale applications, supporting DevOps workflows.
 "SaaS" is incorrect. Software‑as‑a‑Service delivers applications to end users, not development environments.
@@ -144,7 +144,7 @@
 - VPN
 - HTTPS
 
-**Explanations:**
+**Explanation:**
 "S3 Encryption" is correct. S3 encryption protects data at rest, not in transit.
 "IPsec" is incorrect. IPsec secures data in transit between networked systems.
 "VPN" is incorrect. VPNs encrypt data in transit over public networks.
@@ -159,7 +159,7 @@
 - API calls
 - Machine images
 
-**Explanations:**
+**Explanation:**
 "DynamoDB tables" is incorrect. DynamoDB stores persistent data, representing data at rest.
 "S3 objects" is incorrect. S3 objects are stored in AWS and are considered data at rest.
 "API calls" is correct. API calls are data in motion, not at rest.
@@ -174,7 +174,7 @@
 - Alerts
 - Events
 
-**Explanations:**
+**Explanation:**
 "Alarms" is correct. CloudWatch Alarms monitor metrics and can trigger actions automatically when thresholds are breached.
 "Triggers" is incorrect. While triggers may sound like event initiators, AWS does not use this term for CloudWatch automation.
 "Alerts" is incorrect. Alerts notify but do not initiate automated actions.
@@ -189,7 +189,7 @@
 - Access/secret key
 - Username/password
 
-**Explanations:**
+**Explanation:**
 "Security hardware token" is incorrect. Tokens alone are not used for CLI authentication; they may be part of MFA.
 "MFA" is incorrect. MFA adds security but requires keys; it is not standalone for CLI automation.
 "Access/secret key" is correct. CLI automation uses programmatic credentials (access key ID and secret access key) to authenticate.
@@ -204,7 +204,7 @@
 - AWS Artifact
 - AWS CloudTrail
 
-**Explanations:**
+**Explanation:**
 "AWS Systems Manager" is incorrect. Systems Manager helps manage infrastructure but does not provide compliance certification information.
 "AWS Billing Console" is incorrect. Provides billing data, not compliance documents.
 "AWS Artifact" is correct. Artifact provides access to AWS compliance reports and certifications for regulatory bodies.
@@ -220,7 +220,7 @@
 - Chef Automate
 - Rsync
 
-**Explanations:**
+**Explanation:**
 "Git" is incorrect. Git is a version control tool, not a managed instance in OpsWorks.
 "Puppet Enterprise" is correct. OpsWorks supports Puppet Enterprise for configuration management.
 "FlashCopy" is incorrect. FlashCopy is an IBM storage feature, not AWS OpsWorks.
@@ -236,7 +236,7 @@
 - Resource pooling
 - Multitenancy
 
-**Explanations:**
+**Explanation:**
 "Metered service" is incorrect. Metered service relates to billing based on usage, not resource scaling.
 "Elasticity" is correct. Elasticity allows resources to automatically scale up or down to meet demand.
 "Resource pooling" is incorrect. Resource pooling shares resources among multiple tenants but does not imply dynamic scaling.
@@ -251,7 +251,7 @@
 - Placement Groups – Spread
 - Auto Scaling Groups
 
-**Explanations:**
+**Explanation:**
 "Placement Groups – Cluster" is incorrect. Cluster placement groups place instances close together in a single AZ to achieve low‑latency networking, not to separate them physically.
 "Placement Groups – Partition" is incorrect. Partition placement groups separate instances into partitions across racks, but they are optimized for large distributed systems like HDFS and are not intended for small groups of isolated instances.
 "Placement Groups – Spread" is correct. Spread placement groups ensure each instance is placed on distinct hardware within an AZ, minimizing correlated failure.
@@ -266,7 +266,7 @@
 - Ability to run instances on dedicated physical hardware
 - Guaranteed higher I/O performance
 
-**Explanations:**
+**Explanation:**
 "Improved network bandwidth" is incorrect. Reserved Instances do not change performance characteristics.
 "Lower compute costs in exchange for commitment" is correct. Reserved Instances reduce hourly pricing if you commit for 1 or 3 years.
 "Ability to run instances on dedicated physical hardware" is incorrect. This is a feature of Dedicated Hosts.
@@ -281,7 +281,7 @@
 - Savings Plans
 - Dedicated Hosts
 
-**Explanations:**
+**Explanation:**
 "Spot Instances" is incorrect. Spot Instances can be terminated at any moment when capacity or price changes.
 "On-Demand Instances" is correct. They provide uninterrupted compute with no risk of involuntary termination.
 "Savings Plans" is incorrect. Savings Plans reduce cost but do not influence instance interruption or guarantees.
@@ -296,7 +296,7 @@
 - C family
 - I family
 
-**Explanations:**
+**Explanation:**
 "M family" is incorrect. M is general-purpose with balanced CPU, memory, and networking.
 "R family" is correct. R instances are explicitly memory‑optimized for high RAM workloads.
 "C family" is incorrect. C instances are compute‑optimized.
@@ -311,7 +311,7 @@
 - Maintaining a static public IPv4 across instance replacements
 - Encrypting traffic between instances
 
-**Explanations:**
+**Explanation:**
 "Scaling compute capacity" is incorrect. IPs do not influence compute scaling.
 "Automating instance recovery" is incorrect. Elastic IPs do not handle resilience.
 "Maintaining a static public IPv4 across instance replacements" is correct. EIPs let you reassign IPs to new instances instantly.
@@ -326,7 +326,7 @@
 - EBS Provisioned IOPS SSD (io2)
 - EFS Standard
 
-**Explanations:**
+**Explanation:**
 "Instance Store" is incorrect. Fast, but ephemeral and not designed for sustained transactional IOPS.
 "EBS General Purpose SSD (gp3)" is incorrect. Good baseline performance but not highest IOPS.
 "EBS Provisioned IOPS SSD (io2)" is correct. io2 / io2 Block Express provide maximum durability and highest IOPS for databases.
@@ -341,7 +341,7 @@
 - EBS volumes detach automatically
 - The instance cannot be started again
 
-**Explanations:**
+**Explanation:**
 "Instance Store data persists" is incorrect. Instance Store is ephemeral.
 "Instance Store data is lost" is correct. Stopping or terminating the instance wipes the instance store data.
 "EBS volumes detach automatically" is incorrect. Stopping does not detach EBS unless done manually.
@@ -356,7 +356,7 @@
 - Setting security groups
 - Configuring networking rules
 
-**Explanations:**
+**Explanation:**
 "Applying IAM roles" is incorrect. IAM roles are attached separately.
 "Running boot-time automation scripts" is correct. User data provides initialization automation at instance launch.
 "Setting security groups" is incorrect. Security groups are defined externally.
@@ -371,7 +371,7 @@
 - Root access keys
 - OS-level accounts
 
-**Explanations:**
+**Explanation:**
 "API keys stored in user data" is incorrect and insecure.
 "IAM roles" is correct. Provide temporary credentials via IMDS with no static secrets.
 "Root access keys" is incorrect. Should never be distributed or embedded.
@@ -386,7 +386,7 @@
 - Security Groups
 - Internet Gateways
 
-**Explanations:**
+**Explanation:**
 "Network ACLs" is incorrect. NACLs operate at subnet level, stateless.
 "Route Tables" is incorrect. These define traffic paths.
 "Security Groups" is correct. Instance-level, stateful firewalls controlling inbound/outbound traffic.
@@ -401,7 +401,7 @@
 - Region
 - AMI
 
-**Explanations:**
+**Explanation:**
 "VPC size" is incorrect. ENI limits are not tied to CIDR capacity.
 "Instance type" is correct. Each instance type family defines ENI limits.
 "Region" is incorrect. Limits are consistent across regions.
@@ -416,7 +416,7 @@
 - CloudWatch Logs
 - Elastic Beanstalk
 
-**Explanations:**
+**Explanation:**
 "EC2 Auto Recovery" is correct. Automatically recovers instances when underlying hardware fails.
 "Auto Scaling" is incorrect. Auto Scaling replaces instances based on custom health checks, not EC2 system checks.
 "CloudWatch Logs" is incorrect. Logging does not trigger instance recovery.
@@ -431,7 +431,7 @@
 - Spot Instances
 - Savings Plans
 
-**Explanations:**
+**Explanation:**
 "Dedicated Instances" is incorrect. Provide isolation at host level but without hardware visibility.
 "Dedicated Hosts" is correct. Give full physical host control and license management.
 "Spot Instances" is incorrect. No isolation guarantees.
@@ -446,7 +446,7 @@
 - C‑family instances provide maximum CPU
 - R‑family instances provide high memory capacity
 
-**Explanations:**
+**Explanation:**
 "T‑family instances accumulate CPU credits and spend them during spikes" is correct. Burst model with CPU credit system.
 "M‑family instances offer balanced CPU and memory" is incorrect. Not burst-based.
 "C‑family instances provide maximum CPU" is incorrect. Compute-focused but not credit-based.
@@ -461,7 +461,7 @@
 - Automatic switching between instance types
 - Automatic application deployment
 
-**Explanations:**
+**Explanation:**
 "Automatic OS patching" is incorrect. This is handled via SSM, not Auto Scaling.
 "Automatic adjustment of instance count based on demand" is correct. Auto Scaling matches capacity to load.
 "Automatic switching between instance types" is incorrect. Only possible with mixed instance policies, but not the core purpose.
@@ -476,7 +476,7 @@
 - General Purpose SSD (gp3)
 - Throughput Optimized HDD (st1)
 
-**Explanations:**
+**Explanation:**
 "Magnetic (standard)" is incorrect. Magnetic (previously standard) volumes are legacy HDD-backed volumes that offer lower performance and are rarely recommended for modern workloads where SSDs are preferable.
 "Provisioned IOPS SSD (io2)" is incorrect. io2 provides the highest sustained IOPS and throughput for mission-critical databases but is more expensive and targeted at I/O-intensive workloads rather than general use.
 "General Purpose SSD (gp3)" is correct. gp3 is designed to deliver a balance of price and performance for a broad set of workloads, allowing baseline performance and the ability to provision additional IOPS and throughput independently of volume size.
@@ -491,7 +491,7 @@
 - Only the running process list
 - User data script only
 
-**Explanations:**
+**Explanation:**
 "Only the instance’s metadata" is incorrect. Metadata (instance‑id, etc.) is ephemeral and not sufficient to recreate the instance filesystem or configuration.
 "The instance’s root volume and optional attached EBS volumes (snapshots)" is correct. Creating an AMI typically snapshots the root EBS volume (and optionally other EBS volumes), capturing the filesystem state to launch identical instances.
 "Only the running process list" is incorrect. The process list is transient and not used to recreate the full instance image.
@@ -506,7 +506,7 @@
 - Snapshots cannot be used to create new volumes
 - Snapshots are automatically copied to all regions
 
-**Explanations:**
+**Explanation:**
 "Snapshots are incremental after the first full snapshot" is correct. After the initial full snapshot, subsequent snapshots store only changed blocks, making them incremental and more storage-efficient.
 "Each snapshot always duplicates the entire volume data" is incorrect. Only the first snapshot is effectively a full copy; subsequent snapshots record changed blocks relative to prior snapshots.
 "Snapshots cannot be used to create new volumes" is incorrect. Snapshots are commonly used to create new EBS volumes in the same region (and can be copied to other regions first).
@@ -521,7 +521,7 @@
 - Both IMDSv1 and IMDSv2 are identical in protection
 - Neither; metadata access cannot be protected
 
-**Explanations:**
+**Explanation:**
 "IMDSv1" is incorrect. IMDSv1 accepts unsigned HTTP requests and is more vulnerable to SSRF and unauthorized metadata access.
 "IMDSv2" is correct. IMDSv2 requires a session‑oriented PUT to obtain a time‑limited token which must be included in subsequent GET requests, significantly reducing SSRF and request‑forgery risks.
 "Both IMDSv1 and IMDSv2 are identical in protection" is incorrect. IMDSv2 adds tokenization and is more secure than IMDSv1.
@@ -536,7 +536,7 @@
 - Instance store volumes can be snapshotted to S3 automatically
 - Instance store is recommended for long-term durable storage
 
-**Explanations:**
+**Explanation:**
 "Instance store data persists after instance stop/terminate" is incorrect. Instance store is ephemeral; data is lost when the instance stops, hibernates, or terminates.
 "Instance store provides ephemeral storage physically attached to the host" is correct. Instance store (also called ephemeral storage) is physically attached to the host and offers high I/O but no durability across host failure or instance stop.
 "Instance store volumes can be snapshotted to S3 automatically" is incorrect. Only EBS volumes support snapshots; instance store cannot be snapshotted by AWS.
@@ -551,7 +551,7 @@
 - Store root account credentials on the instance
 - Manually rotate IAM user credentials daily
 
-**Explanations:**
+**Explanation:**
 "Embed long-lived access keys in application config" is incorrect. Embedding long-lived keys is insecure and risks credential leakage.
 "Use IAM roles attached to the instance (Instance Profile)" is correct. IAM roles provide temporary, automatically rotated credentials via the Instance Metadata Service, which is the secure AWS best practice.
 "Store root account credentials on the instance" is incorrect. Root credentials must never be stored on instances.
@@ -566,7 +566,7 @@
 - A physical NIC in the AWS data center
 - The route table for a VPC
 
-**Explanations:**
+**Explanation:**
 "A virtual network card that can be attached to an EC2 instance" is correct. An ENI is a logical network interface with private IPs, security groups, and MAC that can be attached/detached from instances.
 "AWS’s term for a subnet" is incorrect. Subnets are CIDR‑based subdivisions of a VPC; ENIs are per-instance interfaces.
 "A physical NIC in the AWS data center" is incorrect. ENIs are virtual constructs managed by AWS, not a physical device you control.
@@ -581,7 +581,7 @@
 - Using Spot Instances
 - Using a T2 instance family
 
-**Explanations:**
+**Explanation:**
 "Using Instance Store-backed AMIs" is incorrect. Instance-store-backed AMIs lose instance store data on stop; they don’t persist root by stopping.
 "Using EBS-backed root volumes" is correct. Instances with EBS-backed root volumes can be stopped and restarted while preserving the EBS volume contents.
 "Using Spot Instances" is incorrect. Spot instances can be terminated; they don’t guarantee persistent root preservation.
@@ -596,7 +596,7 @@
 - Store backups only on the instance’s local disk and manual copy
 - Do not back up; rely on auto-healing
 
-**Explanations:**
+**Explanation:**
 "Rely solely on instance store volumes" is incorrect. Instance store is ephemeral and not suitable for backups.
 "Use EBS snapshots and copy them to another region or use lifecycle policies" is correct. EBS snapshots (incremental) and cross‑region copies or automated lifecycle policies are recommended for durable backups.
 "Store backups only on the instance’s local disk and manual copy" is incorrect. Local disks are ephemeral; manual procedures are error-prone and not durable.
@@ -611,7 +611,7 @@
 - Private
 - Community
 
-**Explanations:**
+**Explanation:**
 "Public" is correct. AWS is a public cloud provider offering computing, storage, and other services over the internet to multiple tenants with shared infrastructure.
 "Hybrid" is incorrect. A hybrid cloud combines on‑premises and cloud resources; AWS itself is not inherently hybrid.
 "Private" is incorrect. A private cloud is dedicated to a single organization, while AWS serves multiple organizations on shared infrastructure.
@@ -626,7 +626,7 @@
 - AWS CloudWatch
 - AWS CloudTrail
 
-**Explanations:**
+**Explanation:**
 "AWS WAF" is incorrect. WAF is a web application firewall and does not provide consolidated monitoring.
 "AWS Shield" is incorrect. Shield provides DDoS protection, not general monitoring.
 "AWS CloudWatch" is correct. CloudWatch collects metrics, logs, and events, providing monitoring and dashboards for your AWS resources.
@@ -641,7 +641,7 @@
 - Quotas
 - Blocks
 
-**Explanations:**
+**Explanation:**
 "Constraints" is incorrect. Constraints are rules in service configuration but do not enforce usage limits.
 "Segments" is incorrect. Segments are not relevant to AWS usage control.
 "Quotas" is correct. AWS service quotas (formerly limits) restrict resource consumption per account to prevent accidental overuse or cost overruns.
@@ -656,7 +656,7 @@
 - AWS Cloud Adoption Framework
 - Knowledge Center
 
-**Explanations:**
+**Explanation:**
 "Documentation" is incorrect. Documentation provides manuals and technical references but not a dedicated FAQ format.
 "Discussion forums" is incorrect. Forums allow community discussion, not a curated FAQ.
 "AWS Cloud Adoption Framework" is incorrect. CAF is a guidance framework for planning adoption, not an FAQ.
@@ -671,7 +671,7 @@
 - Maintenance
 - Governance
 
-**Explanations:**
+**Explanation:**
 "Auditability" is incorrect. Auditability refers to the ability to track and review actions.
 "Interoperability" is incorrect. Interoperability refers to systems working across different platforms.
 "Maintenance" is incorrect. Maintenance refers to updating, patching, or repairing systems.
@@ -686,7 +686,7 @@
 - Security groups only apply to outbound traffic
 - Security groups only apply to inbound traffic
 
-**Explanations:**
+**Explanation:**
 "Security groups only apply to traffic within the VPC" is incorrect. Security groups apply to all traffic entering or leaving the instance, including from the Internet if assigned a public IP.
 "Security groups apply to both inbound and outbound traffic" is correct. Security groups have rules for both inbound and outbound traffic, controlling connectivity in both directions.
 "Security groups only apply to outbound traffic" is incorrect. They control inbound traffic as well.
@@ -701,7 +701,7 @@
 - eu-central-1
 - af-south-1
 
-**Explanations:**
+**Explanation:**
 "us-west-1" is incorrect. This is a US-based region and does not meet data residency requirements in Germany.
 "ge-south-1" is incorrect. This region does not exist.
 "eu-central-1" is correct. eu-central-1 corresponds to Frankfurt, Germany, and satisfies jurisdictional requirements for running instances locally.
@@ -717,7 +717,7 @@
 - Standard
 - Hybrid
 
-**Explanations:**
+**Explanation:**
 "Flexible" is incorrect. There is no AWS Reserved Instance type called “Flexible.”
 "Dynamic" is incorrect. “Dynamic” is not an official EC2 Reserved Instance category.
 "Convertible" is correct. Convertible Reserved Instances allow you to change instance types, OS, or tenancy during the reservation period while maintaining cost benefits.
@@ -733,7 +733,7 @@
 - Containers
 - Virtualization
 
-**Explanations:**
+**Explanation:**
 "Elasticity" is incorrect. Elasticity refers to scaling resources up or down based on demand, not sharing hardware.
 "Metered service" is incorrect. Metered service is about pay‑per‑use billing, not resource abstraction.
 "Containers" is incorrect. Containers provide application-level isolation, but hypervisors relate to virtualization.
@@ -748,7 +748,7 @@
 - Rapid elasticity
 - Metered service
 
-**Explanations:**
+**Explanation:**
 "On-demand self-service" is incorrect. This allows users to provision resources without human intervention, but doesn’t inherently avoid adding hardware.
 "Virtualization" is correct. Virtualization abstracts hardware, allowing allocation of resources from a large shared pool without physically adding hardware.
 "Rapid elasticity" is incorrect. Elasticity allows scaling resources automatically, but underlying virtualization is required to avoid new hardware purchases.
@@ -763,7 +763,7 @@
 - CPU
 - Memory
 
-**Explanations:**
+**Explanation:**
 "Storage" is incorrect. Storage is typically virtualized and shared across tenants, with logical isolation.
 "Data" is correct. Customer data is logically isolated and not shared between tenants.
 "CPU" is incorrect. Physical CPU cores are shared via virtualization across tenants.
@@ -778,7 +778,7 @@
 - ec2.eu-west-2.amazonaws.com
 - ec2.aws.com
 
-**Explanations:**
+**Explanation:**
 "ec2.amazonaws.com" is correct. This is the standard global endpoint for EC2 API requests.
 "ec2.aws.amazon.com" is incorrect. This is not a valid AWS endpoint.
 "ec2.eu-west-2.amazonaws.com" is correct for the specific London region; regional endpoints include the region code.
@@ -793,7 +793,7 @@
 - IAM account passwords can only be set by the root account and cannot be modified by the account itself
 - AWS has a global password policy that is enforced for all IAM accounts to meet industry best practices
 
-**Explanations:**
+**Explanation:**
 "IAM accounts are free to use whatever password is desired by the account holder" is incorrect. AWS allows administrators to enforce password policies.
 "IAM password policies have granular controls and can be set based on the regulatory or corporate policies required for the account" is correct. IAM policies can enforce length, complexity, expiration, and reuse restrictions to meet regulatory requirements.
 "IAM account passwords can only be set by the root account and cannot be modified by the account itself" is incorrect. Users can change their own passwords within policy constraints.
@@ -809,7 +809,7 @@
 - PIN
 - Challenge question
 
-**Explanations:**
+**Explanation:**
 "Date of birth" is incorrect. Personal info like DOB is not considered a valid MFA factor.
 "Hardware token" is correct. Hardware tokens (e.g. YubiKey, virtual MFA apps) provide a second factor beyond password.
 "Retinal scan" is correct. Biometric factors such as retinal or fingerprint scans are valid MFA methods if supported.
@@ -825,7 +825,7 @@
 - EC2
 - Lightsail
 
-**Explanations:**
+**Explanation:**
 "S3" is incorrect. S3 pricing calculator options are relatively simple and do not offer the same advanced compute-level configurations.
 "Elastic Beanstalk" is incorrect. Elastic Beanstalk abstracts the infrastructure and does not require extensive parameter estimation in the calculator.
 "EC2" is correct. EC2 has both simple quick estimates and advanced options for configuring instance type, storage, networking, and pricing details.
@@ -840,7 +840,7 @@
 - AWS KMS
 - AWS STS
 
-**Explanations:**
+**Explanation:**
 "AWS IAM" is incorrect. IAM defines identities and policies, but access without long-term credentials requires temporary credentials.
 "AWS Secrets Manager" is incorrect. Secrets Manager stores and rotates secrets but does not directly issue temporary credentials.
 "AWS KMS" is incorrect. KMS manages encryption keys, not access credentials.
@@ -855,7 +855,7 @@
 - Allows rules based on IP, protocol, and port
 - Automatically scales horizontally
 
-**Explanations:**
+**Explanation:**
 "Stateless traffic filtering" is incorrect. Security Groups are stateful; they track return traffic automatically.
 "Applies at subnet level" is incorrect. Security Groups are applied at the instance level.
 "Allows rules based on IP, protocol, and port" is correct. Security Groups define inbound and outbound rules using IP addresses, protocols, and ports.
@@ -870,7 +870,7 @@
 - IAM Roles
 - Network ACLs
 
-**Explanations:**
+**Explanation:**
 "Security Groups" is incorrect. Security Groups control network traffic, not data encryption.
 "EBS Encryption" is correct. EBS volumes can be encrypted at rest using AWS-managed or customer-managed keys.
 "IAM Roles" is incorrect. IAM roles manage permissions, not encryption.
@@ -885,7 +885,7 @@
 - They guarantee uninterrupted compute
 - They cannot be used with Auto Scaling
 
-**Explanations:**
+**Explanation:**
 "They are the most expensive EC2 option" is incorrect. Spot Instances are the cheapest option due to bidding on unused capacity.
 "They can be interrupted by AWS with a 2-minute warning" is correct. Spot Instances can be terminated when capacity is reclaimed, with a 2-minute notification.
 "They guarantee uninterrupted compute" is incorrect. Spot Instances are interruptible and do not provide guaranteed compute.
@@ -900,7 +900,7 @@
 - AWS Systems Manager
 - AWS Config
 
-**Explanations:**
+**Explanation:**
 "AWS CloudFormation" is incorrect. CloudFormation provisions resources but does not directly manage configuration with Puppet or Chef.
 "AWS OpsWorks" is correct. OpsWorks supports configuration management using Chef and Puppet for automated EC2 instance setup.
 "AWS Systems Manager" is incorrect. Systems Manager provides patching and automation but does not natively integrate Puppet or Chef.
@@ -915,7 +915,7 @@
 - Savings Plans
 - Reserved Instances
 
-**Explanations:**
+**Explanation:**
 "On-Demand Instances" is incorrect. On-Demand charges per usage with no long-term commitment.
 "Spot Instances" is incorrect. Spot Instances bid on unused capacity, not long-term commitment.
 "Savings Plans" is incorrect. Savings Plans apply to usage discounts but are not specific to EC2 reservations per se.
@@ -930,7 +930,7 @@
 - Amazon EFS
 - Amazon FSx
 
-**Explanations:**
+**Explanation:**
 "Amazon EBS" is incorrect. EBS provides block storage for EC2, limited per volume.
 "Amazon S3" is correct. S3 offers object storage that scales virtually unlimited in capacity.
 "Amazon EFS" is incorrect. EFS is a scalable file system for Linux instances but has throughput limits.
@@ -945,7 +945,7 @@
 - Virtual Private Cloud (VPC)
 - Regions
 
-**Explanations:**
+**Explanation:**
 "Availability Zones" is incorrect. AZs are physical data center clusters, not logical isolation boundaries.
 "Subnets" is incorrect. Subnets are subdivisions within a VPC, not top-level isolation.
 "Virtual Private Cloud (VPC)" is correct. A VPC provides a logically isolated section of AWS resources with its own IP ranges, routing, and security.
@@ -960,7 +960,7 @@
 - Stopping
 - Retiring
 
-**Explanations:**
+**Explanation:**
 "Pending" is incorrect. This is a valid state while an instance is initializing.
 "Running" is incorrect. Indicates the instance is operational.
 "Stopping" is incorrect. Indicates an instance is being stopped.
@@ -975,7 +975,7 @@
 - Security Groups
 - Elastic IP
 
-**Explanations:**
+**Explanation:**
 "Instance Store" is incorrect. Instance store is ephemeral and loses data on stop/terminate.
 "EBS Volumes" is correct. EBS-backed volumes persist across instance stops and starts, maintaining data.
 "Security Groups" is incorrect. Security groups manage network access, not storage persistence.

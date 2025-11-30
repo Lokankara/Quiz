@@ -1,4 +1,4 @@
-``## 1. What best describes the principle that users should only be given the minimum permissions they need to do their job?
+## 1. What best describes the principle that users should only be given the minimum permissions they need to do their job?
 
 - All users should have the same baseline permissions to use basic AWS services.
 - Users should submit all access requests in writing for an audit trail.

@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { FlashCardDto, OptionDto } from "../types";
+import { FlashCardDto, OptionDto, QuestionProps } from "../types";
 
-interface QuestionProps {
-    card: FlashCardDto;
-    onSubmit: (selectedOptions: string[]) => void;
-}
-
-export default function Question({ card, onSubmit }: QuestionProps) {
+export default function Question({index, size, card, onSubmit }: QuestionProps) {
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
     const handleSelect = (option: OptionDto) => {
@@ -34,9 +29,9 @@ export default function Question({ card, onSubmit }: QuestionProps) {
         selectedOptions.includes(JSON.stringify(option));
 
     return (
-        <div className="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-lg space-y-4">
+        <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-lg space-y-4">
             <div className="text-xl font-semibold text-gray-800">
-                {card.id}. {card.question}
+                {index +1}/{size}. {card.question}
             </div>
 
             <div className="space-y-3">

@@ -24,9 +24,7 @@ export const getAvailableCount = async (): Promise<number> => {
 export const submitAnswer = async (id: number, options: string[]): Promise<AnswerDto> => {
     const params = new URLSearchParams();
     params.append("id", id.toString());
-    options.forEach(opt => {
-        params.append("options", opt);
-    });
+    options.forEach(option => params.append("options", option));
     const res = await axios.post<AnswerDto>("/api/questions/answers", null, { params });
     return res.data;
 };
@@ -48,11 +46,7 @@ export const removeQuestion = async (id: number): Promise<FlashCardDto> => {
     return res.data;
 };
 
-export const handleRestart = async () => {
-    try {
-        await axios.post("/api/questions/restart");
-        window.location.href = "/";
-    } catch (err) {
-        console.error(err);
-    }
+export const handleRestart = async (fileIndex: number) => {
+    await axios.post(`/api/questions/restart?fileIndex=${fileIndex}`);
+    window.location.href = "/";
 };

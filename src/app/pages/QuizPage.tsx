@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FlashCardDto, AnswerDto } from "../types";
-import { getAllQuestions, getAvailableQuestions, submitAnswer } from "../api";
+import { getAllQuestions, submitAnswer } from "../api";
 import Question from "../components/Question";
 import AnswerFeedback from "../components/AnswerFeedback";
 
@@ -28,21 +28,15 @@ export default function QuizPage() {
   useEffect(() => {
     return () => {
       if (timerRef.current) {
-        window.clearTimeout(timerRef.current);  
+        window.clearTimeout(timerRef.current);
       }
     };
   }, []);
 
   const handleAnswerSubmit = async (cardId: number, selectedOptions: string[]) => {
-    if (answerResult) return;
     const answer = await submitAnswer(cardId, selectedOptions);
     setAnswerResult(answer);
-
-    timerRef.current = window.setTimeout(() => {
-      setAnswerResult(null);
-      setCurrentIndex((prev) => prev + 1);
-      timerRef.current = null;
-    }, 5000);
+    setCurrentIndex((prev) => prev + 1);
   };
 
   useEffect(() => {
@@ -50,8 +44,14 @@ export default function QuizPage() {
       navigate("/results");
     }
   }, [loading, currentIndex, cards.length, navigate]);
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+      </div>
+    );
+  }
 
-  if (loading) return <div>Loading...</div>;
   if (cards.length === 0) {
     navigate("/results");
     return null;
@@ -62,20 +62,18 @@ export default function QuizPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      {currentIndex + 1}/{cards.length}
-
-      {!answerResult && (
         <Question
-          key={currentCard.id}
+          size={cards.length}
+          key={currentIndex + 1}
+          index={currentIndex}
           card={currentCard}
           onSubmit={(selectedOptions) => handleAnswerSubmit(currentCard.id, selectedOptions)}
         />
-      )}
 
       {answerResult && (
         <AnswerFeedback
           answerResult={answerResult}
-          explanationTitle=""
+          explanationTitle={currentCard.question}
         />
       )}
     </div>

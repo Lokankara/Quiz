@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { AnswerDto } from "../types";
+import { getAnswers } from "../api";
 
 const ResultPage = () => {
     const [answers, setAnswers] = useState<AnswerDto[]>([]);
@@ -10,8 +10,8 @@ const ResultPage = () => {
         const fetchAnswers = async () => {
             setLoading(true);
             try {
-                const res = await axios.get<AnswerDto[]>("/api/questions/answers");
-                setAnswers(res.data);
+                const res = await getAnswers();
+                setAnswers(res);
             } catch (err) {
                 console.error(err);
             } finally {
@@ -21,7 +21,13 @@ const ResultPage = () => {
         fetchAnswers();
     }, []);
 
-    if (loading) return <div className="p-4 text-center">Loading...</div>;
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center h-screen">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+        </div>
+      );
+    }
 
     return (
         <div className="max-w-3xl mx-auto p-4">
