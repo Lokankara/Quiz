@@ -25,6 +25,7 @@ public class QuestionService implements IQuestionService {
 
     private final Warehouse warehouse;
     private final QuestionRepository repository;
+    private final TextFileParserService parserService;
     private volatile List<FlashCardDto> allCardsCache;
     private final Set<AnswerDto> answerMap = Collections.synchronizedSet(new LinkedHashSet<>());
 
@@ -34,6 +35,9 @@ public class QuestionService implements IQuestionService {
             allCardsCache = repository.findAll().stream()
                     .map(FlashCardMapper::toDto)
                     .collect(Collectors.toList());
+            if(allCardsCache.isEmpty()){
+                parserService.parseDataFile("0");
+            }
             warehouse.seed(allCardsCache);
         }
         return allCardsCache;
@@ -79,8 +83,11 @@ public class QuestionService implements IQuestionService {
                 .map(Option::getText)
                 .collect(Collectors.toSet());
 
-        boolean correct = selectedOptions.size() == correctOptions.size() &&
-                correctOptions.containsAll(selectedOptions);
+        Set<String> selectedSet = selectedOptions.stream()
+                .map(s -> s.replace("\"", ""))
+                .collect(Collectors.toSet());
+
+        boolean correct = correctOptions.equals(selectedSet);
 
         AnswerDto answerDto = AnswerDto.builder()
                 .id(entity.getId())
@@ -114,6 +121,17 @@ public class QuestionService implements IQuestionService {
     public SseEmitter subscribeAvailable() {
         getAllCards();
         return warehouse.subscribe();
+    }
+
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
+    }
+
+    @Override
+    public void saveAll(String filenameIndex) {
+        List<QuestionEntity> cards = parserService.parseDataFile(filenameIndex);
+        repository.saveAll(cards);
     }
 
     @Override

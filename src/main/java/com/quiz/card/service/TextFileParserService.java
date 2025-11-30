@@ -2,10 +2,12 @@ package com.quiz.card.service;
 
 import com.quiz.card.model.Option;
 import com.quiz.card.model.QuestionEntity;
-import org.springframework.beans.factory.annotation.Value;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -13,31 +15,28 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
+@RequiredArgsConstructor
 public class TextFileParserService {
 
     private final ResourceLoader resourceLoader;
-    private final String dataFilePath;
+    private final static Logger LOGGER = LoggerFactory.getLogger(TextFileParserService.class);
 
-    public TextFileParserService(ResourceLoader resourceLoader,
-            @Value("${quiz.data.file:classpath:quiz-set_0.md}") String dataFilePath) {
-        this.resourceLoader = resourceLoader;
-        this.dataFilePath = dataFilePath;
-    }
-
-    public List<QuestionEntity> parseDataFile() throws IOException {
-        Resource resource = resourceLoader.getResource(dataFilePath);
-        String fileContent = resource.getContentAsString(StandardCharsets.UTF_8);
-
+    public List<QuestionEntity> parseDataFile(String index) {
         List<QuestionEntity> cards = new ArrayList<>();
-        String[] sections = fileContent.split("##\\s*\\d+\\.");
-
-        for (int i = 1; i < sections.length; i++) {
-            cards.add(parseSection(sections[i].trim()));
+        String location = String.format("quiz-set_%s.md", index);
+        Resource resource = resourceLoader.getResource(location);
+        try{
+            String[] sections = resource.getContentAsString(StandardCharsets.UTF_8).split("##\\s*\\d+\\.");
+            IntStream.range(1, sections.length).mapToObj(i -> parseSection(sections[i].trim())).forEach(cards::add);
+        } catch (IOException e) {
+            LOGGER.error("{}", e.getMessage());
         }
-
         return cards;
     }
 
@@ -99,13 +98,42 @@ public class TextFileParserService {
         if (explanation == null || explanation.isEmpty())
             return correct;
 
-        String[] lines = explanation.split("\n");
-        for (String line : lines) {
-            if (line.contains("is correct") || line.contains("Correct.")) {
-                int end = line.indexOf("is correct");
-                String correctOption = line.substring(0, end).replace("\"", "").trim();
-                if (!correctOption.isEmpty())
-                    correct.add(correctOption);
+        String[] sentences = explanation.split("[\\r\\n]+|(?<=\\.)");
+        Pattern pCorrect = Pattern.compile("(?i)\\bcorrect\\b");
+        Pattern pQuoted = Pattern.compile("\"([^\"]+)\"");
+        Pattern pBeforeCorrect = Pattern.compile("(?i)([\\w\\s\\-:&]+?)\\bcorrect\\b");
+
+        for (String sentence : sentences) {
+            String s = sentence.trim();
+            if (s.isEmpty())
+                continue;
+
+            Matcher mCorrect = pCorrect.matcher(s);
+            if (!mCorrect.find())
+                continue;
+
+            Matcher mq = pQuoted.matcher(s);
+            boolean found = false;
+            while (mq.find()) {
+                String g = mq.group(1).trim();
+                if (!g.isEmpty()) {
+                    correct.add(g);
+                    found = true;
+                }
+            }
+            if (found)
+                continue;
+
+            Matcher mb = pBeforeCorrect.matcher(s);
+            if (mb.find()) {
+                String group = mb.group(1);
+                group = group.replaceAll("[\\*\\[\\]\\(\\)]+", "").trim();
+                String[] parts = group.split("\\band\\b|,");
+                for (String part : parts) {
+                    String opt = part.replaceAll("^[\\-:\\s]+|[\\-:\\s]+$", "").trim();
+                    if (!opt.isEmpty())
+                        correct.add(opt);
+                }
             }
         }
         return correct;

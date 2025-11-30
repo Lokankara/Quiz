@@ -15,4 +15,5 @@ public class FlashCardDto {
     private long id;
     private String question;
     private Set<String> options;
+    private boolean multiSelect;
 }

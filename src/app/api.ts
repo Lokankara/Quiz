@@ -47,3 +47,12 @@ export const removeQuestion = async (id: number): Promise<FlashCardDto> => {
     });
     return res.data;
 };
+
+export const handleRestart = async () => {
+    try {
+        await axios.post("/api/questions/restart");
+        window.location.href = "/";
+    } catch (err) {
+        console.error(err);
+    }
+};

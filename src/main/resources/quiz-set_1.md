@@ -24,7 +24,7 @@
 - **On-Demand Instances:** Incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
 - **Reserved Instances:** Incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
 - **Spot Instances:** Incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
-- **Dedicated Hosts:** Correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
+`- **Dedicated Hosts:** Correct. Dedicated` Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
 
 ---
 

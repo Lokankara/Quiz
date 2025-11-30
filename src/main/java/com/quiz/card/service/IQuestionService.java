@@ -25,4 +25,8 @@ public interface IQuestionService {
     FlashCardDto removeCard(Long id);
 
     SseEmitter subscribeAvailable();
+
+    void deleteAll();
+
+    void saveAll(String filenameIndex);
 }

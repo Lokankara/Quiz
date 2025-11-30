@@ -6,13 +6,14 @@ export interface OptionDto {
 export interface FlashCardDto {
     id: number;
     question: string;
+    multiSelect: boolean;
     options: OptionDto[];
     explanation: string;
 }
 
 export interface AnswerDto {
+    id: number;
     correct: boolean;
-    card: FlashCardDto;
     explanation: string;
 }
 

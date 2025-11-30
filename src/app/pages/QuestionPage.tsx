@@ -1,36 +1,45 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { FlashCardDto, AnswerDto } from "../types";
+import { FlashCardDto } from "../types";
+import { getRandomQuestion, submitAnswer as sendAnswer } from "../api";
 
-export default function QuestionPage() {
+export default function QuizPage() {
     const [question, setQuestion] = useState<FlashCardDto | null>(null);
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchRandomQuestion = async () => {
+    const loadQuestion = async () => {
         setLoading(true);
         try {
-            const res = await axios.get<FlashCardDto>("/api/questions/random");
-            setQuestion(res.data);
-            setSelectedIndex(null);
+            const q = await getRandomQuestion();
+            setQuestion(q);
+            setSelectedOptions([]);
+        } catch (error) {
+            console.error("Failed to load question:", error);
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
-        fetchRandomQuestion();
+        loadQuestion();
     }, []);
-
-    const submitAnswer = async () => {
-        if (question && selectedIndex !== null) {
-            const selectedOptionText = [question.options[selectedIndex].text];
-            const res = await axios.post<AnswerDto>("/api/questions/answers", null, {
-                params: { id: question.id, options: selectedOptionText },
-            });
-            await fetchRandomQuestion();
-            alert(res.data.correct ? "Correct!" : "Incorrect!");
+    
+    const handleSelect = (optionStr: string) => {
+        if (!question) return;
+        if (question.multiSelect) {
+            setSelectedOptions(prev =>
+                prev.includes(optionStr) ? prev.filter(o => o !== optionStr) : [...prev, optionStr]
+            );
+        } else {
+            setSelectedOptions([optionStr]);
         }
+    };
+
+    const handleSubmit = async () => {
+        if (!question || selectedOptions.length === 0) return;
+        const res = await sendAnswer(question.id, selectedOptions);
+        alert(res.correct ? "Correct" : "Incorrect");
+        await loadQuestion();
     };
 
     if (loading) return <div className="text-center mt-20">Loading...</div>;
@@ -40,25 +49,27 @@ export default function QuestionPage() {
         <div className="max-w-xl mx-auto p-6 border rounded shadow">
             <h2 className="font-bold mb-4">{question.question}</h2>
             <ul className="space-y-2">
-                {question.options.map((opt, idx) => (
-                    <li key={opt.text}>
-                        <label className="flex items-center space-x-2 cursor-pointer">
-                            <input
-                                type="radio"
-                                name="option"
-                                checked={selectedIndex === idx}
-                                onChange={() => setSelectedIndex(idx)}
-                                className="form-radio"
-                            />
-                            <span>{opt.text}</span>
-                        </label>
-                    </li>
-                ))}
+                {question.options.map(o => {
+                    const str = JSON.stringify(o);
+                    const checked = selectedOptions.includes(str);
+                    return (
+                        <li key={o.text}>
+                            <label className="flex items-center space-x-2 cursor-pointer">
+                                <input
+                                    type={question.multiSelect ? "checkbox" : "radio"}
+                                    checked={checked}
+                                    onChange={() => handleSelect(str)}
+                                />
+                                <span>{o.text}</span>
+                            </label>
+                        </li>
+                    );
+                })}
             </ul>
             <button
-                onClick={submitAnswer}
-                disabled={selectedIndex === null}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+                onClick={handleSubmit}
+                disabled={selectedOptions.length === 0}
+                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
             >
                 Submit
             </button>

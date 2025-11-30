@@ -4,14 +4,6 @@
 
 [![Java CI/CD](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml/badge.svg)](https://github.com/Lokankara/Quiz/actions/workflows/ci.yml)
 
-Build and run the application with Gradle:
-
-`./gradlew bootRun`
-
-`./gradlew clean build --refresh-dependencies`
-
-`./gradlew bootRun`
-
 ```bash
 npx create-react-app ui --template typescript
 npm install @types/node@^20.19.0 --save-dev
@@ -30,7 +22,15 @@ npm install -D tailwindcss@3
 npx tailwindcss init -p
 ```
 
-`npm start`
+Build and run the application with Gradle:
+
+`./gradlew bootRun`
+
+`./gradlew clean build --refresh-dependencies`
+
+`./gradlew bootRun`
+
+`npm start dev`
 
 `npm run dev`
 

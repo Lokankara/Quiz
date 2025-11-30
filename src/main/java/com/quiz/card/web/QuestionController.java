@@ -68,4 +68,11 @@ public class QuestionController {
         FlashCardDto deleted = service.removeCard(id);
         return ResponseEntity.ok(deleted);
     }
+
+    @PostMapping("/restart")
+    public ResponseEntity<Void> restartQuiz(@RequestParam(defaultValue = "0") String fileIndex) {
+        service.deleteAll();
+        service.saveAll(fileIndex);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FlashCardDto, AnswerDto } from "../types";
 import { getAvailableQuestions, submitAnswer } from "../api";
 import Question from "../components/Question";
@@ -8,6 +9,7 @@ export default function QuizPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerDto[]>([]);
   const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
   useEffect(() => {
     getAvailableQuestions().then((data) => {
@@ -23,7 +25,11 @@ export default function QuizPage() {
   };
 
   if (loading) return <div>Loading...</div>;
-  if (cards.length === 0 || currentIndex >= cards.length) return <div>No more questions</div>;
+    if (cards.length === 0 || currentIndex >= cards.length) {
+        navigate("/results"); 
+        return null;
+    }
+
 
   const currentCard = cards[currentIndex];
 
