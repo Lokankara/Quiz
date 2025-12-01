@@ -955,7 +955,7 @@ management.
 
 **Explanation:**  
 "Amazon EC2" is correct. Customers manage and patch the OS on EC2.  
-"AWS Fargate," "Amazon Lambda," and "Amazon DynamoDB" are incorrect; AWS manages the OS for these services.
+"AWS Fargate" "Amazon Lambda" and "Amazon DynamoDB" are incorrect; AWS manages the OS for these services.
 
 ---
 

@@ -84,28 +84,28 @@ export default function AnswerFeedback({
 
   return (
     <>
-      {title && <h2 className="font-bold mb-4">{title}</h2>}
       <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-lg space-y-4">
         <div
           className={`p-4 rounded mb-4 border ${answerResult.correct ? "bg-green-100 border-green-500" : "bg-red-100 border-red-500"
             }`}
         >
           <h3 className={`font-bold text-lg ${answerResult.correct ? "text-green-700" : "text-red-700"}`}>
-            {answerResult.correct ? "✓ " : "✗ "}
-            {explanationTitle}
+            {answerResult.correct ? "✓ Correct" : "✗ Incorrect"}
           </h3>
         </div>
         <div className="space-y-3">
           {options.map((opt, i) => (
             <div
               key={i}
-              className={`p-3 rounded-md ${i % 2 === 1 ? "bg-gray-100" : "bg-white"}`}
+              className={`p-2 pl-4 border-l-4 ${opt.correct ? "border-green-500" : "border-red-500"
+                } rounded-md ${i % 2 === 1 ? "bg-gray-100" : "bg-white"}`}
             >
-              <h4 className={`text-lg mb-1 ${opt.correct ? "text-green-700 font-semibold" : "text-red-700"}`}>
+              <h4 className={`text-lg ${opt.correct ? "text-green-700 font-semibold" : "text-red-700"}`}>
                 {opt.text}
               </h4>
               {opt.explanation && <p className="text-gray-700">{opt.explanation}</p>}
             </div>
+
           ))}
         </div>
       </div>

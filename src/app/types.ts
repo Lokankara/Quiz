@@ -1,5 +1,4 @@
 export interface QuestionProps {
-    index: number;
     size: number;
     card: FlashCardDto;
     onSubmit: (selectedOptions: string[]) => void;

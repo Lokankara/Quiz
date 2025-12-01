@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { FlashCardDto, OptionDto, QuestionProps } from "../types";
+import { useState } from "react";
+import { OptionDto, QuestionProps } from "../types";
 
-export default function Question({index, size, card, onSubmit }: QuestionProps) {
+export default function Question({ size, card, onSubmit }: QuestionProps) {
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
     const handleSelect = (option: OptionDto) => {
@@ -31,7 +31,7 @@ export default function Question({index, size, card, onSubmit }: QuestionProps) 
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-lg space-y-4">
             <div className="text-xl font-semibold text-gray-800">
-                {index +1}/{size}. {card.question}
+                #{size}. {card.question}
             </div>
 
             <div className="space-y-3">
