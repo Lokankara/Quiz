@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { StatisticsPage } from "../pages/StatisticsPage";
-import { getAnswers } from "../api";
+import { getAnswers, handleRestart } from "../api";
 import { AnswerDto } from "../types";
 import { TabNav } from "../components/NavTab";
 import { RestartPage } from "./RestartPage";
@@ -26,14 +25,6 @@ export const ResultPage = () => {
         fetchAnswers();
     }, []);
 
-    const handleRestart = async (fileIndex: number) => {
-        try {
-            await axios.post(`/api/questions/restart?fileIndex=${fileIndex}`);
-            window.location.href = "/";
-        } catch (err) {
-            console.error(err);
-        }
-    };
 
     if (loading) {
         return (
