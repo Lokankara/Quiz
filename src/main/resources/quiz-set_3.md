@@ -980,3 +980,5 @@
 "EBS Volumes" is correct. EBS-backed volumes persist across instance stops and starts, maintaining data.
 "Security Groups" is incorrect. Security groups manage network access, not storage persistence.
 "Elastic IP" is incorrect. Elastic IP provides static IPs, not data storage.
+
+---

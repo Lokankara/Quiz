@@ -3,6 +3,7 @@
 ---
 
 ## 1. What best describes the principle that users should only be given the minimum permissions they need to do their job?
+
 - All users should have the same baseline permissions to use basic AWS services.
 - Users should submit all access requests in writing for an audit trail.
 - Users should be granted permission to access only the resources they need for their job.
@@ -17,6 +18,7 @@
 ---
 
 ## 2. Amazon RDS provides Multi-AZ feature for better availability of databases. Which of the following options describes Multi-AZ?
+
 - Multi-AZ allows read replicas of RDS instances across availability zones.
 - Multi-AZ maintains standby replicas of RDS instances in different availability zones.
 - Multi-AZ allows peering connections between VPCs.
@@ -31,6 +33,7 @@
 ---
 
 ## 3. A developer is creating a new application and wants to integrate features of AWS services directly into the application. Which AWS tool is the BEST for this purpose?
+
 - AWS Software Development Kit
 - AWS CodeDeploy
 - AWS Command Line Interface (CLI)
@@ -45,6 +48,7 @@
 ---
 
 ## 4. Which AWS component of the Billing Dashboard will give users an overview of their past 12 months of usage and forecasts for their projected usage for the next 12 months?
+
 - Cost Explorer
 - Budget Reports
 - AWS Budgets
@@ -59,6 +63,7 @@
 ---
 
 ## 5. What Amazon Web Services service would you use to send notifications based on Amazon CloudWatch alarms?
+
 - Amazon Route 53
 - AWS CloudTrail
 - Amazon Simple Notification Service (Amazon SNS)
@@ -73,6 +78,7 @@
 ---
 
 ## 6. How does using managed services like RDS help companies focus on applications rather than infrastructure?
+
 - Managed services eliminate infrastructure costs.
 - Managed services have unlimited scale.
 - The provider handles maintenance tasks.
@@ -87,6 +93,7 @@
 ---
 
 ## 7. Which service allows users to quickly get configured vendor systems up and running quickly within AWS?
+
 - AWS EC2
 - AWS Lambda
 - AWS Machine Images
@@ -101,6 +108,7 @@
 ---
 
 ## 8. AWS offers a variety of different EC2 instance types that are optimized for different types of focused usage. Which of the following is not an optimized instance type under EC2?
+
 - Storage optimized
 - Network optimized
 - Compute optimized
@@ -113,6 +121,7 @@
 ---
 
 ## 9. A company migrated their application servers to Amazon EC2 instances. The IT Manager wants to know about upcoming AWS scheduled maintenance activities that could impact the EC2 instances. Which AWS service provides alerts about these activities?
+
 - AWS Personal Health Dashboard
 - AWS Trusted Advisor
 - AWS Service Health Dashboard
@@ -127,6 +136,7 @@
 ---
 
 ## 10. What action does an Elastic Load Balancer (ELB) take when it detects an unhealthy Amazon EC2 instance?
+
 - It continues to send traffic to the failed instance.
 - It restarts the unhealthy EC2 instance.
 - It terminates the failed instance so that it is not part of the ELB target group.
@@ -141,6 +151,7 @@
 ---
 
 ## 11. Which key cloud concept pertains to the ability to reuse components of an application or service?
+
 - Reusability
 - Modularization
 - Portability
@@ -155,6 +166,7 @@
 ---
 
 ## 12. According to the AWS Shared Responsibility Model, which two of the following are customer responsibilities?
+
 - Patching the network infrastructure
 - Patching the EC2 Operating System
 - Physical security of data center facilities
@@ -167,6 +179,7 @@
 ---
 
 ## 13. If you have multiple users who need the same rights within your AWS account, which would be the easiest approach to implement and maintain the consistency of them?
+
 - Create each user in IAM and assign the proper roles.
 - Make each their own AWS account and share access to the main account.
 - Assign them to the same IAM group that you create.
@@ -181,6 +194,7 @@
 ---
 
 ## 14. How does using cloud computing help companies achieve more efficient use of resources?
+
 - The cloud provider handles efficiency.
 - Resources are unlimited.
 - Resources can be scaled based on demand.
@@ -195,6 +209,7 @@
 ---
 
 ## 15. A business analyst wants to move away from creating complex database queries and static spreadsheets when generating regular reports for high-level management. They would like to publish insightful, graphically appealing reports with interactive dashboards. Which AWS service can help them accomplish this?
+
 - Amazon CloudWatch
 - Amazon Redshift
 - Amazon QuickSight
@@ -209,6 +224,7 @@
 ---
 
 ## 16. Which AWS component of the Billing Dashboard will track a user's incurred billing throughout the month and provide a projected total bill for the month on a continual basis?
+
 - AWS Budgets
 - Cost Explorer
 - Cost Categories
@@ -223,6 +239,7 @@
 ---
 
 ## 17. A large company needs to allow its employees to access Linux desktops remotely from any location. Which Amazon Web Services product can be used for this?
+
 - Amazon AppStream 2.0
 - Amazon Cognito
 - Amazon WorkSpaces
@@ -237,6 +254,7 @@
 ---
 
 ## 18. How can you reduce the operating costs for a MySQL database?
+
 - By migrating the database to an EC2 instance
 - By migrating the database to an Amazon RDS instance
 - By migrating the database to a Docker container
@@ -251,6 +269,7 @@
 ---
 
 ## 19. You have a Node.js application that you want to get running as quickly as possible. You need high performance and reliability, but you do not care about the underlying system running your code. Which AWS service would best suit your needs?
+
 - AppStream
 - Lightsail
 - Elastic Beanstalk
@@ -265,6 +284,7 @@
 ---
 
 ## 20. Which AWS tool can help identify unused Amazon EC2 instances to reduce costs?
+
 - AWS Cost Explorer
 - AWS Trusted Advisor
 - AWS Budgets
@@ -279,6 +299,7 @@
 ---
 
 ## 21. Which universal concept of cloud computing refers to the ability of a cloud environment to continue functioning while some portions are unavailable?
+
 - Availability
 - Performance
 - Scalability
@@ -293,6 +314,7 @@
 ---
 
 ## 22. Developers need to deploy a website with multiple tiers. Which AWS service can help create a catalog of resources to allow quick deployment of the website?
+
 - AWS Config
 - AWS CloudFormation
 - AWS Service Catalog
@@ -307,6 +329,7 @@
 ---
 
 ## 23. How much data can a company store in Amazon S3?
+
 - Virtually unlimited
 - 1 PB
 - 100 TB
@@ -319,6 +342,7 @@
 ---
 
 ## 24. How can a system administrator add extra login protection to a user's AWS Management Console?
+
 - Enable AWS CloudTrail
 - Review AWS Identity and Access Management (IAM) roles
 - Enable multi-factor authentication
@@ -333,6 +357,7 @@
 ---
 
 ## 25. What are two best practices for managing access in AWS using IAM?
+
 - Grant least privilege
 - Use service accounts
 - Account-level policies
@@ -346,6 +371,7 @@
 ---
 
 ## 26. Which service is the AWS DNS offering that allows for highly scalable and secure lookups and the ability to extend traditional DNS to encompass health checks?
+
 - Route 53
 - AWS DNS
 - Lambda
@@ -360,6 +386,7 @@
 ---
 
 ## 27. A company wants to start a new system on AWS. But the company does not have an employee who knows about AWS. Which AWS program can help the company to design, build, and manage their systems on AWS?
+
 - AWS Marketplace
 - AWS Trusted Advisor
 - Amazon Inspector
@@ -374,6 +401,7 @@
 ---
 
 ## 28. In which two locations can Amazon EC2 Auto Scaling launch resources?
+
 - Only in one single availability zone
 - Multiple availability zones within a region
 - Multiple availability zones across multiple regions
@@ -387,6 +415,7 @@
 ---
 
 ## 29. To save on long-term costs from pre-purchasing hardware, you want to move your company's data warehouse system into AWS. Which AWS service would you utilize for this?
+
 - Amazon Aurora
 - Amazon RDS
 - DynamoDB
@@ -401,6 +430,7 @@
 ---
 
 ## 30. In the shared responsibility model for Amazon EC2, which two choices are customer responsibilities?
+
 - Amazon Machine Images (AMIs)
 - Applications in EC2 instances
 - Virtualization infrastructure
@@ -414,6 +444,7 @@
 ---
 
 ## 31. How does using cloud computing help companies focus on innovation rather than infrastructure?
+
 - The cloud automates all processes.
 - There are no infrastructure costs.
 - Resources can be provisioned on demand.
@@ -428,6 +459,7 @@
 ---
 
 ## 32. You are using Amazon Simple Notification Service to send notifications to alert admins when CPU usage of an Amazon EC2 instance is more than 70%. Which two of the following can subscribe to an Amazon SNS topic?
+
 - AWS Lambda
 - Email
 - Amazon S3
@@ -441,6 +473,7 @@
 ---
 
 ## 33. What are two benefits of deploying a relational database on Amazon RDS instead of Amazon EC2?
+
 - Software patching
 - Unlimited resources
 - Cost savings
@@ -454,6 +487,7 @@
 ---
 
 ## 34. The AWS Trusted Advisor is split into five areas of focus to analyze your services and configurations and recommend appropriate best practices. Which of the following is not one of the AWS Trusted Advisor areas of focus?
+
 - Performance
 - Security
 - Fault tolerance
@@ -466,6 +500,7 @@
 ---
 
 ## 35. A website wants to serve content to users in their native language based on the user's location. Which Amazon Web Services feature provides location-based web personalization using geolocation headers?
+
 - AWS Elastic Beanstalk
 - AWS Global Accelerator
 - Amazon EC2
@@ -480,6 +515,7 @@
 ---
 
 ## 36. Which concept will articulate the specific requirements between the cloud user and provider as far as promised performance, uptime, and responsiveness for services?
+
 - Governance
 - Contract
 - Auditability
@@ -494,6 +530,7 @@
 ---
 
 ## 37. A company wants to use AWS storage. Low storage cost is very important for them. Their data is rarely needed and waiting 13-14 hours to get the data back is acceptable. What is the best storage option for the company to use?
+
 - Amazon EBS
 - Amazon S3
 - S3 Glacier Deep Archive
@@ -508,6 +545,7 @@
 ---
 
 ## 38. You have an application installed on an Amazon EC2 instance. You want to restrict access to the application for different users. Which of the following methods can help you achieve this?
+
 - Configure the firewall inside the EC2 instance.
 - Detach the primary network interface from the EC2 instance and attach it to another instance.
 - Configure multiple network interfaces (ENIs) with separate IP addresses and security groups.
@@ -522,6 +560,7 @@
 ---
 
 ## 39. A website manager uses online resources for an organization. What AWS service can track expiration dates of SSL/TLS certificates and handle renewals?
+
 - AWS Certificate Manager
 - AWS Firewall Manager
 - AWS Data Lifecycle Manager
@@ -536,6 +575,7 @@
 ---
 
 ## 40. An organization runs several Amazon EC2 instances inside an Amazon VPC using three subnets - one for Development, one for Test, and one for Production. The Security team wants to restrict communication between the EC2 instances using Security Groups. Which of the following statements is true about changing Security Groups associated with the instances in this scenario?
+
 - You can change a Security Group only if there are no instances associated with it.
 - You can change only the Default Security Group.
 - You can change a Security Group associated with an instance if the instance is in the hibernate state.
@@ -550,6 +590,7 @@
 ---
 
 ## 41. Which AWS service provides offerings to help achieve outcomes related to adopting AWS Cloud through paid engagements?
+
 - Concierge Support
 - AWS Enterprise Support
 - AWS Professional Services
@@ -564,6 +605,7 @@
 ---
 
 ## 42. What are two true statements about AWS Secrets Manager?
+
 - It provides free storage.
 - It retrieves authentication information from a central repository using an API call.
 - It encrypts data at rest.
@@ -579,6 +621,7 @@
 ---
 
 ## 43. Which AWS service is a Desktop as a Service (DaaS) offering?
+
 - AWS OfficeSpace
 - WorkLink
 - WorkSpaces
@@ -593,6 +636,7 @@
 ---
 
 ## 44. You want to use AWS to back up your on-premises data in a seamless manner. Which AWS service would enable you to accomplish this?
+
 - AWS Glacier
 - AWS Containers
 - AWS Storage Gateway
@@ -607,6 +651,7 @@
 ---
 
 ## 45. Which statement about S3 storage buckets is true?
+
 - Bucket names can span multiple regions but must have a unique name.
 - Bucket names can be used in multiple regions to enable automatic replication between them.
 - Bucket names must be unique within your account and region.
@@ -621,6 +666,7 @@
 ---
 
 ## 46. You are looking for the user guides for Elastic Beanstalk. Which AWS support resource would you explore to find this?
+
 - Discussion Forums
 - AWS Professional Services
 - Knowledge Center
@@ -648,6 +694,7 @@
 ---
 
 ## 48. How does using Infrastructure as a Service (IaaS) help companies?
+
 - IaaS is fully managed by the provider
 - Eliminates infrastructure costs
 - Reduces need for data center space
@@ -662,6 +709,7 @@
 ---
 
 ## 49. How can we allow an application running on an Amazon EC2 instance to securely access data in an Amazon S3 bucket without providing long-term credentials to the application?
+
 - Using User Groups
 - Using cross region replication
 - Using an IAM role
@@ -676,6 +724,7 @@
 ---
 
 ## 50. A company is planning to deploy a high-volume application on multiple Amazon EC2 instances. What can help reduce operational expenses?
+
 - Deploy Amazon EC2 instances in multiple Availability Zones.
 - Deploy Amazon EC2 instances with Amazon instance store-backed AMIs.
 - Deploy Amazon EC2 instances with Auto Scaling.
@@ -690,6 +739,7 @@
 ---
 
 ## 51. How does using multiple Availability Zones improve application availability?
+
 - Different services can be placed in different zones.
 - Data is replicated across zones.
 - It allows load balancing across zones.
@@ -704,6 +754,7 @@
 ---
 
 ## 52. Which type of AWS Budget is used for planning what your ceiling for spending on a particular service will be?
+
 - Cost Savings Budgets
 - Savings Plans Utilization Budgets
 - Cost Budgets
@@ -718,6 +769,7 @@
 ---
 
 ## 53. A user was given an access key ID and secret access key to make API calls to AWS. The user has forgotten the credentials. How can new credentials be generated for the user?
+
 - Use the 'Forgot Password' option
 - Delete the user and recreate them to get new credentials.
 - Create a new access key by logging in to the AWS Management Console as the root user
@@ -745,6 +797,7 @@
 ---
 
 ## 55. The AWS RDS offers several different types of managed databases to meet the needs of almost all users. Which of the following is not a type of database offered under RDS?
+
 - PostgreSQL
 - DynamoDB
 - Oracle
@@ -757,6 +810,7 @@
 ---
 
 ## 56. What is an advantage of using Availability Zones in Amazon Web Services?
+
 - Availability Zones are connected by low-latency networks
 - With multiple availability zones, the cost is reduced
 - Availability Zones automatically replicate data across zones
@@ -771,6 +825,7 @@
 ---
 
 ## 57. Which AWS tool can you use to forecast how much you will spend on AWS?
+
 - AWS Cost Explorer
 - AWS Organizations
 - Amazon DevPay
@@ -785,6 +840,7 @@
 ---
 
 ## 58. What AWS service can be used as a web application firewall?
+
 - AWS Shield
 - AWS CloudFront
 - AWS WAF
@@ -799,6 +855,7 @@
 ---
 
 ## 59. In order to better track costs within the organization, you notice that your account administrator has added in the ability to sort by options such as "user:ProjectName." What is this an example of?
+
 - Cost Categories
 - Cost Metadata
 - Cost Allocation Tags
@@ -813,6 +870,7 @@
 ---
 
 ## 60. How can you protect your data from a regional disaster using Amazon S3?
+
 - Use Lifecycle rules
 - Use Intelligent-Tiering Archive configurations
 - Use bucket policy
@@ -840,6 +898,7 @@
 ---
 
 ## 62. Which AWS tool can help identify potential cost savings by looking for idle and underutilized resources?
+
 - AWS Cost Explorer
 - AWS Trusted Advisor
 - AWS Budgets
@@ -854,6 +913,7 @@
 ---
 
 ## 63. What is the purpose of Amazon CloudHSM?
+
 - It protects against DDoS attacks.
 - It applies protection against malware.
 - It is used to generate, use, and manage encryption keys in the cloud.
@@ -868,6 +928,7 @@
 ---
 
 ## 64. On which AWS services do customers need to patch the operating systems?
+
 - AWS Fargate
 - Amazon Lambda
 - Amazon DynamoDB
@@ -880,6 +941,7 @@
 ---
 
 ## 65. According to the AWS Shared Responsibility Model, who is responsible for managing the operating system and configuration of the Amazon RDS database instances?
+
 - The customer
 - AWS
 - It is shared
@@ -888,5 +950,5 @@
 "AWS" is correct. For Amazon RDS, AWS manages the operating system and database software, including patching and maintenance.  
 "The customer" is incorrect; customers manage the database contents, schema, and access, not the OS or database software.  
 "It is shared" is incorrect; AWS handles the OS and database software management for RDS.
-If you need more questions or want to adjust the format, let me know!
 
+---

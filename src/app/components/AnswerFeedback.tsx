@@ -63,7 +63,6 @@ function buildOptionsFromExplanation(explanation: string): OptionView[] {
 
 export default function AnswerFeedback({
   answerResult,
-  title = "",
   explanationTitle = "",
 }: AnswerFeedbackProps) {
   if (!answerResult) return null
@@ -89,9 +88,11 @@ export default function AnswerFeedback({
           className={`p-4 rounded mb-4 border ${answerResult.correct ? "bg-green-100 border-green-500" : "bg-red-100 border-red-500"
             }`}
         >
-          <h3 className={`font-bold text-lg ${answerResult.correct ? "text-green-700" : "text-red-700"}`}>
-            {answerResult.correct ? "✓ Correct" : "✗ Incorrect"}
-          </h3>
+          <h5 className={`font-bold ${answerResult.correct ? "text-green-700" : "text-red-700"}`}>
+            {answerResult.correct ? "✓ " : "✗ "}
+            {explanationTitle}
+          </h5>
+          
         </div>
         <div className="space-y-3">
           {options.map((opt, i) => (
@@ -105,7 +106,6 @@ export default function AnswerFeedback({
               </h4>
               {opt.explanation && <p className="text-gray-700">{opt.explanation}</p>}
             </div>
-
           ))}
         </div>
       </div>

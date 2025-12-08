@@ -70,7 +70,7 @@ export const ResultPage = () => {
                     {answers.map((answer, idx) => (
                         <div key={answer.id ?? idx} className="mb-6 border rounded-lg p-4 shadow">
                             <div className="mb-2 flex justify-between items-center">
-                                <p className="font-bold text-sm">Answer {idx + 1}</p>
+                                <p className="font-bold text-sm">#{idx + 1} {answer.question}</p>
                                 <span className={`px-2 py-1 text-xs rounded ${answer.correct ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"}`}>
                                     {answer.correct ? "Correct" : "Incorrect"}
                                 </span>

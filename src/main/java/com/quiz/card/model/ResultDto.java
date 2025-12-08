@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.Map;
 
 @Data
 @Builder
@@ -15,5 +15,5 @@ public class ResultDto {
     private long total;
     private long correct;
     private long incorrect;
-    private Set<Long> answeredIds;
+    private Map<Long, String> answered;
 }

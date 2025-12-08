@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -58,14 +59,13 @@ public class QuestionService implements IQuestionService {
         int total = answerMap.size();
         long correct = answerMap.stream().filter(AnswerDto::isCorrect).count();
         long incorrect = total - correct;
-        Set<Long> answeredIds = answerMap.stream()
-                .map(AnswerDto::getId)
-                .collect(Collectors.toSet());
+        Map<Long, String> answered = answerMap.stream()
+                .collect(Collectors.toMap(AnswerDto::getId, AnswerDto::getQuestion, (a, b) -> b));
         return ResultDto.builder()
                 .total(total)
                 .correct(correct)
                 .incorrect(incorrect)
-                .answeredIds(answeredIds)
+                .answered(answered)
                 .build();
     }
 
@@ -77,27 +77,13 @@ public class QuestionService implements IQuestionService {
             return AnswerDto.builder()
                     .correct(false)
                     .explanation("")
+                    .question("")
                     .build();
         }
 
         QuestionEntity entity = optional.get();
 
-        Set<String> correctOptions = entity.getOptions().stream()
-                .filter(Option::isCorrect)
-                .map(Option::getText)
-                .collect(Collectors.toSet());
-
-        Set<String> selectedSet = selectedOptions.stream()
-                .map(s -> s.replace("\"", ""))
-                .collect(Collectors.toSet());
-
-        boolean correct = correctOptions.equals(selectedSet);
-
-        AnswerDto answerDto = AnswerDto.builder()
-                .id(entity.getId())
-                .correct(correct)
-                .explanation(entity.getExplanation())
-                .build();
+        AnswerDto answerDto = getAnswerDto(selectedOptions, entity);
 
         answerMap.removeIf(a -> a.getId() == id);
         answerMap.add(answerDto);
@@ -152,5 +138,25 @@ public class QuestionService implements IQuestionService {
                     return toDto(entity);
                 })
                 .orElse(new FlashCardDto());
+    }
+
+    private AnswerDto getAnswerDto(List<String> selectedOptions, QuestionEntity entity) {
+        Set<String> correctOptions = entity.getOptions().stream()
+                .filter(Option::isCorrect)
+                .map(Option::getText)
+                .collect(Collectors.toSet());
+
+        Set<String> selectedSet = selectedOptions.stream()
+                .map(s -> s.replace("\"", ""))
+                .collect(Collectors.toSet());
+
+        boolean correct = correctOptions.equals(selectedSet);
+
+        return AnswerDto.builder()
+                .id(entity.getId())
+                .correct(correct)
+                .question(entity.getQuestion())
+                .explanation(entity.getExplanation())
+                .build();
     }
 }

@@ -31,7 +31,7 @@ export default function Question({ size, card, onSubmit }: QuestionProps) {
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-lg space-y-4">
             <div className="text-xl font-semibold text-gray-800">
-                #{size}. {card.question}
+                #{66 - size}. {card.question}
             </div>
 
             <div className="space-y-3">

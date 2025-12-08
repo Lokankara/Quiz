@@ -1,4 +1,5 @@
 ## 1. Which Amazon Web Services security tool uses an agent installed on Amazon Elastic Compute Cloud instances to check for vulnerabilities or unexpected changes in the application?
+
 - Amazon Inspector
 - Amazon Macie
 - Amazon Glacier
@@ -11,6 +12,7 @@
 ---
 
 ## 2. Which Amazon EC2 pricing model allows customers to use existing server-bound software licenses?
+
 - On-Demand Instances
 - Reserved Instances
 - Spot Instances
@@ -25,6 +27,7 @@
 ---
 
 ## 3. Which Amazon Web Services service allows you to assign a policy to a user group?
+
 - IAM
 - S3
 - EC2
@@ -39,6 +42,7 @@
 ---
 
 ## 4. What is Amazon responsible for under the AWS shared responsibility model?
+
 - Managing guest operating systems
 - Securing underlying infrastructure and foundation services
 - Securing application access and data
@@ -53,6 +57,7 @@
 ---
 
 ## 5. Which cloud deployment model involves using public cloud resources in addition to keeping some servers on-premises?
+
 - Hybrid cloud
 - Community cloud
 - Public cloud
@@ -83,6 +88,7 @@
 ---
 
 ## 7. Where in the architecture should firewalling be implemented for a web hosting design using AWS?
+
 - For all access layer functions
 - At the perimeter
 - At the core
@@ -97,6 +103,7 @@
 ---
 
 ## 8. Which cloud characteristic involves delivering the same resources to a large pool of customers?
+
 - Elasticity
 - Agility
 - Scalability
@@ -111,6 +118,7 @@
 ---
 
 ## 9. Which two options should be used to improve the security of your AWS Management Console?
+
 - IAM roles
 - Strong password policies
 - Multi-factor authentication (MFA)
@@ -125,6 +133,7 @@
 ---
 
 ## 10. Which AWS database service encrypts data at rest by default?
+
 - Amazon Aurora
 - Amazon RDS
 - Amazon Redshift
@@ -139,6 +148,7 @@
 ---
 
 ## 11. Which of the following statements about security groups is true?
+
 - Security groups allow all inbound traffic by default, but no outbound traffic
 - Security groups allow all outbound traffic by default, but no inbound traffic
 - Security groups allow all outbound and inbound traffic by default
@@ -153,6 +163,7 @@
 ---
 
 ## 12. Which feature of the AWS Systems Manager provides a way to store and push software packages out to your AWS instances?
+
 - Distributor
 - Inventory
 - AWS AppConfig
@@ -167,6 +178,7 @@
 ---
 
 ## 13. Which Amazon Web Services (AWS) service is designed for time series data analytics?
+
 - Amazon ElasticSearch
 - Amazon DynamoDB
 - Amazon Timestream
@@ -181,6 +193,7 @@
 ---
 
 ## 14. Which Amazon Web Services tool can be used to monitor, store and access log files created by EC2 instances and on-premises servers?
+
 - Amazon CloudFront
 - AWS Global Accelerator
 - Amazon CloudWatch Logs
@@ -195,6 +208,7 @@
 ---
 
 ## 15. At what level are security groups applied?
+
 - Subnet
 - Instance
 - Account
@@ -209,6 +223,7 @@
 ---
 
 ## 16. You are starting to move your company's systems into AWS, and you need to make sure you have a support plan that will assist with integrating many of your common third-party applications into the AWS ecosystem. Which is the lowest-level support plan you would need to purchase for this level of support?
+
 - Business
 - Developer
 - Integration
@@ -223,6 +238,7 @@
 ---
 
 ## 17. Which characteristic of cloud computing enables accessing computer system resources rapidly and elastically?
+
 - Agility
 - Availability
 - Scalability
@@ -237,6 +253,7 @@
 ---
 
 ## 18. Which AWS service allows you to centrally manage security and compliance controls across multiple AWS accounts?
+
 - AWS Config
 - AWS Shield
 - AWS Organizations
@@ -251,6 +268,7 @@
 ---
 
 ## 19. Which AWS service allows traffic from the internet to access resources in a VPC?
+
 - Transit Gateway
 - Network Access Control List (NaCl)
 - NAT Gateway
@@ -265,6 +283,7 @@
 ---
 
 ## 20. Which Amazon Web Services service is designed for time series data and operational analytics?
+
 - Amazon Timestream
 - Amazon DynamoDB
 - Amazon ElasticSearch
@@ -279,6 +298,7 @@
 ---
 
 ## 21. Which of the following AWS services under the Free Tier would have limitations for 750 hours of usage for the month?
+
 - CloudWatch
 - Lambda
 - RDS Migration Service
@@ -293,6 +313,7 @@
 ---
 
 ## 22. Which Amazon Web Services service can you use to create billing alarms?
+
 - AWS Systems Manager
 - Amazon CloudWatch
 - Amazon CloudFormation
@@ -307,6 +328,7 @@
 ---
 
 ## 23. Which AWS security service will provide protection against DDoS attacks with both Standard and Advanced Tiers?
+
 - Route 53
 - AWS Shield
 - AWS WAF
@@ -321,6 +343,7 @@
 ---
 
 ## 24. What should customers do to ensure the availability and backup of Amazon EBS volumes?
+
 - Attach new volumes to EC2 instances
 - Delete the data and create new EBS volumes
 - Create EBS snapshots
@@ -335,6 +358,7 @@
 ---
 
 ## 25. Which AWS Cloud Adoption Framework perspective focuses on aligning cloud adoption with business goals?
+
 - Security perspective
 - Business perspective
 - Governance perspective
@@ -349,6 +373,7 @@
 ---
 
 ## 26. Which AWS service allows a customer to mirror their corporate network within AWS with the same types of topographies?
+
 - AWS VPC
 - AWS VPN
 - Route 53
@@ -363,6 +388,7 @@
 ---
 
 ## 27. Which Amazon Web Services tool can identify the user that terminated an Amazon EC2 instance?
+
 - Amazon Inspector
 - AWS Trusted Advisor
 - AWS CloudTrail
@@ -377,6 +403,7 @@
 ---
 
 ## 28. If you wanted to use Chef to maintain your Windows and IIS web servers within your AWS account, which AWS service would you use?
+
 - AWS AppConfig
 - OpsWorks
 - CodeDeploy
@@ -391,6 +418,7 @@
 ---
 
 ## 29. Which authentication method should be used to programmatically access AWS resources from the AWS CLI?
+
 - User ID and Password
 - Fingerprint
 - IAM Role
@@ -405,6 +433,7 @@
 ---
 
 ## 30. Which feature of the AWS Systems Manager provides an automatically created display of operational data from throughout your account?
+
 - Inventory
 - Insights Dashboard
 - Explorer
@@ -419,6 +448,7 @@
 ---
 
 ## 31. Where can a user find the policies and rules about prohibited actions when using AWS infrastructure and services?
+
 - AWS Identity and Access Management (IAM)
 - AWS Acceptable Use Policy
 - AWS Trusted Advisor
@@ -433,6 +463,7 @@
 ---
 
 ## 32. Which Amazon EC2 pricing option provides the largest discounts when you reserve capacity for a 1 or 3 year term?
+
 - Reserved Instances
 - Dedicated Instances
 - On-Demand Instances
@@ -447,6 +478,7 @@
 ---
 
 ## 33. Which Amazon EC2 purchasing option allows you to use your existing per-socket, per-core, or per-VM software licenses like Microsoft Windows Server?
+
 - Reserved Instance
 - Dedicated Host
 - On-Demand Instance
@@ -461,6 +493,7 @@
 ---
 
 ## 34. What resources should be deployed in the private subnet of an Amazon VPC for security?
+
 - Internet Gateways
 - Database Servers
 - NAT Gateways
@@ -475,6 +508,7 @@
 ---
 
 ## 35. Which report, offered in CSV format, can be downloaded to audit your list of users, their access permissions, and other information about logins?
+
 - Credential report
 - User audit
 - IAM report
@@ -489,6 +523,7 @@
 ---
 
 ## 36. Your application has the potential for very high levels of traffic, and you want to get optimal performance from Elastic Load Balancing. Which type of ELB would be best suited for this application?
+
 - Classic
 - Application
 - Dynamic
@@ -503,6 +538,7 @@
 ---
 
 ## 37. Which of the following statements best explains AWS Service Quotas?
+
 - Service Quotas is specific to a region and will place default limits on the number of specific types of resources you can allocate
 - Service Quotas sets limitations on the amount of AWS services that may be allocated across AWS for a specific account
 - Service Quotas only apply to compute and storage instances across AWS
@@ -517,6 +553,7 @@
 ---
 
 ## 38. Amazon CloudFront allows for ultra-low-latency data transmissions. Which AWS technology does CloudFront leverage to achieve this?
+
 - Edge locations
 - Availability Zones
 - Regions
@@ -531,6 +568,7 @@
 ---
 
 ## 39. What Amazon Web Services feature enables fast, secure transfers of files over long distances between your computer and your Amazon S3 storage bucket?
+
 - HTTP Transfer
 - Amazon S3 Transfer Acceleration
 - S3 Acceleration
@@ -545,6 +583,7 @@
 ---
 
 ## 40. What is a key financial benefit of migrating systems hosted in your on-premises data center to AWS?
+
 - Opportunity to replace upfront capital expenses (CAPEX) with low variable costs
 - Opportunity to replace variable capital expenses (CAPEX) with low upfront costs
 - Opportunity to replace upfront operational expenses (OPEX) with low variable operational expenses (OPEX)
@@ -559,6 +598,7 @@
 ---
 
 ## 41. What is the maximum amount of data that can be stored in Amazon S3?
+
 - 100 PB
 - 1 PB
 - Virtually Unlimited
@@ -573,6 +613,7 @@
 ---
 
 ## 42. Which AWS service allows internet traffic to access resources in a VPC?
+
 - Network Access Control List (NaCl)
 - Internet Gateway
 - NAT Gateway
@@ -585,6 +626,7 @@
 ---
 
 ## 43. Which Amazon Web Services feature allows customers to create a copy of their Lightsail instance in EC2?
+
 - LightSail Copy
 - LightSail Backup
 - LightSail-EC2 snapshot
@@ -599,6 +641,7 @@
 ---
 
 ## 44. Which type of AWS Reserved Instance offers the smaller cost savings?
+
 - Limited
 - Standard
 - Flexible
@@ -613,6 +656,7 @@
 ---
 
 ## 45. Which characteristic of the AWS Cloud enables companies to innovate faster?
+
 - High Availability
 - Cost Savings
 - Agility
@@ -627,6 +671,7 @@
 ---
 
 ## 46. What are two services offered by Amazon Route 53?
+
 - Domain Name System (DNS)
 - Caching
 - Data Storage
@@ -641,6 +686,7 @@
 ---
 
 ## 47. Which Amazon Web Services service is regional?
+
 - AWS Identity and Access Management (IAM)
 - Amazon Elastic File System (EFS)
 - Amazon CloudFront
@@ -655,6 +701,7 @@
 ---
 
 ## 48. When doing a cost estimation for EC2 services, which other AWS service is a required component?
+
 - Lambda
 - EBS
 - RDS
@@ -669,6 +716,7 @@
 ---
 
 ## 49. Which Amazon Web Services tool allows you to check Amazon EC2 instances for security vulnerabilities by analyzing them against predefined security templates?
+
 - AWS Inspector
 - AWS Trusted Advisor
 - AWS Config
@@ -684,6 +732,7 @@
 ---
 
 ## 50. What AWS services and resources are contained within an Amazon Virtual Private Cloud (VPC)?
+
 - Resources across multiple Availability Zones in a single region
 - Resources across multiple regions
 - Only resources in a single Availability Zone
@@ -698,6 +747,7 @@
 ---
 
 ## 51. Which AWS service can be used to track user activity in AWS?
+
 - AWS CloudTrail
 - Amazon Elastic Cache
 - AWS CloudWatch
@@ -712,6 +762,7 @@
 ---
 
 ## 52. Which Amazon Web Services offering enables users to find, buy, and immediately start using software solutions in their AWS environment?
+
 - AWS OpsWorks
 - AWS Marketplace
 - AWS Config
@@ -726,6 +777,7 @@
 ---
 
 ## 53. Which Amazon Web Services (AWS) compute service allows you to run custom software on a Red Hat operating system?
+
 - AWS S3
 - AWS DynamoDB
 - AWS EC2
@@ -740,6 +792,7 @@
 ---
 
 ## 54. Which Amazon Web Services networking service enables a company to create a private virtual network within AWS?
+
 - Amazon Virtual Private Cloud (Amazon VPC)
 - AWS Direct Connect
 - AWS Config
@@ -754,6 +807,7 @@
 ---
 
 ## 55. Which Amazon Web Services resource requires customers to be responsible for security configurations related to the infrastructure?
+
 - Amazon DynamoDB
 - Amazon EC2
 - AWS Fargate
@@ -768,6 +822,7 @@
 ---
 
 ## 56. What are two benefits of using the Amazon Web Services (AWS) Cloud?
+
 - Instant migration of any service to the cloud
 - 100% SLA
 - Go global in minutes
@@ -782,6 +837,7 @@
 ---
 
 ## 57. What benefit does Elasticity provide according to Amazon Web Services (AWS)?
+
 - It allows systems to scale up or down based on changes in demand
 - It minimizes storage needs by reducing logging and auditing activities
 - It allows delivery of the same resources to a large pool of customers in a scalable way
@@ -796,6 +852,7 @@
 ---
 
 ## 58. What are two benefits of using AWS Elastic Load Balancing?
+
 - Pay-per-use pricing
 - Automated scaling
 - High availability
@@ -810,6 +867,7 @@
 ---
 
 ## 59. What benefits does a database administrator get by using Amazon Relational Database Service (RDS)?
+
 - RDS databases automatically scale based on load
 - RDS provides extremely high reliability and durability.
 - RDS enables users to dynamically adjust CPU and RAM resources.
@@ -824,6 +882,7 @@
 ---
 
 ## 60. Which concept focuses on building applications from small, loosely coupled components?
+
 - Scalability
 - Microservices
 - Elasticity
@@ -838,6 +897,7 @@
 ---
 
 ## 61. What are two common tasks that AWS can manage for their customers when running applications in the AWS Cloud?
+
 - Patching database software
 - Customize your code
 - Taking backups of databases
@@ -852,6 +912,7 @@
 ---
 
 ## 62. Which two Amazon Web Services support plans provide 24/7 access to enhanced technical support?
+
 - Business
 - All plans
 - Enterprise
@@ -866,6 +927,7 @@
 ---
 
 ## 63. Which AWS service can be used to capture information about inbound and outbound IP traffic on network interfaces in a VPC?
+
 - VPC Flow Logs
 - VPC Peering
 - Transit Gateway
@@ -880,6 +942,7 @@
 ---
 
 ## 64. Which AWS tool will allow you to execute commands on servers within AWS without having to use SSH or PowerShell?
+
 - Distributor
 - Run Command
 - CodeDeploy
@@ -894,6 +957,7 @@
 ---
 
 ## 65. You update the CIDR block on one of your subnets from /16 to /24. What is the resulting impact on the subnet?
+
 - The number of IP addresses available within it decreases
 - The number of IP addresses available within it increases
 - The subnet is opened to the public Internet

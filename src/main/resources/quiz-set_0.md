@@ -88,8 +88,7 @@ triggered.
 - Managed services are self-healing.
 
 **Explanation:**  
-"The provider handles maintenance tasks" is correct. Managed services offload routine maintenance, letting companies
-focus on applications.  
+"The provider handles maintenance tasks" is correct. Managed services offload routine maintenance, letting companies focus on applications.  
 "Managed services eliminate infrastructure costs" is incorrect; costs still exist.  
 "Managed services have unlimited scale" is incorrect; scale is not unlimited.  
 "Managed services are self-healing" is incorrect; self-healing is a feature, not the main benefit.
@@ -177,10 +176,11 @@ instances.
 - Physical security of data center facilities
 - Setting up encryption on an Amazon S3 bucket
 
-**Explanation:**  
-"Patching the EC2 Operating System" and "Setting up encryption on an Amazon S3 bucket" are correct. Customers manage
-their OS and data encryption.  
-"Patching the network infrastructure" and "Physical security of data center facilities" are AWS responsibilities.
+**Explanation:**
+"Patching the EC2 Operating System" is correct. Customers are fully responsible for the operating system running on EC2 instances. This includes applying security updates, installing patches, configuring firewalls, and maintaining OS-level hardening. AWS only manages the underlying physical hardware and virtualization layer, not the guest operating system.
+"Setting up encryption on an Amazon S3 bucket" is correct. Customers are responsible for enabling and configuring encryption for their data stored in S3. This includes choosing between SSE-S3, SSE-KMS, or client-side encryption and managing access policies. AWS provides the tools, but the decision and implementation belong to the customer.
+"Patching the network infrastructure" is incorrect. AWS is responsible for maintaining and patching the underlying network infrastructure that supports AWS services. This includes routers, switches, and physical networking devices. Customers do not have visibility into or control over this layer.
+"Physical security of data center facilities" is incorrect. AWS is responsible for securing the physical data centers, including buildings, power, cooling, surveillance, and access controls. Customers do not manage or access AWS physical facilities, and this responsibility is entirely handled by AWS.
 
 ---
 
@@ -369,11 +369,11 @@ their OS and data encryption.
 - Account-level policies
 - Customer-managed policies
 
-**Explanation:**  
-"Grant least privilege" and "Customer-managed policies" are correct. Least privilege minimizes risk, and
-customer-managed policies allow precise control.  
-"Use service accounts" is incorrect; AWS uses users, groups, and roles.  
-"Account-level policies" is incorrect; policies are attached to users, groups, or roles.
+**Explanation:**
+"Grant least privilege" is correct. This principle ensures that users and services receive only the permissions required to perform their tasks and nothing more. It reduces the attack surface by limiting unnecessary access to resources. Least privilege helps prevent accidental misuse and limits the impact of compromised credentials. It is a foundational security practice in AWS access management.
+"Customer-managed policies" is correct. These policies are fully created and controlled by customers, allowing precise and reusable permission definitions. They can be attached to multiple users, groups, or roles and updated centrally. This provides fine-grained control and scalability for complex permission structures. Customer-managed policies support strict governance and auditing requirements.
+"Use service accounts" is incorrect because AWS does not use a service-account model like some other platforms. AWS access is managed through IAM users, groups, and roles. Roles are used for services and temporary access rather than service accounts. The terminology and access model are fundamentally different.
+"Account-level policies" is incorrect because IAM policies are not directly attached at the account root level as permission objects. Policies are always attached to users, groups, or roles to define access. While SCPs exist at the organization level, standard IAM permissions are never assigned directly to an account itself.
 
 ---
 
@@ -415,11 +415,11 @@ systems.
 - Multiple availability zones across multiple regions
 - Everywhere, there are no constraints
 
-**Explanation:**  
-"Only in one single availability zone" and "Multiple availability zones within a region" are correct. Auto Scaling can
-launch in one or multiple AZs within a region.  
-"Multiple availability zones across multiple regions" is incorrect; Auto Scaling is region-specific.  
-"Everywhere, there are no constraints" is incorrect; there are regional constraints.
+**Explanation:**
+"Only in one single availability zone" is correct. Auto Scaling can manage instances within a single AZ to handle varying load while maintaining availability. It allows scaling up or down depending on demand in that specific zone. This is useful for simpler architectures or when regional redundancy is not required.
+"Multiple availability zones within a region" is correct. Auto Scaling can distribute instances across multiple AZs in the same region to improve fault tolerance and availability. By spanning AZs, it mitigates the impact of an outage in one zone. It ensures that applications remain highly available and resilient to localized failures.
+"Multiple availability zones across multiple regions" is incorrect because Auto Scaling operates at the regional level, not across regions. Scaling across regions requires separate configurations per region.
+"Everywhere, there are no constraints" is incorrect because Auto Scaling is limited by the region and available AZs. It cannot automatically manage instances outside the configured region.
 
 ---
 
@@ -446,10 +446,12 @@ launch in one or multiple AZs within a region.
 - Network infrastructure
 - Physical security of hardware
 
-**Explanation:**  
-"Amazon Machine Images (AMIs)" and "Applications in EC2 instances" are correct. Customers manage their AMIs and
-applications.  
-"Virtualization infrastructure," "Network infrastructure," and "Physical security of hardware" are AWS responsibilities.
+**Explanation:**
+"Amazon Machine Images (AMIs)" is correct. Customers are responsible for creating, maintaining, hardening, and updating their own AMIs. This includes selecting the base operating system, installing required software, and applying security patches. AMIs directly affect the security posture of EC2 instances. Improperly maintained AMIs can introduce vulnerabilities across all launched instances.
+"Applications in EC2 instances" is correct. Customers fully manage the applications running inside EC2, including installation, configuration, patching, and security updates. This responsibility includes application-level firewalls, encryption, authentication mechanisms, and vulnerability management. AWS does not control or manage customer application behavior inside EC2.
+"Virtualization infrastructure" is incorrect because AWS manages the hypervisor and the underlying virtualization layer. Customers have no visibility or control over this layer. AWS ensures isolation, security, and maintenance of the virtualization stack.
+"Network infrastructure" is incorrect because AWS manages the physical networking hardware, including routers, switches, and backbone connectivity. While customers configure security groups and routing at the logical level, the physical network itself is fully AWS-managed.
+"Physical security of hardware" is incorrect because AWS is solely responsible for securing data centers, servers, storage devices, and physical access controls. Customers have no responsibility or access at the physical infrastructure level.
 
 ---
 
@@ -476,10 +478,11 @@ innovation.
 - Amazon S3
 - Amazon CloudWatch
 
-**Explanation:**  
-"AWS Lambda" and "Email" are correct. Both can subscribe to SNS topics.  
-"Amazon S3" is incorrect; it cannot subscribe to SNS.  
-"Amazon CloudWatch" is incorrect; it triggers SNS, not subscribes to it.
+**Explanation:**
+  "AWS Lambda" is correct. Lambda functions can be triggered directly by SNS messages, enabling serverless event-driven workflows. This allows automatic processing of notifications without manual intervention.
+  "Email" is correct. SNS can send notifications directly to email endpoints, making it suitable for alerting users. Subscribers receive messages in real time.
+  "Amazon S3" is incorrect; S3 cannot directly subscribe to SNS topics. It relies on other services like Lambda or EventBridge for integration.
+  "Amazon CloudWatch" is incorrect; CloudWatch can trigger SNS notifications but does not act as a subscriber to topics. It serves as a monitoring and alerting tool.
 
 ---
 
@@ -490,10 +493,11 @@ innovation.
 - Cost savings
 - Automatic backup
 
-**Explanation:**  
-"Software patching" and "Automatic backup" are correct. RDS automates these tasks.  
-"Unlimited resources" is incorrect; resources are not unlimited.  
-"Cost savings" is incorrect; cost savings depend on usage.
+**Explanation:**
+"Software patching" is correct. Amazon RDS handles patching of the database engine and underlying infrastructure so you don’t need to manually update software or OS on the managed database servers.
+"Automatic backup" is correct. RDS automatically creates backups and preserves transaction logs to allow point‑in‑time recovery, reducing the manual effort required to maintain reliable backups.
+"Unlimited resources" is incorrect because RDS allocates resources (compute, storage, IOPS) per instance and you are limited by the instance class, storage quotas, and AWS account limits.
+"Cost savings" is incorrect because while RDS may reduce operational overhead, cost savings depend on usage patterns, instance types, storage size, and configuration — they are not guaranteed.
 
 ---
 
@@ -625,12 +629,12 @@ Security groups can be changed at any time.
 - It replaces hardcoding authentication information in code.
 - It replaces IAM users and roles.
 
-**Explanation:**  
-"It retrieves authentication information from a central repository using an API call" and "It encrypts data at rest" are correct.  
-"It provides free storage" is incorrect; it is a paid service.  
-"It replaces hardcoding authentication information in code" is incorrect as a statement of fact; it helps avoid
-hardcoding, but does not automatically replace it.  
-"It replaces IAM users and roles" is incorrect; it is for secrets, not identity management.
+**Explanation:**
+"It retrieves authentication information from a central repository using an API call" is correct. AWS Secrets Manager allows applications to securely access secrets programmatically without embedding credentials in code.
+"It encrypts data at rest" is correct. Secrets Manager automatically encrypts stored secrets using AWS Key Management Service (KMS), ensuring secure storage.
+"It provides free storage" is incorrect because Secrets Manager is a paid service with charges per secret and API calls.
+"It replaces hardcoding authentication information in code" is incorrect; while it reduces the need to hardcode secrets, it does not automatically modify existing code.
+"It replaces IAM users and roles" is incorrect; Secrets Manager manages secrets and credentials, but does not replace identity and access management controls.
 
 ---
 
@@ -701,10 +705,11 @@ hardcoding, but does not automatically replace it.
 - Automated backups
 - Automated infrastructure deployment using code
 
-**Explanation:**  
-"Reduced operational overhead" and "Automated backups" are correct. Managed services automate maintenance and backups.  
-"Reduced capital expenses" is incorrect; both are operational expenses.  
-"Automated infrastructure deployment using code" is incorrect; this is provided by tools like CloudFormation.
+**Explanation:**
+"Reduced operational overhead" is correct. Managed services handle routine tasks such as patching, scaling, and monitoring, reducing manual effort.
+"Automated backups" is correct. Managed services often include built-in backup capabilities, ensuring data protection without user intervention.
+"Reduced capital expenses" is incorrect; managed services incur operational costs rather than directly reducing capital expenditures.
+"Automated infrastructure deployment using code" is incorrect; this functionality is provided by infrastructure-as-code tools like AWS CloudFormation, not by managed services themselves.
 
 ---
 
@@ -807,9 +812,12 @@ generated; lost keys cannot be retrieved.
 - SAN
 - SSD
 
-**Explanation:**  
-"HDD" and "SSD" are correct. EBS offers both HDD and SSD-backed volumes.  
-"NAS," "Object," and "SAN" are incorrect; EBS is block storage.
+**Explanation:**
+"HDD" is correct. EBS provides HDD-backed volumes designed for large, sequential workloads where throughput is more important than low latency. These volumes are suitable for log processing, big data workloads, and streaming applications. They offer lower cost per GB compared to SSD. HDD options include st1 and sc1 volume types.
+"SSD" is correct. EBS provides SSD-backed volumes optimized for transactional workloads requiring low latency and high IOPS performance. These volumes support databases, boot volumes, and latency-sensitive applications. SSD options include gp3 and io2. They deliver predictable performance with consistent I/O characteristics.
+"NAS" is incorrect because EBS is not a network-attached file storage system. It provides block-level storage attached to a single EC2 instance.
+"Object" is incorrect because object storage refers to services like Amazon S3, not EBS. EBS volumes present as raw block devices for file systems or applications.
+"SAN" is incorrect because EBS is not a traditional storage area network exposed over specialized hardware. It is a managed, network-based block storage service abstracted by AWS.
 
 ---
 
@@ -849,10 +857,10 @@ generated; lost keys cannot be retrieved.
 - AWS Trusted Advisor
 
 **Explanation:**  
-"AWS Cost Explorer" is correct. It provides cost forecasts.  
-"AWS Organizations" is incorrect; it manages accounts.  
-"Amazon DevPay" is incorrect; it is deprecated.  
-"AWS Trusted Advisor" is incorrect; it gives best practice recommendations.
+"AWS Cost Explorer" is correct. AWS Cost Explorer allows customers to visualize, analyze, and forecast AWS spending using historical cost and usage data. It provides predictive forecasts based on previous consumption patterns, helping organizations estimate future expenses. The tool supports filtering by service, account, tag, and region to improve financial planning accuracy. It is widely used for budgeting, cost optimization, and trend analysis.
+"AWS Organizations" is incorrect because it is designed for centralized account management and governance, not cost forecasting. It helps manage multiple AWS accounts, apply Service Control Policies, and consolidate billing. While it supports cost allocation across accounts, it does not generate predictive cost forecasts.
+"Amazon DevPay" is incorrect because it was a legacy billing and monetization service that allowed developers to charge customers for applications hosted on AWS. It did not provide cost forecasting or spending analysis tools. The service has been deprecated and is no longer part of the active AWS ecosystem.
+"AWS Trusted Advisor" is incorrect because it provides best-practice recommendations for cost optimization, security, fault tolerance, performance, and service limits. While it can identify potential cost savings, it does not generate spending forecasts. Its focus is on improving efficiency and reducing waste rather than predicting future costs.
 
 ---
 
@@ -909,9 +917,12 @@ generated; lost keys cannot be retrieved.
 - CloudFront
 - EC2
 
-**Explanation:**  
-"IAM" and "CloudFront" are correct. Both are global services.  
-"Lightsail," "S3," and "EC2" are region-specific.
+**Explanation:**
+"IAM" is correct. IAM is a global service that manages users, groups, roles, and permissions across all AWS regions. It does not belong to any single region and its configurations apply globally to the entire AWS account. This allows consistent identity and access control regardless of where resources are deployed.
+"CloudFront" is correct. CloudFront is a global content delivery network that distributes content through edge locations worldwide. It is not tied to a specific AWS region and serves users based on geographic proximity. CloudFront improves performance, availability, and security on a global scale.
+"Lightsail" is incorrect. Lightsail is a regional service where all instances, storage, and networking resources are created within a specific AWS region. Availability and resource location are region-dependent.
+"S3" is incorrect. S3 buckets are created in specific regions and data residency is tied to the selected region, even though the service itself is accessible globally. Replication across regions requires explicit configuration.
+"EC2" is incorrect. EC2 instances are launched within specific regions and Availability Zones. Compute capacity, networking, and storage are all region-scoped resources.
 
 ---
 
@@ -954,8 +965,10 @@ management.
 - Amazon EC2
 
 **Explanation:**  
-"Amazon EC2" is correct. Customers manage and patch the OS on EC2.  
-"AWS Fargate" "Amazon Lambda" and "Amazon DynamoDB" are incorrect; AWS manages the OS for these services.
+"Amazon EC2" is correct. Customers manage and patch the OS on EC2. EC2 provides full control over the virtual machine, including the operating system, networking stack, and installed software. Because of this control, customers are fully responsible for applying security updates, patches, and OS hardening. This responsibility exists regardless of whether the instance runs Linux, Windows, or a custom OS image.
+"AWS Fargate" is incorrect; AWS manages the OS for this service. Fargate is a serverless compute engine for containers that removes the need to manage servers or virtual machines. Customers only define container images, CPU, memory, and networking. All underlying OS maintenance, patching, and infrastructure security are handled entirely by AWS.
+"Amazon Lambda" is incorrect; AWS manages the OS for this service. Lambda is a fully managed serverless compute service where customers upload code and define execution parameters only. The runtime environment, operating system, scaling, and patching are fully controlled by AWS. Customers are responsible only for application code and its dependencies.
+"Amazon DynamoDB" is incorrect; AWS manages the OS for this service. DynamoDB is a fully managed NoSQL database service where customers interact only with tables, items, and access policies. The underlying servers, operating systems, storage, and patching processes are fully abstracted and maintained by AWS. Customers have no OS-level access or maintenance responsibility.
 
 ---
 
@@ -971,3 +984,5 @@ maintenance.
 "The customer" is incorrect; customers manage the database contents, schema, and access, not the OS or database
 software.  
 "It is shared" is incorrect; AWS handles the OS and database software management for RDS.``
+
+---

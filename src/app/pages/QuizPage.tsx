@@ -57,8 +57,7 @@ export default function QuizPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
-
+      {/* <TabNav activeTab={activeTab} onTabChange={setActiveTab} /> */}
       <Question
         size={cards.length - currentIndex}
         key={currentIndex + 1}

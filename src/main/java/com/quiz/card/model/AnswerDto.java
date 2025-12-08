@@ -12,5 +12,6 @@ import lombok.NoArgsConstructor;
 public class AnswerDto {
     private long id;
     private boolean correct;
+    private String question;
     private String explanation;
 }

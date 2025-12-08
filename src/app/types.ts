@@ -19,6 +19,7 @@ export interface FlashCardDto {
 
 export interface AnswerDto {
     id: number;
+    question: string;
     correct: boolean;
     explanation: string;
 }
@@ -48,5 +49,4 @@ export type AnswerFeedbackProps = {
     answerResult: AnswerResult | null
     title?: string
     explanationTitle?: string
-    onResetTime?: () => void
 }

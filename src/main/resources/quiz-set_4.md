@@ -989,3 +989,4 @@
 "EC2" is correct. EC2 offers both quick and advanced estimates due to configurable instance types, pricing models, and additional features.
 "S3" is incorrect; calculator provides simpler object storage cost estimation only.
 
+---

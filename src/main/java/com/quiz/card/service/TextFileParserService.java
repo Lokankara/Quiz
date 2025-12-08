@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -29,60 +30,64 @@ public class TextFileParserService {
     private final static Logger LOGGER = LoggerFactory.getLogger(TextFileParserService.class);
 
     public List<QuestionEntity> parseDataFile(String index) {
-        List<QuestionEntity> cards = new ArrayList<>();
         String location = String.format("classpath:quiz-set_%s.md", index);
         Resource resource = resourceLoader.getResource(location);
+        List<QuestionEntity> cards = new ArrayList<>();
+        List<String> sections = new ArrayList<>();
+        LOGGER.info("{}", location);
 
         try {
-            String[] sections = resource.getContentAsString(StandardCharsets.UTF_8).split("##\\s*\\d+\\.");
-            IntStream.range(1, sections.length)
-                    .mapToObj(i -> parseSection(sections[i].trim()))
-                    .forEach(cards::add);
+            sections.addAll(List.of(resource.getContentAsString(StandardCharsets.UTF_8).split("##\\s*\\d+\\.")));
         } catch (IOException e) {
             LOGGER.error("{}", e.getMessage());
         }
+
+        int size = sections.size();
+        if (size != 66) {
+            LOGGER.error("Size: must be 66, but was {}", size);
+        }
+
+        IntStream.range(1, sections.size())
+                .mapToObj(i -> parseSection(sections.get(i)))
+                .forEach(cards::add);
 
         return cards;
     }
 
     private QuestionEntity parseSection(String section) {
-        String[] lines = section.split("\\r?\\n");
+        String[] lines = section.trim().split("(?m)(\\r\\n|\\n){2,}");
         StringBuilder question = new StringBuilder();
-        StringBuilder explanation = new StringBuilder();
-        Set<Option> options = new LinkedHashSet<>();
-        boolean inExplanation = false;
+        Set<Option> options;
 
-        for (String line : lines) {
-             line = line.replaceAll("-{3,}", "")
-               .replaceAll("\\s*-{3,}\\s*", "")
-               .trim();
-
-            if (line.isEmpty())
-                continue;
-
-            if (line.startsWith("- ")) {
-                options.add(Option.builder()
-                        .text(line.substring(2).trim())
-                        .correct(false)
-                        .build());
-            } else if (line.startsWith("**Explanation:**")) {
-                inExplanation = true;
-                explanation = new StringBuilder(line.replace("**Explanation:**", "").trim());
-            } else if (inExplanation) {
-                explanation.append(" ").append(line);
-            } else {
-                question.append((question.isEmpty()) ? "" : " ").append(line);
-            }
+        if (lines.length != 4) {
+            LOGGER.error("Size: must be 4, but was {}", Arrays.toString(lines));
         }
 
-        Set<String> correctTexts = extractCorrectOptions(explanation.toString());
+        question.append(lines[0]);
+        StringBuilder explanation = new StringBuilder(lines[2].replace("**Explanation:**", "").trim());
 
+        String[] split = lines[1].split("- ");
+
+        options = Arrays.stream(split).map(String::trim)
+                .filter(trim -> !trim.isEmpty())
+                .map(trim -> Option.builder()
+                .text(trim)
+                .correct(false)
+                .build()).collect(Collectors.toCollection(LinkedHashSet::new));
+
+        Set<String> correctTexts = extractCorrectOptions(explanation.toString());
         Set<Option> finalOptions = options.stream()
                 .map(o -> Option.builder()
                         .text(o.getText())
                         .correct(correctTexts.contains(o.getText()))
                         .build())
                 .collect(Collectors.toCollection(LinkedHashSet::new));
+
+        for (Option option : finalOptions) {
+            if (option.getText().split(" ").length < 2) {
+                LOGGER.error("Option must be with full definition, but was {}", explanation);
+            }
+        }
 
         return QuestionEntity.builder()
                 .question(question.toString())
