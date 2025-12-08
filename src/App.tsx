@@ -12,7 +12,7 @@ export default function App() {
   );
 }
 
-function AppRoutes() {
+export function AppRoutes() {
   let routes = useRoutes([
     { path: "/", element: <QuizPage /> },
     { path: "/results", element: <ResultPage /> },

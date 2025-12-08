@@ -30,6 +30,34 @@ Build and run the application with Gradle:
 
 `./gradlew clean build --refresh-dependencies`
 
+To run backend tests:
+
+`./gradlew test`
+
+To run backend tests and save results to file:
+
+`./gradlew test --info > test-results.txt`
+
+To run UI tests:
+
+`npm run test`
+
+To run UI tests and save results to file:
+
+`npm test -- --coverage --watchAll=false > ui-test-results.txt`
+
+To run both backend and UI tests:
+
+`./gradlew test && npm test -- --coverage --watchAll=false`
+
+To run all tests and save combined results to file:
+
+`./gradlew test --info > backend-test-results.md && npm test -- --coverage --watchAll=false > ui-test-results.md`
+
+To run all tests and save results in MD format for local analysis:
+
+`./gradlew test --info --console=plain --no-daemon > backend-test-results.md && npm test -- --coverage --watchAll=false --reporters=jest-html-reporter > ui-test-results.md`
+
 `npm start dev`
 
 `npm run build`

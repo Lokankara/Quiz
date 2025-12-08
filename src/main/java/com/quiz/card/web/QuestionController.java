@@ -19,7 +19,7 @@ import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8080", "${app.cors.allowed-origins:}"})
 @RequestMapping("/api/questions")
 public class QuestionController {
 
@@ -50,6 +50,12 @@ public class QuestionController {
     @PostMapping("/answers")
     public ResponseEntity<AnswerDto> registerAnswer(
             @RequestParam Long id, @RequestParam List<String> options) {
+        if (id == null || id <= 0) {
+            return ResponseEntity.badRequest().build();
+        }
+        if (options == null) {
+            return ResponseEntity.badRequest().build();
+        }
         AnswerDto answer = service.registerAnswer(id, options);
         return ResponseEntity.ok(answer);
     }
@@ -67,12 +73,22 @@ public class QuestionController {
 
     @DeleteMapping
     public ResponseEntity<FlashCardDto> removeCard(@RequestParam Long id) {
+        if (id == null || id <= 0) {
+            return ResponseEntity.badRequest().build();
+        }
         FlashCardDto deleted = service.removeCard(id);
         return ResponseEntity.ok(deleted);
     }
 
     @PostMapping("/restart")
     public ResponseEntity<Void> restartQuiz(@RequestParam(defaultValue = "0") String fileIndex) {
+        if (!fileIndex.matches("\\d+")) {
+            return ResponseEntity.badRequest().build();
+        }
+        int index = Integer.parseInt(fileIndex);
+        if (index < 0 || index > 5) {
+            return ResponseEntity.badRequest().build();
+        }
         service.deleteAll();
         service.saveAll(fileIndex);
         return ResponseEntity.noContent().build();
