@@ -29,7 +29,7 @@ describe('Question Component', () => {
         onSubmit={jest.fn()} 
       />
     );
-    expect(screen.getByText('#10. Test Question')).toBeInTheDocument();
+    expect(screen.getByText('#56. Test Question')).toBeInTheDocument();
   });
 
   test('renders options correctly', () => {

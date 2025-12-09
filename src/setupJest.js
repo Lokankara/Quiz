@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom';
-
 jest.mock('axios', () => ({
   create: jest.fn(() => ({
     get: jest.fn(),

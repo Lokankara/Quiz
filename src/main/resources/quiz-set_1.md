@@ -5,9 +5,9 @@
 - Amazon Glacier
 
 **Explanation:**
-"Amazon Inspector" is correct. Amazon Inspector uses an agent installed on EC2 instances to automatically assess applications for vulnerabilities or deviations from best practices, including unexpected changes.
-"Amazon Macie" is incorrect. Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS, such as personally identifiable information (PII), but it does not use an agent on EC2 instances.
-"Amazon Glacier" is incorrect. Amazon Glacier is a secure, durable, and low-cost storage service for data archiving and long-term backup, not a security assessment tool.
+Amazon Inspector is correct. Amazon Inspector uses an agent installed on EC2 instances to automatically assess applications for vulnerabilities or deviations from best practices, including unexpected changes.
+Amazon Macie is incorrect. Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS, such as personally identifiable information (PII), but it does not use an agent on EC2 instances.
+Amazon Glacier is incorrect. Amazon Glacier is a secure, durable, and low-cost storage service for data archiving and long-term backup, not a security assessment tool.
 
 ---
 
@@ -19,10 +19,10 @@
 - Dedicated Hosts
 
 **Explanation:**
-"On-Demand Instances" is incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
-"Reserved Instances" is incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
-"Spot Instances" is incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
-"Dedicated Hosts" is correct. Dedicated` Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
+On-Demand Instances is incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
+Reserved Instances is incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
+Spot Instances is incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
+Dedicated Hosts is correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
 
 ---
 
@@ -34,10 +34,10 @@
 - CloudFormation
 
 **Explanation:**
-"IAM" is correct. AWS Identity and Access Management (IAM) allows you to create user groups and assign policies to them, controlling permissions for multiple users at once.
-"S3" is incorrect. Amazon S3 is an object storage service and does not manage user groups or assign policies to them directly; it uses bucket policies and access control lists for resource permissions.
-"EC2" is incorrect. Amazon EC2 is a compute service for running virtual servers and does not manage user groups or policies.
-"CloudFormation" is incorrect. AWS CloudFormation is a service for provisioning AWS resources using templates, not for managing user groups or policies.
+IAM is correct. AWS Identity and Access Management (IAM) allows you to create user groups and assign policies to them, controlling permissions for multiple users at once.
+S3 is incorrect. Amazon S3 is an object storage service and does not manage user groups or assign policies to them directly; it uses bucket policies and access control lists for resource permissions.
+EC2 is incorrect. Amazon EC2 is a compute service for running virtual servers and does not manage user groups or policies.
+CloudFormation is incorrect. AWS CloudFormation is a service for provisioning AWS resources using templates, not for managing user groups or policies.
 
 ---
 
@@ -49,10 +49,10 @@
 - Configuring third-party applications
 
 **Explanation:**
-"Managing guest operating systems" is incorrect. Customers are responsible for managing the guest operating systems on their EC2 instances and other compute resources.
-"Securing underlying infrastructure and foundation services" is correct. AWS is responsible for securing the infrastructure that runs all of the services offered in the AWS Cloud, including hardware, software, networking, and facilities.
-"Securing application access and data" is incorrect. Customers are responsible for securing their applications and data within AWS services.
-"Configuring third-party applications" is incorrect. Customers are responsible for configuring and managing any third-party applications they deploy on AWS.
+Managing guest operating systems is incorrect. Customers are responsible for managing the guest operating systems on their EC2 instances and other compute resources.
+Securing underlying infrastructure and foundation services is correct. AWS is responsible for securing the infrastructure that runs all of the services offered in the AWS Cloud, including hardware, software, networking, and facilities.
+Securing application access and data is incorrect. Customers are responsible for securing their applications and data within AWS services.
+Configuring third-party applications is incorrect. Customers are responsible for configuring and managing any third-party applications they deploy on AWS.
 
 ---
 
@@ -64,14 +64,15 @@
 - Private cloud
 
 **Explanation:**
-"Hybrid cloud" is correct. A hybrid cloud deployment combines public cloud resources with on-premises infrastructure, allowing data and applications to be shared between them.
-"Community cloud" is incorrect. A community cloud is shared by several organizations with common concerns, not specifically a mix of public cloud and on-premises resources.
-"Public cloud" is incorrect. A public cloud is fully managed by a third-party provider and resources are available to the general public, with no on-premises integration.
-"Private cloud" is incorrect. A private cloud is dedicated to a single organization and may be hosted on-premises or by a third party, but does not involve public cloud resources.
+Hybrid cloud is correct. A hybrid cloud deployment combines public cloud resources with on-premises infrastructure, allowing data and applications to be shared between them.
+Community cloud is incorrect. A community cloud is shared by several organizations with common concerns, not specifically a mix of public cloud and on-premises resources.
+Public cloud is incorrect. A public cloud is fully managed by a third-party provider and resources are available to the general public, with no on-premises integration.
+Private cloud is incorrect. A private cloud is dedicated to a single organization and may be hosted on-premises or by a third party, but does not involve public cloud resources.
 
 ---
 
 ## 6. Which of the following are true about security groups, but not ACLs? (Choose two)
+
 - Traffic is automatically allowed outbound to respond to an allowed inbound rule.
 - Rules are applied to only specify things allowed.
 - The VPC by default will allow a traffic for both inbound and outbound routes
@@ -79,11 +80,11 @@
 - Each subnet must have a security group applied
 
 **Explanation:**
-"Traffic is automatically allowed outbound to respond to an allowed inbound rule" is correct. Security groups are stateful, meaning if you allow inbound traffic, the response is automatically allowed outbound. ACLs are stateless and require explicit rules for both directions.
-"Rules are applied to only specify things allowed" is correct. Security groups use only "allow" rules, while ACLs can have both "allow" and "deny" rules.
-"The VPC by default will allow a traffic for both inbound and outbound routes" is incorrect. VPCs do not automatically allow all traffic; security groups and ACLs control traffic.
-"Rule are applied at the subnet level" is incorrect. This describes network ACLs, not security groups.
-"Each subnet must have a security group applied" is incorrect. Security groups are applied to instances, not subnets.
+Traffic is automatically allowed outbound to respond to an allowed inbound rule is correct. Security groups are stateful, meaning if you allow inbound traffic, the response is automatically allowed outbound. ACLs are stateless and require explicit rules for both directions.
+Rules are applied to only specify things allowed is correct. Security groups use only allow rules, while ACLs can have both allow and deny rules.
+The VPC by default will allow a traffic for both inbound and outbound routes is incorrect. VPCs do not automatically allow all traffic; security groups and ACLs control traffic.
+Rule are applied at the subnet level is incorrect. This describes network ACLs, not security groups.
+Each subnet must have a security group applied is incorrect. Security groups are applied to instances, not subnets.
 
 ---
 
@@ -95,10 +96,10 @@
 - At all layers.
 
 **Explanation:**
-"For all access layer functions" is incorrect. While firewalling is important at the access layer, limiting it to only this layer does not provide comprehensive protection.
-"At the perimeter" is incorrect. Perimeter firewalling protects the boundary of the network, but threats can exist internally as well.
-"At the core" is incorrect. The core is the central part of the network, but firewalling only here leaves other areas vulnerable.
-"At all layers" is correct. Implementing firewalling at all layers (perimeter, access, core, and application) provides defense in depth and comprehensive protection against threats.
+For all access layer functions is incorrect. While firewalling is important at the access layer, limiting it to only this layer does not provide comprehensive protection.
+At the perimeter is incorrect. Perimeter firewalling protects the boundary of the network, but threats can exist internally as well.
+At the core is incorrect. The core is the central part of the network, but firewalling only here leaves other areas vulnerable.
+At all layers is correct. Implementing firewalling at all layers (perimeter, access, core, and application) provides defense in depth and comprehensive protection against threats.
 
 ---
 
@@ -110,10 +111,10 @@
 - Multitenancy
 
 **Explanation:**
-"Elasticity" is incorrect. Elasticity is the ability to automatically scale resources up or down based on demand, not about sharing resources among customers.
-"Agility" is incorrect. Agility refers to the speed and flexibility to adapt to changes, not about resource sharing.
-"Scalability" is incorrect. Scalability is the ability to handle increased workload by adding resources, not about sharing resources among customers.
-"Multitenancy" is correct. Multitenancy is the characteristic where the same resources are securely and efficiently shared among multiple customers (tenants).
+Elasticity is incorrect. Elasticity is the ability to automatically scale resources up or down based on demand, not about sharing resources among customers.
+Agility is incorrect. Agility refers to the speed and flexibility to adapt to changes, not about resource sharing.
+Scalability is incorrect. Scalability is the ability to handle increased workload by adding resources, not about sharing resources among customers.
+Multitenancy is correct. Multitenancy is the characteristic where the same resources are securely and efficiently shared among multiple customers (tenants).
 
 ---
 
@@ -125,10 +126,10 @@
 - AWS Key Management Service (KMS)
 
 **Explanation:**
-"IAM roles" is incorrect. IAM roles are used to delegate permissions to AWS resources and services, not directly to secure console access.
-"Strong password policies" is correct. Enforcing strong password policies ensures that users create complex, hard-to-guess passwords, improving account security.
-"Multi-factor authentication (MFA)" is correct. MFA adds an extra layer of security by requiring a second form of authentication in addition to a password.
-"AWS Key Management Service (KMS)" is incorrect. KMS is used for managing cryptographic keys, not for securing console access.
+IAM roles is incorrect. IAM roles are used to delegate permissions to AWS resources and services, not directly to secure console access.
+Strong password policies is correct. Enforcing strong password policies ensures that users create complex, hard-to-guess passwords, improving account security.
+Multi-factor authentication (MFA) is correct. MFA adds an extra layer of security by requiring a second form of authentication in addition to a password.
+AWS Key Management Service (KMS) is incorrect. KMS is used for managing cryptographic keys, not for securing console access.
 
 ---
 
@@ -140,10 +141,10 @@
 - Amazon DynamoDB
 
 **Explanation:**
-"Amazon Aurora" is incorrect. Aurora supports encryption at rest, but it is not enabled by default; you must enable it when creating the database cluster.
-"Amazon RDS" is incorrect. RDS supports encryption at rest, but it is not enabled by default; you must enable it when creating the database instance.
-"Amazon Redshift" is incorrect. Redshift supports encryption at rest, but it is not enabled by default; you must enable it when creating the cluster.
-"Amazon DynamoDB" is correct. DynamoDB encrypts all data at rest by default, with no action required from the user.
+Amazon Aurora is incorrect. Aurora supports encryption at rest, but it is not enabled by default; you must enable it when creating the database cluster.
+Amazon RDS is incorrect. RDS supports encryption at rest, but it is not enabled by default; you must enable it when creating the database instance.
+Amazon Redshift is incorrect. Redshift supports encryption at rest, but it is not enabled by default; you must enable it when creating the cluster.
+Amazon DynamoDB is correct. DynamoDB encrypts all data at rest by default, with no action required from the user.
 
 ---
 
@@ -155,10 +156,10 @@
 - Security groups deny all inbound and outbound traffic by default
 
 **Explanation:**
-"Security groups allow all inbound traffic by default, but no outbound traffic" is incorrect. By default, security groups deny all inbound traffic and allow all outbound traffic.
-"Security groups allow all outbound traffic by default, but no inbound traffic" is correct. By default, security groups deny all inbound traffic and allow all outbound traffic.
-"Security groups allow all outbound and inbound traffic by default" is incorrect. Only outbound traffic is allowed by default; inbound traffic is denied.
-"Security groups deny all inbound and outbound traffic by default" is incorrect. Outbound traffic is allowed by default.
+Security groups allow all inbound traffic by default, but no outbound traffic is incorrect. By default, security groups deny all inbound traffic and allow all outbound traffic.
+Security groups allow all outbound traffic by default, but no inbound traffic is correct. By default, security groups deny all inbound traffic and allow all outbound traffic.
+Security groups allow all outbound and inbound traffic by default is incorrect. Only outbound traffic is allowed by default; inbound traffic is denied.
+Security groups deny all inbound and outbound traffic by default is incorrect. Outbound traffic is allowed by default.
 
 ---
 
@@ -170,10 +171,10 @@
 - Explorer
 
 **Explanation:**
-"Distributor" is correct. Distributor is a feature of AWS Systems Manager that allows you to securely store and distribute software packages to your managed instances.
-"Inventory" is incorrect. Inventory collects and queries configuration and inventory information about your AWS resources, not for distributing software.
-"AWS AppConfig" is incorrect. AppConfig is used for managing and deploying application configurations, not software packages.
-"Explorer" is incorrect. Explorer provides a customizable operations dashboard for insights into your AWS resources, not for distributing software.
+Distributor is correct. Distributor is a feature of AWS Systems Manager that allows you to securely store and distribute software packages to your managed instances.
+Inventory is incorrect. Inventory collects and queries configuration and inventory information about your AWS resources, not for distributing software.
+AWS AppConfig is incorrect. AppConfig is used for managing and deploying application configurations, not software packages.
+Explorer is incorrect. Explorer provides a customizable operations dashboard for insights into your AWS resources, not for distributing software.
 
 ---
 
@@ -185,10 +186,10 @@
 - Amazon Kinesis
 
 **Explanation:**
-"Amazon ElasticSearch" is incorrect. Amazon Elasticsearch (now Amazon OpenSearch Service) is designed for search and analytics of log and text data, not specifically for time series data.
-"Amazon DynamoDB" is incorrect. DynamoDB is a NoSQL database for key-value and document data, not optimized for time series analytics.
-"Amazon Timestream" is correct. Amazon Timestream is a purpose-built time series database for storing and analyzing time series data, such as IoT sensor data and operational metrics.
-"Amazon Kinesis" is incorrect. Amazon Kinesis is designed for real-time data streaming and processing, not specifically for time series analytics.
+Amazon ElasticSearch is incorrect. Amazon Elasticsearch (now Amazon OpenSearch Service) is designed for search and analytics of log and text data, not specifically for time series data.
+Amazon DynamoDB is incorrect. DynamoDB is a NoSQL database for key-value and document data, not optimized for time series analytics.
+Amazon Timestream is correct. Amazon Timestream is a purpose-built time series database for storing and analyzing time series data, such as IoT sensor data and operational metrics.
+Amazon Kinesis is incorrect. Amazon Kinesis is designed for real-time data streaming and processing, not specifically for time series analytics.
 
 ---
 
@@ -200,10 +201,10 @@
 - AWS Organization
 
 **Explanation:**
-"Amazon CloudFront" is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for log management.
-"AWS Global Accelerator" is incorrect. Global Accelerator improves the availability and performance of your applications with global users, not for log management.
-"Amazon CloudWatch Logs" is correct. CloudWatch Logs can monitor, store, and access log files from EC2 instances and on-premises servers.
-"AWS Organization" is incorrect. AWS Organizations is used for managing multiple AWS accounts, not for log management.
+Amazon CloudFront is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for log management.
+AWS Global Accelerator is incorrect. Global Accelerator improves the availability and performance of your applications with global users, not for log management.
+Amazon CloudWatch Logs is correct. CloudWatch Logs can monitor, store, and access log files from EC2 instances and on-premises servers.
+AWS Organization is incorrect. AWS Organizations is used for managing multiple AWS accounts, not for log management.
 
 ---
 
@@ -215,10 +216,10 @@
 - VPC
 
 **Explanation:**
-"Subnet" is incorrect. Security groups are not applied at the subnet level; network ACLs are used for subnet-level security.
-"Instance" is correct. Security groups are applied at the instance level, controlling inbound and outbound traffic for each EC2 instance.
-"Account" is incorrect. Security groups are not applied at the AWS account level; they are associated with resources like instances.
-"VPC" is incorrect. Security groups are associated with resources within a VPC, but not applied to the VPC itself.
+Subnet is incorrect. Security groups are not applied at the subnet level; network ACLs are used for subnet-level security.
+Instance is correct. Security groups are applied at the instance level, controlling inbound and outbound traffic for each EC2 instance.
+Account is incorrect. Security groups are not applied at the AWS account level; they are associated with resources like instances.
+VPC is incorrect. Security groups are associated with resources within a VPC, but not applied to the VPC itself.
 
 ---
 
@@ -230,10 +231,10 @@
 - Enterprise
 
 **Explanation:**
-"Business" is correct. The Business support plan is the lowest-level AWS support plan that provides guidance and support for integrating third-party applications, including access to AWS Trusted Advisor and 24x7 support.
-"Developer" is incorrect. The Developer support plan provides guidance for AWS best practices and general questions, but does not include support for third-party application integration.
-"Integration" is incorrect. There is no AWS support plan called "Integration."
-"Enterprise" is incorrect. The Enterprise support plan provides the highest level of support, including a Technical Account Manager, but the Business plan is the lowest plan that covers third-party integration.
+Business is correct. The Business support plan is the lowest-level AWS support plan that provides guidance and support for integrating third-party applications, including access to AWS Trusted Advisor and 24x7 support.
+Developer is incorrect. The Developer support plan provides guidance for AWS best practices and general questions, but does not include support for third-party application integration.
+Integration is incorrect. There is no AWS support plan called Integration.
+Enterprise is incorrect. The Enterprise support plan provides the highest level of support, including a Technical Account Manager, but the Business plan is the lowest plan that covers third-party integration.
 
 ---
 
@@ -245,10 +246,10 @@
 - Durability
 
 **Explanation:**
-"Agility" is incorrect. Agility refers to the ability to quickly adapt to changes and deploy new solutions, not specifically to rapid and elastic resource access.
-"Availability" is incorrect. Availability is about ensuring resources are accessible when needed, not about rapid or elastic scaling.
-"Scalability" is correct. Scalability is the characteristic that allows cloud resources to be accessed and adjusted rapidly and elastically to meet changing demands.
-"Durability" is incorrect. Durability refers to the ability of data to remain intact and accessible over time, not to resource scaling.
+Agility is incorrect. Agility refers to the ability to quickly adapt to changes and deploy new solutions, not specifically to rapid and elastic resource access.
+Availability is incorrect. Availability is about ensuring resources are accessible when needed, not about rapid or elastic scaling.
+Scalability is correct. Scalability is the characteristic that allows cloud resources to be accessed and adjusted rapidly and elastically to meet changing demands.
+Durability is incorrect. Durability refers to the ability of data to remain intact and accessible over time, not to resource scaling.
 
 ---
 
@@ -260,10 +261,10 @@
 - AWS Inspector
 
 **Explanation:**
-"AWS Config" is incorrect. AWS Config is used for tracking resource configurations and compliance within a single account, not for central management across multiple accounts.
-"AWS Shield" is incorrect. AWS Shield provides DDoS protection, not central management of security and compliance controls.
-"AWS Organizations" is correct. AWS Organizations allows you to centrally manage policies, security, and compliance controls across multiple AWS accounts in your organization.
-"AWS Inspector" is incorrect. AWS Inspector is a security assessment service for identifying vulnerabilities in AWS resources, not for central management across accounts.
+AWS Config is incorrect. AWS Config is used for tracking resource configurations and compliance within a single account, not for central management across multiple accounts.
+AWS Shield is incorrect. AWS Shield provides DDoS protection, not central management of security and compliance controls.
+AWS Organizations is correct. AWS Organizations allows you to centrally manage policies, security, and compliance controls across multiple AWS accounts in your organization.
+AWS Inspector is incorrect. AWS Inspector is a security assessment service for identifying vulnerabilities in AWS resources, not for central management across accounts.
 
 ---
 
@@ -275,10 +276,10 @@
 - Internet Gateway
 
 **Explanation:**
-"Transit Gateway" is incorrect. Transit Gateway is used to connect multiple VPCs and on-premises networks, not for direct internet access.
-"Network Access Control List (NaCl)" is incorrect. NACLs are used to control traffic at the subnet level within a VPC, not to provide internet access.
-"NAT Gateway" is incorrect. NAT Gateway allows instances in a private subnet to access the internet, but does not allow inbound internet traffic to those resources.
-"Internet Gateway" is correct. An Internet Gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between resources in your VPC and the internet.
+Transit Gateway is incorrect. Transit Gateway is used to connect multiple VPCs and on-premises networks, not for direct internet access.
+Network Access Control List (NaCl) is incorrect. NACLs are used to control traffic at the subnet level within a VPC, not to provide internet access.
+NAT Gateway is incorrect. NAT Gateway allows instances in a private subnet to access the internet, but does not allow inbound internet traffic to those resources.
+Internet Gateway is correct. An Internet Gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between resources in your VPC and the internet.
 
 ---
 
@@ -290,10 +291,10 @@
 - Amazon Kinesis
 
 **Explanation:**
-"Amazon Timestream" is correct. Amazon Timestream is a purpose-built time series database for storing and analyzing time series data, such as operational metrics and IoT sensor data.
-"Amazon DynamoDB" is incorrect. DynamoDB is a NoSQL database for key-value and document data, not optimized for time series analytics.
-"Amazon ElasticSearch" is incorrect. Amazon Elasticsearch (now Amazon OpenSearch Service) is designed for search and analytics of log and text data, not specifically for time series data.
-"Amazon Kinesis" is incorrect. Amazon Kinesis is designed for real-time data streaming and processing, not specifically for time series analytics.
+Amazon Timestream is correct. Amazon Timestream is a purpose-built time series database for storing and analyzing time series data, such as operational metrics and IoT sensor data.
+Amazon DynamoDB is incorrect. DynamoDB is a NoSQL database for key-value and document data, not optimized for time series analytics.
+Amazon ElasticSearch is incorrect. Amazon Elasticsearch (now Amazon OpenSearch Service) is designed for search and analytics of log and text data, not specifically for time series data.
+Amazon Kinesis is incorrect. Amazon Kinesis is designed for real-time data streaming and processing, not specifically for time series analytics.
 
 ---
 
@@ -305,10 +306,10 @@
 - EC2
 
 **Explanation:**
-"CloudWatch" is incorrect. CloudWatch Free Tier is based on metrics and logs, not on a specific number of hours of usage.
-"Lambda" is incorrect. Lambda Free Tier is based on the number of requests and compute time (GB-seconds), not on hours of usage.
-"RDS Migration Service" is incorrect. AWS Database Migration Service Free Tier is based on migration hours, but not specifically 750 hours per month.
-"EC2" is correct. The AWS Free Tier for EC2 provides up to 750 hours of t2.micro or t3.micro instance usage per month for the first 12 months.
+CloudWatch is incorrect. CloudWatch Free Tier is based on metrics and logs, not on a specific number of hours of usage.
+Lambda is incorrect. Lambda Free Tier is based on the number of requests and compute time (GB-seconds), not on hours of usage.
+RDS Migration Service is incorrect. AWS Database Migration Service Free Tier is based on migration hours, but not specifically 750 hours per month.
+EC2 is correct. The AWS Free Tier for EC2 provides up to 750 hours of t2.micro or t3.micro instance usage per month for the first 12 months.
 
 ---
 
@@ -320,10 +321,10 @@
 - Amazon CloudFront
 
 **Explanation:**
-"AWS Systems Manager" is incorrect. Systems Manager is used for managing AWS resources and automating operational tasks, not for creating billing alarms.
-"Amazon CloudWatch" is correct. CloudWatch allows you to create billing alarms to monitor your AWS usage and costs.
-"Amazon CloudFormation" is incorrect. CloudFormation is used for provisioning AWS resources using templates, not for creating billing alarms.
-"Amazon CloudFront" is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for creating billing alarms.
+AWS Systems Manager is incorrect. Systems Manager is used for managing AWS resources and automating operational tasks, not for creating billing alarms.
+Amazon CloudWatch is correct. CloudWatch allows you to create billing alarms to monitor your AWS usage and costs.
+Amazon CloudFormation is incorrect. CloudFormation is used for provisioning AWS resources using templates, not for creating billing alarms.
+Amazon CloudFront is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for creating billing alarms.
 
 ---
 
@@ -335,10 +336,10 @@
 - AWS CloudWatch
 
 **Explanation:**
-"Route 53" is incorrect. Route 53 is a DNS service that provides domain name resolution and routing, but it does not specifically protect against DDoS attacks.
-"AWS Shield" is correct. AWS Shield is a managed DDoS protection service that offers two tiers: Standard (free, automatic protection) and Advanced (paid, enhanced protection).
-"AWS WAF" is incorrect. AWS WAF is a web application firewall that protects against common web exploits, but it is not specifically designed for DDoS protection.
-"AWS CloudWatch" is incorrect. CloudWatch is a monitoring service for AWS resources and applications, not a DDoS protection service.
+Route 53 is incorrect. Route 53 is a DNS service that provides domain name resolution and routing, but it does not specifically protect against DDoS attacks.
+AWS Shield is correct. AWS Shield is a managed DDoS protection service that offers two tiers: Standard (free, automatic protection) and Advanced (paid, enhanced protection).
+AWS WAF is incorrect. AWS WAF is a web application firewall that protects against common web exploits, but it is not specifically designed for DDoS protection.
+AWS CloudWatch is incorrect. CloudWatch is a monitoring service for AWS resources and applications, not a DDoS protection service.
 
 ---
 
@@ -350,10 +351,10 @@
 - Create copies of EBS volumes
 
 **Explanation:**
-"Attach new volumes to EC2 instances" is incorrect. Attaching new volumes does not ensure backup or availability; it simply adds storage to an instance.
-"Delete the data and create new EBS volumes" is incorrect. Deleting data and creating new volumes does not provide backup or availability; it results in data loss.
-"Create EBS snapshots" is correct. EBS snapshots are point-in-time backups of EBS volumes that can be used to restore data or create new volumes.
-"Create copies of EBS volumes" is incorrect. While copying volumes can duplicate data, snapshots are the recommended method for backups and availability.
+Attach new volumes to EC2 instances is incorrect. Attaching new volumes does not ensure backup or availability; it simply adds storage to an instance.
+Delete the data and create new EBS volumes is incorrect. Deleting data and creating new volumes does not provide backup or availability; it results in data loss.
+Create EBS snapshots is correct. EBS snapshots are point-in-time backups of EBS volumes that can be used to restore data or create new volumes.
+Create copies of EBS volumes is incorrect. While copying volumes can duplicate data, snapshots are the recommended method for backups and availability.
 
 ---
 
@@ -365,10 +366,10 @@
 - People perspective
 
 **Explanation:**
-"Security perspective" is incorrect. The Security perspective focuses on ensuring compliance, data protection, and securing workloads, not aligning cloud adoption with business goals.
-"Business perspective" is correct. The Business perspective focuses on aligning cloud adoption with business goals, ensuring that cloud strategies support organizational objectives.
-"Governance perspective" is incorrect. The Governance perspective focuses on managing cloud resources and ensuring compliance, not directly aligning with business goals.
-"People perspective" is incorrect. The People perspective focuses on workforce development and organizational change management, not directly aligning with business goals.
+Security perspective is incorrect. The Security perspective focuses on ensuring compliance, data protection, and securing workloads, not aligning cloud adoption with business goals.
+Business perspective is correct. The Business perspective focuses on aligning cloud adoption with business goals, ensuring that cloud strategies support organizational objectives.
+Governance perspective is incorrect. The Governance perspective focuses on managing cloud resources and ensuring compliance, not directly aligning with business goals.
+People perspective is incorrect. The People perspective focuses on workforce development and organizational change management, not directly aligning with business goals.
 
 ---
 
@@ -380,10 +381,10 @@
 - CloudFront
 
 **Explanation:**
-"AWS VPC" is correct. Amazon Virtual Private Cloud (VPC) allows customers to create a logically isolated network within AWS, enabling them to replicate their corporate network's topologies, including subnets, routing, and security.
-"AWS VPN" is incorrect. AWS VPN provides secure connectivity between on-premises networks and AWS, but it does not create a mirrored network topology within AWS.
-"Route 53" is incorrect. Route 53 is a DNS service for routing traffic, not for creating network topologies.
-"CloudFront" is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for creating network topologies.
+AWS VPC is correct. Amazon Virtual Private Cloud (VPC) allows customers to create a logically isolated network within AWS, enabling them to replicate their corporate network's topologies, including subnets, routing, and security.
+AWS VPN is incorrect. AWS VPN provides secure connectivity between on-premises networks and AWS, but it does not create a mirrored network topology within AWS.
+Route 53 is incorrect. Route 53 is a DNS service for routing traffic, not for creating network topologies.
+CloudFront is incorrect. CloudFront is a content delivery network (CDN) for distributing content globally, not for creating network topologies.
 
 ---
 
@@ -395,10 +396,10 @@
 - AWS Config
 
 **Explanation:**
-"Amazon Inspector" is incorrect. Amazon Inspector is a security assessment service that identifies vulnerabilities in your AWS resources, but it does not track user actions like terminating an EC2 instance.
-"AWS Trusted Advisor" is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but it does not track user actions.
-"AWS CloudTrail" is correct. AWS CloudTrail records API calls and user activity, including actions like terminating an EC2 instance, and provides details about the user who performed the action.
-"AWS Config" is incorrect. AWS Config tracks resource configurations and changes over time, but it does not provide detailed user activity logs.
+Amazon Inspector is incorrect. Amazon Inspector is a security assessment service that identifies vulnerabilities in your AWS resources, but it does not track user actions like terminating an EC2 instance.
+AWS Trusted Advisor is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but it does not track user actions.
+AWS CloudTrail is correct. AWS CloudTrail records API calls and user activity, including actions like terminating an EC2 instance, and provides details about the user who performed the action.
+AWS Config is incorrect. AWS Config tracks resource configurations and changes over time, but it does not provide detailed user activity logs.
 
 ---
 
@@ -410,10 +411,10 @@
 - Automation
 
 **Explanation:**
-"AWS AppConfig" is incorrect. AWS AppConfig is used for managing and deploying application configurations, not for managing servers with Chef.
-"OpsWorks" is correct. AWS OpsWorks is a configuration management service that supports Chef and Puppet to automate the configuration, deployment, and management of applications on servers, including Windows and IIS web servers.
-"CodeDeploy" is incorrect. AWS CodeDeploy is used for automating application deployments, not for server configuration management with Chef.
-"Automation" is incorrect. Automation is a feature of AWS Systems Manager for automating operational tasks, not for managing servers with Chef.
+AWS AppConfig is incorrect. AWS AppConfig is used for managing and deploying application configurations, not for managing servers with Chef.
+OpsWorks is correct. AWS OpsWorks is a configuration management service that supports Chef and Puppet to automate the configuration, deployment, and management of applications on servers, including Windows and IIS web servers.
+CodeDeploy is incorrect. AWS CodeDeploy is used for automating application deployments, not for server configuration management with Chef.
+Automation is incorrect. Automation is a feature of AWS Systems Manager for automating operational tasks, not for managing servers with Chef.
 
 ---
 
@@ -425,10 +426,10 @@
 - Client Certificate
 
 **Explanation:**
-"User ID and Password" is incorrect. The AWS CLI does not support authentication using a user ID and password. Instead, it uses access keys or IAM roles for programmatic access.
-"Fingerprint" is incorrect. Fingerprints are not a supported authentication method for the AWS CLI.
-"IAM Role" is correct. IAM roles provide temporary security credentials for programmatic access to AWS resources, especially when used with EC2 instances or other AWS services.
-"Client Certificate" is incorrect. Client certificates are not used for AWS CLI authentication; they are used for mutual TLS authentication in specific scenarios.
+User ID and Password is incorrect. The AWS CLI does not support authentication using a user ID and password. Instead, it uses access keys or IAM roles for programmatic access.
+Fingerprint is incorrect. Fingerprints are not a supported authentication method for the AWS CLI.
+IAM Role is correct. IAM roles provide temporary security credentials for programmatic access to AWS resources, especially when used with EC2 instances or other AWS services.
+Client Certificate is incorrect. Client certificates are not used for AWS CLI authentication; they are used for mutual TLS authentication in specific scenarios.
 
 ---
 
@@ -440,10 +441,10 @@
 - AWS AppConfig
 
 **Explanation:**
-"Inventory" is incorrect. Inventory collects and queries configuration and inventory information about your AWS resources, but it does not provide a centralized operational data display.
-"Insights Dashboard" is incorrect. There is no AWS Systems Manager feature called "Insights Dashboard."
-"Explorer" is correct. Explorer is a Systems Manager feature that provides a customizable operations dashboard to display operational data from across your AWS account.
-"AWS AppConfig" is incorrect. AppConfig is used for managing and deploying application configurations, not for displaying operational data.
+Inventory is incorrect. Inventory collects and queries configuration and inventory information about your AWS resources, but it does not provide a centralized operational data display.
+Insights Dashboard is incorrect. There is no AWS Systems Manager feature called Insights Dashboard.
+Explorer is correct. Explorer is a Systems Manager feature that provides a customizable operations dashboard to display operational data from across your AWS account.
+AWS AppConfig is incorrect. AppConfig is used for managing and deploying application configurations, not for displaying operational data.
 
 ---
 
@@ -455,10 +456,10 @@
 - AWS Billing Console
 
 **Explanation:**
-"AWS Identity and Access Management (IAM)" is incorrect. IAM is used for managing access to AWS resources, not for outlining prohibited actions.
-"AWS Acceptable Use Policy" is correct. The AWS Acceptable Use Policy outlines prohibited actions and rules for using AWS infrastructure and services.
-"AWS Trusted Advisor" is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but does not outline prohibited actions.
-"AWS Billing Console" is incorrect. The Billing Console is used for managing payments and viewing costs, not for outlining prohibited actions.
+AWS Identity and Access Management (IAM) is incorrect. IAM is used for managing access to AWS resources, not for outlining prohibited actions.
+AWS Acceptable Use Policy is correct. The AWS Acceptable Use Policy outlines prohibited actions and rules for using AWS infrastructure and services.
+AWS Trusted Advisor is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but does not outline prohibited actions.
+AWS Billing Console is incorrect. The Billing Console is used for managing payments and viewing costs, not for outlining prohibited actions.
 
 ---
 
@@ -470,10 +471,10 @@
 - Spot Instances
 
 **Explanation:**
-"Reserved Instances" is correct. Reserved Instances provide the largest discounts (up to 75%) compared to On-Demand pricing when you commit to a 1- or 3-year term.
-"Dedicated Instances" is incorrect. Dedicated Instances are physical EC2 servers dedicated to a single customer, but they do not offer the same level of discounts as Reserved Instances.
-"On-Demand Instances" is incorrect. On-Demand Instances are billed per hour or second with no long-term commitment, and they do not offer discounts for reserved capacity.
-"Spot Instances" is incorrect. Spot Instances offer steep discounts for unused capacity, but they are not reserved for a fixed term and can be interrupted by AWS.
+Reserved Instances is correct. Reserved Instances provide the largest discounts (up to 75%) compared to On-Demand pricing when you commit to a 1- or 3-year term.
+Dedicated Instances is incorrect. Dedicated Instances are physical EC2 servers dedicated to a single customer, but they do not offer the same level of discounts as Reserved Instances.
+On-Demand Instances is incorrect. On-Demand Instances are billed per hour or second with no long-term commitment, and they do not offer discounts for reserved capacity.
+Spot Instances is incorrect. Spot Instances offer steep discounts for unused capacity, but they are not reserved for a fixed term and can be interrupted by AWS.
 
 ---
 
@@ -485,10 +486,10 @@
 - Dedicated Instance
 
 **Explanation:**
-"Reserved Instance" is incorrect. Reserved Instances provide cost savings for long-term commitments but do not allow you to bring your own per-socket, per-core, or per-VM software licenses.
-"Dedicated Host" is correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use your existing per-socket, per-core, or per-VM software licenses, such as Microsoft Windows Server or SQL Server.
-"On-Demand Instance" is incorrect. On-Demand Instances are billed per hour or second with no long-term commitment, but they do not allow you to bring your own server-bound licenses.
-"Dedicated Instance" is incorrect. Dedicated Instances run on hardware dedicated to a single customer, but they do not provide the same level of control over the physical server as Dedicated Hosts, which is required for using per-socket, per-core, or per-VM licenses.
+Reserved Instance is incorrect. Reserved Instances provide cost savings for long-term commitments but do not allow you to bring your own per-socket, per-core, or per-VM software licenses.
+Dedicated Host is correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use your existing per-socket, per-core, or per-VM software licenses, such as Microsoft Windows Server or SQL Server.
+On-Demand Instance is incorrect. On-Demand Instances are billed per hour or second with no long-term commitment, but they do not allow you to bring your own server-bound licenses.
+Dedicated Instance is incorrect. Dedicated Instances run on hardware dedicated to a single customer, but they do not provide the same level of control over the physical server as Dedicated Hosts, which is required for using per-socket, per-core, or per-VM licenses.
 
 ---
 
@@ -500,10 +501,10 @@
 - Bastion Hosts
 
 **Explanation:**
-"Internet Gateways" is incorrect. Internet Gateways are deployed in the public subnet to allow communication between resources in the VPC and the internet.
-"Database Servers" is correct. Database servers should be deployed in the private subnet to restrict direct access from the internet and enhance security.
-"NAT Gateways" is incorrect. NAT Gateways are deployed in the public subnet to allow instances in private subnets to access the internet for updates or other outbound traffic.
-"Bastion Hosts" is incorrect. Bastion Hosts are deployed in the public subnet to provide secure access to instances in private subnets.
+Internet Gateways is incorrect. Internet Gateways are deployed in the public subnet to allow communication between resources in the VPC and the internet.
+Database Servers is correct. Database servers should be deployed in the private subnet to restrict direct access from the internet and enhance security.
+NAT Gateways is incorrect. NAT Gateways are deployed in the public subnet to allow instances in private subnets to access the internet for updates or other outbound traffic.
+Bastion Hosts is incorrect. Bastion Hosts are deployed in the public subnet to provide secure access to instances in private subnets.
 
 ---
 
@@ -515,10 +516,10 @@
 - User report
 
 **Explanation:**
-"Credential report" is correct. The IAM Credential Report is a downloadable CSV file that provides details about your AWS account's users, their credentials, and their access permissions.
-"User audit" is incorrect. There is no AWS feature or report called "User audit."
-"IAM report" is incorrect. While IAM provides tools for managing users and permissions, there is no specific "IAM report" feature.
-"User report" is incorrect. There is no AWS feature or report called "User report."
+Credential report is correct. The IAM Credential Report is a downloadable CSV file that provides details about your AWS account's users, their credentials, and their access permissions.
+User audit is incorrect. There is no AWS feature or report called User audit.
+IAM report is incorrect. While IAM provides tools for managing users and permissions, there is no specific IAM report feature.
+User report is incorrect. There is no AWS feature or report called User report.
 
 ---
 
@@ -530,10 +531,10 @@
 - Network
 
 **Explanation:**
-"Classic" is incorrect. Classic Load Balancers are older-generation ELBs and are not optimized for high-performance or high-traffic applications.
-"Application" is incorrect. Application Load Balancers are optimized for HTTP/HTTPS traffic and advanced routing, but they are not specifically designed for very high levels of traffic.
-"Dynamic" is incorrect. There is no ELB type called "Dynamic."
-"Network" is correct. Network Load Balancers are designed for very high levels of traffic and are optimized for ultra-low latency and handling millions of requests per second.
+Classic is incorrect. Classic Load Balancers are older-generation ELBs and are not optimized for high-performance or high-traffic applications.
+Application is incorrect. Application Load Balancers are optimized for HTTP/HTTPS traffic and advanced routing, but they are not specifically designed for very high levels of traffic.
+Dynamic is incorrect. There is no ELB type called Dynamic.
+Network is correct. Network Load Balancers are designed for very high levels of traffic and are optimized for ultra-low latency and handling millions of requests per second.
 
 ---
 
@@ -545,10 +546,10 @@
 - Service Quotas places limits on AWS Services within an account but can always be increased for a fee specific to that service
 
 **Explanation:**
-"Service Quotas is specific to a region and will place default limits on the number of specific types of resources you can allocate" is correct. Service Quotas are region-specific and set default limits on the number of resources (e.g., EC2 instances, S3 buckets) that can be allocated in a specific region.
-"Service Quotas sets limitations on the amount of AWS services that may be allocated across AWS for a specific account" is incorrect. Service Quotas are region-specific, not account-wide across all regions.
-"Service Quotas only apply to compute and storage instances across AWS" is incorrect. Service Quotas apply to a wide range of AWS services, not just compute and storage.
-"Service Quotas places limits on AWS Services within an account but can always be increased for a fee specific to that service" is incorrect. While some quotas can be increased, there is no fee for increasing quotas; you must submit a request to AWS Support.
+Service Quotas is specific to a region and will place default limits on the number of specific types of resources you can allocate is correct. Service Quotas are region-specific and set default limits on the number of resources (e.g., EC2 instances, S3 buckets) that can be allocated in a specific region.
+Service Quotas sets limitations on the amount of AWS services that may be allocated across AWS for a specific account is incorrect. Service Quotas are region-specific, not account-wide across all regions.
+Service Quotas only apply to compute and storage instances across AWS is incorrect. Service Quotas apply to a wide range of AWS services, not just compute and storage.
+Service Quotas places limits on AWS Services within an account but can always be increased for a fee specific to that service is incorrect. While some quotas can be increased, there is no fee for increasing quotas; you must submit a request to AWS Support.
 
 ---
 
@@ -560,10 +561,10 @@
 - ELB
 
 **Explanation:**
-"Edge locations" is correct. CloudFront leverages a global network of edge locations to cache content closer to users, reducing latency and improving performance.
-"Availability Zones" is incorrect. Availability Zones are isolated locations within a region used for deploying AWS resources, but they are not used for caching or reducing latency.
-"Regions" is incorrect. Regions are geographic areas where AWS data centers are located, but they are not specifically used for caching or reducing latency.
-"ELB" is incorrect. Elastic Load Balancing (ELB) distributes traffic across multiple targets, but it is not used for caching or reducing latency.
+Edge locations is correct. CloudFront leverages a global network of edge locations to cache content closer to users, reducing latency and improving performance.
+Availability Zones is incorrect. Availability Zones are isolated locations within a region used for deploying AWS resources, but they are not used for caching or reducing latency.
+Regions is incorrect. Regions are geographic areas where AWS data centers are located, but they are not specifically used for caching or reducing latency.
+ELB is incorrect. Elastic Load Balancing (ELB) distributes traffic across multiple targets, but it is not used for caching or reducing latency.
 
 ---
 
@@ -575,10 +576,10 @@
 - File Transfer
 
 **Explanation:**
-"HTTP Transfer" is incorrect. HTTP is a protocol for transferring data, but it does not optimize file transfers over long distances.
-"Amazon S3 Transfer Acceleration" is correct. S3 Transfer Acceleration uses AWS's global network of edge locations to speed up file transfers to S3 buckets over long distances.
-"S3 Acceleration" is incorrect. "S3 Acceleration" is not the correct name for this feature; the proper term is "Amazon S3 Transfer Acceleration."
-"File Transfer" is incorrect. File Transfer is a general term and not an AWS-specific feature for optimizing transfers to S3.
+HTTP Transfer is incorrect. HTTP is a protocol for transferring data, but it does not optimize file transfers over long distances.
+Amazon S3 Transfer Acceleration is correct. S3 Transfer Acceleration uses AWS's global network of edge locations to speed up file transfers to S3 buckets over long distances.
+S3 Acceleration is incorrect. S3 Acceleration is not the correct name for this feature; the proper term is Amazon S3 Transfer Acceleration.
+File Transfer is incorrect. File Transfer is a general term and not an AWS-specific feature for optimizing transfers to S3.
 
 ---
 
@@ -590,10 +591,10 @@
 - Opportunity to replace variable operational expenses (OPEX) with low upfront capital expenses (CAPEX)
 
 **Explanation:**
-"Opportunity to replace upfront capital expenses (CAPEX) with low variable costs" is correct. Migrating to AWS allows you to avoid large upfront investments in hardware and infrastructure (CAPEX) and instead pay for resources on a pay-as-you-go basis (OPEX).
-"Opportunity to replace variable capital expenses (CAPEX) with low upfront costs" is incorrect. CAPEX is typically an upfront cost, not variable, and AWS does not require upfront payments for most services.
-"Opportunity to replace upfront operational expenses (OPEX) with low variable operational expenses (OPEX)" is incorrect. Operational expenses (OPEX) are ongoing costs, and AWS does not replace them with upfront costs.
-"Opportunity to replace variable operational expenses (OPEX) with low upfront capital expenses (CAPEX)" is incorrect. AWS does not require upfront capital expenses; it operates on a pay-as-you-go model.
+Opportunity to replace upfront capital expenses (CAPEX) with low variable costs is correct. Migrating to AWS allows you to avoid large upfront investments in hardware and infrastructure (CAPEX) and instead pay for resources on a pay-as-you-go basis (OPEX).
+Opportunity to replace variable capital expenses (CAPEX) with low upfront costs is incorrect. CAPEX is typically an upfront cost, not variable, and AWS does not require upfront payments for most services.
+Opportunity to replace upfront operational expenses (OPEX) with low variable operational expenses (OPEX) is incorrect. Operational expenses (OPEX) are ongoing costs, and AWS does not replace them with upfront costs.
+Opportunity to replace variable operational expenses (OPEX) with low upfront capital expenses (CAPEX) is incorrect. AWS does not require upfront capital expenses; it operates on a pay-as-you-go model.
 
 ---
 
@@ -605,10 +606,10 @@
 - 1 EB
 
 **Explanation:**
-"100 PB" is incorrect. While Amazon S3 can store petabytes of data, it is not limited to 100 PB.
-"1 PB" is incorrect. Amazon S3 can store much more than 1 PB of data.
-"Virtually Unlimited" is correct. Amazon S3 is designed to provide virtually unlimited storage capacity, allowing customers to store as much data as they need.
-"1 EB" is incorrect. While Amazon S3 can store exabytes of data, it is not limited to 1 EB.
+100 PB is incorrect. While Amazon S3 can store petabytes of data, it is not limited to 100 PB.
+1 PB is incorrect. Amazon S3 can store much more than 1 PB of data.
+Virtually Unlimited is correct. Amazon S3 is designed to provide virtually unlimited storage capacity, allowing customers to store as much data as they need.
+1 EB is incorrect. While Amazon S3 can store exabytes of data, it is not limited to 1 EB.
 
 ---
 
@@ -619,9 +620,9 @@
 - NAT Gateway
 
 **Explanation:**
-"Network Access Control List (NaCl)" is incorrect. NACLs are used to control inbound and outbound traffic at the subnet level, but they do not enable internet access to resources in a VPC.
-"Internet Gateway" is correct. An Internet Gateway is a VPC component that allows resources in the VPC to communicate with the internet. It is required for internet-facing resources.
-"NAT Gateway" is incorrect. NAT Gateway allows instances in private subnets to initiate outbound internet traffic, but it does not allow inbound internet traffic to resources in a VPC.
+Network Access Control List (NaCl) is incorrect. NACLs are used to control inbound and outbound traffic at the subnet level, but they do not enable internet access to resources in a VPC.
+Internet Gateway is correct. An Internet Gateway is a VPC component that allows resources in the VPC to communicate with the internet. It is required for internet-facing resources.
+NAT Gateway is incorrect. NAT Gateway allows instances in private subnets to initiate outbound internet traffic, but it does not allow inbound internet traffic to resources in a VPC.
 
 ---
 
@@ -633,10 +634,10 @@
 - Upgrade to EC2
 
 **Explanation:**
-"LightSail Copy" is incorrect. There is no feature called "LightSail Copy" in AWS.
-"LightSail Backup" is incorrect. LightSail Backup is used to create backups of Lightsail instances, but it does not create a copy in EC2.
-"LightSail-EC2 snapshot" is incorrect. While snapshots are used for backups, there is no feature called "LightSail-EC2 snapshot."
-"Upgrade to EC2" is correct. The "Upgrade to EC2" feature allows customers to create a copy of their Lightsail instance in Amazon EC2 for more advanced configurations and scaling.
+LightSail Copy is incorrect. There is no feature called LightSail Copy in AWS.
+LightSail Backup is incorrect. LightSail Backup is used to create backups of Lightsail instances, but it does not create a copy in EC2.
+LightSail-EC2 snapshot is incorrect. While snapshots are used for backups, there is no feature called LightSail-EC2 snapshot.
+Upgrade to EC2 is correct. The Upgrade to EC2 feature allows customers to create a copy of their Lightsail instance in Amazon EC2 for more advanced configurations and scaling.
 
 ---
 
@@ -648,10 +649,10 @@
 - Convertible
 
 **Explanation:**
-"Limited" is incorrect. There is no Reserved Instance type called "Limited."
-"Standard" is incorrect. Standard Reserved Instances offer the highest cost savings (up to 75%) compared to On-Demand pricing.
-"Flexible" is incorrect. There is no Reserved Instance type called "Flexible."
-"Convertible" is correct. Convertible Reserved Instances offer smaller cost savings compared to Standard Reserved Instances but allow you to change instance attributes (e.g., instance family, operating system) during the term.
+Limited is incorrect. There is no Reserved Instance type called Limited.
+Standard is incorrect. Standard Reserved Instances offer the highest cost savings (up to 75%) compared to On-Demand pricing.
+Flexible is incorrect. There is no Reserved Instance type called Flexible.
+Convertible is correct. Convertible Reserved Instances offer smaller cost savings compared to Standard Reserved Instances but allow you to change instance attributes (e.g., instance family, operating system) during the term.
 
 ---
 
@@ -663,10 +664,10 @@
 - Security
 
 **Explanation:**
-"High Availability" is incorrect. High Availability ensures that systems are operational and accessible, but it does not directly enable faster innovation.
-"Cost Savings" is incorrect. Cost savings reduce expenses but do not directly contribute to faster innovation.
-"Agility" is correct. Agility enables companies to innovate faster by allowing them to quickly develop, test, and deploy new applications and services without the need for extensive infrastructure setup.
-"Security" is incorrect. Security ensures data and systems are protected, but it does not directly enable faster innovation.
+High Availability is incorrect. High Availability ensures that systems are operational and accessible, but it does not directly enable faster innovation.
+Cost Savings is incorrect. Cost savings reduce expenses but do not directly contribute to faster innovation.
+Agility is correct. Agility enables companies to innovate faster by allowing them to quickly develop, test, and deploy new applications and services without the need for extensive infrastructure setup.
+Security is incorrect. Security ensures data and systems are protected, but it does not directly enable faster innovation.
 
 ---
 
@@ -678,10 +679,10 @@
 - Traffic Flow
 
 **Explanation:**
-"Domain Name System (DNS)" is correct. Amazon Route 53 is primarily a scalable and highly available Domain Name System (DNS) web service that translates domain names into IP addresses.
-"Caching" is incorrect. Caching is not a feature of Route 53; it is a feature of services like Amazon CloudFront.
-"Data Storage" is incorrect. Route 53 does not provide data storage; it is a DNS and traffic management service.
-"Traffic Flow" is correct. Route 53 Traffic Flow allows you to manage traffic globally through routing policies, such as geolocation and latency-based routing.
+Domain Name System (DNS) is correct. Amazon Route 53 is primarily a scalable and highly available Domain Name System (DNS) web service that translates domain names into IP addresses.
+Caching is incorrect. Caching is not a feature of Route 53; it is a feature of services like Amazon CloudFront.
+Data Storage is incorrect. Route 53 does not provide data storage; it is a DNS and traffic management service.
+Traffic Flow is correct. Route 53 Traffic Flow allows you to manage traffic globally through routing policies, such as geolocation and latency-based routing.
 
 ---
 
@@ -693,10 +694,10 @@
 - Amazon Route 53
 
 **Explanation:**
-"AWS Identity and Access Management (IAM)" is incorrect. IAM is a global service, meaning it is not tied to any specific region.
-"Amazon Elastic File System (EFS)" is correct. Amazon EFS is a regional service, meaning the file system is stored and accessed within a specific AWS region.
-"Amazon CloudFront" is incorrect. CloudFront is a global service that uses a network of edge locations to deliver content with low latency.
-"Amazon Route 53" is incorrect. Route 53 is a global service that provides DNS and traffic management across multiple regions.
+AWS Identity and Access Management (IAM) is incorrect. IAM is a global service, meaning it is not tied to any specific region.
+Amazon Elastic File System (EFS) is correct. Amazon EFS is a regional service, meaning the file system is stored and accessed within a specific AWS region.
+Amazon CloudFront is incorrect. CloudFront is a global service that uses a network of edge locations to deliver content with low latency.
+Amazon Route 53 is incorrect. Route 53 is a global service that provides DNS and traffic management across multiple regions.
 
 ---
 
@@ -708,10 +709,10 @@
 - S3
 
 **Explanation:**
-"Lambda" is incorrect. AWS Lambda is a serverless compute service and is not a required component for EC2 cost estimation.
-"EBS" is correct. Amazon Elastic Block Store (EBS) is a required component for EC2 cost estimation because EC2 instances typically use EBS volumes for persistent storage, and the cost of EBS storage must be included in the estimation.
-"RDS" is incorrect. Amazon RDS is a managed relational database service and is not a required component for EC2 cost estimation.
-"S3" is incorrect. Amazon S3 is an object storage service and is not a required component for EC2 cost estimation.
+Lambda is incorrect. AWS Lambda is a serverless compute service and is not a required component for EC2 cost estimation.
+EBS is correct. Amazon Elastic Block Store (EBS) is a required component for EC2 cost estimation because EC2 instances typically use EBS volumes for persistent storage, and the cost of EBS storage must be included in the estimation.
+RDS is incorrect. Amazon RDS is a managed relational database service and is not a required component for EC2 cost estimation.
+S3 is incorrect. Amazon S3 is an object storage service and is not a required component for EC2 cost estimation.
 
 ---
 
@@ -723,11 +724,10 @@
 - Amazon GuardDuty
 
 **Explanation:**
-"AWS Inspector" is correct. Amazon Inspector is a security assessment service that analyzes EC2 instances for vulnerabilities and deviations from best practices using predefined security templates.
-"AWS Trusted Advisor" is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but it does not analyze EC2 instances for vulnerabilities.
-"AWS Config" is incorrect. AWS Config tracks resource configurations and changes over time but does not perform security vulnerability assessments.
-"Amazon GuardDuty" is incorrect. GuardDuty is a threat detection service that monitors AWS accounts and workloads for malicious activity, but it does not analyze EC2 instances against security templates.
-
+AWS Inspector is correct. Amazon Inspector is a security assessment service that analyzes EC2 instances for vulnerabilities and deviations from best practices using predefined security templates.
+AWS Trusted Advisor is incorrect. Trusted Advisor provides best practice recommendations for cost optimization, performance, and security, but it does not analyze EC2 instances for vulnerabilities.
+AWS Config is incorrect. AWS Config tracks resource configurations and changes over time but does not perform security vulnerability assessments.
+Amazon GuardDuty is incorrect. GuardDuty is a threat detection service that monitors AWS accounts and workloads for malicious activity, but it does not analyze EC2 instances against security templates.
 
 ---
 
@@ -739,10 +739,10 @@
 - Resources across multiple AWS regions and your on-premises networks
 
 **Explanation:**
-"Resources across multiple Availability Zones in a single region" is correct. A VPC spans multiple Availability Zones within a single AWS region, allowing you to deploy resources across multiple zones for high availability and fault tolerance.
-"Resources across multiple regions" is incorrect. A VPC is confined to a single AWS region and cannot span multiple regions.
-"Only resources in a single Availability Zone" is incorrect. A VPC spans multiple Availability Zones within a region, not just a single zone.
-"Resources across multiple AWS regions and your on-premises networks" is incorrect. A VPC is limited to a single AWS region, though it can connect to on-premises networks via VPN or Direct Connect.
+Resources across multiple Availability Zones in a single region is correct. A VPC spans multiple Availability Zones within a single AWS region, allowing you to deploy resources across multiple zones for high availability and fault tolerance.
+Resources across multiple regions is incorrect. A VPC is confined to a single AWS region and cannot span multiple regions.
+Only resources in a single Availability Zone is incorrect. A VPC spans multiple Availability Zones within a region, not just a single zone.
+Resources across multiple AWS regions and your on-premises networks is incorrect. A VPC is limited to a single AWS region, though it can connect to on-premises networks via VPN or Direct Connect.
 
 ---
 
@@ -754,10 +754,10 @@
 - Amazon Beanstalk
 
 **Explanation:**
-"AWS CloudTrail" is correct. AWS CloudTrail is a service that tracks user activity and API calls across your AWS account, providing a history of actions taken by users, roles, and AWS services.
-"Amazon Elastic Cache" is incorrect. Amazon ElastiCache is a caching service and does not provide user activity tracking.
-"AWS CloudWatch" is incorrect. AWS CloudWatch is a monitoring service for AWS resources and applications, but it does not provide detailed user activity logs.
-"Amazon Beanstalk" is incorrect. AWS Elastic Beanstalk is a platform-as-a-service (PaaS) for deploying and managing applications, but it does not track user activity.
+AWS CloudTrail is correct. AWS CloudTrail is a service that tracks user activity and API calls across your AWS account, providing a history of actions taken by users, roles, and AWS services.
+Amazon Elastic Cache is incorrect. Amazon ElastiCache is a caching service and does not provide user activity tracking.
+AWS CloudWatch is incorrect. AWS CloudWatch is a monitoring service for AWS resources and applications, but it does not provide detailed user activity logs.
+Amazon Beanstalk is incorrect. AWS Elastic Beanstalk is a platform-as-a-service (PaaS) for deploying and managing applications, but it does not track user activity.
 
 ---
 
@@ -769,10 +769,10 @@
 - AWS SDK
 
 **Explanation:**
-"AWS OpsWorks" is incorrect. AWS OpsWorks is a configuration management service that uses Chef and Puppet to automate the deployment and management of applications, but it does not provide a marketplace for software solutions.
-"AWS Marketplace" is correct. AWS Marketplace is an online store that allows users to find, buy, and immediately deploy software solutions in their AWS environment.
-"AWS Config" is incorrect. AWS Config is a service for tracking resource configurations and compliance, not for purchasing software solutions.
-"AWS SDK" is incorrect. AWS SDK is a set of software development tools for building applications that interact with AWS services, but it does not provide a marketplace for software solutions.
+AWS OpsWorks is incorrect. AWS OpsWorks is a configuration management service that uses Chef and Puppet to automate the deployment and management of applications, but it does not provide a marketplace for software solutions.
+AWS Marketplace is correct. AWS Marketplace is an online store that allows users to find, buy, and immediately deploy software solutions in their AWS environment.
+AWS Config is incorrect. AWS Config is a service for tracking resource configurations and compliance, not for purchasing software solutions.
+AWS SDK is incorrect. AWS SDK is a set of software development tools for building applications that interact with AWS services, but it does not provide a marketplace for software solutions.
 
 ---
 
@@ -784,10 +784,10 @@
 - AWS Lambda
 
 **Explanation:**
-"AWS S3" is incorrect. Amazon S3 is an object storage service and does not provide compute capabilities to run custom software or operating systems.
-"AWS DynamoDB" is incorrect. DynamoDB is a NoSQL database service and does not provide compute capabilities or support for running operating systems.
-"AWS EC2" is correct. Amazon EC2 allows you to run custom software on virtual servers, including instances running the Red Hat operating system.
-"AWS Lambda" is incorrect. AWS Lambda is a serverless compute service that runs code in response to events, but it does not allow you to run a full operating system like Red Hat.
+AWS S3 is incorrect. Amazon S3 is an object storage service and does not provide compute capabilities to run custom software or operating systems.
+AWS DynamoDB is incorrect. DynamoDB is a NoSQL database service and does not provide compute capabilities or support for running operating systems.
+AWS EC2 is correct. Amazon EC2 allows you to run custom software on virtual servers, including instances running the Red Hat operating system.
+AWS Lambda is incorrect. AWS Lambda is a serverless compute service that runs code in response to events, but it does not allow you to run a full operating system like Red Hat.
 
 ---
 
@@ -799,10 +799,10 @@
 - Amazon Route 53
 
 **Explanation:**
-"Amazon Virtual Private Cloud (Amazon VPC)" is correct. Amazon VPC allows companies to create a private, isolated virtual network within AWS, where they can launch and manage AWS resources securely.
-"AWS Direct Connect" is incorrect. AWS Direct Connect provides a dedicated network connection between on-premises data centers and AWS, but it does not create a private virtual network.
-"AWS Config" is incorrect. AWS Config is used for tracking resource configurations and compliance, not for creating private virtual networks.
-"Amazon Route 53" is incorrect. Route 53 is a DNS service for routing traffic, not for creating private virtual networks.
+Amazon Virtual Private Cloud (Amazon VPC) is correct. Amazon VPC allows companies to create a private, isolated virtual network within AWS, where they can launch and manage AWS resources securely.
+AWS Direct Connect is incorrect. AWS Direct Connect provides a dedicated network connection between on-premises data centers and AWS, but it does not create a private virtual network.
+AWS Config is incorrect. AWS Config is used for tracking resource configurations and compliance, not for creating private virtual networks.
+Amazon Route 53 is incorrect. Route 53 is a DNS service for routing traffic, not for creating private virtual networks.
 
 ---
 
@@ -814,10 +814,10 @@
 - Amazon RDS
 
 **Explanation:**
-"Amazon DynamoDB" is incorrect. DynamoDB is a fully managed NoSQL database service, and AWS handles the underlying infrastructure security. Customers are responsible for securing their data and access permissions.
-"Amazon EC2" is correct. With Amazon EC2, customers are responsible for managing the security configurations of the operating system, applications, and network settings on their instances.
-"AWS Fargate" is incorrect. Fargate is a serverless compute engine for containers, and AWS manages the underlying infrastructure security. Customers are responsible for securing their containerized applications.
-"Amazon RDS" is incorrect. RDS is a managed relational database service, and AWS handles the infrastructure security. Customers are responsible for securing their data and access permissions.
+Amazon DynamoDB is incorrect. DynamoDB is a fully managed NoSQL database service, and AWS handles the underlying infrastructure security. Customers are responsible for securing their data and access permissions.
+Amazon EC2 is correct. With Amazon EC2, customers are responsible for managing the security configurations of the operating system, applications, and network settings on their instances.
+AWS Fargate is incorrect. Fargate is a serverless compute engine for containers, and AWS manages the underlying infrastructure security. Customers are responsible for securing their containerized applications.
+Amazon RDS is incorrect. RDS is a managed relational database service, and AWS handles the infrastructure security. Customers are responsible for securing their data and access permissions.
 
 ---
 
@@ -829,10 +829,10 @@
 - Fast setup of IT resources
 
 **Explanation:**
-"Instant migration of any service to the cloud" is incorrect. While AWS provides tools to assist with migration, not all services can be instantly migrated to the cloud without planning and configuration.
-"100% SLA" is incorrect. AWS provides high availability but does not guarantee a 100% Service Level Agreement (SLA).
-"Go global in minutes" is correct. AWS allows customers to deploy applications and resources in multiple regions worldwide quickly, enabling global reach.
-"Fast setup of IT resources" is correct. AWS provides on-demand access to IT resources, allowing customers to quickly set up and scale infrastructure as needed.
+Instant migration of any service to the cloud is incorrect. While AWS provides tools to assist with migration, not all services can be instantly migrated to the cloud without planning and configuration.
+100% SLA is incorrect. AWS provides high availability but does not guarantee a 100% Service Level Agreement (SLA).
+Go global in minutes is correct. AWS allows customers to deploy applications and resources in multiple regions worldwide quickly, enabling global reach.
+Fast setup of IT resources is correct. AWS provides on-demand access to IT resources, allowing customers to quickly set up and scale infrastructure as needed.
 
 ---
 
@@ -844,10 +844,10 @@
 - It provisions new servers to meet static demand growth
 
 **Explanation:**
-"It allows systems to scale up or down based on changes in demand" is correct. Elasticity enables AWS resources to automatically adjust to changes in demand, ensuring optimal performance and cost efficiency.
-"It minimizes storage needs by reducing logging and auditing activities" is incorrect. Elasticity does not minimize storage needs or affect logging and auditing activities.
-"It allows delivery of the same resources to a large pool of customers in a scalable way" is incorrect. This describes multitenancy, not elasticity.
-"It provisions new servers to meet static demand growth" is incorrect. Elasticity is about dynamic scaling based on demand, not provisioning for static growth.
+It allows systems to scale up or down based on changes in demand is correct. Elasticity enables AWS resources to automatically adjust to changes in demand, ensuring optimal performance and cost efficiency.
+It minimizes storage needs by reducing logging and auditing activities is incorrect. Elasticity does not minimize storage needs or affect logging and auditing activities.
+It allows delivery of the same resources to a large pool of customers in a scalable way is incorrect. This describes multitenancy, not elasticity.
+It provisions new servers to meet static demand growth is incorrect. Elasticity is about dynamic scaling based on demand, not provisioning for static growth.
 
 ---
 
@@ -859,10 +859,10 @@
 - Reduced management overhead
 
 **Explanation:**
-"Pay-per-use pricing" is incorrect. While AWS services generally follow a pay-as-you-go pricing model, this is not a specific benefit of Elastic Load Balancing.
-"Automated scaling" is correct. Elastic Load Balancing works with Auto Scaling to automatically distribute traffic across healthy instances as demand changes.
-"High availability" is correct. Elastic Load Balancing ensures high availability by distributing traffic across multiple targets, such as EC2 instances, in different Availability Zones.
-"Reduced management overhead" is incorrect. While Elastic Load Balancing simplifies traffic distribution, reduced management overhead is not a primary benefit.
+Pay-per-use pricing is incorrect. While AWS services generally follow a pay-as-you-go pricing model, this is not a specific benefit of Elastic Load Balancing.
+Automated scaling is correct. Elastic Load Balancing works with Auto Scaling to automatically distribute traffic across healthy instances as demand changes.
+High availability is correct. Elastic Load Balancing ensures high availability by distributing traffic across multiple targets, such as EC2 instances, in different Availability Zones.
+Reduced management overhead is incorrect. While Elastic Load Balancing simplifies traffic distribution, reduced management overhead is not a primary benefit.
 
 ---
 
@@ -874,10 +874,10 @@
 - RDS simplifies tasks related to managing relational databases.
 
 **Explanation:**
-"RDS databases automatically scale based on load" is incorrect. While RDS supports features like Auto Scaling for storage, it does not automatically scale compute resources based on load.
-"RDS provides extremely high reliability and durability" is incorrect. While RDS provides high availability and durability through features like Multi-AZ deployments, this is not the primary benefit for database administrators.
-"RDS enables users to dynamically adjust CPU and RAM resources" is incorrect. RDS does not allow dynamic adjustment of CPU and RAM resources; instance types must be changed manually.
-"RDS simplifies tasks related to managing relational databases" is correct. RDS automates many administrative tasks, such as backups, software patching, and monitoring, reducing the operational burden for database administrators.
+RDS databases automatically scale based on load is incorrect. While RDS supports features like Auto Scaling for storage, it does not automatically scale compute resources based on load.
+RDS provides extremely high reliability and durability. is incorrect. While RDS provides high availability and durability through features like Multi-AZ deployments, this is not the primary benefit for database administrators.
+RDS enables users to dynamically adjust CPU and RAM resources is incorrect. RDS does not allow dynamic adjustment of CPU and RAM resources; instance types must be changed manually.
+RDS simplifies tasks related to managing relational databases is correct. RDS automates many administrative tasks, such as backups, software patching, and monitoring, reducing the operational burden for database administrators.
 
 ---
 
@@ -889,10 +889,10 @@
 - Availability
 
 **Explanation:**
-"Scalability" is incorrect. Scalability refers to the ability of a system to handle increased workload by adding resources, but it does not specifically focus on building applications from small, loosely coupled components.
-"Microservices" is correct. Microservices is an architectural style that focuses on building applications as a collection of small, independent, and loosely coupled services that can be developed, deployed, and scaled independently.
-"Elasticity" is incorrect. Elasticity refers to the ability to scale resources up or down dynamically based on demand, not the design of application components.
-"Availability" is incorrect. Availability refers to the ability of a system to remain operational and accessible, not the design of application components.
+Scalability is incorrect. Scalability refers to the ability of a system to handle increased workload by adding resources, but it does not specifically focus on building applications from small, loosely coupled components.
+Microservices is correct. Microservices is an architectural style that focuses on building applications as a collection of small, independent, and loosely coupled services that can be developed, deployed, and scaled independently.
+Elasticity is incorrect. Elasticity refers to the ability to scale resources up or down dynamically based on demand, not the design of application components.
+Availability is incorrect. Availability refers to the ability of a system to remain operational and accessible, not the design of application components.
 
 ---
 
@@ -904,10 +904,10 @@
 - Design schema of your data
 
 **Explanation:**
-"Patching database software" is correct. AWS manages tasks like patching database software for managed services such as Amazon RDS, reducing the operational burden on customers.
-"Customize your code" is incorrect. AWS does not manage or customize application code; this is the responsibility of the customer.
-"Taking backups of databases" is correct. AWS automates database backups for managed services like RDS, ensuring data durability and recovery options.
-"Design schema of your data" is incorrect. AWS does not design database schemas; this is the responsibility of the customer.
+Patching database software is correct. AWS manages tasks like patching database software for managed services such as Amazon RDS, reducing the operational burden on customers.
+Customize your code is incorrect. AWS does not manage or customize application code; this is the responsibility of the customer.
+Taking backups of databases is correct. AWS automates database backups for managed services like RDS, ensuring data durability and recovery options.
+Design schema of your data is incorrect. AWS does not design database schemas; this is the responsibility of the customer.
 
 ---
 
@@ -919,10 +919,10 @@
 - Developer
 
 **Explanation:**
-"Business" is correct. The Business support plan provides 24/7 access to Cloud Support Engineers for technical support.
-"All plans" is incorrect. Not all AWS support plans provide 24/7 access to technical support. For example, the Basic and Developer plans do not include 24/7 technical support.
-"Enterprise" is correct. The Enterprise support plan provides 24/7 access to senior Cloud Support Engineers and a Technical Account Manager (TAM) for mission-critical workloads.
-"Developer" is incorrect. The Developer support plan provides business hours access to Cloud Support Associates, not 24/7 technical support.
+Business is correct. The Business support plan provides 24/7 access to Cloud Support Engineers for technical support.
+All plans is incorrect. Not all AWS support plans provide 24/7 access to technical support. For example, the Basic and Developer plans do not include 24/7 technical support.
+Enterprise is correct. The Enterprise support plan provides 24/7 access to senior Cloud Support Engineers and a Technical Account Manager (TAM) for mission-critical workloads.
+Developer is incorrect. The Developer support plan provides business hours access to Cloud Support Associates, not 24/7 technical support.
 
 ---
 
@@ -934,10 +934,10 @@
 - Site-to-Site VPN
 
 **Explanation:**
-"VPC Flow Logs" is correct. VPC Flow Logs capture information about the IP traffic going to and from network interfaces in a VPC, which can be used for monitoring and troubleshooting.
-"VPC Peering" is incorrect. VPC Peering is used to connect two VPCs privately, but it does not capture traffic information.
-"Transit Gateway" is incorrect. Transit Gateway connects multiple VPCs and on-premises networks, but it does not capture traffic information.
-"Site-to-Site VPN" is incorrect. Site-to-Site VPN provides secure connectivity between on-premises networks and AWS, but it does not capture traffic information.
+VPC Flow Logs is correct. VPC Flow Logs capture information about the IP traffic going to and from network interfaces in a VPC, which can be used for monitoring and troubleshooting.
+VPC Peering is incorrect. VPC Peering is used to connect two VPCs privately, but it does not capture traffic information.
+Transit Gateway is incorrect. Transit Gateway connects multiple VPCs and on-premises networks, but it does not capture traffic information.
+Site-to-Site VPN is incorrect. Site-to-Site VPN provides secure connectivity between on-premises networks and AWS, but it does not capture traffic information.
 
 ---
 
@@ -949,14 +949,14 @@
 - AWS AppConfig
 
 **Explanation:**
-"Distributor" is incorrect. Distributor is used for storing and distributing software packages to AWS instances, not for executing commands directly.
-"Run Command" is correct. AWS Systems Manager Run Command allows you to execute commands on servers within AWS without needing SSH or PowerShell, simplifying remote management.
-"CodeDeploy" is incorrect. CodeDeploy is used for automating application deployments, not for executing commands on servers.
-"AWS AppConfig" is incorrect. AppConfig is used for managing and deploying application configurations, not for executing commands on servers.
+Distributor is incorrect. Distributor is used for storing and distributing software packages to AWS instances, not for executing commands directly.
+Run Command is correct. AWS Systems Manager Run Command allows you to execute commands on servers within AWS without needing SSH or PowerShell, simplifying remote management.
+CodeDeploy is incorrect. CodeDeploy is used for automating application deployments, not for executing commands on servers.
+AWS AppConfig is incorrect. AppConfig is used for managing and deploying application configurations, not for executing commands on servers.
 
 ---
 
-## 65. You update the CIDR block on one of your subnets from /16 to /24. What is the resulting impact on the subnet?
+## 65. You update the CIDR block one of your subnets from /16 to /24. What is the resulting impact on the subnet?
 
 - The number of IP addresses available within it decreases
 - The number of IP addresses available within it increases
@@ -964,9 +964,9 @@
 - The use of IPv6 addresses is permitted
 
 **Explanation:**
-"The number of IP addresses available within it decreases" is correct. Changing the CIDR block from /16 to /24 reduces the number of available IP addresses in the subnet. A /16 subnet provides 65,536 IP addresses, while a /24 subnet provides only 256 IP addresses.
-"The number of IP addresses available within it increases" is incorrect. Reducing the size of the CIDR block (e.g., from /16 to /24) decreases the number of available IP addresses.
-"The subnet is opened to the public Internet" is incorrect. Changing the CIDR block does not automatically expose the subnet to the public internet. Internet access depends on the presence of an Internet Gateway and associated routing rules.
-"The use of IPv6 addresses is permitted" is incorrect. Changing the CIDR block does not enable IPv6. IPv6 must be explicitly enabled for the VPC and subnet.
+The number of IP addresses available within it decreases is correct. Changing the CIDR block from /16 to /24 reduces the number of available IP addresses in the subnet. A /16 subnet provides 65,536 IP addresses, while a /24 subnet provides only 256 IP addresses.
+The number of IP addresses available within it increases is incorrect. Reducing the size of the CIDR block (e.g., from /16 to /24) decreases the number of available IP addresses.
+The subnet is opened to the public Internet is incorrect. Changing the CIDR block does not automatically expose the subnet to the public internet. Internet access depends on the presence of an Internet Gateway and associated routing rules.
+The use of IPv6 addresses is permitted is incorrect. Changing the CIDR block does not enable IPv6. IPv6 must be explicitly enabled for the VPC and subnet.
 
 ---

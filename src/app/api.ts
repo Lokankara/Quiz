@@ -1,7 +1,7 @@
 import axios from "axios";
 import { FlashCardDto, AnswerDto, ResultDto } from "./types";
 
-const API_BASE = process.env.REACT_APP_API_URL ?? "https://quiz-6o4v.onrender.com";
+const API_BASE = process.env.REACT_APP_API_URL ?? "http://localhost:8080";
 export const api = axios.create({ baseURL: API_BASE });
 
 export const getAllQuestions = async (): Promise<FlashCardDto[]> => {

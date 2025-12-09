@@ -10,10 +10,10 @@
 - Users should always have more permissions than they need.
 
 **Explanation:**  
-"Users should be granted permission to access only the resources they need for their job" is correct. This is the principle of least privilege, which minimizes security risks by limiting user permissions.  
-"All users should have the same baseline permissions to use basic AWS services" is incorrect because it grants unnecessary access.  
-"Users should submit all access requests in writing for an audit trail" is incorrect because it relates to auditing, not permission management.  
-"Users should always have more permissions than they need" is incorrect because it increases security risks.
+Users should be granted permission to access only the resources they need for their job is correct. This is the principle of least privilege, which minimizes security risks by limiting user permissions.  
+All users should have the same baseline permissions to use basic AWS services is incorrect because it grants unnecessary access.  
+Users should submit all access requests in writing for an audit trail is incorrect because it relates to auditing, not permission management.  
+Users should always have more permissions than they need is incorrect because it increases security risks.
 
 ---
 
@@ -25,10 +25,10 @@
 - Multi-AZ encrypts RDS instance data.
 
 **Explanation:**  
-"Multi-AZ maintains standby replicas of RDS instances in different availability zones" is correct. Multi-AZ provides high availability by automatically creating a standby replica in another AZ.  
-"Multi-AZ allows read replicas of RDS instances across availability zones" is incorrect; read replicas are for scaling reads, not high availability.  
-"Multi-AZ allows peering connections between VPCs" is incorrect; VPC peering is unrelated to RDS.  
-"Multi-AZ encrypts RDS instance data" is incorrect; encryption is a separate feature.
+Multi-AZ maintains standby replicas of RDS instances in different availability zones is correct. Multi-AZ provides high availability by automatically creating a standby replica in another AZ.  
+Multi-AZ allows read replicas of RDS instances across availability zones is incorrect; read replicas are for scaling reads, not high availability.  
+Multi-AZ allows peering connections between VPCs is incorrect; VPC peering is unrelated to RDS.  
+Multi-AZ encrypts RDS instance data is incorrect; encryption is a separate feature.
 
 ---
 
@@ -40,10 +40,10 @@
 - AWS CodePipeline
 
 **Explanation:**  
-"AWS Software Development Kit" is correct. The SDK provides APIs and libraries for integrating AWS services into applications.  
-"AWS CodeDeploy" is incorrect; it automates code deployments.  
-"AWS Command Line Interface (CLI)" is incorrect; it is for command-line management, not application integration.  
-"AWS CodePipeline" is incorrect; it is for CI/CD, not direct integration.
+AWS Software Development Kit is correct. The SDK provides APIs and libraries for integrating AWS services into applications.  
+AWS CodeDeploy is incorrect; it automates code deployments.  
+AWS Command Line Interface (CLI) is incorrect; it is for command-line management, not application integration.  
+AWS CodePipeline is incorrect; it is for CI/CD, not direct integration.
 
 ---
 
@@ -55,10 +55,10 @@
 - Cost Projections
 
 **Explanation:**  
-"Cost Explorer" is correct. It provides historical usage and cost forecasts.  
-"Budget Reports" is incorrect; they track usage against budgets.  
-"AWS Budgets" is incorrect; it sets and tracks budgets, not forecasts.  
-"Cost Projections" is incorrect; projections are a feature within Cost Explorer.
+Cost Explorer is correct. It provides historical usage and cost forecasts.  
+Budget Reports is incorrect; they track usage against budgets.  
+AWS Budgets is incorrect; it sets and tracks budgets, not forecasts.  
+Cost Projections is incorrect; projections are a feature within Cost Explorer.
 
 ---
 
@@ -70,10 +70,10 @@
 - AWS Trusted Advisor
 
 **Explanation:**  
-"Amazon Simple Notification Service (Amazon SNS)" is correct. SNS sends notifications when CloudWatch alarms are triggered.  
-"Amazon Route 53" is incorrect; it is a DNS service.  
-"AWS CloudTrail" is incorrect; it logs API calls.  
-"AWS Trusted Advisor" is incorrect; it provides best practice recommendations.
+Amazon Simple Notification Service (Amazon SNS) is correct. SNS sends notifications when CloudWatch alarms are triggered.  
+Amazon Route 53 is incorrect; it is a DNS service.  
+AWS CloudTrail is incorrect; it logs API calls.  
+AWS Trusted Advisor is incorrect; it provides best practice recommendations.
 
 ---
 
@@ -85,10 +85,10 @@
 - Managed services are self-healing.
 
 **Explanation:**  
-"The provider handles maintenance tasks" is correct. Managed services offload routine maintenance, letting companies focus on applications.  
-"Managed services eliminate infrastructure costs" is incorrect; costs still exist.  
-"Managed services have unlimited scale" is incorrect; scale is not unlimited.  
-"Managed services are self-healing" is incorrect; self-healing is a feature, not the main benefit.
+The provider handles maintenance tasks is correct. Managed services offload routine maintenance, letting companies focus on applications.  
+Managed services eliminate infrastructure costs is incorrect; costs still exist.  
+Managed services have unlimited scale is incorrect; scale is not unlimited.  
+Managed services are self-healing is incorrect; self-healing is a feature, not the main benefit.
 
 ---
 
@@ -100,10 +100,10 @@
 - AWS Marketplace
 
 **Explanation:**  
-"AWS Marketplace" is correct. It provides pre-configured vendor solutions for quick deployment.  
-"AWS EC2" is incorrect; it provides virtual servers, not pre-configured solutions.  
-"AWS Lambda" is incorrect; it is a serverless compute service.  
-"AWS Machine Images" is incorrect; they are templates, not a marketplace.
+AWS Marketplace is correct. It provides pre-configured vendor solutions for quick deployment.  
+AWS EC2 is incorrect; it provides virtual servers, not pre-configured solutions.  
+AWS Lambda is incorrect; it is a serverless compute service.  
+AWS Machine Images is incorrect; they are templates, not a marketplace.
 
 ---
 
@@ -115,8 +115,8 @@
 - Memory optimized
 
 **Explanation:**  
-"Network optimized" is correct. There is no official "network optimized" instance family.  
-"Storage optimized," "Compute optimized," and "Memory optimized" are all official EC2 instance types.
+Network optimized is correct. There is no official network optimized instance family.  
+Storage optimized, Compute optimized, and Memory optimized are all official EC2 instance types.
 
 ---
 
@@ -128,10 +128,10 @@
 - AWS Organizations
 
 **Explanation:**  
-"AWS Personal Health Dashboard" is correct. It provides personalized alerts about events affecting your resources.  
-"AWS Trusted Advisor" is incorrect; it gives best practice recommendations.  
-"AWS Service Health Dashboard" is incorrect; it shows general AWS service status, not personalized alerts.  
-"AWS Organizations" is incorrect; it manages multiple accounts.
+AWS Personal Health Dashboard is correct. It provides personalized alerts about events affecting your resources.  
+AWS Trusted Advisor is incorrect; it gives best practice recommendations.  
+AWS Service Health Dashboard is incorrect; it shows general AWS service status, not personalized alerts.  
+AWS Organizations is incorrect; it manages multiple accounts.
 
 ---
 
@@ -143,10 +143,10 @@
 - It only sends traffic to the remaining healthy instances.
 
 **Explanation:**  
-"It only sends traffic to the remaining healthy instances" is correct. ELB stops routing traffic to unhealthy instances.  
-"It continues to send traffic to the failed instance" is incorrect; ELB avoids unhealthy instances.  
-"It restarts the unhealthy EC2 instance" is incorrect; ELB does not manage instance lifecycle.  
-"It terminates the failed instance" is incorrect; ELB does not terminate instances.
+It only sends traffic to the remaining healthy instances is correct. ELB stops routing traffic to unhealthy instances.  
+It continues to send traffic to the failed instance is incorrect; ELB avoids unhealthy instances.  
+It restarts the unhealthy EC2 instance is incorrect; ELB does not manage instance lifecycle.  
+It terminates the failed instance is incorrect; ELB does not terminate instances.
 
 ---
 
@@ -158,10 +158,10 @@
 - Interoperability
 
 **Explanation:**  
-"Reusability" is correct. It refers to using components in multiple places.  
-"Modularization" is incorrect; it is about breaking systems into modules.  
-"Portability" is incorrect; it is about moving applications between environments.  
-"Interoperability" is incorrect; it is about systems working together.
+Reusability is correct. It refers to using components in multiple places.  
+Modularization is incorrect; it is about breaking systems into modules.  
+Portability is incorrect; it is about moving applications between environments.  
+Interoperability is incorrect; it is about systems working together.
 
 ---
 
@@ -173,8 +173,8 @@
 - Setting up encryption on an Amazon S3 bucket
 
 **Explanation:**  
-"Patching the EC2 Operating System" and "Setting up encryption on an Amazon S3 bucket" are correct. Customers manage their OS and data encryption.  
-"Patching the network infrastructure" and "Physical security of data center facilities" are AWS responsibilities.
+Patching the EC2 Operating System and Setting up encryption on an Amazon S3 bucket are correct. Customers manage their OS and data encryption.  
+Patching the network infrastructure and Physical security of data center facilities are AWS responsibilities.
 
 ---
 
@@ -186,10 +186,10 @@
 - Assign them to the same security group.
 
 **Explanation:**  
-"Assign them to the same IAM group that you create" is correct. IAM groups simplify permission management.  
-"Create each user in IAM and assign the proper roles" is incorrect; it is less efficient.  
-"Make each their own AWS account" is incorrect; it is unnecessarily complex.  
-"Assign them to the same security group" is incorrect; security groups are for network access, not user permissions.
+Assign them to the same IAM group that you create is correct. IAM groups simplify permission management.  
+Create each user in IAM and assign the proper roles is incorrect; it is less efficient.  
+Make each their own AWS account is incorrect; it is unnecessarily complex.  
+Assign them to the same security group is incorrect; security groups are for network access, not user permissions.
 
 ---
 
@@ -201,10 +201,10 @@
 - Unused resources are terminated daily.
 
 **Explanation:**  
-"Resources can be scaled based on demand" is correct. Cloud computing allows dynamic scaling.  
-"The cloud provider handles efficiency" is incorrect; customers must manage their resources.  
-"Resources are unlimited" is incorrect; resources are not truly unlimited.  
-"Unused resources are terminated daily" is incorrect; termination is not automatic.
+Resources can be scaled based on demand is correct. Cloud computing allows dynamic scaling.  
+The cloud provider handles efficiency is incorrect; customers must manage their resources.  
+Resources are unlimited is incorrect; resources are not truly unlimited.  
+Unused resources are terminated daily is incorrect; termination is not automatic.
 
 ---
 
@@ -216,10 +216,10 @@
 - Amazon Athena with Amazon Glue
 
 **Explanation:**  
-"Amazon QuickSight" is correct. It is AWS's BI service for dashboards and reports.  
-"Amazon CloudWatch" is incorrect; it is for monitoring.  
-"Amazon Redshift" is incorrect; it is a data warehouse.  
-"Amazon Athena with Amazon Glue" is incorrect; they are for querying and ETL, not dashboards.
+Amazon QuickSight is correct. It is AWS's BI service for dashboards and reports.  
+Amazon CloudWatch is incorrect; it is for monitoring.  
+Amazon Redshift is incorrect; it is a data warehouse.  
+Amazon Athena with Amazon Glue is incorrect; they are for querying and ETL, not dashboards.
 
 ---
 
@@ -231,10 +231,10 @@
 - Savings Plans
 
 **Explanation:**  
-"Cost Explorer" is correct. It tracks incurred costs and provides projections.  
-"AWS Budgets" is incorrect; it is for setting and tracking budgets.  
-"Cost Categories" is incorrect; it is for organizing costs.  
-"Savings Plans" is incorrect; it is a pricing model.
+Cost Explorer is correct. It tracks incurred costs and provides projections.  
+AWS Budgets is incorrect; it is for setting and tracking budgets.  
+Cost Categories is incorrect; it is for organizing costs.  
+Savings Plans is incorrect; it is a pricing model.
 
 ---
 
@@ -246,10 +246,10 @@
 - Amazon WorkLink
 
 **Explanation:**  
-"Amazon WorkSpaces" is correct. It provides cloud-based virtual desktops.  
-"Amazon AppStream 2.0" is incorrect; it streams applications, not desktops.  
-"Amazon Cognito" is incorrect; it is for authentication.  
-"Amazon WorkLink" is incorrect; it is for secure access to internal websites.
+Amazon WorkSpaces is correct. It provides cloud-based virtual desktops.  
+Amazon AppStream 2.0 is incorrect; it streams applications, not desktops.  
+Amazon Cognito is incorrect; it is for authentication.  
+Amazon WorkLink is incorrect; it is for secure access to internal websites.
 
 ---
 
@@ -261,10 +261,10 @@
 - By migrating the database to an AWS Storage Gateway
 
 **Explanation:**  
-"By migrating the database to an Amazon RDS instance" is correct. RDS automates management, reducing costs.  
-"By migrating the database to an EC2 instance" is incorrect; it requires manual management.  
-"By migrating the database to a Docker container" is incorrect; it does not reduce costs.  
-"By migrating the database to an AWS Storage Gateway" is incorrect; Storage Gateway is for hybrid storage.
+By migrating the database to an Amazon RDS instance is correct. RDS automates management, reducing costs.  
+By migrating the database to an EC2 instance is incorrect; it requires manual management.  
+By migrating the database to a Docker container is incorrect; it does not reduce costs.  
+By migrating the database to an AWS Storage Gateway is incorrect; Storage Gateway is for hybrid storage.
 
 ---
 
@@ -276,10 +276,10 @@
 - EC2
 
 **Explanation:**  
-"Elastic Beanstalk" is correct. It is a PaaS for quick deployment without managing infrastructure.  
-"AppStream" is incorrect; it streams applications.  
-"Lightsail" is incorrect; it is for simple cloud projects.  
-"EC2" is incorrect; it requires infrastructure management.
+Elastic Beanstalk is correct. It is a PaaS for quick deployment without managing infrastructure.  
+AppStream is incorrect; it streams applications.  
+Lightsail is incorrect; it is for simple cloud projects.  
+EC2 is incorrect; it requires infrastructure management.
 
 ---
 
@@ -291,10 +291,10 @@
 - AWS Config
 
 **Explanation:**  
-"AWS Trusted Advisor" is correct. It recommends cost optimization, including identifying unused EC2 instances.  
-"AWS Cost Explorer" is incorrect; it analyzes spending, not resource usage.  
-"AWS Budgets" is incorrect; it tracks spending limits.  
-"AWS Config" is incorrect; it tracks configuration changes.
+AWS Trusted Advisor is correct. It recommends cost optimization, including identifying unused EC2 instances.  
+AWS Cost Explorer is incorrect; it analyzes spending, not resource usage.  
+AWS Budgets is incorrect; it tracks spending limits.  
+AWS Config is incorrect; it tracks configuration changes.
 
 ---
 
@@ -306,10 +306,10 @@
 - Resiliency
 
 **Explanation:**  
-"Resiliency" is correct. It is the ability to recover from failures and continue operating.  
-"Availability" is incorrect; it is about uptime, not functioning during failures.  
-"Performance" is incorrect; it is about system operation, not failure recovery.  
-"Scalability" is incorrect; it is about handling increased load.
+Resiliency is correct. It is the ability to recover from failures and continue operating.  
+Availability is incorrect; it is about uptime, not functioning during failures.  
+Performance is incorrect; it is about system operation, not failure recovery.  
+Scalability is incorrect; it is about handling increased load.
 
 ---
 
@@ -321,10 +321,10 @@
 - AWS CodeDeploy
 
 **Explanation:**  
-"AWS CloudFormation" is correct. It provisions multi-tier resources using templates.  
-"AWS Config" is incorrect; it tracks resource configurations.  
-"AWS Service Catalog" is incorrect; it manages approved products, not deployments.  
-"AWS CodeDeploy" is incorrect; it automates code deployments.
+AWS CloudFormation is correct. It provisions multi-tier resources using templates.  
+AWS Config is incorrect; it tracks resource configurations.  
+AWS Service Catalog is incorrect; it manages approved products, not deployments.  
+AWS CodeDeploy is incorrect; it automates code deployments.
 
 ---
 
@@ -336,8 +336,8 @@
 - 100 PB
 
 **Explanation:**  
-"Virtually unlimited" is correct. S3 is designed for unlimited storage.  
-"1 PB," "100 TB," and "100 PB" are incorrect; S3 has no practical upper limit.
+Virtually unlimited is correct. S3 is designed for unlimited storage.  
+1 PB, 100 TB, and 100 PB are incorrect; S3 has no practical upper limit.
 
 ---
 
@@ -349,10 +349,10 @@
 - Use Amazon Cloud Directory
 
 **Explanation:**  
-"Enable multi-factor authentication" is correct. MFA adds an extra layer of security.  
-"Enable AWS CloudTrail" is incorrect; it logs API activity.  
-"Review IAM roles" is incorrect; it does not add login protection.  
-"Use Amazon Cloud Directory" is incorrect; it is a directory service.
+Enable multi-factor authentication is correct. MFA adds an extra layer of security.  
+Enable AWS CloudTrail is incorrect; it logs API activity.  
+Review IAM roles is incorrect; it does not add login protection.  
+Use Amazon Cloud Directory is incorrect; it is a directory service.
 
 ---
 
@@ -364,9 +364,9 @@
 - Customer-managed policies
 
 **Explanation:**  
-"Grant least privilege" and "Customer-managed policies" are correct. Least privilege minimizes risk, and customer-managed policies allow precise control.  
-"Use service accounts" is incorrect; AWS uses users, groups, and roles.  
-"Account-level policies" is incorrect; policies are attached to users, groups, or roles.
+Grant least privilege and Customer-managed policies are correct. Least privilege minimizes risk, and customer-managed policies allow precise control.  
+Use service accounts is incorrect; AWS uses users, groups, and roles.  
+Account-level policies is incorrect; policies are attached to users, groups, or roles.
 
 ---
 
@@ -378,10 +378,10 @@
 - CloudFront
 
 **Explanation:**  
-"Route 53" is correct. It is AWS's DNS service with health checks.  
-"AWS DNS" is incorrect; no such service exists.  
-"Lambda" is incorrect; it is a compute service.  
-"CloudFront" is incorrect; it is a CDN.
+Route 53 is correct. It is AWS's DNS service with health checks.  
+AWS DNS is incorrect; no such service exists.  
+Lambda is incorrect; it is a compute service.  
+CloudFront is incorrect; it is a CDN.
 
 ---
 
@@ -393,10 +393,10 @@
 - AWS Partner Network Consulting Partners
 
 **Explanation:**  
-"AWS Partner Network Consulting Partners" is correct. APN Consulting Partners help design, build, and manage AWS systems.  
-"AWS Marketplace" is incorrect; it is for software solutions.  
-"AWS Trusted Advisor" is incorrect; it provides recommendations.  
-"Amazon Inspector" is incorrect; it is a security assessment service.
+AWS Partner Network Consulting Partners is correct. APN Consulting Partners help design, build, and manage AWS systems.  
+AWS Marketplace is incorrect; it is for software solutions.  
+AWS Trusted Advisor is incorrect; it provides recommendations.  
+Amazon Inspector is incorrect; it is a security assessment service.
 
 ---
 
@@ -408,9 +408,9 @@
 - Everywhere, there are no constraints
 
 **Explanation:**  
-"Only in one single availability zone" and "Multiple availability zones within a region" are correct. Auto Scaling can launch in one or multiple AZs within a region.  
-"Multiple availability zones across multiple regions" is incorrect; Auto Scaling is region-specific.  
-"Everywhere, there are no constraints" is incorrect; there are regional constraints.
+Only in one single availability zone and Multiple availability zones within a region are correct. Auto Scaling can launch in one or multiple AZs within a region.  
+Multiple availability zones across multiple regions is incorrect; Auto Scaling is region-specific.  
+Everywhere, there are no constraints is incorrect; there are regional constraints.
 
 ---
 
@@ -422,10 +422,10 @@
 - Amazon Redshift
 
 **Explanation:**  
-"Amazon Redshift" is correct. It is AWS's managed data warehouse service.  
-"Amazon Aurora" is incorrect; it is a relational database.  
-"Amazon RDS" is incorrect; it is for relational databases, not data warehousing.  
-"DynamoDB" is incorrect; it is a NoSQL database.
+Amazon Redshift is correct. It is AWS's managed data warehouse service.  
+Amazon Aurora is incorrect; it is a relational database.  
+Amazon RDS is incorrect; it is for relational databases, not data warehousing.  
+DynamoDB is incorrect; it is a NoSQL database.
 
 ---
 
@@ -438,8 +438,8 @@
 - Physical security of hardware
 
 **Explanation:**  
-"Amazon Machine Images (AMIs)" and "Applications in EC2 instances" are correct. Customers manage their AMIs and applications.  
-"Virtualization infrastructure," "Network infrastructure," and "Physical security of hardware" are AWS responsibilities.
+Amazon Machine Images (AMIs) and Applications in EC2 instances are correct. Customers manage their AMIs and applications.  
+Virtualization infrastructure, Network infrastructure, and Physical security of hardware are AWS responsibilities.
 
 ---
 
@@ -451,10 +451,10 @@
 - The cloud provider handles routine IT tasks.
 
 **Explanation:**  
-"The cloud provider handles routine IT tasks" is correct. This allows companies to focus on innovation.  
-"The cloud automates all processes" is incorrect; not all processes are automated.  
-"There are no infrastructure costs" is incorrect; costs still exist.  
-"Resources can be provisioned on demand" is incorrect; this is a benefit, but not the main reason for focusing on innovation.
+The cloud provider handles routine IT tasks is correct. This allows companies to focus on innovation.  
+The cloud automates all processes is incorrect; not all processes are automated.  
+There are no infrastructure costs is incorrect; costs still exist.  
+Resources can be provisioned on demand is incorrect; this is a benefit, but not the main reason for focusing on innovation.
 
 ---
 
@@ -466,9 +466,9 @@
 - Amazon CloudWatch
 
 **Explanation:**  
-"AWS Lambda" and "Email" are correct. Both can subscribe to SNS topics.  
-"Amazon S3" is incorrect; it cannot subscribe to SNS.  
-"Amazon CloudWatch" is incorrect; it triggers SNS, not subscribes to it.
+AWS Lambda and Email are correct. Both can subscribe to SNS topics.  
+Amazon S3 is incorrect; it cannot subscribe to SNS.  
+Amazon CloudWatch is incorrect; it triggers SNS, not subscribes to it.
 
 ---
 
@@ -480,9 +480,9 @@
 - Automatic backup
 
 **Explanation:**  
-"Software patching" and "Automatic backup" are correct. RDS automates these tasks.  
-"Unlimited resources" is incorrect; resources are not unlimited.  
-"Cost savings" is incorrect; cost savings depend on usage.
+Software patching and Automatic backup are correct. RDS automates these tasks.  
+Unlimited resources is incorrect; resources are not unlimited.  
+Cost savings is incorrect; cost savings depend on usage.
 
 ---
 
@@ -494,8 +494,8 @@
 - Privacy
 
 **Explanation:**  
-"Privacy" is correct. Privacy is not a Trusted Advisor focus area.  
-"Performance," "Security," and "Fault tolerance" are all focus areas.
+Privacy is correct. Privacy is not a Trusted Advisor focus area.  
+Performance, Security, and Fault tolerance are all focus areas.
 
 ---
 
@@ -507,10 +507,10 @@
 - Amazon CloudFront
 
 **Explanation:**  
-"Amazon CloudFront" is correct. It provides geolocation headers for personalization.  
-"AWS Elastic Beanstalk" is incorrect; it is for application deployment.  
-"AWS Global Accelerator" is incorrect; it improves performance, not personalization.  
-"Amazon EC2" is incorrect; it is a compute service.
+Amazon CloudFront is correct. It provides geolocation headers for personalization.  
+AWS Elastic Beanstalk is incorrect; it is for application deployment.  
+AWS Global Accelerator is incorrect; it improves performance, not personalization.  
+Amazon EC2 is incorrect; it is a compute service.
 
 ---
 
@@ -522,10 +522,10 @@
 - Service level agreement (SLA)
 
 **Explanation:**  
-"Service level agreement (SLA)" is correct. An SLA defines service commitments.  
-"Governance" is incorrect; it is about policies.  
-"Contract" is incorrect; it is a legal agreement, not specific to service metrics.  
-"Auditability" is incorrect; it is about tracking actions.
+Service level agreement (SLA) is correct. An SLA defines service commitments.  
+Governance is incorrect; it is about policies.  
+Contract is incorrect; it is a legal agreement, not specific to service metrics.  
+Auditability is incorrect; it is about tracking actions.
 
 ---
 
@@ -537,10 +537,10 @@
 - Amazon S3 Glacier
 
 **Explanation:**  
-"S3 Glacier Deep Archive" is correct. It is the lowest-cost storage for rarely accessed data with long retrieval times.  
-"Amazon EBS" is incorrect; it is expensive block storage.  
-"Amazon S3" is incorrect; it is more expensive than Glacier Deep Archive.  
-"Amazon S3 Glacier" is incorrect; it is not as low-cost as Deep Archive.
+S3 Glacier Deep Archive is correct. It is the lowest-cost storage for rarely accessed data with long retrieval times.  
+Amazon EBS is incorrect; it is expensive block storage.  
+Amazon S3 is incorrect; it is more expensive than Glacier Deep Archive.  
+Amazon S3 Glacier is incorrect; it is not as low-cost as Deep Archive.
 
 ---
 
@@ -552,10 +552,10 @@
 - Enable antivirus on your EC2 instance.
 
 **Explanation:**  
-"Configure the firewall inside the EC2 instance" is correct. Firewalls control user access.  
-"Detach the primary network interface" is incorrect; it disconnects the instance.  
-"Configure multiple ENIs" is incorrect; it is not for user access control.  
-"Enable antivirus" is incorrect; it is for malware protection.
+Configure the firewall inside the EC2 instance is correct. Firewalls control user access.  
+Detach the primary network interface is incorrect; it disconnects the instance.  
+Configure multiple ENIs is incorrect; it is not for user access control.  
+Enable antivirus is incorrect; it is for malware protection.
 
 ---
 
@@ -567,10 +567,10 @@
 - AWS License Manager
 
 **Explanation:**  
-"AWS Certificate Manager" is correct. It manages SSL/TLS certificates and renewals.  
-"AWS Firewall Manager" is incorrect; it manages firewall rules.  
-"AWS Data Lifecycle Manager" is incorrect; it manages EBS lifecycles.  
-"AWS License Manager" is incorrect; it manages software licenses.
+AWS Certificate Manager is correct. It manages SSL/TLS certificates and renewals.  
+AWS Firewall Manager is incorrect; it manages firewall rules.  
+AWS Data Lifecycle Manager is incorrect; it manages EBS lifecycles.  
+AWS License Manager is incorrect; it manages software licenses.
 
 ---
 
@@ -582,10 +582,10 @@
 - You can change a Security Group associated with an instance if the instance is in the running state.
 
 **Explanation:**  
-"You can change a Security Group associated with an instance if the instance is in the running state" is correct. Security groups can be changed at any time.  
-"Only if there are no instances associated" is incorrect; security groups can be changed while in use.  
-"Only the Default Security Group" is incorrect; any security group can be changed.  
-"If the instance is in the hibernate state" is incorrect; changes can be made while running.
+You can change a Security Group associated with an instance if the instance is in the running state is correct. Security groups can be changed at any time.  
+Only if there are no instances associated is incorrect; security groups can be changed while in use.  
+Only the Default Security Group is incorrect; any security group can be changed.  
+If the instance is in the hibernate state is incorrect; changes can be made while running.
 
 ---
 
@@ -597,10 +597,10 @@
 - AWS Technical Account Manager
 
 **Explanation:**  
-"AWS Professional Services" is correct. It provides paid consulting for cloud adoption.  
-"Concierge Support" is incorrect; it is for billing support.  
-"AWS Enterprise Support" is incorrect; it is for technical support.  
-"AWS Technical Account Manager" is incorrect; TAMs provide ongoing guidance, not paid engagements.
+AWS Professional Services is correct. It provides paid consulting for cloud adoption.  
+Concierge Support is incorrect; it is for billing support.  
+AWS Enterprise Support is incorrect; it is for technical support.  
+AWS Technical Account Manager is incorrect; TAMs provide ongoing guidance, not paid engagements.
 
 ---
 
@@ -613,10 +613,10 @@
 - It replaces IAM users and roles.
 
 **Explanation:**  
-"It retrieves authentication information from a central repository using an API call" and "It encrypts data at rest" are correct.  
-"It provides free storage" is incorrect; it is a paid service.  
-"It replaces hardcoding authentication information in code" is incorrect as a statement of fact; it helps avoid hardcoding, but does not automatically replace it.  
-"It replaces IAM users and roles" is incorrect; it is for secrets, not identity management.
+It retrieves authentication information from a central repository using an API call and It encrypts data at rest are correct.  
+It provides free storage is incorrect; it is a paid service.  
+It replaces hardcoding authentication information in code is incorrect as a statement of fact; it helps avoid hardcoding, but does not automatically replace it.  
+It replaces IAM users and roles is incorrect; it is for secrets, not identity management.
 
 ---
 
@@ -628,10 +628,10 @@
 - AWS VDI
 
 **Explanation:**  
-"WorkSpaces" is correct. It is AWS's DaaS solution.  
-"AWS OfficeSpace" is incorrect; it is not an AWS service.  
-"WorkLink" is incorrect; it is for secure website access.  
-"AWS VDI" is incorrect; no such AWS service exists.
+WorkSpaces is correct. It is AWS's DaaS solution.  
+AWS OfficeSpace is incorrect; it is not an AWS service.  
+WorkLink is incorrect; it is for secure website access.  
+AWS VDI is incorrect; no such AWS service exists.
 
 ---
 
@@ -643,10 +643,10 @@
 - AWS Snow
 
 **Explanation:**  
-"AWS Storage Gateway" is correct. It integrates on-premises environments with AWS storage.  
-"AWS Glacier" is incorrect; it is for archival storage.  
-"AWS Containers" is incorrect; it is for containerized applications.  
-"AWS Snow" is incorrect; it is for large-scale data transfer.
+AWS Storage Gateway is correct. It integrates on-premises environments with AWS storage.  
+AWS Glacier is incorrect; it is for archival storage.  
+AWS Containers is incorrect; it is for containerized applications.  
+AWS Snow is incorrect; it is for large-scale data transfer.
 
 ---
 
@@ -658,10 +658,10 @@
 - Bucket names must be globally unique within AWS and can only exist in one region.
 
 **Explanation:**  
-"Bucket names must be globally unique within AWS and can only exist in one region" is correct.  
-"Can span multiple regions" is incorrect; a bucket exists in one region.  
-"Can be used in multiple regions" is incorrect; replication uses different buckets.  
-"Must be unique within your account and region" is incorrect; uniqueness is global.
+Bucket names must be globally unique within AWS and can only exist in one region is correct.  
+Can span multiple regions is incorrect; a bucket exists in one region.  
+Can be used in multiple regions is incorrect; replication uses different buckets.  
+Must be unique within your account and region is incorrect; uniqueness is global.
 
 ---
 
@@ -673,10 +673,10 @@
 - Documentation
 
 **Explanation:**  
-"Documentation" is correct. It provides official user guides.  
-"Discussion Forums" is incorrect; they are for community support.  
-"AWS Professional Services" is incorrect; it is for consulting.  
-"Knowledge Center" is incorrect; it is for FAQs.
+Documentation is correct. It provides official user guides.  
+Discussion Forums is incorrect; they are for community support.  
+AWS Professional Services is incorrect; it is for consulting.  
+Knowledge Center is incorrect; it is for FAQs.
 
 ---
 
@@ -687,9 +687,9 @@
 - Automated infrastructure deployment using code
 
 **Explanation:**  
-"Reduced operational overhead" and "Automated backups" are correct. Managed services automate maintenance and backups.  
-"Reduced capital expenses" is incorrect; both are operational expenses.  
-"Automated infrastructure deployment using code" is incorrect; this is provided by tools like CloudFormation.
+Reduced operational overhead and Automated backups are correct. Managed services automate maintenance and backups.  
+Reduced capital expenses is incorrect; both are operational expenses.  
+Automated infrastructure deployment using code is incorrect; this is provided by tools like CloudFormation.
 
 ---
 
@@ -701,10 +701,10 @@
 - Provides rapid innovation capabilities
 
 **Explanation:**  
-"Reduces need for data center space" is correct. IaaS shifts infrastructure to the cloud.  
-"IaaS is fully managed by the provider" is incorrect; customers manage OS and apps.  
-"Eliminates infrastructure costs" is incorrect; costs still exist.  
-"Provides rapid innovation capabilities" is incorrect; this is more PaaS/SaaS.
+Reduces need for data center space is correct. IaaS shifts infrastructure to the cloud.  
+IaaS is fully managed by the provider is incorrect; customers manage OS and apps.  
+Eliminates infrastructure costs is incorrect; costs still exist.  
+Provides rapid innovation capabilities is incorrect; this is more PaaS/SaaS.
 
 ---
 
@@ -716,10 +716,10 @@
 - Using Bucket Permissions
 
 **Explanation:**  
-"Using an IAM role" is correct. IAM roles provide temporary credentials.  
-"User Groups" is incorrect; they are for organizing users.  
-"Cross region replication" is incorrect; it is for data replication.  
-"Bucket Permissions" is incorrect; they control access, not credential management.
+Using an IAM role is correct. IAM roles provide temporary credentials.  
+User Groups is incorrect; they are for organizing users.  
+Cross region replication is incorrect; it is for data replication.  
+Bucket Permissions is incorrect; they control access, not credential management.
 
 ---
 
@@ -731,10 +731,10 @@
 - Deploy Amazon EC2 instances with Cluster placement groups.
 
 **Explanation:**  
-"Deploy Amazon EC2 instances with Auto Scaling" is correct. Auto Scaling optimizes resource usage and cost.  
-"Multiple Availability Zones" is incorrect; it improves availability, not cost.  
-"Instance store-backed AMIs" is incorrect; they do not reduce costs.  
-"Cluster placement groups" is incorrect; they are for high performance, not cost.
+Deploy Amazon EC2 instances with Auto Scaling is correct. Auto Scaling optimizes resource usage and cost.  
+Multiple Availability Zones is incorrect; it improves availability, not cost.  
+Instance store-backed AMIs is incorrect; they do not reduce costs.  
+Cluster placement groups is incorrect; they are for high performance, not cost.
 
 ---
 
@@ -746,10 +746,10 @@
 - It provides isolation for extra security.
 
 **Explanation:**  
-"It allows load balancing across zones" is correct. Load balancing improves availability.  
-"Different services in different zones" is incorrect; it does not guarantee availability.  
-"Data is replicated across zones" is incorrect; replication is for durability.  
-"Isolation for extra security" is incorrect; it is a security benefit.
+It allows load balancing across zones is correct. Load balancing improves availability.  
+Different services in different zones is incorrect; it does not guarantee availability.  
+Data is replicated across zones is incorrect; replication is for durability.  
+Isolation for extra security is incorrect; it is a security benefit.
 
 ---
 
@@ -761,10 +761,10 @@
 - Usage Budgets
 
 **Explanation:**  
-"Cost Budgets" is correct. They set a spending ceiling.  
-"Cost Savings Budgets" is incorrect; no such type exists.  
-"Savings Plans Utilization Budgets" is incorrect; they track utilization.  
-"Usage Budgets" is incorrect; they track usage, not cost.
+Cost Budgets is correct. They set a spending ceiling.  
+Cost Savings Budgets is incorrect; no such type exists.  
+Savings Plans Utilization Budgets is incorrect; they track utilization.  
+Usage Budgets is incorrect; they track usage, not cost.
 
 ---
 
@@ -776,10 +776,10 @@
 - Contact AWS Support to retrieve the forgotten Secret Access Key.
 
 **Explanation:**  
-"Create a new access key by logging in to the AWS Management Console as the root user" is correct. New keys can be generated; lost keys cannot be retrieved.  
-"'Forgot Password' option" is incorrect; it is for passwords, not access keys.  
-"Delete the user and recreate them" is incorrect; it is unnecessary.  
-"Contact AWS Support" is incorrect; AWS cannot retrieve lost keys.
+Create a new access key by logging in to the AWS Management Console as the root user is correct. New keys can be generated; lost keys cannot be retrieved.  
+'Forgot Password' option is incorrect; it is for passwords, not access keys.  
+Delete the user and recreate them is incorrect; it is unnecessary.  
+Contact AWS Support is incorrect; AWS cannot retrieve lost keys.
 
 ---
 
@@ -791,8 +791,8 @@
 - SSD
 
 **Explanation:**  
-"HDD" and "SSD" are correct. EBS offers both HDD and SSD-backed volumes.  
-"NAS," "Object," and "SAN" are incorrect; EBS is block storage.
+HDD and SSD are correct. EBS offers both HDD and SSD-backed volumes.  
+NAS, Object, and SAN are incorrect; EBS is block storage.
 
 ---
 
@@ -804,8 +804,8 @@
 - MariaDB
 
 **Explanation:**  
-"DynamoDB" is correct. It is a NoSQL service, not part of RDS.  
-"PostgreSQL" "Oracle" and "MariaDB" are all supported by RDS.
+DynamoDB is correct. It is a NoSQL service, not part of RDS.  
+PostgreSQL Oracle and MariaDB are all supported by RDS.
 
 ---
 
@@ -817,10 +817,10 @@
 - Availability Zones provide unlimited storage capacity
 
 **Explanation:**  
-"Availability Zones are connected by low-latency networks" is correct. This enables high availability.  
-"Cost is reduced" is incorrect; cost is not inherently reduced.  
-"Automatically replicate data" is incorrect; replication must be configured.  
-"Unlimited storage capacity" is incorrect; storage is determined by provisioned resources.
+Availability Zones are connected by low-latency networks is correct. This enables high availability.  
+Cost is reduced is incorrect; cost is not inherently reduced.  
+Automatically replicate data is incorrect; replication must be configured.  
+Unlimited storage capacity is incorrect; storage is determined by provisioned resources.
 
 ---
 
@@ -832,10 +832,10 @@
 - AWS Trusted Advisor
 
 **Explanation:**  
-"AWS Cost Explorer" is correct. It provides cost forecasts.  
-"AWS Organizations" is incorrect; it manages accounts.  
-"Amazon DevPay" is incorrect; it is deprecated.  
-"AWS Trusted Advisor" is incorrect; it gives best practice recommendations.
+AWS Cost Explorer is correct. It provides cost forecasts.  
+AWS Organizations is incorrect; it manages accounts.  
+Amazon DevPay is incorrect; it is deprecated.  
+AWS Trusted Advisor is incorrect; it gives best practice recommendations.
 
 ---
 
@@ -847,14 +847,14 @@
 - AWS Snowball
 
 **Explanation:**  
-"AWS WAF" is correct. It is AWS's web application firewall.  
-"AWS Shield" is incorrect; it is for DDoS protection.  
-"AWS CloudFront" is incorrect; it is a CDN.  
-"AWS Snowball" is incorrect; it is for data transfer.
+AWS WAF is correct. It is AWS's web application firewall.  
+AWS Shield is incorrect; it is for DDoS protection.  
+AWS CloudFront is incorrect; it is a CDN.  
+AWS Snowball is incorrect; it is for data transfer.
 
 ---
 
-## 59. In order to better track costs within the organization, you notice that your account administrator has added in the ability to sort by options such as "user:ProjectName." What is this an example of?
+## 59. In order to better track costs within the organization, you notice that your account administrator has added in the ability to sort by options such as user:ProjectName. What is this an example of?
 
 - Cost Categories
 - Cost Metadata
@@ -862,10 +862,10 @@
 - Cost Containers
 
 **Explanation:**  
-"Cost Allocation Tags" is correct. They are user-defined labels for tracking costs.  
-"Cost Categories" is incorrect; they group costs, not tag resources.  
-"Cost Metadata" is incorrect; it is not an AWS feature.  
-"Cost Containers" is incorrect; it is not an AWS feature.
+Cost Allocation Tags is correct. They are user-defined labels for tracking costs.  
+Cost Categories is incorrect; they group costs, not tag resources.  
+Cost Metadata is incorrect; it is not an AWS feature.  
+Cost Containers is incorrect; it is not an AWS feature.
 
 ---
 
@@ -877,10 +877,10 @@
 - Use Cross-Region Replication (CRR)
 
 **Explanation:**  
-"Use Cross-Region Replication (CRR)" is correct. CRR replicates data to another region.  
-"Lifecycle rules" is incorrect; they manage object transitions and deletions.  
-"Intelligent-Tiering Archive" is incorrect; it is for cost optimization.  
-"Bucket policy" is incorrect; it controls access, not replication.
+Use Cross-Region Replication (CRR) is correct. CRR replicates data to another region.  
+Lifecycle rules is incorrect; they manage object transitions and deletions.  
+Intelligent-Tiering Archive is incorrect; it is for cost optimization.  
+Bucket policy is incorrect; it controls access, not replication.
 
 ---
 
@@ -892,8 +892,8 @@
 - EC2
 
 **Explanation:**  
-"IAM" and "CloudFront" are correct. Both are global services.  
-"Lightsail," "S3," and "EC2" are region-specific.
+IAM and CloudFront are correct. Both are global services.  
+Lightsail, S3, and EC2 are region-specific.
 
 ---
 
@@ -905,10 +905,10 @@
 - AWS Config
 
 **Explanation:**  
-"AWS Trusted Advisor" is correct. It identifies idle and underutilized resources.  
-"AWS Cost Explorer" is incorrect; it analyzes spending.  
-"AWS Budgets" is incorrect; it tracks spending limits.  
-"AWS Config" is incorrect; it tracks configuration changes.
+AWS Trusted Advisor is correct. It identifies idle and underutilized resources.  
+AWS Cost Explorer is incorrect; it analyzes spending.  
+AWS Budgets is incorrect; it tracks spending limits.  
+AWS Config is incorrect; it tracks configuration changes.
 
 ---
 
@@ -920,10 +920,10 @@
 - It acts as an interface between the user and the computer.
 
 **Explanation:**  
-"It is used to generate, use, and manage encryption keys in the cloud" is correct. CloudHSM is for secure key management.  
-"Protects against DDoS attacks" is incorrect; AWS Shield does this.  
-"Applies protection against malware" is incorrect; CloudHSM is not an anti-malware service.  
-"Acts as an interface" is incorrect; it is for cryptographic key management.
+It is used to generate, use, and manage encryption keys in the cloud is correct. CloudHSM is for secure key management.  
+Protects against DDoS attacks is incorrect; AWS Shield does this.  
+Applies protection against malware is incorrect; CloudHSM is not an anti-malware service.  
+Acts as an interface is incorrect; it is for cryptographic key management.
 
 ---
 
@@ -935,8 +935,8 @@
 - Amazon EC2
 
 **Explanation:**  
-"Amazon EC2" is correct. Customers manage and patch the OS on EC2.  
-"AWS Fargate" "Amazon Lambda" and "Amazon DynamoDB" are incorrect; AWS manages the OS for these services.
+Amazon EC2 is correct. Customers manage and patch the OS on EC2.  
+AWS Fargate Amazon Lambda and Amazon DynamoDB are incorrect; AWS manages the OS for these services.
 
 ---
 
@@ -947,8 +947,8 @@
 - It is shared
 
 **Explanation:**  
-"AWS" is correct. For Amazon RDS, AWS manages the operating system and database software, including patching and maintenance.  
-"The customer" is incorrect; customers manage the database contents, schema, and access, not the OS or database software.  
-"It is shared" is incorrect; AWS handles the OS and database software management for RDS.
+AWS is correct. For Amazon RDS, AWS manages the operating system and database software, including patching and maintenance.  
+The customer is incorrect; customers manage the database contents, schema, and access, not the OS or database software.  
+It is shared is incorrect; AWS handles the OS and database software management for RDS.
 
 ---

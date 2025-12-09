@@ -5,6 +5,7 @@ import static com.quiz.card.service.FlashCardMapper.toDto;
 import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.FlashCardDto;
 import com.quiz.card.model.Option;
+import com.quiz.card.model.OptionDto;
 import com.quiz.card.model.QuestionEntity;
 import com.quiz.card.model.ResultDto;
 import com.quiz.card.repository.QuestionRepository;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +38,7 @@ public class QuestionService implements IQuestionService {
             allCardsCache = repository.findAll().stream()
                     .map(FlashCardMapper::toDto)
                     .collect(Collectors.toList());
-            if(allCardsCache == null || allCardsCache.isEmpty()){
+            if (allCardsCache == null || allCardsCache.isEmpty()) {
                 List<QuestionEntity> entities = parserService.parseDataFile(String.valueOf(0));
                 repository.saveAll(entities);
                 allCardsCache = entities.stream()
@@ -77,6 +79,7 @@ public class QuestionService implements IQuestionService {
             return AnswerDto.builder()
                     .correct(false)
                     .explanation("")
+                    .options(new HashSet<>())
                     .question("")
                     .build();
         }
@@ -141,14 +144,8 @@ public class QuestionService implements IQuestionService {
     }
 
     private AnswerDto getAnswerDto(List<String> selectedOptions, QuestionEntity entity) {
-        Set<String> correctOptions = entity.getOptions().stream()
-                .filter(Option::isCorrect)
-                .map(Option::getText)
-                .collect(Collectors.toSet());
-
-        Set<String> selectedSet = selectedOptions.stream()
-                .map(s -> s.replace("\"", ""))
-                .collect(Collectors.toSet());
+        Set<String> correctOptions = getCorrectOptions(entity);
+        Set<String> selectedSet = getSelectedSet(selectedOptions);
 
         boolean correct = correctOptions.equals(selectedSet);
 
@@ -157,6 +154,25 @@ public class QuestionService implements IQuestionService {
                 .correct(correct)
                 .question(entity.getQuestion())
                 .explanation(entity.getExplanation())
+                .options(toSetDto(entity.getOptions()))
                 .build();
+    }
+
+    private Set<OptionDto> toSetDto(Set<Option> options) {
+        return options.stream()
+                .map(option -> new OptionDto(option.isCorrect(), option.getText()))
+                .collect(Collectors.toSet());
+    }
+
+    private Set<String> getSelectedSet(List<String> selectedOptions) {
+        return selectedOptions.stream()
+                .collect(Collectors.toSet());
+    }
+
+    private Set<String> getCorrectOptions(QuestionEntity entity) {
+        return entity.getOptions().stream()
+                .filter(Option::isCorrect)
+                .map(Option::getText)
+                .collect(Collectors.toSet());
     }
 }

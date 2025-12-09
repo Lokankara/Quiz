@@ -5,6 +5,7 @@
 - DO NOT DO ANYTHING THE USER DOESN'T ASK FOR
 - FOLLOW SOLID, YAGNI, DRY principles
 - USE DESIGN PATTERNS where appropriate
+- NEVER USE snake cases for Java method naming
 
 ## Instructions
 Follow the rules specified in this prompt file when implementing solutions. Apply software engineering best practices including:

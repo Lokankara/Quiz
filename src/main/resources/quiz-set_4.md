@@ -10,10 +10,10 @@
 - Automation
 
 **Explanation:**
-"Parameter Store" is correct. Parameter Store in AWS Systems Manager allows centralized storage of configuration values, secrets, and parameters. You can maintain different values for different environments (e.g., prod/test) while keeping consistent keys across systems.
-"Distributor" is incorrect. Distributor is for deploying software packages and scripts to managed instances; it does not provide centralized configuration management.
-"AWS AppConfig" is incorrect. AppConfig is designed to safely deploy application configuration updates but does not provide hierarchical parameter storage suitable for multiple environment separation.
-"Automation" is incorrect. Automation runs operational runbooks, not centralized storage of configuration parameters.
+Parameter Store is correct. Parameter Store in AWS Systems Manager allows centralized storage of configuration values, secrets, and parameters. You can maintain different values for different environments (e.g., prod/test) while keeping consistent keys across systems.
+Distributor is incorrect. Distributor is for deploying software packages and scripts to managed instances; it does not provide centralized configuration management.
+AWS AppConfig is incorrect. AppConfig is designed to safely deploy application configuration updates but does not provide hierarchical parameter storage suitable for multiple environment separation.
+Automation is incorrect. Automation runs operational runbooks, not centralized storage of configuration parameters.
 
 ---
 
@@ -25,10 +25,10 @@
 - Dedicated Hosts
 
 **Explanation:**
-"On-Demand Instances" is incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
-"Reserved Instances" is incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
-"Spot Instances" is incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
-"Dedicated Hosts" is correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
+On-Demand Instances is incorrect. On-Demand Instances allow you to pay for compute capacity by the hour or second with no long-term commitments, but they do not support bringing your own server-bound licenses.
+Reserved Instances is incorrect. Reserved Instances provide a significant discount compared to On-Demand pricing in exchange for a one- or three-year commitment, but they do not support bringing your own server-bound licenses.
+Spot Instances is incorrect. Spot Instances allow you to bid on unused EC2 capacity at reduced rates, but they do not support bringing your own server-bound licenses.
+Dedicated Hosts is correct. Dedicated Hosts provide physical servers dedicated to your use, allowing you to use existing server-bound software licenses (such as Windows Server, SQL Server, or SUSE Linux Enterprise Server) that are bound to physical hardware.
 
 ---
 
@@ -40,10 +40,10 @@
 - DaaS
 
 **Explanation:**
-"PaaS" is correct. Platform as a Service provides ready-to-use platforms with OS, runtime, and frameworks preconfigured. Developers can deploy applications quickly without managing infrastructure.
-"SaaS" is incorrect. SaaS provides fully managed software applications; developers cannot deploy arbitrary code.
-"IaaS" is incorrect. Infrastructure as a Service provides VMs and storage but requires developers to configure the platform themselves.
-"DaaS" is incorrect. Desktop as a Service provides virtual desktops, not application deployment platforms.
+PaaS is correct. Platform as a Service provides ready-to-use platforms with OS, runtime, and frameworks preconfigured. Developers can deploy applications quickly without managing infrastructure.
+SaaS is incorrect. SaaS provides fully managed software applications; developers cannot deploy arbitrary code.
+IaaS is incorrect. Infrastructure as a Service provides VMs and storage but requires developers to configure the platform themselves.
+DaaS is incorrect. Desktop as a Service provides virtual desktops, not application deployment platforms.
 
 ---
 
@@ -55,10 +55,10 @@
 - eu-south-1.az1
 
 **Explanation:**
-"eu-south-1az2" is incorrect. This format is invalid; AZ identifiers have a single letter suffix.
-"eu-south-1-a" is incorrect. Hyphen is not used before the letter.
-"eu-south-1a" is correct. Availability Zones follow the pattern `<region><letter>`.
-"eu-south-1.az1" is incorrect. This is not AWS’s naming convention.
+eu-south-1az2 is incorrect. This format is invalid; AZ identifiers have a single letter suffix.
+eu-south-1-a is incorrect. Hyphen is not used before the letter.
+eu-south-1a is correct. Availability Zones follow the pattern `<region><letter>`.
+eu-south-1.az1 is incorrect. This is not AWS’s naming convention.
 
 ---
 
@@ -70,10 +70,10 @@
 - Security groups only apply to traffic within the VPC.
 
 **Explanation:**
-"Security groups only apply to inbound traffic." is incorrect; they also control outbound traffic.
-"Security groups apply to both inbound and outbound traffic." is correct. Security groups are stateful, allowing inbound rules and outbound rules for associated resources.
-"Security groups only apply to outbound traffic." is incorrect.
-"Security groups only apply to traffic within the VPC." is incorrect; they apply to traffic both inside and outside the VPC depending on rules.
+Security groups only apply to inbound traffic. is incorrect; they also control outbound traffic.
+Security groups apply to both inbound and outbound traffic. is correct. Security groups are stateful, allowing inbound rules and outbound rules for associated resources.
+Security groups only apply to outbound traffic. is incorrect.
+Security groups only apply to traffic within the VPC. is incorrect; they apply to traffic both inside and outside the VPC depending on rules.
 
 ---
 
@@ -85,10 +85,10 @@
 - Inventory
 
 **Explanation:**
-"Explorer" is incorrect. Explorer provides aggregated visibility for operations, not task automation.
-"AWS AppConfig" is incorrect. AppConfig manages configuration deployments.
-"OpsCenter" is correct. OpsCenter provides APIs for investigating and remediating operational issues across AWS resources.
-"Inventory" is incorrect. Inventory collects metadata about managed instances.
+Explorer is incorrect. Explorer provides aggregated visibility for operations, not task automation.
+AWS AppConfig is incorrect. AppConfig manages configuration deployments.
+OpsCenter is correct. OpsCenter provides APIs for investigating and remediating operational issues across AWS resources.
+Inventory is incorrect. Inventory collects metadata about managed instances.
 
 ---
 
@@ -100,10 +100,10 @@
 - Quotas
 
 **Explanation:**
-"Constraints" is incorrect; this term is not used for quota/billing limits in AWS.
-"Segments" is incorrect; it does not relate to usage limits.
-"Blocks" is incorrect; AWS does not use "blocks" for usage/billing control.
-"Quotas" is correct. AWS service quotas (formerly limits) prevent overuse and potential runaway costs, and ensure resources remain available.
+Constraints is incorrect; this term is not used for quota/billing limits in AWS.
+Segments is incorrect; it does not relate to usage limits.
+Blocks is incorrect; AWS does not use blocks for usage/billing control.
+Quotas is correct. AWS service quotas (formerly limits) prevent overuse and potential runaway costs, and ensure resources remain available.
 
 ---
 
@@ -115,10 +115,10 @@
 - Metered service
 
 **Explanation:**
-"On-demand self-service" is incorrect. This refers to the ability to request resources, not the elasticity concept itself.
-"Virtualization" is partially related but does not directly address dynamic resource scaling.
-"Rapid elasticity" is correct. Rapid elasticity allows cloud resources to be scaled up or down dynamically to meet demand without physical hardware changes.
-"Metered service" is incorrect; it relates to billing, not dynamic resource scaling.
+On-demand self-service is incorrect. This refers to the ability to request resources, not the elasticity concept itself.
+Virtualization is partially related but does not directly address dynamic resource scaling.
+Rapid elasticity is correct. Rapid elasticity allows cloud resources to be scaled up or down dynamically to meet demand without physical hardware changes.
+Metered service is incorrect; it relates to billing, not dynamic resource scaling.
 
 ---
 
@@ -130,10 +130,10 @@
 - DynamoDB
 
 **Explanation:**
-"CloudWatch" is incorrect; its free tier primarily limits metrics and dashboards, not requests per se.
-"Lambda" is incorrect; free tier is limited by compute time and invocation counts, not storage.
-"Server Migration Service" is incorrect; free tier is not storage/request based.
-"DynamoDB" is correct. DynamoDB free tier includes storage limits and request throughput limits (read/write capacity units).
+CloudWatch is incorrect; its free tier primarily limits metrics and dashboards, not requests per se.
+Lambda is incorrect; free tier is limited by compute time and invocation counts, not storage.
+Server Migration Service is incorrect; free tier is not storage/request based.
+DynamoDB is correct. DynamoDB free tier includes storage limits and request throughput limits (read/write capacity units).
 
 ---
 
@@ -145,10 +145,10 @@
 - Identification
 
 **Explanation:**
-"Tokenization" is incorrect. Tokenization is replacing sensitive data with tokens after discovery/classification.
-"Discovery" is correct. Discovery identifies where data resides, which is necessary before classifying it.
-"Location" is partially related but is a subset of discovery.
-"Identification" is subsequent to discovery; discovery comes first.
+Tokenization is incorrect. Tokenization is replacing sensitive data with tokens after discovery/classification.
+Discovery is correct. Discovery identifies where data resides, which is necessary before classifying it.
+Location is partially related but is a subset of discovery.
+Identification is subsequent to discovery; discovery comes first.
 
 ---
 
@@ -161,11 +161,11 @@
 - Puppet Enterprise
 
 **Explanation:**
-"Git" is incorrect; OpsWorks does not manage Git.
-"Rsync" is incorrect; OpsWorks does not manage Rsync.
-"FlashCopy" is incorrect; unrelated.
-"Chef Automate" is correct. OpsWorks provides managed Chef Automate instances.
-"Puppet Enterprise" is correct. OpsWorks also supports managed Puppet Enterprise.
+Git is incorrect; OpsWorks does not manage Git.
+Rsync is incorrect; OpsWorks does not manage Rsync.
+FlashCopy is incorrect; unrelated.
+Chef Automate is correct. OpsWorks provides managed Chef Automate instances.
+Puppet Enterprise is correct. OpsWorks also supports managed Puppet Enterprise.
 
 ---
 
@@ -178,11 +178,11 @@
 - Services
 
 **Explanation:**
-"Billing Dashboard" is incorrect; it’s a service page, not a top console menu.
-"Cost Explorer" is incorrect; it’s a service page.
-"Regions" is correct. AWS console includes a region selection drop-down at the top.
-"Automation" is incorrect; not a top-level console menu.
-"Services" is correct. Services drop-down provides access to all AWS services.
+Billing Dashboard is incorrect; it’s a service page, not a top console menu.
+Cost Explorer is incorrect; it’s a service page.
+Regions is correct. AWS console includes a region selection drop-down at the top.
+Automation is incorrect; not a top-level console menu.
+Services is correct. Services drop-down provides access to all AWS services.
 
 ---
 
@@ -194,10 +194,10 @@
 - AWS Cloud Adoption Framework
 
 **Explanation:**
-"Documentation" is incorrect; it is product-specific docs, not FAQ-style content.
-"Knowledge Center" is correct. Knowledge Center contains FAQ articles, guides, and troubleshooting tips.
-"Discussion forums" is incorrect; forums are community-driven, not formal AWS FAQs.
-"AWS Cloud Adoption Framework" is incorrect; it is a methodology, not FAQ content.
+Documentation is incorrect; it is product-specific docs, not FAQ-style content.
+Knowledge Center is correct. Knowledge Center contains FAQ articles, guides, and troubleshooting tips.
+Discussion forums is incorrect; forums are community-driven, not formal AWS FAQs.
+AWS Cloud Adoption Framework is incorrect; it is a methodology, not FAQ content.
 
 ---
 
@@ -209,10 +209,10 @@
 - Data
 
 **Explanation:**
-"Operations" is partially retained via monitoring and management.
-"Security" is shared with AWS; not fully given up.
-"Hardware" is correct. Physical hardware, network, and underlying infrastructure are fully managed by AWS.
-"Data" remains the responsibility of the customer.
+Operations is partially retained via monitoring and management.
+Security is shared with AWS; not fully given up.
+Hardware is correct. Physical hardware, network, and underlying infrastructure are fully managed by AWS.
+Data remains the responsibility of the customer.
 
 ---
 
@@ -224,10 +224,10 @@
 - AWS VPN
 
 **Explanation:**
-"AWS Shield" is incorrect; Shield provides DDoS protection.
-"AWS VPC" is correct. Virtual Private Cloud creates an isolated network within AWS for deploying resources.
-"AWS Snowball" is incorrect; Snowball is for data transport.
-"AWS VPN" is incorrect; VPN connects existing networks to AWS, but does not create the isolated network itself.
+AWS Shield is incorrect; Shield provides DDoS protection.
+AWS VPC is correct. Virtual Private Cloud creates an isolated network within AWS for deploying resources.
+AWS Snowball is incorrect; Snowball is for data transport.
+AWS VPN is incorrect; VPN connects existing networks to AWS, but does not create the isolated network itself.
 
 ---
 
@@ -239,10 +239,10 @@
 - Discovery
 
 **Explanation:**
-"Labeling" is only marking data; it does not determine controls.
-"Hashing" is unrelated; it ensures integrity.
-"Classification" is correct. Classification assesses sensitivity and guides what security controls should be applied.
-"Discovery" is prior to classification; it identifies where data exists.
+Labeling is only marking data; it does not determine controls.
+Hashing is unrelated; it ensures integrity.
+Classification is correct. Classification assesses sensitivity and guides what security controls should be applied.
+Discovery is prior to classification; it identifies where data exists.
 
 ---
 
@@ -254,10 +254,10 @@
 - Cost Explorer
 
 **Explanation:**
-"AWS Budgets" only shows cost limits and alerts, not detailed user actions.
-"AWS Shield" is for DDoS protection; irrelevant.
-"AWS CloudTrail" is correct. CloudTrail logs all API activity, enabling auditing of who accessed what and when.
-"Cost Explorer" only analyzes cost patterns, not detailed API actions.
+AWS Budgets only shows cost limits and alerts, not detailed user actions.
+AWS Shield is for DDoS protection; irrelevant.
+AWS CloudTrail is correct. CloudTrail logs all API activity, enabling auditing of who accessed what and when.
+Cost Explorer only analyzes cost patterns, not detailed API actions.
 
 ---
 
@@ -269,10 +269,10 @@
 - Tokenization
 
 **Explanation:**
-"Anonymizing" removes identifiers; does not check integrity.
-"Obfuscation" hides data; does not verify integrity.
-"Hashing" is correct. Hash functions produce digests to verify that data has not been altered.
-"Tokenization" replaces sensitive data with tokens; does not check integrity.
+Anonymizing removes identifiers; does not check integrity.
+Obfuscation hides data; does not verify integrity.
+Hashing is correct. Hash functions produce digests to verify that data has not been altered.
+Tokenization replaces sensitive data with tokens; does not check integrity.
 
 ---
 
@@ -284,10 +284,10 @@
 - sa-east-1
 
 **Explanation:**
-"us-gov-west-1" is correct. AWS GovCloud regions are restricted to US government customers and approved accounts.
-"ca-central-1" is incorrect; publicly available.
-"me-south-1" is incorrect; publicly available.
-"sa-east-1" is incorrect; publicly available.
+us-gov-west-1 is correct. AWS GovCloud regions are restricted to US government customers and approved accounts.
+ca-central-1 is incorrect; publicly available.
+me-south-1 is incorrect; publicly available.
+sa-east-1 is incorrect; publicly available.
 
 ---
 
@@ -299,10 +299,10 @@
 - Route 53
 
 **Explanation:**
-"CloudFront" is available at Edge locations for CDN functionality.
-"Lightsail" is correct. Lightsail instances are not served via Edge locations.
-"AWS Shield" is integrated with Edge locations to protect CloudFront.
-"Route 53" is globally distributed and uses Edge network.
+CloudFront is available at Edge locations for CDN functionality.
+Lightsail is correct. Lightsail instances are not served via Edge locations.
+AWS Shield is integrated with Edge locations to protect CloudFront.
+Route 53 is globally distributed and uses Edge network.
 
 ---
 
@@ -314,10 +314,10 @@
 - Public
 
 **Explanation:**
-"Community" is incorrect. Community cloud is shared among a specific group of organizations.
-"Private" is incorrect. Private cloud is dedicated to a single organization.
-"Hybrid" is incorrect. Hybrid cloud combines on-premises and public cloud, but AWS itself is a public provider.
-"Public" is correct. AWS provides services available to any customer via the internet, which defines a public cloud.
+Community is incorrect. Community cloud is shared among a specific group of organizations.
+Private is incorrect. Private cloud is dedicated to a single organization.
+Hybrid is incorrect. Hybrid cloud combines on-premises and public cloud, but AWS itself is a public provider.
+Public is correct. AWS provides services available to any customer via the internet, which defines a public cloud.
 
 ---
 
@@ -330,11 +330,11 @@
 - Application code
 
 **Explanation:**
-"Operating system" is incorrect; PaaS abstracts OS management.
-"Networking" is incorrect; PaaS handles networking setup internally.
-"Storage" is incorrect; PaaS handles persistent storage management.
-"Data" is correct. Users are responsible for their application data.
-"Application code" is correct. Users develop and manage their application logic while the platform handles infrastructure and runtime.
+Operating system is incorrect; PaaS abstracts OS management.
+Networking is incorrect; PaaS handles networking setup internally.
+Storage is incorrect; PaaS handles persistent storage management.
+Data is correct. Users are responsible for their application data.
+Application code is correct. Users develop and manage their application logic while the platform handles infrastructure and runtime.
 
 ---
 
@@ -346,10 +346,10 @@
 - IAM password policies have granular controls and can be set based on the regulatory or corporate policies required for the account.
 
 **Explanation:**
-"AWS has a global password policy that is enforced for all IAM accounts to meet industry best practices." is incorrect; IAM password policies are configurable per account.
-"IAM accounts are free to use whatever password is desired by the account holder." is incorrect; passwords must follow the defined policy.
-"IAM account passwords can only be set by the root account and cannot be modified by the account itself." is incorrect; users can change their passwords within policy limits.
-"IAM password policies have granular controls and can be set based on the regulatory or corporate policies required for the account." is correct. Policies can enforce length, complexity, expiration, and reuse rules.
+AWS has a global password policy that is enforced for all IAM accounts to meet industry best practices. is incorrect; IAM password policies are configurable per account.
+IAM accounts are free to use whatever password is desired by the account holder. is incorrect; passwords must follow the defined policy.
+IAM account passwords can only be set by the root account and cannot be modified by the account itself. is incorrect; users can change their passwords within policy limits.
+IAM password policies have granular controls and can be set based on the regulatory or corporate policies required for the account. is correct. Policies can enforce length, complexity, expiration, and reuse rules.
 
 ---
 
@@ -361,10 +361,10 @@
 - Storage system
 
 **Explanation:**
-"Network firewalls" is incorrect; they protect data in transit, not in use.
-"Web server" is incorrect; protects specific data at rest or transit points, not in-use on devices.
-"User's device" is correct. DLP agents on endpoints monitor and protect data while it is actively processed or used.
-"Storage system" is incorrect; this protects data at rest, not actively in use.
+Network firewalls is incorrect; they protect data in transit, not in use.
+Web server is incorrect; protects specific data at rest or transit points, not in-use on devices.
+User's device is correct. DLP agents on endpoints monitor and protect data while it is actively processed or used.
+Storage system is incorrect; this protects data at rest, not actively in use.
 
 ---
 
@@ -376,10 +376,10 @@
 - AWS Shield protects at the Layer 7 content level, while AWS WAF protects at the Layer 3 and 4 network traffic levels.
 
 **Explanation:**
-"AWS Shield protects at the Layer 3 and 4 network levels, while AWS WAF protects at the Layer 7 content level." is correct. Shield provides DDoS protection, and WAF provides application-layer filtering.
-"AWS Shield protects storage services; AWS WAF protects compute services." is incorrect. Shield protects network attacks, not storage specifically.
-"AWS Shield protects from external attacks, whereas AWS WAF protects between services within AWS." is incorrect; WAF protects application content at the edge.
-"AWS Shield protects at the Layer 7 content level, while AWS WAF protects at the Layer 3 and 4 network traffic levels." is incorrect; the layers are reversed.
+AWS Shield protects at the Layer 3 and 4 network levels, while AWS WAF protects at the Layer 7 content level. is correct. Shield provides DDoS protection, and WAF provides application-layer filtering.
+AWS Shield protects storage services; AWS WAF protects compute services. is incorrect. Shield protects network attacks, not storage specifically.
+AWS Shield protects from external attacks, whereas AWS WAF protects between services within AWS. is incorrect; WAF protects application content at the edge.
+AWS Shield protects at the Layer 7 content level, while AWS WAF protects at the Layer 3 and 4 network traffic levels. is incorrect; the layers are reversed.
 
 ---
 
@@ -393,10 +393,10 @@
 - ec2.aws.amazon.com
 
 **Explanation:**
-"ec2.amazonaws.com" is partially correct but lacks region specificity.
-"ec2.aws.com" is incorrect; AWS domains are amazonaws.com.
-"ec2.eu-west-2.amazonaws.com" is correct. Standard endpoint format includes service.region.amazonaws.com.
-"ec2.aws.amazon.com" is incorrect; domain format is invalid.
+ec2.amazonaws.com is partially correct but lacks region specificity.
+ec2.aws.com is incorrect; AWS domains are amazonaws.com.
+ec2.eu-west-2.amazonaws.com is correct. Standard endpoint format includes service.region.amazonaws.com.
+ec2.aws.amazon.com is incorrect; domain format is invalid.
 
 ---
 
@@ -408,10 +408,10 @@
 - CPU
 
 **Explanation:**
-"Data" is correct. Each tenant's data is logically isolated and not shared.
-"Storage" can be virtualized and shared among tenants.
-"Memory" can be shared in virtualized environments.
-"CPU" can be shared through hypervisor scheduling.
+Data is correct. Each tenant's data is logically isolated and not shared.
+Storage can be virtualized and shared among tenants.
+Memory can be shared in virtualized environments.
+CPU can be shared through hypervisor scheduling.
 
 ---
 
@@ -423,10 +423,10 @@
 - ge-south-1
 
 **Explanation:**
-"us-west-1" is incorrect; located in the US.
-"af-south-1" is incorrect; located in South Africa.
-"eu-central-1" is correct. This AWS region is in Frankfurt, Germany.
-"ge-south-1" is incorrect; there is no such AWS region.
+us-west-1 is incorrect; located in the US.
+af-south-1 is incorrect; located in South Africa.
+eu-central-1 is correct. This AWS region is in Frankfurt, Germany.
+ge-south-1 is incorrect; there is no such AWS region.
 
 ---
 
@@ -438,10 +438,10 @@
 - PaaS
 
 **Explanation:**
-"SaaS" is correct. Software as a Service provides complete software applications accessible over the internet.
-"IaaS" is incorrect. IaaS provides infrastructure, not end-user applications.
-"DaaS" is incorrect; provides virtual desktops.
-"PaaS" is incorrect; provides platforms to deploy applications, not ready-made consumer services.
+SaaS is correct. Software as a Service provides complete software applications accessible over the internet.
+IaaS is incorrect. IaaS provides infrastructure, not end-user applications.
+DaaS is incorrect; provides virtual desktops.
+PaaS is incorrect; provides platforms to deploy applications, not ready-made consumer services.
 
 ---
 
@@ -453,10 +453,10 @@
 - /16
 
 **Explanation:**
-"/32" is incorrect; represents a single IP address.
-"/28" is incorrect; provides 16 IPs.
-"/24" is incorrect; provides 256 IPs.
-"/16" is correct. /16 provides 65,536 IP addresses.
+/32 is incorrect; represents a single IP address.
+/28 is incorrect; provides 16 IPs.
+/24 is incorrect; provides 256 IPs.
+/16 is correct. /16 provides 65,536 IP addresses.
 
 ---
 
@@ -468,10 +468,10 @@
 - ACLs have numbered rules that are processed in order.
 
 **Explanation:**
-"ACLs are composed only of ALLOW rules." is correct as the incorrect statement. Network ACLs can have both ALLOW and DENY rules.
-"Every subnet must have an ACL assigned to it." is correct; default ACL is automatically applied if not customized.
-"ACLs can have different inbound and outbound rules." is correct.
-"ACLs have numbered rules that are processed in order." is correct.
+ACLs are composed only of ALLOW rules. is correct as the incorrect statement. Network ACLs can have both ALLOW and DENY rules.
+Every subnet must have an ACL assigned to it. is correct; default ACL is automatically applied if not customized.
+ACLs can have different inbound and outbound rules. is correct.
+ACLs have numbered rules that are processed in order. is correct.
 
 ---
 
@@ -483,10 +483,10 @@
 - PaaS
 
 **Explanation:**
-"SaaS" is incorrect; it is end-user software.
-"IaaS" is incorrect; provides infrastructure.
-"DaaS" is incorrect; virtual desktops.
-"PaaS" is correct. PaaS provides platforms and deployment automation, supporting CI/CD pipelines central to DevOps practices.
+SaaS is incorrect; it is end-user software.
+IaaS is incorrect; provides infrastructure.
+DaaS is incorrect; virtual desktops.
+PaaS is correct. PaaS provides platforms and deployment automation, supporting CI/CD pipelines central to DevOps practices.
 
 ---
 
@@ -498,10 +498,10 @@
 - Multitenancy
 
 **Explanation:**
-"Broad network access" is incorrect; it refers to service access from any device.
-"Resource pooling" is incorrect; it refers to shared physical resources.
-"On-demand self-service" is correct. Users can provision resources instantly without human intervention.
-"Multitenancy" is incorrect; it refers to shared resources among multiple customers.
+Broad network access is incorrect; it refers to service access from any device.
+Resource pooling is incorrect; it refers to shared physical resources.
+On-demand self-service is correct. Users can provision resources instantly without human intervention.
+Multitenancy is incorrect; it refers to shared resources among multiple customers.
 
 ---
 
@@ -513,10 +513,10 @@
 - Performance
 
 **Explanation:**
-"Fault Tolerance" is correct. Trusted Advisor flags underutilized or misconfigured resources and provides guidance to improve availability and fault tolerance.
-"Service Limits" checks quota usage, not fault tolerance.
-"Security" identifies security gaps.
-"Performance" identifies efficiency optimizations, but fault tolerance specifically focuses on availability.
+Fault Tolerance is correct. Trusted Advisor flags underutilized or misconfigured resources and provides guidance to improve availability and fault tolerance.
+Service Limits checks quota usage, not fault tolerance.
+Security identifies security gaps.
+Performance identifies efficiency optimizations, but fault tolerance specifically focuses on availability.
 
 ---
 
@@ -528,10 +528,10 @@
 - Operating system
 
 **Explanation:**
-"Hardware" is correct. AWS is responsible for physical infrastructure.
-"Data" is the customer’s responsibility.
-"Application code" is the customer’s responsibility.
-"Operating system" is generally the customer’s responsibility for EC2 instances.
+Hardware is correct. AWS is responsible for physical infrastructure.
+Data is the customer’s responsibility.
+Application code is the customer’s responsibility.
+Operating system is generally the customer’s responsibility for EC2 instances.
 
 ---
 
@@ -543,10 +543,10 @@
 - Metered service
 
 **Explanation:**
-"Elasticity" is incorrect; elasticity refers to scaling resources.
-"Virtualization" is correct. Virtualization allows multiple VMs to share the same physical hardware using hypervisors.
-"Containers" are isolated processes but require an OS, not full virtualization.
-"Metered service" is incorrect; refers to billing.
+Elasticity is incorrect; elasticity refers to scaling resources.
+Virtualization is correct. Virtualization allows multiple VMs to share the same physical hardware using hypervisors.
+Containers are isolated processes but require an OS, not full virtualization.
+Metered service is incorrect; refers to billing.
 
 ---
 
@@ -558,10 +558,10 @@
 - AWS AppConfig
 
 **Explanation:**
-"Automation" is correct. Automation lets users execute workflows or runbooks (playbooks) on AWS resources.
-"OpsCenter" manages operational issues.
-"Patch Manager" applies patches.
-"AWS AppConfig" manages application configuration rollout.
+Automation is correct. Automation lets users execute workflows or runbooks (playbooks) on AWS resources.
+OpsCenter manages operational issues.
+Patch Manager applies patches.
+AWS AppConfig manages application configuration rollout.
 
 ---
 
@@ -573,10 +573,10 @@
 - Community
 
 **Explanation:**
-"Hybrid" is correct. Hybrid cloud combines on-premises infrastructure with cloud resources for optimal flexibility.
-"Private" is incorrect; fully on-premises.
-"Public" is incorrect; fully cloud.
-"Community" is incorrect; shared infrastructure for a group.
+Hybrid is correct. Hybrid cloud combines on-premises infrastructure with cloud resources for optimal flexibility.
+Private is incorrect; fully on-premises.
+Public is incorrect; fully cloud.
+Community is incorrect; shared infrastructure for a group.
 
 ---
 
@@ -588,10 +588,10 @@
 - Resource pooling
 
 **Explanation:**
-"On-demand self-service" is incorrect; provisioning, not billing.
-"Metered service" is correct. Customers are billed for exact resource usage.
-"Multitenancy" is incorrect; relates to shared resources.
-"Resource pooling" is incorrect; relates to efficient hardware usage.
+On-demand self-service is incorrect; provisioning, not billing.
+Metered service is correct. Customers are billed for exact resource usage.
+Multitenancy is incorrect; relates to shared resources.
+Resource pooling is incorrect; relates to efficient hardware usage.
 
 ---
 
@@ -603,10 +603,10 @@
 - Integrity
 
 **Explanation:**
-"Privacy" is partially related but not precise.
-"Availability" is incorrect; hashing does not improve uptime.
-"Confidentiality" is incorrect; hashing does not hide data, it ensures integrity.
-"Integrity" is correct. Hashing verifies that data has not been altered.
+Privacy is partially related but not precise.
+Availability is incorrect; hashing does not improve uptime.
+Confidentiality is incorrect; hashing does not hide data, it ensures integrity.
+Integrity is correct. Hashing verifies that data has not been altered.
 
 ---
 
@@ -618,10 +618,10 @@
 - Projects
 
 **Explanation:**
-"Units" is incorrect; units describe quantity, not organization.
-"Services" is incorrect; this refers to individual AWS services, not grouping.
-"Groups" is incorrect; no specific “groups” feature exists.
-"Projects" is correct. Projects allow users to organize multiple service estimates together under a single project for easier tracking and management.
+Units is incorrect; units describe quantity, not organization.
+Services is incorrect; this refers to individual AWS services, not grouping.
+Groups is incorrect; no specific “groups” feature exists.
+Projects is correct. Projects allow users to organize multiple service estimates together under a single project for easier tracking and management.
 
 ---
 
@@ -633,10 +633,10 @@
 - SCP
 
 **Explanation:**
-"HTTPS" is correct. HTTPS encrypts HTTP traffic using TLS, protecting data in transit.
-"SMTP" is incorrect; it is for email transmission, not general application data.
-"FTP" is incorrect; FTP is unencrypted.
-"SCP" is incorrect; SCP is for secure file transfer but not broadly used for general application data in transit.
+HTTPS is correct. HTTPS encrypts HTTP traffic using TLS, protecting data in transit.
+SMTP is incorrect; it is for email transmission, not general application data.
+FTP is incorrect; FTP is unencrypted.
+SCP is incorrect; SCP is for secure file transfer but not broadly used for general application data in transit.
 
 ---
 
@@ -649,11 +649,11 @@
 - Hardware token
 
 **Explanation:**
-"Retinal scan" is correct; biometric factor.
-"PIN" is incorrect; a PIN alone is knowledge-based and not a true second factor.
-"Challenge question" is incorrect; knowledge-based, not considered strong MFA.
-"Date of birth" is incorrect; same as above.
-"Hardware token" is correct; a physical device generating codes fulfills MFA requirements.
+Retinal scan is correct; biometric factor.
+PIN is incorrect; a PIN alone is knowledge-based and not a true second factor.
+Challenge question is incorrect; knowledge-based, not considered strong MFA.
+Date of birth is incorrect; same as above.
+Hardware token is correct; a physical device generating codes fulfills MFA requirements.
 
 ---
 
@@ -665,10 +665,10 @@
 - Portability
 
 **Explanation:**
-"Reversibility" is correct. Reversibility ensures that a customer can completely remove data and workloads from the cloud without vendor lock-in.
-"Removability" is not a standard cloud concept.
-"Erasability" is partially correct, but reversibility is the formal term in cloud computing.
-"Portability" refers to moving workloads between providers, not deletion.
+Reversibility is correct. Reversibility ensures that a customer can completely remove data and workloads from the cloud without vendor lock-in.
+Removability is not a standard cloud concept.
+Erasability is partially correct, but reversibility is the formal term in cloud computing.
+Portability refers to moving workloads between providers, not deletion.
 
 ---
 
@@ -680,10 +680,10 @@
 - DynamoDB tables
 
 **Explanation:**
-"Machine images" is data at rest.
-"S3 objects" is data at rest.
-"API calls" is correct. API calls are transient events in transit, not stored data.
-"DynamoDB tables" is data at rest.
+Machine images is data at rest.
+S3 objects is data at rest.
+API calls is correct. API calls are transient events in transit, not stored data.
+DynamoDB tables is data at rest.
 
 ---
 
@@ -695,10 +695,10 @@
 - Metered service
 
 **Explanation:**
-"Multitenancy" is incorrect; it refers to shared infrastructure among customers.
-"Resource pooling" is incorrect; it refers to sharing infrastructure.
-"Elasticity" is correct. Elasticity enables automatic scaling of resources to meet demand.
-"Metered service" is incorrect; it relates to billing.
+Multitenancy is incorrect; it refers to shared infrastructure among customers.
+Resource pooling is incorrect; it refers to sharing infrastructure.
+Elasticity is correct. Elasticity enables automatic scaling of resources to meet demand.
+Metered service is incorrect; it relates to billing.
 
 ---
 
@@ -711,11 +711,11 @@
 - S3
 
 **Explanation:**
-"Lightsail" is incorrect; not covered by Savings Plans.
-"Elastic Beanstalk" is incorrect; Savings Plans apply to the underlying compute, not the platform abstraction.
-"Fargate" is correct. Savings Plans provide discounts for Fargate usage.
-"Lambda" is correct. Lambda compute usage is covered under Savings Plans.
-"S3" is incorrect; Savings Plans do not apply to storage.
+Lightsail is incorrect; not covered by Savings Plans.
+Elastic Beanstalk is incorrect; Savings Plans apply to the underlying compute, not the platform abstraction.
+Fargate is correct. Savings Plans provide discounts for Fargate usage.
+Lambda is correct. Lambda compute usage is covered under Savings Plans.
+S3 is incorrect; Savings Plans do not apply to storage.
 
 ---
 
@@ -727,10 +727,10 @@
 - S3 Encryption
 
 **Explanation:**
-"VPN" is used to encrypt data in transit.
-"HTTPS" encrypts data in transit.
-"Ipsec" encrypts network traffic.
-"S3 Encryption" is correct. S3 encryption protects data at rest, not in transit.
+VPN is used to encrypt data in transit.
+HTTPS encrypts data in transit.
+Ipsec encrypts network traffic.
+S3 Encryption is correct. S3 encryption protects data at rest, not in transit.
 
 ---
 
@@ -742,10 +742,10 @@
 - DaaS
 
 **Explanation:**
-"PaaS" is incorrect; requires application code deployment.
-"IaaS" is incorrect; requires deploying and managing applications.
-"SaaS" is correct. SaaS provides fully managed applications, so you don’t need developers.
-"DaaS" is incorrect; virtual desktops do not replace application development costs.
+PaaS is incorrect; requires application code deployment.
+IaaS is incorrect; requires deploying and managing applications.
+SaaS is correct. SaaS provides fully managed applications, so you don’t need developers.
+DaaS is incorrect; virtual desktops do not replace application development costs.
 
 ---
 
@@ -757,10 +757,10 @@
 - To provision new services
 
 **Explanation:**
-"To create initial admin accounts from the IAM console" is correct. The root account should only be used for initial setup, billing, and emergency access.
-"To use tools on the Billing Dashboard" is partially correct; root is required for some billing tasks, but IAM users with billing permissions are preferred.
-"To approve S3 bucket creations" is incorrect; IAM users can create buckets.
-"To provision new services" is incorrect; IAM users can provision services without root.
+To create initial admin accounts from the IAM console is correct. The root account should only be used for initial setup, billing, and emergency access.
+To use tools on the Billing Dashboard is partially correct; root is required for some billing tasks, but IAM users with billing permissions are preferred.
+To approve S3 bucket creations is incorrect; IAM users can create buckets.
+To provision new services is incorrect; IAM users can provision services without root.
 
 ---
 
@@ -772,10 +772,10 @@
 - Developer
 
 **Explanation:**
-"Business" is incorrect; higher tier than required.
-"Free" is incorrect; free tier has limited Trusted Advisor checks.
-"Enterprise" is higher than required.
-"Developer" is correct. Developer support gives limited Trusted Advisor access.
+Business is incorrect; higher tier than required.
+Free is incorrect; free tier has limited Trusted Advisor checks.
+Enterprise is higher than required.
+Developer is correct. Developer support gives limited Trusted Advisor access.
 
 ---
 
@@ -787,10 +787,10 @@
 - ACLs
 
 **Explanation:**
-"AWS Shield" is incorrect; DDoS protection only.
-"Subnets" is incorrect; subnets do not control per-instance traffic.
-"Security groups" is correct. Security groups are stateful; they automatically allow response traffic for allowed inbound requests.
-"ACLs" is incorrect; network ACLs are stateless and require explicit outbound rules.
+AWS Shield is incorrect; DDoS protection only.
+Subnets is incorrect; subnets do not control per-instance traffic.
+Security groups is correct. Security groups are stateful; they automatically allow response traffic for allowed inbound requests.
+ACLs is incorrect; network ACLs are stateless and require explicit outbound rules.
 
 ---
 
@@ -803,11 +803,11 @@
 - Flexible
 
 **Explanation:**
-"Dynamic" is incorrect; not a reserved instance type.
-"Standard" is correct. Standard RIs offer fixed discounts with predictable usage.
-"Convertible" is correct. Convertible RIs allow exchanging for different instance types.
-"Hybrid" is incorrect; not an AWS term.
-"Flexible" is incorrect; not an AWS type.
+Dynamic is incorrect; not a reserved instance type.
+Standard is correct. Standard RIs offer fixed discounts with predictable usage.
+Convertible is correct. Convertible RIs allow exchanging for different instance types.
+Hybrid is incorrect; not an AWS term.
+Flexible is incorrect; not an AWS type.
 
 ---
 
@@ -819,10 +819,10 @@
 - EBS
 
 **Explanation:**
-"EC2" is incorrect; EC2 quotas relate to instances, volumes, IPs.
-"S3 Glacier" is incorrect; quotas are not prominently displayed here.
-"S3" is correct. S3 provides service quotas for buckets, objects, requests, and lifecycle operations.
-"EBS" is incorrect; quotas relate to volumes, snapshots, and IOPS.
+EC2 is incorrect; EC2 quotas relate to instances, volumes, IPs.
+S3 Glacier is incorrect; quotas are not prominently displayed here.
+S3 is correct. S3 provides service quotas for buckets, objects, requests, and lifecycle operations.
+EBS is incorrect; quotas relate to volumes, snapshots, and IOPS.
 
 ---
 
@@ -834,10 +834,10 @@
 - PaaS
 
 **Explanation:**
-"SaaS" is incorrect; application software does not provide raw storage.
-"IaaS" is correct. IaaS provides virtualized compute, volume storage, and object storage for customers.
-"DaaS" is incorrect; virtual desktops are not storage-focused.
-"PaaS" is incorrect; PaaS abstracts storage management.
+SaaS is incorrect; application software does not provide raw storage.
+IaaS is correct. IaaS provides virtualized compute, volume storage, and object storage for customers.
+DaaS is incorrect; virtual desktops are not storage-focused.
+PaaS is incorrect; PaaS abstracts storage management.
 
 ---
 
@@ -849,10 +849,10 @@
 - sa-east-1-a
 
 **Explanation:**
-"us-east-1-1" is incorrect; incorrect format.
-"eu-west-1a" is correct. AWS AZs are denoted by region plus a letter.
-"us-west-1.a" is incorrect; dot notation is invalid.
-"sa-east-1-a" is incorrect; extra hyphen is invalid.
+us-east-1-1 is incorrect; incorrect format.
+eu-west-1a is correct. AWS AZs are denoted by region plus a letter.
+us-west-1.a is incorrect; dot notation is invalid.
+sa-east-1-a is incorrect; extra hyphen is invalid.
 
 ---
 
@@ -864,10 +864,10 @@
 - AWS CloudTrail
 
 **Explanation:**
-"AWS Systems Manager" is incorrect; operational management, not compliance reports.
-"AWS OpsWorks" is incorrect; configuration management only.
-"AWS Artifact" is correct. Artifact contains compliance documents such as FedRAMP and SOC reports.
-"AWS CloudTrail" is incorrect; logs API activity, not compliance evidence.
+AWS Systems Manager is incorrect; operational management, not compliance reports.
+AWS OpsWorks is incorrect; configuration management only.
+AWS Artifact is correct. Artifact contains compliance documents such as FedRAMP and SOC reports.
+AWS CloudTrail is incorrect; logs API activity, not compliance evidence.
 
 ---
 
@@ -879,10 +879,10 @@
 - Events
 
 **Explanation:**
-"Alarms" is partially correct; alarms detect thresholds but don’t perform custom actions.
-"Triggers" is correct. Triggers in CloudWatch Events (now EventBridge) initiate workflows in response to events.
-"Alerts" is incorrect; they are notifications only.
-"Events" is incomplete; CloudWatch Events provides infrastructure, triggers execute actions.
+Alarms is partially correct; alarms detect thresholds but don’t perform custom actions.
+Triggers is correct. Triggers in CloudWatch Events (now EventBridge) initiate workflows in response to events.
+Alerts is incorrect; they are notifications only.
+Events is incomplete; CloudWatch Events provides infrastructure, triggers execute actions.
 
 ---
 
@@ -894,10 +894,10 @@
 - GuardDuty
 
 **Explanation:**
-"Lightsail" is correct. Lightsail provides simple VM instances with a one-month free trial.
-"AppStream" is incorrect; managed application streaming.
-"Inspector" is incorrect; security assessment tool.
-"GuardDuty" is incorrect; threat detection service.
+Lightsail is correct. Lightsail provides simple VM instances with a one-month free trial.
+AppStream is incorrect; managed application streaming.
+Inspector is incorrect; security assessment tool.
+GuardDuty is incorrect; threat detection service.
 
 ---
 
@@ -909,10 +909,10 @@
 - Interoperability
 
 **Explanation:**
-"Maintenance" is incorrect; operational work only.
-"Auditability" is incorrect; relates to checking performance.
-"Governance" is correct. Governance ensures accountability, roles, and enforcement of policies.
-"Interoperability" is incorrect; relates to system compatibility.
+Maintenance is incorrect; operational work only.
+Auditability is incorrect; relates to checking performance.
+Governance is correct. Governance ensures accountability, roles, and enforcement of policies.
+Interoperability is incorrect; relates to system compatibility.
 
 ---
 
@@ -924,10 +924,10 @@
 - Access/secret key
 
 **Explanation:**
-"Username/password" is incorrect; AWS CLI does not support password-based automation.
-"MFA" is partially correct; used as additional authentication, not primary CLI auth.
-"Security hardware token" is incorrect; hardware token is for MFA.
-"Access/secret key" is correct. AWS CLI uses access key ID and secret access key for automated authentication.
+Username/password is incorrect; AWS CLI does not support password-based automation.
+MFA is partially correct; used as additional authentication, not primary CLI auth.
+Security hardware token is incorrect; hardware token is for MFA.
+Access/secret key is correct. AWS CLI uses access key ID and secret access key for automated authentication.
 
 ---
 
@@ -939,10 +939,10 @@
 - AWS CloudTrail
 
 **Explanation:**
-"AWS Shield" is incorrect; DDoS protection.
-"AWS CloudWatch" is correct. CloudWatch aggregates metrics, logs, and monitoring across all AWS services.
-"AWS WAF" is incorrect; application firewall.
-"AWS CloudTrail" is incorrect; logs API calls, not metrics.
+AWS Shield is incorrect; DDoS protection.
+AWS CloudWatch is correct. CloudWatch aggregates metrics, logs, and monitoring across all AWS services.
+AWS WAF is incorrect; application firewall.
+AWS CloudTrail is incorrect; logs API calls, not metrics.
 
 ---
 
@@ -954,10 +954,10 @@
 - WorkSpaces
 
 **Explanation:**
-"AppStream" is incorrect; application streaming, not full desktop VDI.
-"AWS Desktop" is incorrect; service name is not correct.
-"WorkLink" is incorrect; mobile access to internal apps.
-"WorkSpaces" is correct. WorkSpaces provides managed Windows/Linux virtual desktops.
+AppStream is incorrect; application streaming, not full desktop VDI.
+AWS Desktop is incorrect; service name is not correct.
+WorkLink is incorrect; mobile access to internal apps.
+WorkSpaces is correct. WorkSpaces provides managed Windows/Linux virtual desktops.
 
 ---
 
@@ -969,10 +969,10 @@
 - Json
 
 **Explanation:**
-"xml" is incorrect; XML is a markup language, not a standard.
-"sql" is incorrect; unrelated to authentication.
-"SAML" is correct. Security Assertion Markup Language (SAML) is the standard for SSO and federated authentication.
-"Json" is incorrect; data interchange format only.
+xml is incorrect; XML is a markup language, not a standard.
+sql is incorrect; unrelated to authentication.
+SAML is correct. Security Assertion Markup Language (SAML) is the standard for SSO and federated authentication.
+Json is incorrect; data interchange format only.
 
 ---
 
@@ -984,9 +984,9 @@
 - S3
 
 **Explanation:**
-"Elastic Beanstalk" is incorrect; calculator uses underlying compute services.
-"Lightsail" is incorrect; calculator supports simple estimates only.
-"EC2" is correct. EC2 offers both quick and advanced estimates due to configurable instance types, pricing models, and additional features.
-"S3" is incorrect; calculator provides simpler object storage cost estimation only.
+Elastic Beanstalk is incorrect; calculator uses underlying compute services.
+Lightsail is incorrect; calculator supports simple estimates only.
+EC2 is correct. EC2 offers both quick and advanced estimates due to configurable instance types, pricing models, and additional features.
+S3 is incorrect; calculator provides simpler object storage cost estimation only.
 
 ---

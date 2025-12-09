@@ -28,7 +28,7 @@ describe('NavTab Component', () => {
     );
 
     const activeTabElement = screen.getByText('Results');
-    expect(activeTabElement.parentElement).toHaveClass('border-blue-500', 'text-blue-600');
+    expect(activeTabElement).toHaveClass('border-blue-500', 'text-blue-600');
   });
 
   test('applies inactive styling to non-active tabs', () => {
@@ -40,7 +40,7 @@ describe('NavTab Component', () => {
     );
 
     const inactiveTabElement = screen.getByText('Restart');
-    expect(inactiveTabElement.parentElement).toHaveClass('border-transparent', 'text-gray-500');
+    expect(inactiveTabElement).toHaveClass('border-transparent', 'text-gray-500');
   });
 
   test('calls onTabChange when a tab is clicked', () => {

@@ -5,16 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AnswerDto {
-    private long id;
+public class OptionDto {
     private boolean correct;
-    private String question;
-    private String explanation;
-    private Set<OptionDto> options;
+    private String text;
 }

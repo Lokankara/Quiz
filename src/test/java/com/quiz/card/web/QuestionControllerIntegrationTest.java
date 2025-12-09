@@ -18,7 +18,8 @@ import com.quiz.card.service.IQuestionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -35,7 +36,7 @@ class QuestionControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
+    @MockBean
     private IQuestionService questionService;
 
     private List<FlashCardDto> mockCards;
@@ -48,7 +49,7 @@ class QuestionControllerIntegrationTest {
         mockCard = FlashCardDto.builder()
                 .id(1)
                 .question("Test Question")
-                .options(new HashSet<>(Arrays.asList("Option 1", "Option 2")))
+                .options(new HashSet<>(List.of("Option 1", "Option 2")))
                 .explanation("Explanation")
                 .multiSelect(false)
                 .build();
@@ -127,7 +128,7 @@ class QuestionControllerIntegrationTest {
     }
 
     @Test
-    void testRegisterAnswer_WithMultipleOptions() throws Exception {
+    void testRegisterAnswerWithMultipleOptions() throws Exception {
         when(questionService.registerAnswer(anyLong(), anyList())).thenReturn(mockAnswer);
 
         mockMvc.perform(post("/api/questions/answers")
@@ -140,7 +141,7 @@ class QuestionControllerIntegrationTest {
     }
 
     @Test
-    void testRegisterAnswer_InvalidId() throws Exception {
+    void testRegisterAnswerInvalidId() throws Exception {
         mockMvc.perform(post("/api/questions/answers")
                         .param("id", "-1")
                         .param("options", "Option 1")
@@ -149,7 +150,7 @@ class QuestionControllerIntegrationTest {
     }
 
     @Test
-    void testRegisterAnswer_NullOptions() throws Exception {
+    void testRegisterAnswerNullOptions() throws Exception {
         mockMvc.perform(post("/api/questions/answers")
                         .param("id", "1")
                         .contentType(MediaType.APPLICATION_JSON))
@@ -190,7 +191,7 @@ class QuestionControllerIntegrationTest {
     }
 
     @Test
-    void testRemoveCard_InvalidId() throws Exception {
+    void testRemoveCardInvalidId() throws Exception {
         mockMvc.perform(delete("/api/questions")
                         .param("id", "-1"))
                 .andExpect(status().isBadRequest());
@@ -207,14 +208,14 @@ class QuestionControllerIntegrationTest {
     }
 
     @Test
-    void testRestartQuiz_InvalidFileIndex() throws Exception {
+    void testRestartQuizInvalidFileIndex() throws Exception {
         mockMvc.perform(post("/api/questions/restart")
                         .param("fileIndex", "invalid"))
                 .andExpect(status().isBadRequest());
     }
 
     @Test
-    void testRestartQuiz_OutOfRangeFileIndex() throws Exception {
+    void testRestartQuizOutOfRangeFileIndex() throws Exception {
         mockMvc.perform(post("/api/questions/restart")
                         .param("fileIndex", "10"))
                 .andExpect(status().isBadRequest());

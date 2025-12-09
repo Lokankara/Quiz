@@ -1,9 +1,13 @@
 package com.quiz.card.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.FlashCardDto;
@@ -23,7 +27,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @ExtendWith(MockitoExtension.class)
 class QuestionServiceTest {
@@ -44,8 +47,8 @@ class QuestionServiceTest {
         questionService = new QuestionService(warehouse, repository, parserService);
     }
 
-    @Test
-    void testGetAllCards_CacheMiss() {
+   @Test
+   void testGetAllCardsCacheMiss() {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setId(1L);
         entity1.setQuestion("Test Question 1");
@@ -75,7 +78,7 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testGetAllCards_CacheMiss_EmptyRepo() {
+    void testGetAllCardsCacheMissEmptyRepo() {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setId(1L);
         entity1.setQuestion("Test Question 1");
@@ -132,7 +135,7 @@ class QuestionServiceTest {
                 .build();
 
         Set<AnswerDto> answers = new HashSet<>(Arrays.asList(answer1, answer2));
-        
+
         java.lang.reflect.Field answerMapField;
         try {
             answerMapField = QuestionService.class.getDeclaredField("answerMap");
@@ -154,7 +157,7 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testRegisterAnswer_QuestionExists_Correct() {
+    void testRegisterAnswerQuestionExistsCorrect() {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
@@ -169,7 +172,7 @@ class QuestionServiceTest {
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
 
-        List<String> selectedOptions = Arrays.asList("\"Option 1\"");
+        List<String> selectedOptions = List.of("\"Option 1\"");
         AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
 
         assertTrue(result.isCorrect());
@@ -179,7 +182,7 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testRegisterAnswer_QuestionExists_Incorrect() {
+    void testRegisterAnswerQuestionExistsIncorrect() {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
@@ -194,7 +197,7 @@ class QuestionServiceTest {
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
 
-        List<String> selectedOptions = Arrays.asList("\"Option 2\"");
+        List<String> selectedOptions = List.of("\"Option 2\"");
         AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
 
         assertFalse(result.isCorrect());
@@ -204,10 +207,10 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testRegisterAnswer_QuestionNotExists() {
+    void testRegisterAnswerQuestionNotExists() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
-        List<String> selectedOptions = Arrays.asList("\"Option 1\"");
+        List<String> selectedOptions = List.of("\"Option 1\"");
         AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
 
         assertFalse(result.isCorrect());
@@ -233,7 +236,7 @@ class QuestionServiceTest {
                 .build();
 
         Set<AnswerDto> expectedAnswers = new HashSet<>(Arrays.asList(answer1, answer2));
-        
+
         java.lang.reflect.Field answerMapField;
         try {
             answerMapField = QuestionService.class.getDeclaredField("answerMap");
@@ -278,7 +281,7 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testRemoveCard_Exists() {
+    void testRemoveCardExists() {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
@@ -308,7 +311,7 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testRemoveCard_NotExists() {
+    void testRemoveCardNotExists() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
         FlashCardDto result = questionService.removeCard(1L);
@@ -330,7 +333,7 @@ class QuestionServiceTest {
     @Test
     void testSaveAll() {
         String filenameIndex = "1";
-        List<QuestionEntity> mockCards = Arrays.asList(new QuestionEntity());
+        List<QuestionEntity> mockCards = List.of(new QuestionEntity());
 
         when(parserService.parseDataFile(filenameIndex)).thenReturn(mockCards);
 

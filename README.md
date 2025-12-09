@@ -24,6 +24,8 @@ npm install -D tailwindcss@3
 npx tailwindcss init -p
 ```
 
+`npm start dev`
+
 Build and run the application with Gradle:
 
 `./gradlew bootRun`
@@ -36,7 +38,7 @@ To run backend tests:
 
 To run backend tests and save results to file:
 
-`./gradlew test --info > test-results.txt`
+`./gradlew test --info > /docs/test-results.md`
 
 To run UI tests:
 
@@ -56,10 +58,12 @@ To run all tests and save combined results to file:
 
 To run all tests and save results in MD format for local analysis:
 
-`./gradlew test --info --console=plain --no-daemon > backend-test-results.md && npm test -- --coverage --watchAll=false --reporters=jest-html-reporter > ui-test-results.md`
-
-`npm start dev`
+`npm test -- --coverage --watchAll=false --reporters=jest-html-reporter > ui-test-results.md`
 
 `npm run build`
 
-`npm run eject`
+## TODO
+
+schema.sql
+
+The routing is handled by Spring Boot controllers (e.g., RouterController.java) and React Router for client-side navigation. There is no Express.js in this application stack. The RouterController forwards non-API requests to the React application to enable client-side routing in production.

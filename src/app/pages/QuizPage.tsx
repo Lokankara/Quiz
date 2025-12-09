@@ -10,6 +10,7 @@ export default function QuizPage() {
   const [answerResult, setAnswerResult] = useState<AnswerDto | null>(null);
   const [cards, setCards] = useState<FlashCardDto[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevQuestion, setPrevQuestion] = useState<string>("");
   const [activeTab, setActiveTab] = useState<TabType>("exam");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ export default function QuizPage() {
 
   const handleAnswerSubmit = async (cardId: number, selectedOptions: string[]) => {
     const answer = await submitAnswer(cardId, selectedOptions);
+    setPrevQuestion(currentCard.question)
     setAnswerResult(answer);
     setCurrentIndex((prev) => prev + 1);
   };
@@ -57,7 +59,6 @@ export default function QuizPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      {/* <TabNav activeTab={activeTab} onTabChange={setActiveTab} /> */}
       <Question
         size={cards.length - currentIndex}
         key={currentIndex + 1}
@@ -68,7 +69,7 @@ export default function QuizPage() {
       {answerResult && (
         <AnswerFeedback
           answerResult={answerResult}
-          explanationTitle={currentCard.question}
+          question={prevQuestion}
         />
       )}
     </div>

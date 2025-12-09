@@ -1,3 +1,5 @@
+import { Set } from "typescript";
+
 export interface QuestionProps {
     size: number;
     card: FlashCardDto;
@@ -22,6 +24,7 @@ export interface AnswerDto {
     question: string;
     correct: boolean;
     explanation: string;
+    options: OptionDto[];
 }
 
 export interface ResultDto {
@@ -31,10 +34,9 @@ export interface ResultDto {
     answeredIds: Set<number>;
 }
 
-export type OptionView = {
-    text: string
-    correct?: boolean
-    explanation?: string
+export interface OptionView {
+    correct: boolean;
+    text: string;
 }
 
 export type AnswerResult = {
@@ -43,10 +45,4 @@ export type AnswerResult = {
     options?: OptionView[]
     correctOptions?: string[]
     selectedOptions?: string[]
-}
-
-export type AnswerFeedbackProps = {
-    answerResult: AnswerResult | null
-    title?: string
-    explanationTitle?: string
 }

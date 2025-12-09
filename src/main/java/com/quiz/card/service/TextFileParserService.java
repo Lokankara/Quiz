@@ -57,10 +57,9 @@ public class TextFileParserService {
     private QuestionEntity parseSection(String section) {
         String[] lines = section.trim().split("(?m)(\\r\\n|\\n){2,}");
         StringBuilder question = new StringBuilder();
-        Set<Option> options;
 
         if (lines.length != 4) {
-            LOGGER.error("Size: must be 4, but was {}", Arrays.toString(lines));
+            LOGGER.error("Size: must be 4, but was {}", section);
         }
 
         question.append(lines[0]);
@@ -68,7 +67,7 @@ public class TextFileParserService {
 
         String[] split = lines[1].split("- ");
 
-        options = Arrays.stream(split).map(String::trim)
+        Set<Option> options = Arrays.stream(split).map(String::trim)
                 .filter(trim -> !trim.isEmpty())
                 .map(trim -> Option.builder()
                 .text(trim)
@@ -99,18 +98,26 @@ public class TextFileParserService {
     private Set<String> extractCorrectOptions(String explanation) {
         Set<String> correctOptions = new HashSet<>();
 
-        Pattern multiPattern =
-                Pattern.compile("\"([^\"]+)\"\\s+and\\s+\"([^\"]+)\"\\s+are\\s+correct", Pattern.CASE_INSENSITIVE);
-        Matcher multiMatcher = multiPattern.matcher(explanation);
-        while (multiMatcher.find()) {
-            correctOptions.add(multiMatcher.group(1).trim());
-            correctOptions.add(multiMatcher.group(2).trim());
+        Pattern areCorrectPattern = Pattern.compile("\"([^\"]+)\"\\s+are\\s+correct", Pattern.CASE_INSENSITIVE);
+        Matcher areCorrectMatcher = areCorrectPattern.matcher(explanation);
+        while (areCorrectMatcher.find()) {
+            String match = areCorrectMatcher.group(1).trim();
+            String[] parts = match.split(",|\\s+and\\s+");
+            for (String part : parts) {
+                part = part.trim().replaceAll("^\"|\"$", "");
+                if (!part.isEmpty()) {
+                    correctOptions.add(part);
+                }
+            }
         }
 
-        Pattern singlePattern = Pattern.compile("\"([^\"]+)\"\\s+is\\s+correct", Pattern.CASE_INSENSITIVE);
-        Matcher singleMatcher = singlePattern.matcher(explanation);
-        while (singleMatcher.find()) {
-            correctOptions.add(singleMatcher.group(1).trim());
+        Pattern isCorrectPattern = Pattern.compile("\"([^\"]+)\"\\s+(?:is|are)\\s+correct", Pattern.CASE_INSENSITIVE);
+        Matcher isCorrectMatcher = isCorrectPattern.matcher(explanation);
+        while (isCorrectMatcher.find()) {
+            String option = isCorrectMatcher.group(1).trim();
+            if (!option.isEmpty()) {
+                correctOptions.add(option);
+            }
         }
 
         return correctOptions;
