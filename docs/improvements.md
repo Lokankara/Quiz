@@ -8,7 +8,7 @@
 - **State Management**: The current state management is distributed across components; consider implementing a more centralized state management solution like Redux or Context API for better maintainability
 - **Error Handling**: Add comprehensive error handling for API calls with user-friendly error messages and fallbacks
 - **Hardcoded Value**: Line 34 in Question.tsx contains hardcoded value `66` which should be a configurable constant
-- **Option Display**: Line 58 in Question.tsx uses `JSON.stringify(option).replaceAll('"', '')` which is not the best way to display options - should use proper text property
+- **Option Display**: Line 58 in Question.tsx uses `JSON.stringify(answers).replaceAll('"', '')` which is not the best way to display answers - should use proper text property
 
 ### 1.2. Backend
 - **Repository Implementation**: The `QuestionRepository.java` file exists and properly extends JpaRepository, but consider adding custom query methods for better performance

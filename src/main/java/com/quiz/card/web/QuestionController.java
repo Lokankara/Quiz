@@ -50,10 +50,7 @@ public class QuestionController {
     @PostMapping("/answers")
     public ResponseEntity<AnswerDto> registerAnswer(
             @RequestParam Long id, @RequestParam List<String> options) {
-        if (id == null || id <= 0) {
-            return ResponseEntity.badRequest().build();
-        }
-        if (options == null) {
+        if (id == null || id <= 0 || options == null || options.isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
         AnswerDto answer = service.registerAnswer(id, options);

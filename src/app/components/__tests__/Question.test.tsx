@@ -9,7 +9,7 @@ describe('Question Component', () => {
   const mockCard: FlashCardDto = {
     id: 1,
     question: 'Test Question',
-    options: [mockOption1, mockOption2],
+    answers: [mockOption1, mockOption2],
     explanation: 'Explanation',
     multiSelect: false
   };
@@ -32,7 +32,7 @@ describe('Question Component', () => {
     expect(screen.getByText('#56. Test Question')).toBeInTheDocument();
   });
 
-  test('renders options correctly', () => {
+  test('renders answers correctly', () => {
     render(
       <Question 
         size={10} 
@@ -107,7 +107,7 @@ describe('Question Component', () => {
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
 
-  test('updates UI when options are selected', () => {
+  test('updates UI when answers are selected', () => {
     render(
       <Question 
         size={10} 

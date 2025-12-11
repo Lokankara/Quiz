@@ -118,7 +118,7 @@ Multitenancy is correct. Multitenancy is the characteristic where the same resou
 
 ---
 
-## 9. Which two options should be used to improve the security of your AWS Management Console?
+## 9. Which two answers should be used to improve the security of your AWS Management Console?
 
 - IAM roles
 - Strong password policies
@@ -463,7 +463,7 @@ AWS Billing Console is incorrect. The Billing Console is used for managing payme
 
 ---
 
-## 32. Which Amazon EC2 pricing option provides the largest discounts when you reserve capacity for a 1 or 3 year term?
+## 32. Which Amazon EC2 pricing answers provides the largest discounts when you reserve capacity for a 1 or 3 year term?
 
 - Reserved Instances
 - Dedicated Instances
@@ -478,7 +478,7 @@ Spot Instances is incorrect. Spot Instances offer steep discounts for unused cap
 
 ---
 
-## 33. Which Amazon EC2 purchasing option allows you to use your existing per-socket, per-core, or per-VM software licenses like Microsoft Windows Server?
+## 33. Which Amazon EC2 purchasing answers allows you to use your existing per-socket, per-core, or per-VM software licenses like Microsoft Windows Server?
 
 - Reserved Instance
 - Dedicated Host
@@ -906,7 +906,7 @@ Availability is incorrect. Availability refers to the ability of a system to rem
 **Explanation:**
 Patching database software is correct. AWS manages tasks like patching database software for managed services such as Amazon RDS, reducing the operational burden on customers.
 Customize your code is incorrect. AWS does not manage or customize application code; this is the responsibility of the customer.
-Taking backups of databases is correct. AWS automates database backups for managed services like RDS, ensuring data durability and recovery options.
+Taking backups of databases is correct. AWS automates database backups for managed services like RDS, ensuring data durability and recovery answers.
 Design schema of your data is incorrect. AWS does not design database schemas; this is the responsibility of the customer.
 
 ---

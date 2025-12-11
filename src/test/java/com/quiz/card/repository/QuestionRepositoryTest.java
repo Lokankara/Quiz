@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.quiz.card.model.QuestionEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
@@ -24,11 +24,9 @@ class QuestionRepositoryTest {
     void testSaveAndFindAll() {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setQuestion("Test Question 1");
-        entity1.setExplanation("Explanation 1");
 
         QuestionEntity entity2 = new QuestionEntity();
         entity2.setQuestion("Test Question 2");
-        entity2.setExplanation("Explanation 2");
 
         QuestionEntity saved1 = questionRepository.save(entity1);
         QuestionEntity saved2 = questionRepository.save(entity2);
@@ -47,7 +45,6 @@ class QuestionRepositoryTest {
     void testFindById() {
         QuestionEntity entity = new QuestionEntity();
         entity.setQuestion("Test Question");
-        entity.setExplanation("Explanation");
         QuestionEntity savedEntity = questionRepository.save(entity);
 
         var foundEntity = questionRepository.findById(savedEntity.getId());
@@ -55,14 +52,12 @@ class QuestionRepositoryTest {
         assertTrue(foundEntity.isPresent());
         assertEquals(savedEntity.getId(), foundEntity.get().getId());
         assertEquals("Test Question", foundEntity.get().getQuestion());
-        assertEquals("Explanation", foundEntity.get().getExplanation());
     }
 
     @Test
     void testDeleteById() {
         QuestionEntity entity = new QuestionEntity();
         entity.setQuestion("Test Question");
-        entity.setExplanation("Explanation");
         QuestionEntity savedEntity = questionRepository.save(entity);
 
         assertTrue(questionRepository.findById(savedEntity.getId()).isPresent());

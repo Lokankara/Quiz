@@ -14,16 +14,14 @@ export interface OptionDto {
 export interface FlashCardDto {
     id: number;
     question: string;
+    options: string[];
     multiSelect: boolean;
-    options: OptionDto[];
-    explanation: string;
 }
 
 export interface AnswerDto {
     id: number;
     question: string;
     correct: boolean;
-    explanation: string;
     options: OptionDto[];
 }
 
@@ -42,7 +40,7 @@ export interface OptionView {
 export type AnswerResult = {
     correct: boolean
     explanation: string
-    options?: OptionView[]
-    correctOptions?: string[]
+    answers: OptionView[]
+    correctOptions: string[]
     selectedOptions?: string[]
 }

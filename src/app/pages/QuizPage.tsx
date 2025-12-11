@@ -4,14 +4,12 @@ import { FlashCardDto, AnswerDto } from "../types";
 import { getAvailableQuestions, submitAnswer } from "../api";
 import Question from "../components/Question";
 import AnswerFeedback from "../components/AnswerFeedback";
-import { TabNav, TabType } from "../components/NavTab";
 
 export default function QuizPage() {
   const [answerResult, setAnswerResult] = useState<AnswerDto | null>(null);
   const [cards, setCards] = useState<FlashCardDto[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevQuestion, setPrevQuestion] = useState<string>("");
-  const [activeTab, setActiveTab] = useState<TabType>("exam");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const mountedRef = useRef(true);
@@ -56,7 +54,7 @@ export default function QuizPage() {
   if (currentIndex >= cards.length) return null;
 
   const currentCard = cards[currentIndex];
-
+  console.log(currentCard)
   return (
     <div className="max-w-3xl mx-auto p-4">
       <Question

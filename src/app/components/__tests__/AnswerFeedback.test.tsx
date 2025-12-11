@@ -9,7 +9,7 @@ describe('AnswerFeedback Component', () => {
     id: 1,
     question: 'Test Question',
     correct: true,
-    options: [mockOption1, mockOption2]
+    answers: [mockOption1, mockOption2]
   };
 
   test('renders correctly when answerResult is provided', () => {

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Option {
+public class Answers {
     @Column(columnDefinition = "TEXT")
     private String text;
     private boolean correct;

@@ -946,7 +946,7 @@ AWS CloudTrail is incorrect; logs API calls, not metrics.
 
 ---
 
-## 63. AWS offers a fully managed virtual desktop infrastructure (VDI) solution with both Windows and Linux options. Which AWS service is this?
+## 63. AWS offers a fully managed virtual desktop infrastructure (VDI) solution with both Windows and Linux answers. Which AWS service is this?
 
 - AppStream
 - AWS Desktop
@@ -976,7 +976,7 @@ Json is incorrect; data interchange format only.
 
 ---
 
-## 65. In the AWS Pricing Calculator, which AWS service offers options for both a quick estimate and an advanced estimate?
+## 65. In the AWS Pricing Calculator, which AWS service offers answers for both a quick estimate and an advanced estimate?
 
 - Elastic Beanstalk
 - Lightsail

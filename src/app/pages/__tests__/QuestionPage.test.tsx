@@ -12,7 +12,7 @@ describe('QuestionPage Component', () => {
   const mockCard: FlashCardDto = {
     id: 1,
     question: 'Test Question',
-    options: [
+    answers: [
       { text: 'Option 1', correct: false },
       { text: 'Option 2', correct: true }
     ],
@@ -54,7 +54,7 @@ describe('QuestionPage Component', () => {
     });
   });
 
-  test('displays options correctly', async () => {
+  test('displays answers correctly', async () => {
     mockedApi.getRandomQuestion.mockResolvedValue(mockCard);
 
     render(

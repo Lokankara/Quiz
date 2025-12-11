@@ -54,7 +54,7 @@ This document provides a comprehensive review of the full-stack Quiz application
 2. **Input Validation**: Added validation to all controller endpoints:
    - Added validation for ID parameters to ensure they are positive
    - Added validation for the fileIndex parameter in restartQuiz() to prevent path traversal
-   - Added validation for options list in registerAnswer()
+   - Added validation for answers list in registerAnswer()
 
 #### Remaining Security Considerations
 - Consider implementing rate limiting for API endpoints
@@ -81,7 +81,7 @@ This document provides a comprehensive review of the full-stack Quiz application
 ### Data Models Review
 
 #### Analysis
-1. **QuestionEntity**: The entity is well-structured with proper JPA annotations. The use of `@ElementCollection` for options is appropriate for the use case where options are simple value objects.
+1. **QuestionEntity**: The entity is well-structured with proper JPA annotations. The use of `@ElementCollection` for answers is appropriate for the use case where answers are simple value objects.
 
 2. **Option**: As an `@Embeddable` class, it's correctly designed as a value object that's part of the QuestionEntity.
 
@@ -90,7 +90,7 @@ This document provides a comprehensive review of the full-stack Quiz application
 4. **Consistency**: The use of Lombok annotations (@Data, @Builder, @NoArgsConstructor, @AllArgsConstructor) is consistent across models.
 
 #### Potential Improvements
-- The `multiSelect` field in FlashCardDto is calculated from the options rather than being stored, which is good to avoid duplication
+- The `multiSelect` field in FlashCardDto is calculated from the answers rather than being stored, which is good to avoid duplication
 - The ID field types are consistent (Long for entities, long for DTOs)
 
 ### Service Layer Analysis
@@ -181,7 +181,7 @@ This document provides a comprehensive review of the full-stack Quiz application
 1. In QuestionService: `selectedOptions.stream().map(s -> s.replace("\"", ""))` - hardcoded quote removal
 2. The method `getEntityOptional` in QuestionService is redundant since the same operation is done just above
 3. Some methods could be simplified (e.g., the complex stream operations could be broken down)
-4. In TextFileParserService: The regex patterns for extracting correct options could be constants
+4. In TextFileParserService: The regex patterns for extracting correct answers could be constants
 
 ## File Parsing Logic Review
 

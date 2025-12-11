@@ -24,10 +24,10 @@ export const getAvailableCount = async (): Promise<number> => {
     return res.data;
 };
 
-export const submitAnswer = async (id: number, options: string[]): Promise<AnswerDto> => {
+export const submitAnswer = async (id: number, answers: string[]): Promise<AnswerDto> => {
     const params = new URLSearchParams();
     params.append("id", id.toString());
-    options.forEach(option => params.append("options", option));
+    answers.forEach(answers => params.append("options", answers));
     const res = await api.post<AnswerDto>("/api/questions/answers", null, { params });
     return res.data;
 };

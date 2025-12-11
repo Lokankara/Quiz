@@ -16,7 +16,7 @@ describe('API Functions', () => {
         {
           id: 1,
           question: 'Test Question 1',
-          options: [{ text: 'Option 1', correct: true }, { text: 'Option 2', correct: false }],
+          answers: [{ text: 'Option 1', correct: true }, { text: 'Option 2', correct: false }],
           explanation: 'Explanation 1',
           multiSelect: false
         }
@@ -52,7 +52,7 @@ describe('API Functions', () => {
       const mockResponse: FlashCardDto = {
         id: 1,
         question: 'Random Question',
-        options: [{ text: 'Option 1', correct: true }],
+        answers: [{ text: 'Option 1', correct: true }],
         explanation: 'Explanation',
         multiSelect: false
       };
@@ -82,7 +82,7 @@ describe('API Functions', () => {
         {
           id: 1,
           question: 'Available Question',
-          options: [{ text: 'Option 1', correct: true }],
+          answers: [{ text: 'Option 1', correct: true }],
           explanation: 'Explanation',
           multiSelect: false
         }
@@ -151,7 +151,7 @@ describe('API Functions', () => {
         }
       });
 
-      const result = await api.submitAnswer(1, ['option1', 'option2']);
+      const result = await api.submitAnswer(1, ['answers1', 'answers2']);
       
       expect(mockedAxios.post).toHaveBeenCalledWith(
         '/api/questions/answers',
@@ -159,7 +159,7 @@ describe('API Functions', () => {
         {
           params: {
             id: '1',
-            options: ['option1', 'option2']
+            answers: ['answers1', 'answers2']
           }
         }
       );
@@ -230,7 +230,7 @@ describe('API Functions', () => {
       const mockResponse: FlashCardDto = {
         id: 1,
         question: 'Test Question',
-        options: [{ text: 'Option 1', correct: true }],
+        answers: [{ text: 'Option 1', correct: true }],
         explanation: 'Explanation',
         multiSelect: false
       };

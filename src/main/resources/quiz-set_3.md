@@ -62,7 +62,7 @@ Network firewalls is incorrect. Firewalls protect data in transit and network ac
 
 ---
 
-## 5. AWS offers a fully managed virtual desktop infrastructure (VDI) solution with both Windows and Linux options. Which AWS service is this?
+## 5. AWS offers a fully managed virtual desktop infrastructure (VDI) solution with both Windows and Linux answers. Which AWS service is this?
 
 - WorkSpaces
 - WorkLink
@@ -274,7 +274,7 @@ Guaranteed higher I/O performance is incorrect. Performance depends on instance 
 
 ---
 
-## 19. Which EC2 purchase option is best for workloads that cannot tolerate interruption?
+## 19. Which EC2 purchase answers is best for workloads that cannot tolerate interruption?
 
 - Spot Instances
 - On-Demand Instances
@@ -424,7 +424,7 @@ Elastic Beanstalk is incorrect. It manages environments but is not an EC2 recove
 
 ---
 
-## 29. Which option provides the highest level of isolation for EC2?
+## 29. Which answers provides the highest level of isolation for EC2?
 
 - Dedicated Instances
 - Dedicated Hosts
@@ -480,7 +480,7 @@ Automatic application deployment is incorrect. This is a CI/CD or Elastic Beanst
 Magnetic (standard) is incorrect. Magnetic (previously standard) volumes are legacy HDD-backed volumes that offer lower performance and are rarely recommended for modern workloads where SSDs are preferable.
 Provisioned IOPS SSD (io2) is incorrect. io2 provides the highest sustained IOPS and throughput for mission-critical databases but is more expensive and targeted at I/O-intensive workloads rather than general use.
 General Purpose SSD (gp3) is correct. gp3 is designed to deliver a balance of price and performance for a broad set of workloads, allowing baseline performance and the ability to provision additional IOPS and throughput independently of volume size.
-Throughput Optimized HDD (st1) is incorrect. st1 is optimized for large, sequential throughput for big data or log processing and is not the balanced general-purpose option.
+Throughput Optimized HDD (st1) is incorrect. st1 is optimized for large, sequential throughput for big data or log processing and is not the balanced general-purpose answers.
 
 ---
 
@@ -818,7 +818,7 @@ Challenge question is incorrect. Knowledge-based questions are considered single
 
 ---
 
-## 55. In the AWS Pricing Calculator, which AWS service offers options for both a quick estimate and an advanced estimate?
+## 55. In the AWS Pricing Calculator, which AWS service offers answers for both a quick estimate and an advanced estimate?
 
 - S3
 - Elastic Beanstalk
@@ -826,10 +826,10 @@ Challenge question is incorrect. Knowledge-based questions are considered single
 - Lightsail
 
 **Explanation:**
-S3 is incorrect. S3 pricing calculator options are relatively simple and do not offer the same advanced compute-level configurations.
+S3 is incorrect. S3 pricing calculator answers are relatively simple and do not offer the same advanced compute-level configurations.
 Elastic Beanstalk is incorrect. Elastic Beanstalk abstracts the infrastructure and does not require extensive parameter estimation in the calculator.
-EC2 is correct. EC2 has both simple quick estimates and advanced options for configuring instance type, storage, networking, and pricing details.
-Lightsail is incorrect. Lightsail has simpler fixed-pricing bundles; the calculator has limited advanced options.
+EC2 is correct. EC2 has both simple quick estimates and advanced answers for configuring instance type, storage, networking, and pricing details.
+Lightsail is incorrect. Lightsail has simpler fixed-pricing bundles; the calculator has limited advanced answers.
 
 ---
 
@@ -880,13 +880,13 @@ Network ACLs is incorrect. NACLs control traffic at the subnet level; they do no
 
 ## 59. Which of the following is true about Spot Instances?
 
-- They are the most expensive EC2 option
+- They are the most expensive EC2 answers
 - They can be interrupted by AWS with a 2-minute warning
 - They guarantee uninterrupted compute
 - They cannot be used with Auto Scaling
 
 **Explanation:**
-They are the most expensive EC2 option is incorrect. Spot Instances are the cheapest option due to bidding on unused capacity.
+They are the most expensive EC2 answers is incorrect. Spot Instances are the cheapest answers due to bidding on unused capacity.
 They can be interrupted by AWS with a 2-minute warning is correct. Spot Instances can be terminated when capacity is reclaimed, with a 2-minute notification.
 They guarantee uninterrupted compute is incorrect. Spot Instances are interruptible and do not provide guaranteed compute.
 They cannot be used with Auto Scaling is incorrect. Spot Instances can be part of Auto Scaling groups.

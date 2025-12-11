@@ -10,9 +10,9 @@
 - AWS CodePipeline
 
 **Explanation:**  
-"AWS Step Functions" is correct. AWS Step Functions is a serverless function orchestrator that makes it easy to sequence AWS services and orchestrate complex business processes using visual workflows.  
-"AWS Lambda" is incorrect; it is for serverless compute, not workflow orchestration.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
+"AWS Step Functions" is correct. AWS Step Functions is a serverless function orchestrator that makes it easy to sequence AWS services and orchestrate complex business processes using visual workflows.
+"AWS Lambda" is incorrect; it is for serverless compute, not workflow orchestration.
+"Amazon SQS" is incorrect; it is a message queuing service.
 "AWS CodePipeline" is incorrect; it is specifically for CI/CD pipeline automation.
 
 ---
@@ -25,9 +25,9 @@
 - Amazon Redshift
 
 **Explanation:**  
-"Amazon QuickSight" is correct. Amazon QuickSight is a fast, cloud-powered business intelligence service that allows you to create interactive dashboards and analyze data from multiple sources.  
-"Amazon Athena" is incorrect; it is for interactive querying of data in S3.  
-"AWS Glue" is incorrect; it is for ETL operations and data cataloging.  
+"Amazon QuickSight" is correct. Amazon QuickSight is a fast, cloud-powered business intelligence service that allows you to create interactive dashboards and analyze data from multiple sources.
+"Amazon Athena" is incorrect; it is for interactive querying of data in S3.
+"AWS Glue" is incorrect; it is for ETL operations and data cataloging.
 "Amazon Redshift" is incorrect; it is a data warehouse service.
 
 ---
@@ -40,9 +40,9 @@
 - AWS Step Functions
 
 **Explanation:**  
-"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) is a managed messaging service that provides a publish-subscribe model for sending messages to multiple recipients.  
-"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.  
-"Amazon SES" is incorrect; it is an email-sending service.  
+"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) is a managed messaging service that provides a publish-subscribe model for sending messages to multiple recipients.
+"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.
+"Amazon SES" is incorrect; it is an email-sending service.
 "AWS Step Functions" is incorrect; it is for workflow orchestration.
 
 ---
@@ -55,9 +55,9 @@
 - To monitor data transfer activities
 
 **Explanation:**  
-"To securely transfer data between on-premises and AWS" is correct. AWS DataSync is an online data transfer service that simplifies, automates, and accelerates copying large amounts of data to and from AWS.  
-"To migrate databases to AWS" is incorrect; this is AWS DMS.  
-"To sync data between S3 buckets" is incorrect; this is not the primary purpose of DataSync.  
+"To securely transfer data between on-premises and AWS" is correct. AWS DataSync is an online data transfer service that simplifies, automates, and accelerates copying large amounts of data to and from AWS.
+"To migrate databases to AWS" is incorrect; this is AWS DMS.
+"To sync data between S3 buckets" is incorrect; this is not the primary purpose of DataSync.
 "To monitor data transfer activities" is incorrect; monitoring is a secondary feature.
 
 ---
@@ -70,9 +70,9 @@
 - Amazon SQS
 
 **Explanation:**  
-"Amazon API Gateway" is correct. Amazon API Gateway is a fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs at any scale with automatic scaling and built-in security features.  
-"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.  
-"AWS Lambda" is incorrect; it is for serverless compute, not API management.  
+"Amazon API Gateway" is correct. Amazon API Gateway is a fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs at any scale with automatic scaling and built-in security features.
+"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.
+"AWS Lambda" is incorrect; it is for serverless compute, not API management.
 "Amazon SQS" is incorrect; it is for message queuing.
 
 ---
@@ -85,9 +85,9 @@
 - Amazon Inspector
 
 **Explanation:**  
-"Amazon Macie" is correct. Amazon Macie uses machine learning to automatically discover, classify, and protect sensitive data like personally identifiable information (PII) across AWS environments.  
-"AWS Shield" is incorrect; it is for DDoS protection.  
-"AWS WAF" is incorrect; it is a web application firewall.  
+"Amazon Macie" is correct. Amazon Macie uses machine learning to automatically discover, classify, and protect sensitive data like personally identifiable information (PII) across AWS environments.
+"AWS Shield" is incorrect; it is for DDoS protection.
+"AWS WAF" is incorrect; it is a web application firewall.
 "Amazon Inspector" is incorrect; it is for security assessment of applications.
 
 ---
@@ -100,9 +100,9 @@
 - Amazon Connect
 
 **Explanation:**  
-"Amazon Chime SDK" is correct. The Amazon Chime SDK provides the building blocks needed to create custom communication applications with real-time audio, video, and data transmission.  
-"Amazon IVS" is incorrect; it is specifically for live video streaming.  
-"AWS AppSync" is incorrect; it is for GraphQL APIs.  
+"Amazon Chime SDK" is correct. The Amazon Chime SDK provides the building blocks needed to create custom communication applications with real-time audio, video, and data transmission.
+"Amazon IVS" is incorrect; it is specifically for live video streaming.
+"AWS AppSync" is incorrect; it is for GraphQL APIs.
 "Amazon Connect" is incorrect; it is for contact center solutions.
 
 ---
@@ -115,9 +115,9 @@
 - To provide disaster recovery services
 
 **Explanation:**  
-"To centralize and automate backup of AWS resources" is correct. AWS Backup is a fully managed backup service that makes it easy to centralize and automate the backup of AWS resources across services.  
-"To encrypt AWS resources" is incorrect; this is AWS KMS.  
-"To monitor backup activities" is incorrect; this is a secondary feature.  
+"To centralize and automate backup of AWS resources" is correct. AWS Backup is a fully managed backup service that makes it easy to centralize and automate the backup of AWS resources across services.
+"To encrypt AWS resources" is incorrect; this is AWS KMS.
+"To monitor backup activities" is incorrect; this is a secondary feature.
 "To provide disaster recovery services" is incorrect; it's specifically for backup management.
 
 ---
@@ -130,9 +130,9 @@
 - Amazon DocumentDB
 
 **Explanation:**  
-"Amazon Timestream" is correct. Amazon Timestream is a purpose-built time-series database service that makes it easy to store and analyze trillions of events per day.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon Timestream" is correct. Amazon Timestream is a purpose-built time-series database service that makes it easy to store and analyze trillions of events per day.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon DocumentDB" is incorrect; it is for document databases.
 
 ---
@@ -145,9 +145,9 @@
 - AWS Fargate
 
 **Explanation:**  
-"AWS App Runner" is correct. AWS App Runner is a fully managed service that makes it easy to quickly deploy containerized web applications and APIs at scale without managing infrastructure.  
-"Amazon ECS" is incorrect; it is a container orchestration service requiring more management.  
-"Amazon EKS" is incorrect; it is a managed Kubernetes service requiring more management.  
+"AWS App Runner" is correct. AWS App Runner is a fully managed service that makes it easy to quickly deploy containerized web applications and APIs at scale without managing infrastructure.
+"Amazon ECS" is incorrect; it is a container orchestration service requiring more management.
+"Amazon EKS" is incorrect; it is a managed Kubernetes service requiring more management.
 "AWS Fargate" is incorrect; it is a compute engine for containers but not a deployment service.
 
 ---
@@ -160,9 +160,9 @@
 - AWS Glue
 
 **Explanation:**  
-"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics makes it easy to analyze streaming data in real time with SQL or Java without having to learn new programming models.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.  
-"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.  
+"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics makes it easy to analyze streaming data in real time with SQL or Java without having to learn new programming models.
+"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.
+"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -175,9 +175,9 @@
 - To encrypt data in transit
 
 **Explanation:**  
-"To provide a cloud-based integrated development environment (IDE)" is correct. AWS Cloud9 is a cloud-based IDE that lets you write, run, and debug your code with just a browser.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user identities" is incorrect; this is AWS IAM.  
+"To provide a cloud-based integrated development environment (IDE)" is correct. AWS Cloud9 is a cloud-based IDE that lets you write, run, and debug your code with just a browser.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user identities" is incorrect; this is AWS IAM.
 "To encrypt data in transit" is incorrect; this is handled by SSL/TLS and other services.
 
 ---
@@ -190,9 +190,9 @@
 - Amazon S3
 
 **Explanation:**  
-"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) is a managed live streaming solution that provides broadcast-quality, low-latency video streams.  
-"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.  
-"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.  
+"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) is a managed live streaming solution that provides broadcast-quality, low-latency video streams.
+"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.
+"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.
 "Amazon S3" is incorrect; it is for storage, not real-time streaming.
 
 ---
@@ -205,9 +205,9 @@
 - AWS Data Pipeline
 
 **Explanation:**  
-"Amazon Personalize" is correct. Amazon Personalize is a machine learning service that makes it easy to add real-time personalization and recommendation capabilities to applications.  
-"Amazon SageMaker" is incorrect; it is for building custom ML models.  
-"Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.  
+"Amazon Personalize" is correct. Amazon Personalize is a machine learning service that makes it easy to add real-time personalization and recommendation capabilities to applications.
+"Amazon SageMaker" is incorrect; it is for building custom ML models.
+"Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.
 "AWS Data Pipeline" is incorrect; it is for data processing workflows.
 
 ---
@@ -220,9 +220,9 @@
 - Amazon DocumentDB
 
 **Explanation:**  
-"Amazon Neptune" is correct. Amazon Neptune is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon Neptune" is correct. Amazon Neptune is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon DocumentDB" is incorrect; it is for document databases.
 
 ---
@@ -235,9 +235,9 @@
 - To encrypt data at rest
 
 **Explanation:**  
-"To provide a unified interface for developing, building, and deploying applications" is correct. AWS CodeStar provides a unified user interface that connects to various AWS services to provision and manage applications.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access" is incorrect; this is AWS IAM.  
+"To provide a unified interface for developing, building, and deploying applications" is correct. AWS CodeStar provides a unified user interface that connects to various AWS services to provision and manage applications.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access" is incorrect; this is AWS IAM.
 "To encrypt data at rest" is incorrect; this is AWS KMS.
 
 ---
@@ -250,9 +250,9 @@
 - Amazon SES
 
 **Explanation:**  
-"AWS Pinpoint" is correct. Amazon Pinpoint is a service that enables you to send targeted push notifications to mobile applications with advanced analytics and targeting capabilities.  
-"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced targeting.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
+"AWS Pinpoint" is correct. Amazon Pinpoint is a service that enables you to send targeted push notifications to mobile applications with advanced analytics and targeting capabilities.
+"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced targeting.
+"Amazon SQS" is incorrect; it is a message queuing service.
 "Amazon SES" is incorrect; it is for email delivery.
 
 ---
@@ -265,9 +265,9 @@
 - Amazon Neptune
 
 **Explanation:**  
-"Amazon DocumentDB" is correct. Amazon DocumentDB is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service but not MongoDB-compatible.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon DocumentDB" is correct. Amazon DocumentDB is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service but not MongoDB-compatible.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon Neptune" is incorrect; it is for graph databases.
 
 ---
@@ -280,9 +280,9 @@
 - Amazon SQS
 
 **Explanation:**  
-"AWS AppSync" is correct. AWS AppSync is a fully managed service that makes it easy to develop GraphQL APIs with real-time subscriptions and offline programming capabilities.  
-"Amazon API Gateway" is incorrect; it is for REST and WebSocket APIs, not specifically GraphQL.  
-"AWS Lambda" is incorrect; it is for serverless compute.  
+"AWS AppSync" is correct. AWS AppSync is a fully managed service that makes it easy to develop GraphQL APIs with real-time subscriptions and offline programming capabilities.
+"Amazon API Gateway" is incorrect; it is for REST and WebSocket APIs, not specifically GraphQL.
+"AWS Lambda" is incorrect; it is for serverless compute.
 "Amazon SQS" is incorrect; it is for message queuing.
 
 ---
@@ -295,9 +295,9 @@
 - To log API calls
 
 **Explanation:**  
-"To provide secure and auditable access to EC2 instances without requiring SSH keys or opening inbound ports" is correct. Session Manager provides secure and seamless access to EC2 instances for managed instances.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To provide secure and auditable access to EC2 instances without requiring SSH keys or opening inbound ports" is correct. Session Manager provides secure and seamless access to EC2 instances for managed instances.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -310,9 +310,9 @@
 - Amazon QuickSight
 
 **Explanation:**  
-"AWS X-Ray" is correct. AWS X-Ray helps developers analyze and debug production, distributed applications by providing real-time monitoring of application performance and user experience.  
-"Amazon CloudWatch" is incorrect; it is for resource and application monitoring but not specifically for distributed tracing.  
-"AWS CloudTrail" is incorrect; it is for API call logging.  
+"AWS X-Ray" is correct. AWS X-Ray helps developers analyze and debug production, distributed applications by providing real-time monitoring of application performance and user experience.
+"Amazon CloudWatch" is incorrect; it is for resource and application monitoring but not specifically for distributed tracing.
+"AWS CloudTrail" is incorrect; it is for API call logging.
 "Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.
 
 ---
@@ -325,9 +325,9 @@
 - AWS DataSync
 
 **Explanation:**  
-"Amazon Kinesis Data Streams" is correct. Amazon Kinesis Data Streams enables you to build custom applications that process or analyze streaming data for specialized needs with support for multiple data formats.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
-"Amazon SNS" is incorrect; it is a publish-subscribe service.  
+"Amazon Kinesis Data Streams" is correct. Amazon Kinesis Data Streams enables you to build custom applications that process or analyze streaming data for specialized needs with support for multiple data formats.
+"Amazon SQS" is incorrect; it is a message queuing service.
+"Amazon SNS" is incorrect; it is a publish-subscribe service.
 "AWS DataSync" is incorrect; it is for data transfer between on-premises and AWS.
 
 ---
@@ -340,9 +340,9 @@
 - AWS Step Functions
 
 **Explanation:**  
-"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) is a managed service that provides fan-out capabilities for sending messages to multiple recipients simultaneously.  
-"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.  
-"Amazon SES" is incorrect; it is an email-sending service.  
+"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) is a managed service that provides fan-out capabilities for sending messages to multiple recipients simultaneously.
+"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.
+"Amazon SES" is incorrect; it is an email-sending service.
 "AWS Step Functions" is incorrect; it is for workflow orchestration.
 
 ---
@@ -355,9 +355,9 @@
 - To encrypt data in transit
 
 **Explanation:**  
-"To visualize, understand, and manage AWS costs and usage over time" is correct. AWS Cost Explorer provides a detailed view of AWS costs and usage over time, helping users analyze and manage their spending.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access" is incorrect; this is AWS IAM.  
+"To visualize, understand, and manage AWS costs and usage over time" is correct. AWS Cost Explorer provides a detailed view of AWS costs and usage over time, helping users analyze and manage their spending.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access" is incorrect; this is AWS IAM.
 "To encrypt data in transit" is incorrect; this is handled by SSL/TLS and other services.
 
 ---
@@ -370,9 +370,9 @@
 - AWS Glue
 
 **Explanation:**  
-"AWS EMR" is correct. Amazon EMR is a managed cluster platform that simplifies running big data frameworks like Apache Spark and Apache Hadoop to process and analyze vast amounts of data.  
-"Amazon Redshift" is incorrect; it is a data warehouse service.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service.  
+"AWS EMR" is correct. Amazon EMR is a managed cluster platform that simplifies running big data frameworks like Apache Spark and Apache Hadoop to process and analyze vast amounts of data.
+"Amazon Redshift" is incorrect; it is a data warehouse service.
+"Amazon QuickSight" is incorrect; it is a business intelligence service.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -385,9 +385,9 @@
 - Amazon SQS
 
 **Explanation:**  
-"Amazon API Gateway" is correct. Amazon API Gateway is a fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs at any scale with built-in throttling and caching features.  
-"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.  
-"AWS Lambda" is incorrect; it is for serverless compute, not API management.  
+"Amazon API Gateway" is correct. Amazon API Gateway is a fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs at any scale with built-in throttling and caching features.
+"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.
+"AWS Lambda" is incorrect; it is for serverless compute, not API management.
 "Amazon SQS" is incorrect; it is for message queuing.
 
 ---
@@ -400,9 +400,9 @@
 - Amazon Neptune
 
 **Explanation:**  
-"Amazon DynamoDB" is correct. Amazon DynamoDB is a fully managed NoSQL database service that provides automatic scaling, multi-region replication, and built-in security features.  
-"Amazon RDS" is incorrect; it is for relational databases.  
-"Amazon DocumentDB" is incorrect; it is for document databases with MongoDB compatibility.  
+"Amazon DynamoDB" is correct. Amazon DynamoDB is a fully managed NoSQL database service that provides automatic scaling, multi-region replication, and built-in security features.
+"Amazon RDS" is incorrect; it is for relational databases.
+"Amazon DocumentDB" is incorrect; it is for document databases with MongoDB compatibility.
 "Amazon Neptune" is incorrect; it is for graph databases.
 
 ---
@@ -415,9 +415,9 @@
 - To log API calls
 
 **Explanation:**  
-"To store configuration data and secrets" is correct. AWS Systems Manager Parameter Store provides a hierarchical store for configuration data and secrets management.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To store configuration data and secrets" is correct. AWS Systems Manager Parameter Store provides a hierarchical store for configuration data and secrets management.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -430,9 +430,9 @@
 - Amazon S3
 
 **Explanation:**  
-"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides advanced features including live-to-VOD conversion, making it easy to create video-on-demand content from live streams.  
-"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.  
-"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.  
+"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides advanced features including live-to-VOD conversion, making it easy to create video-on-demand content from live streams.
+"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.
+"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.
 "Amazon S3" is incorrect; it is for storage, not real-time streaming.
 
 ---
@@ -445,9 +445,9 @@
 - Amazon QuickSight
 
 **Explanation:**  
-"AWS Glue" is correct. AWS Glue provides serverless Apache Spark capabilities, allowing you to run ETL jobs without managing clusters.  
-"Amazon EMR" is incorrect; it requires cluster management.  
-"Amazon Redshift" is incorrect; it is a data warehouse service.  
+"AWS Glue" is correct. AWS Glue provides serverless Apache Spark capabilities, allowing you to run ETL jobs without managing clusters.
+"Amazon EMR" is incorrect; it requires cluster management.
+"Amazon Redshift" is incorrect; it is a data warehouse service.
 "Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.
 
 ---
@@ -460,9 +460,9 @@
 - AWS App Runner
 
 **Explanation:**  
-"Amazon ElastiCache" is correct. Amazon ElastiCache provides in-memory caching that can be used to speed up web applications by reducing the load on databases.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is a relational database service.  
+"Amazon ElastiCache" is correct. Amazon ElastiCache provides in-memory caching that can be used to speed up web applications by reducing the load on databases.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is a relational database service.
 "AWS App Runner" is incorrect; it is for deploying containerized applications.
 
 ---
@@ -475,9 +475,9 @@
 - To encrypt CloudFormation templates
 
 **Explanation:**  
-"To deploy stacks across multiple accounts and regions" is correct. AWS CloudFormation StackSets enable you to create, update, or delete stacks across multiple accounts and regions with a single operation.  
-"To monitor CloudFormation stacks" is incorrect; this is not the primary purpose of StackSets.  
-"To manage user access to stacks" is incorrect; this is AWS IAM.  
+"To deploy stacks across multiple accounts and regions" is correct. AWS CloudFormation StackSets enable you to create, update, or delete stacks across multiple accounts and regions with a single operation.
+"To monitor CloudFormation stacks" is incorrect; this is not the primary purpose of StackSets.
+"To manage user access to stacks" is incorrect; this is AWS IAM.
 "To encrypt CloudFormation templates" is incorrect; this is handled by other services.
 
 ---
@@ -490,9 +490,9 @@
 - Amazon Connect
 
 **Explanation:**  
-"Amazon Chime SDK" is correct. The Amazon Chime SDK provides the building blocks needed to create custom communication applications with real-time voice, video, and messaging capabilities.  
-"Amazon IVS" is incorrect; it is specifically for live video streaming.  
-"AWS AppSync" is incorrect; it is for GraphQL APIs.  
+"Amazon Chime SDK" is correct. The Amazon Chime SDK provides the building blocks needed to create custom communication applications with real-time voice, video, and messaging capabilities.
+"Amazon IVS" is incorrect; it is specifically for live video streaming.
+"AWS AppSync" is incorrect; it is for GraphQL APIs.
 "Amazon Connect" is incorrect; it is for contact center solutions.
 
 ---
@@ -505,9 +505,9 @@
 - AWS Fargate
 
 **Explanation:**  
-"AWS App Runner" is correct. AWS App Runner is a fully managed service that makes it easy to quickly deploy containerized web applications and APIs at scale with automatic scaling.  
-"Amazon ECS" is incorrect; it is a container orchestration service requiring more management.  
-"Amazon EKS" is incorrect; it is a managed Kubernetes service requiring more management.  
+"AWS App Runner" is correct. AWS App Runner is a fully managed service that makes it easy to quickly deploy containerized web applications and APIs at scale with automatic scaling.
+"Amazon ECS" is incorrect; it is a container orchestration service requiring more management.
+"Amazon EKS" is incorrect; it is a managed Kubernetes service requiring more management.
 "AWS Fargate" is incorrect; it is a compute engine for containers but not a deployment service.
 
 ---
@@ -520,9 +520,9 @@
 - AWS Glue
 
 **Explanation:**  
-"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports Apache Flink for real-time data analytics on streaming data.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.  
-"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.  
+"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports Apache Flink for real-time data analytics on streaming data.
+"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.
+"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -535,9 +535,9 @@
 - To manage user access policies
 
 **Explanation:**  
-"To store and manage sensitive information like database credentials" is correct. AWS Secrets Manager is designed to store and manage sensitive information like database credentials, API keys, and other secrets.  
-"To store and manage encryption keys" is incorrect; this is AWS KMS.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
+"To store and manage sensitive information like database credentials" is correct. AWS Secrets Manager is designed to store and manage sensitive information like database credentials, API keys, and other secrets.
+"To store and manage encryption keys" is incorrect; this is AWS KMS.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
 "To manage user access policies" is incorrect; this is AWS IAM.
 
 ---
@@ -550,9 +550,9 @@
 - AWS IoT Device Defender
 
 **Explanation:**  
-"AWS IoT Analytics" is correct. AWS IoT Analytics is a fully managed service that processes and analyzes data from IoT devices for real-time and batch analytics.  
-"Amazon Kinesis" is incorrect; it is for general data streaming, not specifically IoT-focused.  
-"AWS IoT Core" is incorrect; it is for connecting IoT devices to AWS.  
+"AWS IoT Analytics" is correct. AWS IoT Analytics is a fully managed service that processes and analyzes data from IoT devices for real-time and batch analytics.
+"Amazon Kinesis" is incorrect; it is for general data streaming, not specifically IoT-focused.
+"AWS IoT Core" is incorrect; it is for connecting IoT devices to AWS.
 "AWS IoT Device Defender" is incorrect; it is for security monitoring of IoT devices.
 
 ---
@@ -565,9 +565,9 @@
 - Amazon DocumentDB
 
 **Explanation:**  
-"Amazon Timestream" is correct. Amazon Timestream is purpose-built for time-series data with built-in analytics and machine learning capabilities for anomaly detection and forecasting.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon Timestream" is correct. Amazon Timestream is purpose-built for time-series data with built-in analytics and machine learning capabilities for anomaly detection and forecasting.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon DocumentDB" is incorrect; it is for document databases.
 
 ---
@@ -580,9 +580,9 @@
 - Amazon Neptune
 
 **Explanation:**  
-"Amazon DocumentDB" is correct. Amazon DocumentDB is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads with automatic scaling capabilities.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service but not MongoDB-compatible.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon DocumentDB" is correct. Amazon DocumentDB is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads with automatic scaling capabilities.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service but not MongoDB-compatible.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon Neptune" is incorrect; it is for graph databases.
 
 ---
@@ -595,9 +595,9 @@
 - To log API calls
 
 **Explanation:**  
-"To execute commands on managed instances at scale" is correct. AWS Systems Manager Run Command allows you to remotely and securely manage the configuration of your managed instances at scale.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To execute commands on managed instances at scale" is correct. AWS Systems Manager Run Command allows you to remotely and securely manage the configuration of your managed instances at scale.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -610,9 +610,9 @@
 - Amazon SES
 
 **Explanation:**  
-"AWS Pinpoint" is correct. Amazon Pinpoint is a service that enables you to send targeted push notifications to mobile and web applications with advanced analytics and engagement tracking.  
-"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced analytics.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
+"AWS Pinpoint" is correct. Amazon Pinpoint is a service that enables you to send targeted push notifications to mobile and web applications with advanced analytics and engagement tracking.
+"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced analytics.
+"Amazon SQS" is incorrect; it is a message queuing service.
 "Amazon SES" is incorrect; it is for email delivery.
 
 ---
@@ -625,9 +625,9 @@
 - Amazon DocumentDB
 
 **Explanation:**  
-"Amazon Neptune" is correct. Amazon Neptune is a fast, reliable, fully managed graph database service with built-in machine learning capabilities for graph analytics.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon Neptune" is correct. Amazon Neptune is a fast, reliable, fully managed graph database service with built-in machine learning capabilities for graph analytics.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon DocumentDB" is incorrect; it is for document databases.
 
 ---
@@ -640,9 +640,9 @@
 - AWS Glue
 
 **Explanation:**  
-"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports complex event processing for real-time data analytics on streaming data.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.  
-"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.  
+"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports complex event processing for real-time data analytics on streaming data.
+"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.
+"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -655,9 +655,9 @@
 - To log API calls
 
 **Explanation:**  
-"To automate operational tasks across AWS resources" is correct. AWS Systems Manager Automation allows you to create and manage runbooks to automate operational tasks across AWS resources.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To automate operational tasks across AWS resources" is correct. AWS Systems Manager Automation allows you to create and manage runbooks to automate operational tasks across AWS resources.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -670,9 +670,9 @@
 - Amazon S3
 
 **Explanation:**  
-"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides advanced content protection features like encryption and token authentication for secure video streaming.  
-"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.  
-"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.  
+"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides advanced content protection features like encryption and token authentication for secure video streaming.
+"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.
+"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.
 "Amazon S3" is incorrect; it is for storage, not real-time streaming.
 
 ---
@@ -685,9 +685,9 @@
 - AWS Data Pipeline
 
 **Explanation:**  
-"Amazon Personalize" is correct. Amazon Personalize is a machine learning service that makes it easy to add real-time personalization and recommendation capabilities to applications.  
-"Amazon SageMaker" is incorrect; it is for building custom ML models.  
-"Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.  
+"Amazon Personalize" is correct. Amazon Personalize is a machine learning service that makes it easy to add real-time personalization and recommendation capabilities to applications.
+"Amazon SageMaker" is incorrect; it is for building custom ML models.
+"Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.
 "AWS Data Pipeline" is incorrect; it is for data processing workflows.
 
 ---
@@ -700,9 +700,9 @@
 - AWS App Runner
 
 **Explanation:**  
-"Amazon ElastiCache" is correct. Amazon ElastiCache supports multiple caching engines including Redis and Memcached for secure, scalable, and highly available caching.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is a relational database service.  
+"Amazon ElastiCache" is correct. Amazon ElastiCache supports multiple caching engines including Redis and Memcached for secure, scalable, and highly available caching.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is a relational database service.
 "AWS App Runner" is incorrect; it is for deploying containerized applications.
 
 ---
@@ -715,9 +715,9 @@
 - To log API calls
 
 **Explanation:**  
-"To automate patching of managed instances" is correct. AWS Systems Manager Patch Manager automates the process of patching managed instances with both security-related and other types of updates.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To automate patching of managed instances" is correct. AWS Systems Manager Patch Manager automates the process of patching managed instances with both security-related and other types of updates.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -730,9 +730,9 @@
 - AWS Step Functions
 
 **Explanation:**  
-"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) provides message filtering capabilities that allow subscribers to receive only the messages that are of interest to them.  
-"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.  
-"Amazon SES" is incorrect; it is an email-sending service.  
+"Amazon SNS" is correct. Amazon Simple Notification Service (SNS) provides message filtering capabilities that allow subscribers to receive only the messages that are of interest to them.
+"Amazon SQS" is incorrect; it is a message queuing service with a pull-based model.
+"Amazon SES" is incorrect; it is an email-sending service.
 "AWS Step Functions" is incorrect; it is for workflow orchestration.
 
 ---
@@ -745,9 +745,9 @@
 - Amazon SQS
 
 **Explanation:**  
-"Amazon API Gateway" is correct. Amazon API Gateway provides built-in authentication and authorization features including integration with AWS IAM, Cognito, and custom authorizers.  
-"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.  
-"AWS Lambda" is incorrect; it is for serverless compute, not API management.  
+"Amazon API Gateway" is correct. Amazon API Gateway provides built-in authentication and authorization features including integration with AWS IAM, Cognito, and custom authorizers.
+"AWS AppSync" is incorrect; it is specifically for GraphQL APIs.
+"AWS Lambda" is incorrect; it is for serverless compute, not API management.
 "Amazon SQS" is incorrect; it is for message queuing.
 
 ---
@@ -760,9 +760,9 @@
 - AWS DataSync
 
 **Explanation:**  
-"Amazon Kinesis Data Streams" is correct. Amazon Kinesis Data Streams supports multiple data sources and formats for real-time data ingestion and processing.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
-"Amazon SNS" is incorrect; it is a publish-subscribe service.  
+"Amazon Kinesis Data Streams" is correct. Amazon Kinesis Data Streams supports multiple data sources and formats for real-time data ingestion and processing.
+"Amazon SQS" is incorrect; it is a message queuing service.
+"Amazon SNS" is incorrect; it is a publish-subscribe service.
 "AWS DataSync" is incorrect; it is for data transfer between on-premises and AWS.
 
 ---
@@ -775,9 +775,9 @@
 - To log API calls
 
 **Explanation:**  
-"To collect and query configuration and inventory information about managed instances" is correct. AWS Systems Manager Inventory collects and organizes inventory and configuration information about your managed instances.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To collect and query configuration and inventory information about managed instances" is correct. AWS Systems Manager Inventory collects and organizes inventory and configuration information about your managed instances.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -790,9 +790,9 @@
 - Amazon Rekognition
 
 **Explanation:**  
-"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) integrates with AWS machine learning services like Amazon Rekognition for content analysis and automated moderation.  
-"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video with ML.  
-"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.  
+"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) integrates with AWS machine learning services like Amazon Rekognition for content analysis and automated moderation.
+"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video with ML.
+"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.
 "Amazon Rekognition" is incorrect; it is for image and video analysis but not for streaming.
 
 ---
@@ -805,9 +805,9 @@
 - Amazon QuickSight
 
 **Explanation:**  
-"AWS Glue" is correct. AWS Glue provides serverless Apache Spark capabilities with automatic scaling, allowing you to run ETL jobs without managing clusters.  
-"Amazon EMR" is incorrect; it requires cluster management.  
-"Amazon Redshift" is incorrect; it is a data warehouse service.  
+"AWS Glue" is correct. AWS Glue provides serverless Apache Spark capabilities with automatic scaling, allowing you to run ETL jobs without managing clusters.
+"Amazon EMR" is incorrect; it requires cluster management.
+"Amazon Redshift" is incorrect; it is a data warehouse service.
 "Amazon QuickSight" is incorrect; it is for business intelligence and dashboards.
 
 ---
@@ -820,9 +820,9 @@
 - Amazon Neptune
 
 **Explanation:**  
-"Amazon DynamoDB" is correct. Amazon DynamoDB provides automatic scaling and global replication for secure and scalable NoSQL databases.  
-"Amazon RDS" is incorrect; it is for relational databases.  
-"Amazon DocumentDB" is incorrect; it is for document databases with MongoDB compatibility.  
+"Amazon DynamoDB" is correct. Amazon DynamoDB provides automatic scaling and global replication for secure and scalable NoSQL databases.
+"Amazon RDS" is incorrect; it is for relational databases.
+"Amazon DocumentDB" is incorrect; it is for document databases with MongoDB compatibility.
 "Amazon Neptune" is incorrect; it is for graph databases.
 
 ---
@@ -835,9 +835,9 @@
 - To log API calls
 
 **Explanation:**  
-"To securely store and distribute software packages to managed instances" is correct. AWS Systems Manager Distributor enables you to securely store and distribute software packages to your managed instances.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To securely store and distribute software packages to managed instances" is correct. AWS Systems Manager Distributor enables you to securely store and distribute software packages to your managed instances.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -850,9 +850,9 @@
 - AWS Glue
 
 **Explanation:**  
-"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports custom business logic using SQL or Java for real-time data analytics on streaming data.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.  
-"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.  
+"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports custom business logic using SQL or Java for real-time data analytics on streaming data.
+"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.
+"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -865,9 +865,9 @@
 - Amazon SQS
 
 **Explanation:**  
-"AWS AppSync" is correct. AWS AppSync is a fully managed service that makes it easy to develop GraphQL APIs with real-time subscriptions and automatic scaling capabilities.  
-"Amazon API Gateway" is incorrect; it is for REST and WebSocket APIs, not specifically GraphQL.  
-"AWS Lambda" is incorrect; it is for serverless compute.  
+"AWS AppSync" is correct. AWS AppSync is a fully managed service that makes it easy to develop GraphQL APIs with real-time subscriptions and automatic scaling capabilities.
+"Amazon API Gateway" is incorrect; it is for REST and WebSocket APIs, not specifically GraphQL.
+"AWS Lambda" is incorrect; it is for serverless compute.
 "Amazon SQS" is incorrect; it is for message queuing.
 
 ---
@@ -880,9 +880,9 @@
 - Amazon Connect
 
 **Explanation:**  
-"Amazon Chime SDK" is correct. The Amazon Chime SDK provides built-in analytics for real-time communication applications with audio, video, and data transmission.  
-"Amazon IVS" is incorrect; it is specifically for live video streaming.  
-"AWS AppSync" is incorrect; it is for GraphQL APIs.  
+"Amazon Chime SDK" is correct. The Amazon Chime SDK provides built-in analytics for real-time communication applications with audio, video, and data transmission.
+"Amazon IVS" is incorrect; it is specifically for live video streaming.
+"AWS AppSync" is incorrect; it is for GraphQL APIs.
 "Amazon Connect" is incorrect; it is for contact center solutions.
 
 ---
@@ -895,9 +895,9 @@
 - To log API calls
 
 **Explanation:**  
-"To define time windows for performing maintenance on managed instances" is correct. AWS Systems Manager Maintenance Windows allow you to define time windows for performing maintenance on managed instances.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To define time windows for performing maintenance on managed instances" is correct. AWS Systems Manager Maintenance Windows allow you to define time windows for performing maintenance on managed instances.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -910,9 +910,9 @@
 - Amazon SES
 
 **Explanation:**  
-"AWS Pinpoint" is correct. Amazon Pinpoint provides advanced segmentation and personalization features for targeted push notifications to mobile applications.  
-"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced segmentation.  
-"Amazon SQS" is incorrect; it is a message queuing service.  
+"AWS Pinpoint" is correct. Amazon Pinpoint provides advanced segmentation and personalization features for targeted push notifications to mobile applications.
+"Amazon SNS" is incorrect; while it can send push notifications, Pinpoint provides more advanced segmentation.
+"Amazon SQS" is incorrect; it is a message queuing service.
 "Amazon SES" is incorrect; it is for email delivery.
 
 ---
@@ -925,9 +925,9 @@
 - Amazon DocumentDB
 
 **Explanation:**  
-"Amazon Neptune" is correct. Amazon Neptune provides built-in backup and recovery capabilities for highly available and scalable graph databases.  
-"Amazon DynamoDB" is incorrect; it is a NoSQL database service.  
-"Amazon RDS" is incorrect; it is for relational databases.  
+"Amazon Neptune" is correct. Amazon Neptune provides built-in backup and recovery capabilities for highly available and scalable graph databases.
+"Amazon DynamoDB" is incorrect; it is a NoSQL database service.
+"Amazon RDS" is incorrect; it is for relational databases.
 "Amazon DocumentDB" is incorrect; it is for document databases.
 
 ---
@@ -940,9 +940,9 @@
 - AWS Glue
 
 **Explanation:**  
-"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports windowing functions for real-time data analytics on streaming data.  
-"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.  
-"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.  
+"Amazon Kinesis Data Analytics" is correct. Amazon Kinesis Data Analytics supports windowing functions for real-time data analytics on streaming data.
+"Amazon QuickSight" is incorrect; it is a business intelligence service for dashboards.
+"Amazon Athena" is incorrect; it is for querying data in S3 using SQL.
 "AWS Glue" is incorrect; it is for ETL operations.
 
 ---
@@ -955,9 +955,9 @@
 - To log API calls
 
 **Explanation:**  
-"To maintain consistent configurations across managed instances" is correct. AWS Systems Manager State Manager helps maintain consistent configurations across your fleet of managed instances.  
-"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.  
-"To manage user access policies" is incorrect; this is AWS IAM.  
+"To maintain consistent configurations across managed instances" is correct. AWS Systems Manager State Manager helps maintain consistent configurations across your fleet of managed instances.
+"To monitor AWS resources" is incorrect; this is Amazon CloudWatch.
+"To manage user access policies" is incorrect; this is AWS IAM.
 "To log API calls" is incorrect; this is AWS CloudTrail.
 
 ---
@@ -970,9 +970,9 @@
 - Amazon S3
 
 **Explanation:**  
-"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides support for multiple quality levels and adaptive bitrate streaming for optimal viewing experiences.  
-"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.  
-"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.  
+"Amazon IVS" is correct. Amazon Interactive Video Service (IVS) provides support for multiple quality levels and adaptive bitrate streaming for optimal viewing experiences.
+"Amazon Kinesis" is incorrect; it is for data streaming, not specifically video.
+"AWS Elemental MediaLive" is incorrect; it is for broadcast-grade video processing.
 "Amazon S3" is incorrect; it is for storage, not real-time streaming.
 
 ---

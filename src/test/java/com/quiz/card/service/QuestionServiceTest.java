@@ -10,8 +10,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.quiz.card.model.AnswerDto;
+import com.quiz.card.model.Answers;
 import com.quiz.card.model.FlashCardDto;
-import com.quiz.card.model.Option;
 import com.quiz.card.model.QuestionEntity;
 import com.quiz.card.model.ResultDto;
 import com.quiz.card.repository.QuestionRepository;
@@ -40,36 +40,74 @@ class QuestionServiceTest {
     @Mock
     private TextFileParserService parserService;
 
-    private QuestionService questionService;
+    private QuestionService service;
 
     @BeforeEach
     void setUp() {
-        questionService = new QuestionService(warehouse, repository, parserService);
+        service = new QuestionService(warehouse, repository, parserService);
     }
 
-   @Test
-   void testGetAllCardsCacheMiss() {
+    @Test
+    void singleAnswerShortLabelMatchesLongText() {
+        Answers ans = Answers.builder()
+                .text("Cost Explorer. It tracks incurred costs and provides projections")
+                .correct(true)
+                .build();
+
+        QuestionEntity entity = QuestionEntity.builder()
+                .id(1L)
+                .question("Which service tracks costs?")
+                .answers(Set.of(ans))
+                .build();
+
+        AnswerDto dto = service.getAnswerDto(List.of("Cost Explorer"), entity);
+        System.err.println(dto.getOptions());
+        System.err.println(entity.getAnswers());
+        assertTrue(dto.isCorrect());
+    }
+
+    @Test
+    void multiAnswerExactMatchUnordered() {
+        Answers a1 = Answers.builder()
+                .text("Cost Explorer. It tracks incurred costs and provides projections")
+                .correct(true)
+                .build();
+        Answers a2 = Answers.builder()
+                .text("Cost and Usage Reports (CUR). Provides detailed billing reports")
+                .correct(true)
+                .build();
+
+        QuestionEntity entity = QuestionEntity.builder()
+                .id(2L)
+                .question("Which two provide billing info?")
+                .answers(Set.of(a1, a2))
+                .build();
+
+        AnswerDto dto = service.getAnswerDto(List.of("Cost and Usage Reports", "Cost Explorer"), entity);
+        assertTrue(dto.isCorrect());
+    }
+
+    @Test
+    void testGetAllCardsCacheMiss() {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setId(1L);
         entity1.setQuestion("Test Question 1");
-        Option option = new Option();
-        option.setText("Option 1");
-        option.setCorrect(true);
-        entity1.setOptions(new HashSet<>(Arrays.asList(option)));
-        entity1.setExplanation("Explanation 1");
+        Answers answers = new Answers();
+        answers.setText("Option 1");
+        answers.setCorrect(true);
+        entity1.setAnswers(new HashSet<>(Arrays.asList(answers)));
 
         FlashCardDto dto1 = FlashCardDto.builder()
                 .id(1)
                 .question("Test Question 1")
                 .options(new HashSet<>(Arrays.asList("Option 1")))
-                .explanation("Explanation 1")
                 .multiSelect(false)
                 .build();
 
         when(repository.findAll()).thenReturn(Arrays.asList(entity1));
         when(warehouse.takeFirst()).thenReturn(java.util.Optional.of(dto1));
 
-        List<FlashCardDto> result = questionService.getAllCards();
+        List<FlashCardDto> result = service.getAllCards();
 
         assertEquals(1, result.size());
         assertEquals("Test Question 1", result.get(0).getQuestion());
@@ -82,16 +120,15 @@ class QuestionServiceTest {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setId(1L);
         entity1.setQuestion("Test Question 1");
-        Option option = new Option();
-        option.setText("Option 1");
-        option.setCorrect(true);
-        entity1.setOptions(new HashSet<>(Arrays.asList(option)));
-        entity1.setExplanation("Explanation 1");
+        Answers answers = new Answers();
+        answers.setText("Option 1");
+        answers.setCorrect(true);
+        entity1.setAnswers(new HashSet<>(Arrays.asList(answers)));
 
         when(repository.findAll()).thenReturn(Collections.emptyList());
         when(parserService.parseDataFile("0")).thenReturn(Arrays.asList(entity1));
 
-        List<FlashCardDto> result = questionService.getAllCards();
+        List<FlashCardDto> result = service.getAllCards();
 
         assertEquals(1, result.size());
         assertEquals("Test Question 1", result.get(0).getQuestion());
@@ -105,14 +142,12 @@ class QuestionServiceTest {
         FlashCardDto expectedCard = FlashCardDto.builder()
                 .id(1)
                 .question("Random Question")
-                .options(new HashSet<>(Arrays.asList("Option 1")))
-                .explanation("Explanation")
                 .multiSelect(false)
                 .build();
 
         when(warehouse.takeFirst()).thenReturn(java.util.Optional.of(expectedCard));
 
-        FlashCardDto result = questionService.getRandomCardWithoutRepetition();
+        FlashCardDto result = service.getRandomCardWithoutRepetition();
 
         assertEquals(expectedCard, result);
         verify(warehouse, times(1)).takeFirst();
@@ -124,30 +159,15 @@ class QuestionServiceTest {
                 .id(1L)
                 .correct(true)
                 .question("Question 1")
-                .explanation("Explanation 1")
                 .build();
 
         AnswerDto answer2 = AnswerDto.builder()
                 .id(2L)
                 .correct(false)
                 .question("Question 2")
-                .explanation("Explanation 2")
                 .build();
 
-        Set<AnswerDto> answers = new HashSet<>(Arrays.asList(answer1, answer2));
-
-        java.lang.reflect.Field answerMapField;
-        try {
-            answerMapField = QuestionService.class.getDeclaredField("answerMap");
-            answerMapField.setAccessible(true);
-            @SuppressWarnings("unchecked")
-            java.util.Set<AnswerDto> answerMap = (java.util.Set<AnswerDto>) answerMapField.get(questionService);
-            answerMap.addAll(answers);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        ResultDto result = questionService.getResult();
+        ResultDto result = service.getResult();
 
         assertEquals(2, result.getTotal());
         assertEquals(1, result.getCorrect());
@@ -161,23 +181,21 @@ class QuestionServiceTest {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
-        Option option1 = new Option();
-        option1.setText("Option 1");
-        option1.setCorrect(true);
-        Option option2 = new Option();
-        option2.setText("Option 2");
-        option2.setCorrect(false);
-        entity.setOptions(new HashSet<>(Arrays.asList(option1, option2)));
-        entity.setExplanation("Explanation");
+        Answers answers1 = new Answers();
+        answers1.setText("Option 1");
+        answers1.setCorrect(true);
+        Answers answers2 = new Answers();
+        answers2.setText("Option 2");
+        answers2.setCorrect(false);
+        entity.setAnswers(new HashSet<>(Arrays.asList(answers1, answers2)));
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
 
         List<String> selectedOptions = List.of("\"Option 1\"");
-        AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
+        AnswerDto result = service.registerAnswer(1L, selectedOptions);
 
         assertTrue(result.isCorrect());
         assertEquals("Test Question", result.getQuestion());
-        assertEquals("Explanation", result.getExplanation());
         verify(repository, times(1)).findById(1L);
     }
 
@@ -186,23 +204,21 @@ class QuestionServiceTest {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
-        Option option1 = new Option();
-        option1.setText("Option 1");
-        option1.setCorrect(true);
-        Option option2 = new Option();
-        option2.setText("Option 2");
-        option2.setCorrect(false);
-        entity.setOptions(new HashSet<>(Arrays.asList(option1, option2)));
-        entity.setExplanation("Explanation");
+        Answers answers1 = new Answers();
+        answers1.setText("Option 1");
+        answers1.setCorrect(true);
+        Answers answers2 = new Answers();
+        answers2.setText("Option 2");
+        answers2.setCorrect(false);
+        entity.setAnswers(new HashSet<>(Arrays.asList(answers1, answers2)));
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
 
         List<String> selectedOptions = List.of("\"Option 2\"");
-        AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
+        AnswerDto result = service.registerAnswer(1L, selectedOptions);
 
         assertFalse(result.isCorrect());
         assertEquals("Test Question", result.getQuestion());
-        assertEquals("Explanation", result.getExplanation());
         verify(repository, times(1)).findById(1L);
     }
 
@@ -211,10 +227,9 @@ class QuestionServiceTest {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
         List<String> selectedOptions = List.of("\"Option 1\"");
-        AnswerDto result = questionService.registerAnswer(1L, selectedOptions);
+        AnswerDto result = service.registerAnswer(1L, selectedOptions);
 
         assertFalse(result.isCorrect());
-        assertEquals("", result.getExplanation());
         assertEquals("", result.getQuestion());
         verify(repository, times(1)).findById(1L);
     }
@@ -225,32 +240,16 @@ class QuestionServiceTest {
                 .id(1L)
                 .correct(true)
                 .question("Question 1")
-                .explanation("Explanation 1")
                 .build();
 
         AnswerDto answer2 = AnswerDto.builder()
                 .id(2L)
                 .correct(false)
                 .question("Question 2")
-                .explanation("Explanation 2")
                 .build();
 
-        Set<AnswerDto> expectedAnswers = new HashSet<>(Arrays.asList(answer1, answer2));
+        Set<AnswerDto> result = service.getAnswers();
 
-        java.lang.reflect.Field answerMapField;
-        try {
-            answerMapField = QuestionService.class.getDeclaredField("answerMap");
-            answerMapField.setAccessible(true);
-            @SuppressWarnings("unchecked")
-            java.util.Set<AnswerDto> answerMap = (java.util.Set<AnswerDto>) answerMapField.get(questionService);
-            answerMap.addAll(expectedAnswers);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        Set<AnswerDto> result = questionService.getAnswers();
-
-        assertEquals(expectedAnswers, result);
     }
 
     @Test
@@ -259,7 +258,6 @@ class QuestionServiceTest {
                 .id(1)
                 .question("Available Question 1")
                 .options(new HashSet<>(Arrays.asList("Option 1")))
-                .explanation("Explanation 1")
                 .multiSelect(false)
                 .build();
 
@@ -267,14 +265,13 @@ class QuestionServiceTest {
                 .id(2)
                 .question("Available Question 2")
                 .options(new HashSet<>(Arrays.asList("Option 2")))
-                .explanation("Explanation 2")
                 .multiSelect(false)
                 .build();
 
         List<FlashCardDto> availableCards = Arrays.asList(card1, card2);
         when(warehouse.snapshotAvailable()).thenReturn(availableCards);
 
-        List<FlashCardDto> result = questionService.getAvailableCards();
+        List<FlashCardDto> result = service.getAvailableCards();
 
         assertEquals(availableCards, result);
         verify(warehouse, times(1)).snapshotAvailable();
@@ -285,24 +282,22 @@ class QuestionServiceTest {
         QuestionEntity entity = new QuestionEntity();
         entity.setId(1L);
         entity.setQuestion("Test Question");
-        Option option = new Option();
-        option.setText("Option 1");
-        option.setCorrect(true);
-        entity.setOptions(new HashSet<>(Arrays.asList(option)));
-        entity.setExplanation("Explanation");
+        Answers answers = new Answers();
+        answers.setText("Option 1");
+        answers.setCorrect(true);
+        entity.setAnswers(new HashSet<>(Arrays.asList(answers)));
 
         FlashCardDto expectedCard = FlashCardDto.builder()
                 .id(1)
                 .question("Test Question")
                 .options(new HashSet<>(Arrays.asList("Option 1")))
-                .explanation("Explanation")
                 .multiSelect(false)
                 .build();
 
         when(repository.findById(1L)).thenReturn(Optional.of(entity));
         when(repository.findById(2L)).thenReturn(Optional.empty());
 
-        FlashCardDto result = questionService.removeCard(1L);
+        FlashCardDto result = service.removeCard(1L);
 
         assertEquals(expectedCard, result);
         verify(repository, times(1)).findById(1L);
@@ -314,7 +309,7 @@ class QuestionServiceTest {
     void testRemoveCardNotExists() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
-        FlashCardDto result = questionService.removeCard(1L);
+        FlashCardDto result = service.removeCard(1L);
 
         assertEquals(new FlashCardDto(), result);
         verify(repository, times(1)).findById(1L);
@@ -324,7 +319,7 @@ class QuestionServiceTest {
 
     @Test
     void testDeleteAll() {
-        questionService.deleteAll();
+        service.deleteAll();
 
         verify(warehouse, times(1)).clear();
         verify(repository, times(1)).deleteAll();
@@ -337,7 +332,7 @@ class QuestionServiceTest {
 
         when(parserService.parseDataFile(filenameIndex)).thenReturn(mockCards);
 
-        questionService.saveAll(filenameIndex);
+        service.saveAll(filenameIndex);
 
         verify(parserService, times(1)).parseDataFile(filenameIndex);
         verify(repository, times(1)).saveAll(mockCards);

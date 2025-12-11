@@ -1,32 +1,34 @@
 import { useState } from "react";
-import { OptionDto, QuestionProps } from "../types";
+import { QuestionProps } from "../types";
 
 export default function Question({ size, card, onSubmit }: QuestionProps) {
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-    const handleSelect = (option: OptionDto) => {
-        const optionStr = JSON.stringify(option);
+    const handleSelect = (answer: string) => {
         if (card.multiSelect) {
             setSelectedOptions(prev => {
-                const updated = prev.includes(optionStr)
-                    ? prev.filter(o => o !== optionStr)
-                    : [...prev, optionStr];
-
-                if (updated.length === 2) {
+                let updated;
+                if (prev.includes(answer)) {
+                    updated = prev.filter(o => o !== answer);
+                } else {
+                    updated = [...prev, answer];
+                }
+                
+                if (updated.length >= 2) {
                     onSubmit(updated);
                 }
-
+                
                 return updated;
             });
         } else {
-            const updated = [optionStr];
+            const updated = [answer];
             setSelectedOptions(updated);
             onSubmit(updated);
         }
     };
 
-    const isSelected = (option: OptionDto) =>
-        selectedOptions.includes(JSON.stringify(option));
+    const isSelected = (answer: string) =>
+        selectedOptions.includes(answer);
 
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-lg space-y-4">
@@ -35,11 +37,11 @@ export default function Question({ size, card, onSubmit }: QuestionProps) {
             </div>
 
             <div className="space-y-3">
-                {card.options.map((option, idx) => {
-                    const selected = isSelected(option);
+                {card.options.map((answer, idx) => {
+                    const selected = isSelected(answer);
                     return (
                         <label
-                            key={`option-${card.id}-${idx}`}
+                            key={`answer-${card.id}-${idx}`}
                             className={`
                                 flex items-center space-x-3 cursor-pointer w-full py-3 px-4 rounded-lg border-2 transition duration-150 ease-in-out
                                 ${selected
@@ -51,11 +53,11 @@ export default function Question({ size, card, onSubmit }: QuestionProps) {
                             <input
                                 type={card.multiSelect ? "checkbox" : "radio"}
                                 checked={selected}
-                                onChange={() => handleSelect(option)}
+                                onChange={() => handleSelect(answer)}
                                 className="w-6 h-6 accent-blue-600 flex-shrink-0 mt-0.5"
                             />
                             <span className="font-medium">
-                                {JSON.stringify(option).replaceAll('"', '')}
+                                {answer}
                             </span>
                         </label>
                     );
@@ -64,3 +66,4 @@ export default function Question({ size, card, onSubmit }: QuestionProps) {
         </div>
     );
 }
+

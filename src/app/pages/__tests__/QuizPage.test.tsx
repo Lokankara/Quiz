@@ -12,7 +12,7 @@ describe('QuizPage Component', () => {
   const mockCard: FlashCardDto = {
     id: 1,
     question: 'Test Question',
-    options: [
+    answers: [
       { text: 'Option 1', correct: false },
       { text: 'Option 2', correct: true }
     ],

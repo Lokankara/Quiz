@@ -14,7 +14,6 @@ import java.util.Set;
 public class FlashCardDto {
     private long id;
     private String question;
-    private String explanation;
     private Set<String> options;
     private boolean multiSelect;
 }

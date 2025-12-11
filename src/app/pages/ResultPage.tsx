@@ -66,8 +66,17 @@ export const ResultPage = () => {
                                     {answer.correct ? "Correct" : "Incorrect"}
                                 </span>
                             </div>
-                            <div className="text-sm text-gray-700 whitespace-pre-wrap">
-                                {answer.explanation}
+                            <div className="space-y-2">
+                                {answer.options.map((opt, i) => (
+                                    <div
+                                        key={i}
+                                        className={`p-2 pl-4 border-l-4 rounded-md ${opt.correct ? "border-green-500 bg-green-50" : "border-red-500 bg-red-50"}`}
+                                    >
+                                        <p className={`text-sm ${opt.correct ? "text-green-700 font-semibold" : "text-red-700"}`}>
+                                            {opt.text}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ))}

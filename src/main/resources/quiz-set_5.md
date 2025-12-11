@@ -2,7 +2,7 @@
 
 ---
 
-## 1. A startup is planning to leverage AWS Cloud to power a low-traffic website they plan to scale based on demand. Their business model is not yet stable, leading to unpredictable usage patterns. However, they want to minimize costs while experimenting during the first year. Given that they want to leverage the AWS Free Tier to the maximum extent, which compute purchasing option should they consider?
+## 1. A startup is planning to leverage AWS Cloud to power a low-traffic website they plan to scale based on demand. Their business model is not yet stable, leading to unpredictable usage patterns. However, they want to minimize costs while experimenting during the first year. Given that they want to leverage the AWS Free Tier to the maximum extent, which compute purchasing answers should they consider?
 
 - On-Demand Instances.
 - Reserved Instances.
@@ -10,8 +10,8 @@
 - Spot Instances.
 
 **Explanation:**
-On-Demand Instances is correct. On-Demand Instances let you pay for compute capacity by the hour or second with no long-term commitments, enabling immediate start/stop to match unpredictable usage. They are covered by the AWS Free Tier for qualifying instance types during the first year, which helps minimize costs while experimenting. Long-term commitments or interruptible options would not fit the startup's uncertain usage pattern.
-Reserved Instances is incorrect because they require a one- or three-year commitment in exchange for lower rates, which is risky for unpredictable startups. Reserved Instances provide deep discounts only when workload and capacity are predictable. They involve upfront or partial-upfront payment options and planning to match instance attributes.
+On-Demand Instances is correct. On-Demand Instances let you pay for compute capacity by the hour or second with no long-term commitments, enabling immediate start/stop to match unpredictable usage. They are covered by the AWS Free Tier for qualifying instance types during the first year, which helps minimize costs while experimenting. Long-term commitments or interruptible answers would not fit the startup's uncertain usage pattern.
+Reserved Instances is incorrect because they require a one- or three-year commitment in exchange for lower rates, which is risky for unpredictable startups. Reserved Instances provide deep discounts only when workload and capacity are predictable. They involve upfront or partial-upfront payment answers and planning to match instance attributes.
 Savings Plans is incorrect because they require a monetary commitment over a one- or three-year term to receive discounted rates across compute usage. Savings Plans are more flexible than instance-specific reservations but still assume predictable spend. They are less suitable for early-stage experiments with variable usage.
 Spot Instances is incorrect because Spot Instances can be interrupted when AWS reclaims capacity, making them unsuitable for user-facing services requiring stable availability. They are ideal for fault-tolerant, batch, or non-critical workloads that tolerate interruptions. Relying solely on Spot for a production website risks unexpected downtime.
 
@@ -32,7 +32,7 @@ Keep all the data in S3 Standard to ensure immediate access and simplify managem
 
 ---
 
-## 3. Your company is planning the deployment of a new application on AWS, which will require steady-state workloads to be running 24/7. To optimize costs, your CFO suggests purchasing compute capacity in advance. As the Cloud Practitioner responsible for managing the AWS resources, you need to choose the most cost-effective purchasing option for these specific workloads. Which AWS compute purchasing option should you recommend?
+## 3. Your company is planning the deployment of a new application on AWS, which will require steady-state workloads to be running 24/7. To optimize costs, your CFO suggests purchasing compute capacity in advance. As the Cloud Practitioner responsible for managing the AWS resources, you need to choose the most cost-effective purchasing answers for these specific workloads. Which AWS compute purchasing answers should you recommend?
 
 - Savings Plans.
 - On-Demand Instances.
@@ -40,7 +40,7 @@ Keep all the data in S3 Standard to ensure immediate access and simplify managem
 - Reserved Instances.
 
 **Explanation:**
-Reserved Instances is correct. Reserved Instances provide significant hourly rate discounts in exchange for a one- or three-year commitment, making them the most cost-effective choice for predictable, continuous workloads that must run 24/7. They reduce long-term compute costs when usage patterns are stable and known. Proper planning is required to match instance attributes, scope, and payment options to workload needs.
+Reserved Instances is correct. Reserved Instances provide significant hourly rate discounts in exchange for a one- or three-year commitment, making them the most cost-effective choice for predictable, continuous workloads that must run 24/7. They reduce long-term compute costs when usage patterns are stable and known. Proper planning is required to match instance attributes, scope, and payment answers to workload needs.
 Savings Plans is incorrect because although Savings Plans offer flexible discounts across compute services in exchange for a monetary commitment, Reserved Instances often yield deeper savings for fixed, steady-state instance usage and can be preferable when instance attributes are known. Savings Plans are useful when you need cross-instance or cross-service flexibility.
 On-Demand Instances is incorrect because they are billed per hour or second without commitment and are therefore more expensive for long-running steady-state workloads. On-Demand is optimal for variable or unpredictable workloads rather than always-on services where long-term discounts apply.
 Spot Instances is incorrect because Spot Instances are interruptible and can be reclaimed by AWS with little notice, making them unsuitable for continuous, critical workloads that require guaranteed availability. They are best for fault-tolerant, batch, or non-critical processing.
@@ -62,7 +62,7 @@ Reserved Instances purchased in one account within AWS Organizations can be used
 
 ---
 
-## 5. You are a Solutions Architect working on a project for a client that requires instances to be available 24/7. The workload is predictable, and it is vital to keep costs optimized while ensuring the servers are always running. The client prefers a long-term commitment to make the most out of potential savings. Which Amazon EC2 pricing option should you recommend given the need for a cost-effective, long-term solution with consistent usage?
+## 5. You are a Solutions Architect working on a project for a client that requires instances to be available 24/7. The workload is predictable, and it is vital to keep costs optimized while ensuring the servers are always running. The client prefers a long-term commitment to make the most out of potential savings. Which Amazon EC2 pricing answers should you recommend given the need for a cost-effective, long-term solution with consistent usage?
 
 - Reserved Instances.
 - Spot Instances.
@@ -70,7 +70,7 @@ Reserved Instances purchased in one account within AWS Organizations can be used
 - Dedicated Hosts.
 
 **Explanation:**
-Reserved Instances is correct. Reserved Instances reduce compute costs by committing to a specified instance configuration for a one- or three-year term and deliver substantial discounts for predictable, always-on workloads. They are well suited to steady-state usage where capacity needs are consistent. Other options either lack guaranteed continuous availability or target specialized licensing/compliance scenarios.
+Reserved Instances is correct. Reserved Instances reduce compute costs by committing to a specified instance configuration for a one- or three-year term and deliver substantial discounts for predictable, always-on workloads. They are well suited to steady-state usage where capacity needs are consistent. Other answers either lack guaranteed continuous availability or target specialized licensing/compliance scenarios.
 Spot Instances is incorrect because Spot Instances can be interrupted with short notice and thus are unsuitable for workloads that must run continuously and reliably. They are ideal for fault-tolerant or batch workloads that can tolerate interruptions.
 On-Demand Instances is incorrect because On-Demand pricing provides flexibility with no long-term commitment but results in higher costs for continuous 24/7 workloads. On-Demand is better for variable or unpredictable workloads.
 Dedicated Hosts is incorrect because Dedicated Hosts allocate entire physical servers for a customer’s use, which is mainly required for specific licensing or compliance needs and typically costs more; they are not the standard cost-optimization choice for general steady-state workloads.
@@ -92,7 +92,7 @@ You only need to set up AWS CloudTrail for API call logging to utilize the AWS S
 
 ---
 
-## 7. As a Cloud Architect at a large enterprise, you are responsible for overseeing the cloud infrastructure which is vital to the operations of the company. It is crucial for you to receive proactive guidance and support to optimize your AWS environment. Additionally, you need a consolidated view of the health of your AWS resources and services, and also be alerted to potential issues that could impact your applications running on AWS. Which AWS Support option combined with which AWS feature would best fit your needs to achieve these objectives?
+## 7. As a Cloud Architect at a large enterprise, you are responsible for overseeing the cloud infrastructure which is vital to the operations of the company. It is crucial for you to receive proactive guidance and support to optimize your AWS environment. Additionally, you need a consolidated view of the health of your AWS resources and services, and also be alerted to potential issues that could impact your applications running on AWS. Which AWS Support answers combined with which AWS feature would best fit your needs to achieve these objectives?
 
 - AWS Enterprise Support and AWS Personal Health Dashboard.
 - AWS Basic Support and AWS Personal Health Dashboard.
@@ -250,7 +250,7 @@ AWS CAF provides hardware upgrades for on-premises servers to handle increased l
 - AWS DataSync.
 
 **Explanation:**
-AWS DataSync. is correct. AWS DataSync is a managed service designed to automate and accelerate online data transfers between on-premises storage and AWS, supporting large-scale, incremental, and scheduled transfers with built-in validation and performance tuning. It can transfer files to S3, EFS, or FSx while minimizing manual effort and ensuring data integrity. DataSync is suitable when the transfer window is limited and when network-based migration is preferred over offline appliance options.
+AWS DataSync. is correct. AWS DataSync is a managed service designed to automate and accelerate online data transfers between on-premises storage and AWS, supporting large-scale, incremental, and scheduled transfers with built-in validation and performance tuning. It can transfer files to S3, EFS, or FSx while minimizing manual effort and ensuring data integrity. DataSync is suitable when the transfer window is limited and when network-based migration is preferred over offline appliance answers.
 AWS Snowball. is incorrect because Snowball is an offline data transfer appliance used for very large datasets when network transfer is impractical or too slow. It requires physical shipment of devices and is optimal for bulk migrations where online transfer time is prohibitive. Snowball is not the best choice when rapid, repeated, or incremental synchronization over the network is required.
 Amazon RDS. is incorrect because RDS is a managed relational database service and does not provide file synchronization capabilities from on-premises file shares to S3. It is intended for databases rather than general file transfer or synchronization tasks. Database migration tasks use AWS DMS rather than RDS itself.
 AWS Storage Gateway. is incorrect because Storage Gateway provides hybrid storage interfaces to AWS, including file gateway modes, but it is primarily for ongoing hybrid access patterns rather than high-performance bulk synchronization for migration windows. It can be used for hybrid workflows but DataSync is optimized for fast, large-scale migrations.
@@ -266,7 +266,7 @@ AWS Storage Gateway. is incorrect because Storage Gateway provides hybrid storag
 
 **Explanation:**
 EC2 Auto Scaling adjusts the number of EC2 instances based on demand, ensuring you only pay for the resources you need. is correct. Auto Scaling dynamically adds or removes instances in response to defined policies, target tracking, or scheduled actions, aligning capacity with real-time demand. By scaling out during peaks and scaling in during low usage, Auto Scaling reduces idle capacity and associated costs. Proper configuration of scaling policies and metrics ensures cost-efficient operation without sacrificing performance.
-EC2 Auto Scaling employs a fixed pricing model that is cheaper than on-demand instance pricing. is incorrect because Auto Scaling is a management capability and does not itself change instance pricing; underlying instance costs remain based on chosen purchasing options. Cost savings come from rightsizing and automated scaling rather than a different pricing model.
+EC2 Auto Scaling employs a fixed pricing model that is cheaper than on-demand instance pricing. is incorrect because Auto Scaling is a management capability and does not itself change instance pricing; underlying instance costs remain based on chosen purchasing answers. Cost savings come from rightsizing and automated scaling rather than a different pricing model.
 EC2 Auto Scaling provides free unlimited storage, thereby reducing storage costs. is incorrect because Auto Scaling manages compute capacity and does not provide storage services or eliminate storage costs. Storage remains the responsibility of services like EBS, S3, or instance store depending on architecture.
 EC2 Auto Scaling increases the number of instances at all times to ensure maximum redundancy and availability. is incorrect because Auto Scaling adjusts capacity according to demand and policies rather than keeping instances at a maximum count, which would be inefficient and costly. Its goal is to balance availability and cost by scaling appropriately.
 
@@ -312,7 +312,7 @@ Amazon DynamoDB. is incorrect because DynamoDB is a managed NoSQL database servi
 
 **Explanation:**
 Receiving alerts when usage exceeds defined thresholds. is correct. AWS Budgets allows creation of cost and usage budgets with alerts that notify stakeholders when thresholds are met or exceeded, enabling proactive cost control. Budget alerts help teams respond quickly to unexpected spending and enforce financial guardrails. This feature supports disciplined cost management practices regardless of scale.
-Access to discounted pricing through reserved instances. is correct. Economies of scale include procurement options like Reserved Instances and Savings Plans that provide discounted pricing in exchange for commitment, which reduces effective unit costs as usage grows. These purchasing options are part of a cost optimization strategy to capture predictable workloads at lower rates.
+Access to discounted pricing through reserved instances. is correct. Economies of scale include procurement answers like Reserved Instances and Savings Plans that provide discounted pricing in exchange for commitment, which reduces effective unit costs as usage grows. These purchasing answers are part of a cost optimization strategy to capture predictable workloads at lower rates.
 Setting custom cost and usage budgets to avoid overspending. is correct. AWS Budgets enables tailored budgets by service, tag, linked account, or usage type, which helps teams control spending and align costs with business objectives. Custom budgets combined with alerts promote accountability and cost-conscious behavior.
 Automatic adjustment of instance types based on usage patterns. is incorrect because AWS Budgets is a financial governance tool and does not perform automated resource adjustments; automated rightsizing requires operational tools like Compute Optimizer combined with automation workflows. Budgeting informs decisions but does not change infrastructure automatically.
 Free technical support for budget management. is incorrect because AWS Budgets itself does not include free hands-on technical support beyond standard AWS support tiers; support levels depend on the account’s support plan and may incur costs for higher-tier assistance. Budgeting tools provide information and alerts but not guaranteed free advisory services.
@@ -363,7 +363,7 @@ Using Auto Scaling to automatically adjust resource capacity. is correct. Auto S
 
 **Explanation:**
 Ability to estimate costs for specific AWS services. is correct. The Simple Monthly Calculator helps estimate monthly costs for selected AWS services by allowing users to input usage patterns and service configurations to produce an approximate monthly bill. It provides a straightforward way to model service costs before migration. It is useful for preliminary budgeting and scenario comparison.
-Consideration of different pricing models like Reserved Instances and Spot Instances. is correct. The calculator and related AWS cost tools let you model different purchasing options to compare potential savings from reserved capacity or spot pricing versus on-demand usage. This capability helps in planning cost-effective architectures.
+Consideration of different pricing models like Reserved Instances and Spot Instances. is correct. The calculator and related AWS cost tools let you model different purchasing answers to compare potential savings from reserved capacity or spot pricing versus on-demand usage. This capability helps in planning cost-effective architectures.
 Transparency in pricing with detailed breakdown. is correct. The tool provides itemized cost components that help identify where spend is occurring, enabling more transparent cost assessments and clearer communication with stakeholders. This detail supports migration planning and TCO analysis.
 Automated cost optimization recommendations. is incorrect because the Simple Monthly Calculator is a modelling tool and does not actively analyze live usage to produce automated optimization suggestions; services like Trusted Advisor or Compute Optimizer provide operational recommendations. The calculator is a planning aid rather than an optimization engine.
 Integration with AWS Cost Explorer for detailed analytics. is incorrect because the Simple Monthly Calculator does not integrate with Cost Explorer; Cost Explorer analyzes historical usage and provides analytics on actual bills, whereas the calculator is used for prospective estimates.
@@ -430,7 +430,7 @@ AWS Trusted Advisor. is incorrect because Trusted Advisor offers optimization ch
 
 ---
 
-## 29. A company is looking to implement a data warehousing solution on AWS using Amazon Redshift. The dataset includes sensitive personal information that needs to be protected both at rest and in transit. A security officer has been tasked to ensure that the data in the Redshift clusters is encrypted according to compliance requirements. Which of the following options can they choose to achieve encryption at rest with Amazon Redshift?
+## 29. A company is looking to implement a data warehousing solution on AWS using Amazon Redshift. The dataset includes sensitive personal information that needs to be protected both at rest and in transit. A security officer has been tasked to ensure that the data in the Redshift clusters is encrypted according to compliance requirements. Which of the following answers can they choose to achieve encryption at rest with Amazon Redshift?
 
 - Encrypt data at the application level before loading it into Redshift.
 - Enable SSL/TLS encryption on the Redshift cluster endpoint for encryption at rest.
@@ -516,7 +516,7 @@ IAM Access Keys. is incorrect because access keys are long-lived programmatic cr
 Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads, and third-party security products can be found in the AWS Marketplace to complement Amazon GuardDuty with additional features. is correct. GuardDuty analyzes VPC Flow Logs, CloudTrail events, and DNS logs to identify suspicious activity and provides actionable findings. The AWS Marketplace hosts numerous third-party security products that can augment detection, response, forensics, and compliance capabilities. Customers often run GuardDuty alongside third-party tools to gain broader coverage and specialized functionality.
 Amazon GuardDuty is primarily an antivirus software and all third-party security products are automatically integrated with it upon installation. is incorrect because GuardDuty is a threat detection and monitoring service, not a host-based antivirus solution, and third-party integrations are not automatically installed or integrated without explicit configuration. GuardDuty's findings can be sent to other tools, but integration requires configuration or partner connectors.
 Third-party security products are not available in the AWS Marketplace, and customers can only use Amazon GuardDuty for security monitoring. is incorrect because the AWS Marketplace offers many third-party security solutions across detection, prevention, and incident response domains that customers can deploy alongside native AWS services. Marketplace offerings provide complementary capabilities and different specialization levels.
-AWS accounts cannot use both Amazon GuardDuty and third-party security solutions simultaneously; they must choose one or the other. is incorrect because customers commonly run multiple tools concurrently to strengthen security posture, combine insights, and meet specific regulatory or operational requirements. Using multiple layers increases detection fidelity and response options.
+AWS accounts cannot use both Amazon GuardDuty and third-party security solutions simultaneously; they must choose one or the other. is incorrect because customers commonly run multiple tools concurrently to strengthen security posture, combine insights, and meet specific regulatory or operational requirements. Using multiple layers increases detection fidelity and response answers.
 
 ---
 
@@ -544,7 +544,7 @@ AWS Identity and Access Management (IAM). is incorrect because IAM controls auth
 - Ensuring the physical security of data center facilities.
 
 **Explanation:**
-Managing data encryption at rest within S3 buckets. is correct. Customers are responsible for configuring encryption for their objects and managing encryption keys or KMS policies as appropriate to meet security and compliance requirements. This includes selecting server-side encryption options, client-side encryption, or customer-managed keys and validating access controls. AWS provides key management services and infrastructure, but customers control data protection settings for their own resources.
+Managing data encryption at rest within S3 buckets. is correct. Customers are responsible for configuring encryption for their objects and managing encryption keys or KMS policies as appropriate to meet security and compliance requirements. This includes selecting server-side encryption answers, client-side encryption, or customer-managed keys and validating access controls. AWS provides key management services and infrastructure, but customers control data protection settings for their own resources.
 Patching and maintaining the underlying hardware of the data centers. is incorrect because AWS is responsible for the physical infrastructure, hardware lifecycle, and host patching under the shared responsibility model. Customers operate at the guest OS, application, and configuration level for resources they control while AWS manages the cloud infrastructure.
 Implementing identity and access management policies through IAM. is correct. Customers must design and enforce IAM policies, roles, and permission boundaries to control who and what can access their resources. IAM configuration, least-privilege enforcement, credential rotation, and MFA enforcement are customer responsibilities to protect access.
 Ensuring compliance with company policies by configuring AWS Config rules. is correct. Customers configure AWS Config to evaluate resource configurations against internal policies and regulatory requirements, remediate noncompliance, and collect evidence for audits. AWS provides the service, but customers define rules, remediation actions, and monitoring criteria aligned with their governance needs.

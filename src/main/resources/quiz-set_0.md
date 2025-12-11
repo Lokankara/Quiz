@@ -15,7 +15,7 @@ Users should always have more permissions than they need is incorrect because it
 
 ---
 
-## 2. Amazon RDS provides Multi-AZ feature for better availability of databases. Which of the following options describes Multi-AZ?
+## 2. Amazon RDS provides Multi-AZ feature for better availability of databases. Which of the following answers describes Multi-AZ?
 
 - Multi-AZ allows read replicas of RDS instances across availability zones.
 - Multi-AZ maintains standby replicas of RDS instances in different availability zones.
@@ -24,9 +24,9 @@ Users should always have more permissions than they need is incorrect because it
 
 **Explanation:**
 Multi-AZ maintains standby replicas of RDS instances in different availability zones is correct. Multi-AZ provides
-high availability by automatically creating a standby replica in another AZ.  
+high availability by automatically creating a standby replica in another AZ.
 Multi-AZ allows read replicas of RDS instances across availability zones is incorrect; read replicas are for scaling
-reads, not high availability.  
+reads, not high availability.
 Multi-AZ allows peering connections between VPCs is incorrect; VPC peering is unrelated to RDS.
 Multi-AZ encrypts RDS instance data is incorrect; encryption is a separate feature.
 
@@ -41,7 +41,7 @@ Multi-AZ encrypts RDS instance data is incorrect; encryption is a separate featu
 
 **Explanation:**
 AWS Software Development Kit is correct. The SDK provides APIs and libraries for integrating AWS services into
-applications.  
+applications.
 AWS CodeDeploy is incorrect; it automates code deployments.
 AWS Command Line Interface (CLI) is incorrect; it is for command-line management, not application integration.
 AWS CodePipeline is incorrect; it is for CI/CD, not direct integration.
@@ -72,7 +72,7 @@ Cost Projections is incorrect; projections are a feature within Cost Explorer.
 
 **Explanation:**
 Amazon Simple Notification Service (Amazon SNS) is correct. SNS sends notifications when CloudWatch alarms are
-triggered.  
+triggered.
 Amazon Route 53 is incorrect; it is a DNS service.
 AWS CloudTrail is incorrect; it logs API calls.
 AWS Trusted Advisor is incorrect; it provides best practice recommendations.
@@ -146,7 +146,7 @@ AWS Organizations is incorrect; it manages multiple accounts.
 
 **Explanation:**
 It only sends traffic to the remaining healthy instances is correct. ELB stops routing traffic to unhealthy
-instances.  
+instances.
 It continues to send traffic to the failed instance is incorrect; ELB avoids unhealthy instances.
 It restarts the unhealthy EC2 instance is incorrect; ELB does not manage instance lifecycle.
 It terminates the failed instance is incorrect; ELB does not terminate instances.
@@ -400,7 +400,7 @@ CloudFront is incorrect; it is a CDN.
 
 **Explanation:**
 AWS Partner Network Consulting Partners is correct. APN Consulting Partners help design, build, and manage AWS
-systems.  
+systems.
 AWS Marketplace is incorrect; it is for software solutions.
 AWS Trusted Advisor is incorrect; it provides recommendations.
 Amazon Inspector is incorrect; it is a security assessment service.
@@ -543,7 +543,7 @@ Auditability is incorrect; it is about tracking actions.
 
 ---
 
-## 37. A company wants to use AWS storage. Low storage cost is very important for them. Their data is rarely needed and waiting 13-14 hours to get the data back is acceptable. What is the best storage option for the company to use?
+## 37. A company wants to use AWS storage. Low storage cost is very important for them. Their data is rarely needed and waiting 13-14 hours to get the data back is acceptable. What is the best storage answers for the company to use?
 
 - Amazon EBS
 - Amazon S3
@@ -552,7 +552,7 @@ Auditability is incorrect; it is about tracking actions.
 
 **Explanation:**
 S3 Glacier Deep Archive is correct. It is the lowest-cost storage for rarely accessed data with long retrieval
-times.  
+times.
 Amazon EBS is incorrect; it is expensive block storage.
 Amazon S3 is incorrect; it is more expensive than Glacier Deep Archive.
 Amazon S3 Glacier is incorrect; it is not as low-cost as Deep Archive.
@@ -598,7 +598,7 @@ AWS License Manager is incorrect; it manages software licenses.
 
 **Explanation:**
 You can change a Security Group associated with an instance if the instance is in the running state is correct.
-Security groups can be changed at any time.  
+Security groups can be changed at any time.
 Only if there are no instances associated is incorrect; security groups can be changed while in use.
 Only the Default Security Group is incorrect; any security group can be changed.
 If the instance is in the hibernate state is incorrect; changes can be made while running.
@@ -789,15 +789,15 @@ Usage Budgets is incorrect; they track usage, not cost.
 
 ## 53. A user was given an access key ID and secret access key to make API calls to AWS. The user has forgotten the credentials. How can new credentials be generated for the user?
 
-- Use the 'Forgot Password' option
+- Use the 'Forgot Password' answers
 - Delete the user and recreate them to get new credentials.
 - Create a new access key by logging in to the AWS Management Console as the root user
 - Contact AWS Support to retrieve the forgotten Secret Access Key.
 
 **Explanation:**
 Create a new access key by logging in to the AWS Management Console as the root user is correct. New keys can be
-generated; lost keys cannot be retrieved.  
-Forgot Password option is incorrect; it is for passwords, not access keys.
+generated; lost keys cannot be retrieved.
+Forgot Password answers is incorrect; it is for passwords, not access keys.
 Delete the user and recreate them is incorrect; it is unnecessary.
 Contact AWS Support is incorrect; AWS cannot retrieve lost keys.
 
@@ -812,8 +812,8 @@ Contact AWS Support is incorrect; AWS cannot retrieve lost keys.
 - SSD
 
 **Explanation:**
-HDD is correct. EBS provides HDD-backed volumes designed for large, sequential workloads where throughput is more important than low latency. These volumes are suitable for log processing, big data workloads, and streaming applications. They offer lower cost per GB compared to SSD. HDD options include st1 and sc1 volume types.
-SSD is correct. EBS provides SSD-backed volumes optimized for transactional workloads requiring low latency and high IOPS performance. These volumes support databases, boot volumes, and latency-sensitive applications. SSD options include gp3 and io2. They deliver predictable performance with consistent I/O characteristics.
+HDD is correct. EBS provides HDD-backed volumes designed for large, sequential workloads where throughput is more important than low latency. These volumes are suitable for log processing, big data workloads, and streaming applications. They offer lower cost per GB compared to SSD. HDD answers include st1 and sc1 volume types.
+SSD is correct. EBS provides SSD-backed volumes optimized for transactional workloads requiring low latency and high IOPS performance. These volumes support databases, boot volumes, and latency-sensitive applications. SSD answers include gp3 and io2. They deliver predictable performance with consistent I/O characteristics.
 NAS is incorrect because EBS is not a network-attached file storage system. It provides block-level storage attached to a single EC2 instance.
 Object is incorrect because object storage refers to services like Amazon S3, not EBS. EBS volumes present as raw block devices for file systems or applications.
 SAN is incorrect because EBS is not a traditional storage area network exposed over specialized hardware. It is a managed, network-based block storage service abstracted by AWS.
@@ -878,7 +878,7 @@ AWS Snowball is incorrect; it is for data transfer.
 
 ---
 
-## 59. In order to better track costs within the organization, you notice that your account administrator has added in the ability to sort by options such as user:ProjectName. What is this an example of?
+## 59. In order to better track costs within the organization, you notice that your account administrator has added in the ability to sort by answers such as user:ProjectName. What is this an example of?
 
 - Cost Categories
 - Cost Metadata
@@ -949,7 +949,7 @@ AWS Config is incorrect; it tracks configuration changes.
 
 **Explanation:**
 It is used to generate, use, and manage encryption keys in the cloud is correct. CloudHSM is for secure key
-management.  
+management.
 Protects against DDoS attacks is incorrect; AWS Shield does this.
 Applies protection against malware is incorrect; CloudHSM is not an anti-malware service.
 Acts as an interface is incorrect; it is for cryptographic key management.
@@ -979,9 +979,9 @@ Amazon DynamoDB is incorrect; AWS manages the OS for this service. DynamoDB is a
 
 **Explanation:**
 AWS is correct. For Amazon RDS, AWS manages the operating system and database software, including patching and
-maintenance.  
+maintenance.
 The customer is incorrect; customers manage the database contents, schema, and access, not the OS or database
-software.  
+software.
 It is shared is incorrect; AWS handles the OS and database software management for RDS.``
 
 ---

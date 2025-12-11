@@ -4,7 +4,7 @@ import static com.quiz.card.service.FlashCardMapper.toDto;
 
 import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.FlashCardDto;
-import com.quiz.card.model.Option;
+import com.quiz.card.model.Answers;
 import com.quiz.card.model.OptionDto;
 import com.quiz.card.model.QuestionEntity;
 import com.quiz.card.model.ResultDto;
@@ -78,7 +78,6 @@ public class QuestionService implements IQuestionService {
         if (optional.isEmpty()) {
             return AnswerDto.builder()
                     .correct(false)
-                    .explanation("")
                     .options(new HashSet<>())
                     .question("")
                     .build();
@@ -143,36 +142,29 @@ public class QuestionService implements IQuestionService {
                 .orElse(new FlashCardDto());
     }
 
-    private AnswerDto getAnswerDto(List<String> selectedOptions, QuestionEntity entity) {
-        Set<String> correctOptions = getCorrectOptions(entity);
-        Set<String> selectedSet = getSelectedSet(selectedOptions);
+    protected AnswerDto getAnswerDto(List<String> selectedOptions, QuestionEntity entity) {
 
-        boolean correct = correctOptions.equals(selectedSet);
+        Set<String> normalizedCorrect = entity.getAnswers().stream()
+                .filter(Answers::isCorrect)
+                .map(Answers::getText)
+                .collect(Collectors.toSet());
+
+        boolean correct = normalizedCorrect.size() == selectedOptions.size() &&
+                normalizedCorrect.stream().allMatch(correctText ->
+                        selectedOptions.stream().anyMatch(correctText::startsWith)
+                );
 
         return AnswerDto.builder()
                 .id(entity.getId())
                 .correct(correct)
                 .question(entity.getQuestion())
-                .explanation(entity.getExplanation())
-                .options(toSetDto(entity.getOptions()))
+                .options(toSetDto(entity.getAnswers()))
                 .build();
     }
 
-    private Set<OptionDto> toSetDto(Set<Option> options) {
-        return options.stream()
+    private Set<OptionDto> toSetDto(Set<Answers> answers) {
+        return answers.stream()
                 .map(option -> new OptionDto(option.isCorrect(), option.getText()))
-                .collect(Collectors.toSet());
-    }
-
-    private Set<String> getSelectedSet(List<String> selectedOptions) {
-        return selectedOptions.stream()
-                .collect(Collectors.toSet());
-    }
-
-    private Set<String> getCorrectOptions(QuestionEntity entity) {
-        return entity.getOptions().stream()
-                .filter(Option::isCorrect)
-                .map(Option::getText)
                 .collect(Collectors.toSet());
     }
 }

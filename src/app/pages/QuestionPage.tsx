@@ -49,24 +49,21 @@ export default function QuizPage() {
       </div>
     );
   }
-    if (!question) return <div className="text-center mt-20">No questions available</div>;
-
-    return (
+    if (question) return (
         <div className="max-w-xl mx-auto p-6 border rounded shadow">
             <h2 className="font-bold mb-4">{question.question}</h2>
             <ul className="space-y-2">
-                {question.options.map(o => {
-                    const str = JSON.stringify(o);
+                {question.options.map(str => {
                     const checked = selectedOptions.includes(str);
                     return (
-                        <li key={o.text}>
+                        <li key={str}>
                             <label className="flex items-center space-x-2 cursor-pointer">
                                 <input
                                     type={question.multiSelect ? "checkbox" : "radio"}
                                     checked={checked}
                                     onChange={() => handleSelect(str)}
                                 />
-                                <span>{o.text}</span>
+                                <span>{str}</span>
                             </label>
                         </li>
                     );

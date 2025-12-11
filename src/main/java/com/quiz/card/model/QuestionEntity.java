@@ -34,8 +34,9 @@ public class QuestionEntity {
     @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "question_options", joinColumns = @JoinColumn(name = "question_id"))
-    private Set<Option> options = new HashSet<>();
+    private Set<Answers> answers = new HashSet<>();
 
+    @Builder.Default
     @Column(columnDefinition = "TEXT")
-    private String explanation;
+    private Set<String> options = new HashSet<>();
 }

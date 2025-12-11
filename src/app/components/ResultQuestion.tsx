@@ -40,7 +40,7 @@ const ResultPage = () => {
                         </span>
                     </div>
                     <div className="text-sm text-gray-700 whitespace-pre-wrap">
-                        {answer.explanation}
+                        {JSON.stringify(answer.options)}
                     </div>
                 </div>
             ))}
