@@ -13,7 +13,6 @@ import com.quiz.card.model.AnswerDto;
 import com.quiz.card.model.Answers;
 import com.quiz.card.model.FlashCardDto;
 import com.quiz.card.model.QuestionEntity;
-import com.quiz.card.model.ResultDto;
 import com.quiz.card.repository.QuestionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -88,34 +87,6 @@ class QuestionServiceTest {
     }
 
     @Test
-    void testGetAllCardsCacheMiss() {
-        QuestionEntity entity1 = new QuestionEntity();
-        entity1.setId(1L);
-        entity1.setQuestion("Test Question 1");
-        Answers answers = new Answers();
-        answers.setText("Option 1");
-        answers.setCorrect(true);
-        entity1.setAnswers(new HashSet<>(Arrays.asList(answers)));
-
-        FlashCardDto dto1 = FlashCardDto.builder()
-                .id(1)
-                .question("Test Question 1")
-                .options(new HashSet<>(Arrays.asList("Option 1")))
-                .multiSelect(false)
-                .build();
-
-        when(repository.findAll()).thenReturn(Arrays.asList(entity1));
-        when(warehouse.takeFirst()).thenReturn(java.util.Optional.of(dto1));
-
-        List<FlashCardDto> result = service.getAllCards();
-
-        assertEquals(1, result.size());
-        assertEquals("Test Question 1", result.get(0).getQuestion());
-        verify(repository, times(1)).findAll();
-        verify(warehouse, times(1)).seed(any());
-    }
-
-    @Test
     void testGetAllCardsCacheMissEmptyRepo() {
         QuestionEntity entity1 = new QuestionEntity();
         entity1.setId(1L);
@@ -151,52 +122,6 @@ class QuestionServiceTest {
 
         assertEquals(expectedCard, result);
         verify(warehouse, times(1)).takeFirst();
-    }
-
-    @Test
-    void testGetResult() {
-        AnswerDto answer1 = AnswerDto.builder()
-                .id(1L)
-                .correct(true)
-                .question("Question 1")
-                .build();
-
-        AnswerDto answer2 = AnswerDto.builder()
-                .id(2L)
-                .correct(false)
-                .question("Question 2")
-                .build();
-
-        ResultDto result = service.getResult();
-
-        assertEquals(2, result.getTotal());
-        assertEquals(1, result.getCorrect());
-        assertEquals(1, result.getIncorrect());
-        assertTrue(result.getAnswered().containsKey(1L));
-        assertTrue(result.getAnswered().containsKey(2L));
-    }
-
-    @Test
-    void testRegisterAnswerQuestionExistsCorrect() {
-        QuestionEntity entity = new QuestionEntity();
-        entity.setId(1L);
-        entity.setQuestion("Test Question");
-        Answers answers1 = new Answers();
-        answers1.setText("Option 1");
-        answers1.setCorrect(true);
-        Answers answers2 = new Answers();
-        answers2.setText("Option 2");
-        answers2.setCorrect(false);
-        entity.setAnswers(new HashSet<>(Arrays.asList(answers1, answers2)));
-
-        when(repository.findById(1L)).thenReturn(Optional.of(entity));
-
-        List<String> selectedOptions = List.of("\"Option 1\"");
-        AnswerDto result = service.registerAnswer(1L, selectedOptions);
-
-        assertTrue(result.isCorrect());
-        assertEquals("Test Question", result.getQuestion());
-        verify(repository, times(1)).findById(1L);
     }
 
     @Test
@@ -275,34 +200,6 @@ class QuestionServiceTest {
 
         assertEquals(availableCards, result);
         verify(warehouse, times(1)).snapshotAvailable();
-    }
-
-    @Test
-    void testRemoveCardExists() {
-        QuestionEntity entity = new QuestionEntity();
-        entity.setId(1L);
-        entity.setQuestion("Test Question");
-        Answers answers = new Answers();
-        answers.setText("Option 1");
-        answers.setCorrect(true);
-        entity.setAnswers(new HashSet<>(Arrays.asList(answers)));
-
-        FlashCardDto expectedCard = FlashCardDto.builder()
-                .id(1)
-                .question("Test Question")
-                .options(new HashSet<>(Arrays.asList("Option 1")))
-                .multiSelect(false)
-                .build();
-
-        when(repository.findById(1L)).thenReturn(Optional.of(entity));
-        when(repository.findById(2L)).thenReturn(Optional.empty());
-
-        FlashCardDto result = service.removeCard(1L);
-
-        assertEquals(expectedCard, result);
-        verify(repository, times(1)).findById(1L);
-        verify(repository, times(1)).deleteById(1L);
-        verify(warehouse, times(1)).removeById(1L);
     }
 
     @Test

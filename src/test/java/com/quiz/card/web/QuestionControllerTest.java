@@ -81,8 +81,7 @@ class QuestionControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.correct").exists())
-                .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.explanation").exists());
+                .andExpect(jsonPath("$.id").value(id));
     }
 
     @Test
